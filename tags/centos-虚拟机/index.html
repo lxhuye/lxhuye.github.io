@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>配置Centos8虚拟机网络服务 | Hexo</title>
+  <title>Tag: centos, 虚拟机 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="配置前准备：​    软件安装： VMware Fusion, Transmit, SrcureCRT ​    镜像使用： centos8 安装好软件之后, 将镜像导入VMware中, 会启动图形化界面安装, 安装很简单, 不再赘述如何配置虚拟机网络 在虚拟机功能栏窗口选择虚拟机 选择网络适配器 点击设置 使用网络适配器桥接模式中的WIFI 与宿主机相关联 进入虚拟机终端 使用 dhclient">
-<meta property="og:type" content="article">
-<meta property="og:title" content="配置Centos8虚拟机网络服务">
-<meta property="og:url" content="http://example.com/2020/10/16/%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/tags/centos-%E8%99%9A%E6%8B%9F%E6%9C%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="配置前准备：​    软件安装： VMware Fusion, Transmit, SrcureCRT ​    镜像使用： centos8 安装好软件之后, 将镜像导入VMware中, 会启动图形化界面安装, 安装很简单, 不再赘述如何配置虚拟机网络 在虚拟机功能栏窗口选择虚拟机 选择网络适配器 点击设置 使用网络适配器桥接模式中的WIFI 与宿主机相关联 进入虚拟机终端 使用 dhclient">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-16T06:20:09.000Z">
-<meta property="article:modified_time" content="2020-10-18T01:12:05.628Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="虚拟机">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,197 +144,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-配置虚拟机网络" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      配置Centos8虚拟机网络服务
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/10/18/%E5%9C%A8Centos%E4%B8%AD%E4%BD%BF%E7%94%A8Docker%E5%AE%89%E8%A3%85Mysql%E5%92%8CRedis/" class="archive-article-date">
+  	<time datetime="2020-10-18T00:43:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/10/18/%E5%9C%A8Centos%E4%B8%AD%E4%BD%BF%E7%94%A8Docker%E5%AE%89%E8%A3%85Mysql%E5%92%8CRedis/">在Centos中使用Docker安装Mysql和Redis</a>
     </h1>
   
 
-        
-        <a href="/2020/10/16/%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="archive-article-date">
-  	<time datetime="2020-10-16T06:20:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="配置前准备："><a href="#配置前准备：" class="headerlink" title="配置前准备："></a>配置前准备：</h5><p>​    软件安装： VMware Fusion, Transmit, SrcureCRT</p>
-<p>​    镜像使用： centos8</p>
-<h4 id="安装好软件之后-将镜像导入VMware中-会启动图形化界面安装-安装很简单-不再赘述"><a href="#安装好软件之后-将镜像导入VMware中-会启动图形化界面安装-安装很简单-不再赘述" class="headerlink" title="安装好软件之后, 将镜像导入VMware中, 会启动图形化界面安装, 安装很简单, 不再赘述"></a>安装好软件之后, 将镜像导入VMware中, 会启动图形化界面安装, 安装很简单, 不再赘述</h4><h4 id="如何配置虚拟机网络"><a href="#如何配置虚拟机网络" class="headerlink" title="如何配置虚拟机网络"></a>如何配置虚拟机网络</h4><ol>
-<li><h5 id="在虚拟机功能栏窗口选择虚拟机"><a href="#在虚拟机功能栏窗口选择虚拟机" class="headerlink" title="在虚拟机功能栏窗口选择虚拟机"></a>在虚拟机功能栏窗口选择虚拟机</h5></li>
-<li><h5 id="选择网络适配器-点击设置"><a href="#选择网络适配器-点击设置" class="headerlink" title="选择网络适配器 点击设置"></a>选择网络适配器 点击设置</h5></li>
-<li><h5 id="使用网络适配器桥接模式中的WIFI-与宿主机相关联"><a href="#使用网络适配器桥接模式中的WIFI-与宿主机相关联" class="headerlink" title="使用网络适配器桥接模式中的WIFI 与宿主机相关联"></a>使用网络适配器桥接模式中的WIFI 与宿主机相关联</h5></li>
-<li><h5 id="进入虚拟机终端-使用-dhclient-为虚拟机分配一个ip地址-需要管理员权限"><a href="#进入虚拟机终端-使用-dhclient-为虚拟机分配一个ip地址-需要管理员权限" class="headerlink" title="进入虚拟机终端 使用 dhclient 为虚拟机分配一个ip地址 (需要管理员权限)"></a>进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</h5></li>
-<li><h5 id="使用vim进入配置文件夹配置网络信息"><a href="#使用vim进入配置文件夹配置网络信息" class="headerlink" title="使用vim进入配置文件夹配置网络信息"></a>使用vim进入配置文件夹配置网络信息</h5><p><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
-</li>
-<li><h5 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h5></li>
-</ol>
-<a id="more"></a>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=6b13b942-8eca-4589-9eb8-e8478038cd4c</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR= //这里填虚拟机自动分配的地址</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.31.1</span><br><span class="line">DNS=119.29.29.29</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li><p>重新启动网络服务 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nmcli c reload ##重启网卡之前一定要重新载入一下配置文件，不然不能立即生效</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#重启网卡（下面的三条命令都可以）</span></span></span><br><span class="line">nmcli c up ens160</span><br><span class="line">nmcli d reapply ens160</span><br><span class="line">nmcli d connect ens160</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试是否可以ping通外界网站和宿主机<br><code>ping www.baidu.com / ping 192.168.xx.xx</code></p>
-</li>
-</ol>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos, 虚拟机</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/16/%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          yum lock错误的解决方法
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何新建hexo博客</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -362,9 +220,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -432,11 +290,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mac_terminal</a>
+                <a href="javascript:void(0)" class="js-tag color1">macos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+                <a href="javascript:void(0)" class="js-tag color2">centos, 虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
