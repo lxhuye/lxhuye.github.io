@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>IDEA使用教程-学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[toc]  Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时">
+  <meta name="description" content="&lt;%- toc(page.content) %&gt; Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDEA使用教程-学习笔记">
 <meta property="og:url" content="http://example.com/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[toc]  Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时">
+<meta property="og:description" content="&lt;%- toc(page.content) %&gt; Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiii-a-make-introduce-1.jpg">
@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg">
 <meta property="article:published_time" content="2020-10-23T14:07:35.000Z">
-<meta property="article:modified_time" content="2020-10-23T15:31:06.174Z">
+<meta property="article:modified_time" content="2020-10-23T15:43:01.687Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -181,10 +181,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[toc]</p>
-<hr>
-<h1 id="Mac-下修改-VM-参数"><a href="#Mac-下修改-VM-参数" class="headerlink" title="Mac 下修改 VM 参数"></a>Mac 下修改 VM 参数</h1><h2 id="方法一（官方推荐）"><a href="#方法一（官方推荐）" class="headerlink" title="方法一（官方推荐）"></a>方法一（官方推荐）</h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
+        <p>&lt;%- toc(page.content) %&gt;</p>
+<h1><span id="mac-下修改-vm-参数">Mac 下修改 VM 参数</span></h1><h2><span id="方法一官方推荐">方法一（官方推荐）</span></h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
+<h2><span id="方法二">方法二</span></h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
 <ul>
 <li>打开 Finder</li>
 <li>按快捷键 Command + Shift + G</li>
@@ -196,7 +195,7 @@
 
 
 
-<h1 id="UI界面"><a href="#UI界面" class="headerlink" title="UI界面"></a>UI界面</h1><blockquote>
+<h1><span id="ui界面">UI界面</span></h1><blockquote>
 <ul>
 <li><strong>重点说明：</strong> IntelliJ IDEA 是没有类似 Eclipse 的工作空间的概念（<code>Workspaces</code> ），最大单元就是 <code>Project</code>。如果你同时观察多个项目的情况，IntelliJ IDEA 提供的解决方案是打开多个项目实例，你可以理解为开多个项目窗口。</li>
 <li>命令 <code>Create New Project</code> 创建一个新项目。</li>
@@ -213,8 +212,8 @@
 </ul>
 </blockquote>
 <p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg" alt="界面介绍"></p>
-<h1 id="IntelliJ-IDEA-主题、字体、编辑区主题、文件编码修改、乱码问题"><a href="#IntelliJ-IDEA-主题、字体、编辑区主题、文件编码修改、乱码问题" class="headerlink" title="IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题"></a>IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html</a></p>
-<h1 id="编译方式介绍"><a href="#编译方式介绍" class="headerlink" title="编译方式介绍"></a>编译方式介绍</h1><p>在 IntelliJ IDEA 里，编译方式一共有三种：</p>
+<h1><span id="intellij-idea-主题-字体-编辑区主题-文件编码修改-乱码问题">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</span></h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html</a></p>
+<h1><span id="编译方式介绍">编译方式介绍</span></h1><p>在 IntelliJ IDEA 里，编译方式一共有三种：</p>
 <blockquote>
 <ul>
 <li>Compile：对选定的目标（Java 类文件），进行强制性编译，不管目标是否是被修改过。注：2018版操作为Recompile。</li>
@@ -230,7 +229,7 @@
 <li>如上图标注 3 所示，Rebuild 的操作有：<code>Rebuild Project</code></li>
 </ul>
 </blockquote>
-<h1 id="Project-和-Module-介绍-⭐️"><a href="#Project-和-Module-介绍-⭐️" class="headerlink" title="Project 和 Module 介绍 ⭐️"></a>Project 和 Module 介绍 ⭐️</h1><p>对于 Project，IntelliJ IDEA 是这样解释的：</p>
+<h1><span id="project-和-module-介绍-️">Project 和 Module 介绍 ⭐️</span></h1><p>对于 Project，IntelliJ IDEA 是这样解释的：</p>
 <blockquote>
 <ul>
 <li>Whatever you do in IntelliJ IDEA, you do that in the context of a project. A project is an organizational unit that represents a complete software solution. It serves as a basis for coding assistance, bulk refactoring, coding style consistency, etc.</li>
@@ -259,7 +258,7 @@
 </blockquote>
 <p>通过上面的介绍我们知道，在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module。一个 Project 可以有多个 Module。目前主流的大型项目结构都是类似这种多 Module 结构，这类项目一般是这样划分的，比如：core Module、web Module、plugin Module、solr Module 等等，模块之间彼此可以相互依赖。通过这些 Module 的命名也可以看出，他们之间应该都是处于同一个项目业务情况下的模块，彼此之间是有不可分割的业务关系的。</p>
 <p>所以我们现在总结：<strong>一个 <code>Project</code> 是由一个或多个 <code>Module</code> 组成，模块之间尽量是处在同一个项目业务的的情况下，彼此之间互相依赖关联。</strong>这里用的是 <code>尽量</code>，因为 IntelliJ IDEA 的 Project 是一个没有具备任何编码设置、构建等开发功能的，主要起到一个项目定义、范围约束、规范等类型的效果，也许我们可以简单地理解为就是一个单纯的目录，只是这个目录命名上必须有其代表性的意义。</p>
-<h1 id="language-level-介绍"><a href="#language-level-介绍" class="headerlink" title="language level 介绍"></a>language level 介绍</h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiv-c-language-level-introduce-2.jpg" alt="language level 介绍"></p>
+<h1><span id="language-level-介绍">language level 介绍</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiv-c-language-level-introduce-2.jpg" alt="language level 介绍"></p>
 <blockquote>
 <ul>
 <li>如上第一张图标注 1，使用的是 JDK 7，显示的 <code>SDK default</code> 为 <code>7 - Diamonds，ARM，multi-catch etc.</code></li>
@@ -269,8 +268,8 @@
 <p>当我们使用 JDK 8 的时候，我们只能向下兼容 JDK 8 及其以下的特性，所以只能选择 8 及其以下的 <code>language level</code>。所以当我们项目使用的是 JDK 8，但是代码却没有使用 JDK 8 的新特性，最多使用了 JDK 7 的特性的时候我们可以选择 <code>7 - Diamonds，ARM，multi-catch etc.</code>。</p>
 <p>对此我们总结 <code>language level</code>：限定项目编译检查时最低要求的 JDK 特性。</p>
 <p>现在假设我们有一个项目代码使用的 JDK 8 新特性：<code>lambda</code> 语法，但是 JDK 选择的却是 JDK 7，即使 <code>language level</code> 选择了 <code>8 - Lambdas，type annotation etc.</code>，也是没有多大意义的，一样会编译报错。</p>
-<h1 id="IntelliJ-IDEA-下的版本控制介绍-⭐️"><a href="#IntelliJ-IDEA-下的版本控制介绍-⭐️" class="headerlink" title="IntelliJ IDEA 下的版本控制介绍 ⭐️"></a>IntelliJ IDEA 下的版本控制介绍 ⭐️</h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html</a></p>
-<h1 id="实时代码模板的介绍"><a href="#实时代码模板的介绍" class="headerlink" title="实时代码模板的介绍"></a>实时代码模板的介绍</h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-1.gif" alt="实时代码模板的介绍"></p>
+<h1><span id="intellij-idea-下的版本控制介绍-️">IntelliJ IDEA 下的版本控制介绍 ⭐️</span></h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html</a></p>
+<h1><span id="实时代码模板的介绍">实时代码模板的介绍</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-1.gif" alt="实时代码模板的介绍"></p>
 <blockquote>
 <ul>
 <li>上图 Gif 演示为最好的介绍 <code>Live Templates</code>。</li>
@@ -298,7 +297,7 @@
 </blockquote>
 <p>调用常规的实时代码模板主要是通过两个快捷键：<code>Tab</code> 和 <code>Ctrl + J</code>。虽然 IntelliJ IDEA 支持修改此对应的快捷键，但是默认大家都是这样使用的，所以没有特别原因就不要去改。</p>
 <p>该两个快捷键的使用方法：如第一张 Gif 演示图所示，在输入 <code>sys</code> 后按 <code>Tab</code> 键，即立即生成预设语句。如果按 <code>Ctrl + J</code> 则会先提示与之匹配的实时代码模板介绍，然后还需按 <code>Enter</code> 才可完成预设语句的生成。</p>
-<h1 id="文件代码模板的设置"><a href="#文件代码模板的设置" class="headerlink" title="文件代码模板的设置"></a>文件代码模板的设置</h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xviii-b-file-and-code-templates-settings-1.jpg" alt="文件代码模板的设置"></p>
+<h1><span id="文件代码模板的设置">文件代码模板的设置</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xviii-b-file-and-code-templates-settings-1.jpg" alt="文件代码模板的设置"></p>
 <blockquote>
 <ul>
 <li>如上图标注 1 所示，文件代码模板支持的类型基本常见的文件类型都涵盖了。</li>
@@ -316,20 +315,20 @@
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="Postfix-Completion-的介绍"><a href="#Postfix-Completion-的介绍" class="headerlink" title="Postfix Completion 的介绍"></a>Postfix Completion 的介绍</h1><p>Postfix Completion 功能本质上也是代码模板，只是它比 Live Templates 来得更加便捷一点点而已。具体它是做什么的，我们通过下面一张 Gif 演示图来说明：</p>
+<h1><span id="postfix-completion-的介绍">Postfix Completion 的介绍</span></h1><p>Postfix Completion 功能本质上也是代码模板，只是它比 Live Templates 来得更加便捷一点点而已。具体它是做什么的，我们通过下面一张 Gif 演示图来说明：</p>
 <p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-c-postfix-completion-introduce-1.gif" alt="Postfix Completion 的介绍"></p>
 <blockquote>
 <ul>
 <li>如上图标注 1 所示，非空的判断在 Java 代码中应该是非常常见的一句话代码，如果用 Live Templates 当然也是可以快速生成，但是没有上图 Gif 这种 Postfix Completion 效果快。也许只是快了那么 0.01 秒，但是有如此好用的功能不用也是一种浪费。</li>
 </ul>
 </blockquote>
-<h2 id="Postfix-Completion-的设置"><a href="#Postfix-Completion-的设置" class="headerlink" title="Postfix Completion 的设置"></a>Postfix Completion 的设置</h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-d-postfix-completion-settings-1.jpg" alt="Postfix Completion 的设置"></p>
+<h2><span id="postfix-completion-的设置">Postfix Completion 的设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-d-postfix-completion-settings-1.jpg" alt="Postfix Completion 的设置"></p>
 <blockquote>
 <ul>
 <li>如上图红圈所示，IntelliJ IDEA 只提供了是否启用的开关，其他的设置就没了。所以如果目前的版本中你还无法想对该功能进行自定义。IntelliJ IDEA 也对常用到的一些固定格式的代码进行了归纳，基本目前也够用了。</li>
 </ul>
 </blockquote>
-<h1 id="Maven-项目介绍-⭐️"><a href="#Maven-项目介绍-⭐️" class="headerlink" title="Maven 项目介绍 ⭐️"></a>Maven 项目介绍 ⭐️</h1><h2 id="Maven-组件界面介绍"><a href="#Maven-组件界面介绍" class="headerlink" title="Maven 组件界面介绍"></a>Maven 组件界面介绍</h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg" alt="Maven 组件界面介绍"></p>
+<h1><span id="maven-项目介绍-️">Maven 项目介绍 ⭐️</span></h1><h2><span id="maven-组件界面介绍">Maven 组件界面介绍</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg" alt="Maven 组件界面介绍"></p>
 <blockquote>
 <ul>
 <li><p>如上图标注 1 所示，为常用的 Maven 工具栏，其中最常用的有：</p>
@@ -351,7 +350,7 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="Maven-快速排查依赖包冲突"><a href="#Maven-快速排查依赖包冲突" class="headerlink" title="Maven 快速排查依赖包冲突"></a>Maven 快速排查依赖包冲突</h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg" alt="Maven 快速排查依赖包冲突"></p>
+<h2><span id="maven-快速排查依赖包冲突">Maven 快速排查依赖包冲突</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg" alt="Maven 快速排查依赖包冲突"></p>
 <blockquote>
 <ul>
 <li>如上图箭头所示，点击此按钮会出现左边的项目依赖结构图，通过此图我们可以很好的观察项目的依赖依赖情况。</li>
@@ -364,7 +363,7 @@
 <li>如上图描述，一般我们在出现红色线的时候是都要进行排除的，防止出现因为版本不同的依赖包造成代码无法编译。</li>
 </ul>
 </blockquote>
-<h1 id="Maven-的单模块-多模块之-Spring-MVC-Spring-Mybatis-项目讲解"><a href="#Maven-的单模块-多模块之-Spring-MVC-Spring-Mybatis-项目讲解" class="headerlink" title="Maven 的单模块 / 多模块之 Spring MVC + Spring + Mybatis 项目讲解"></a>Maven 的单模块 / 多模块之 Spring MVC + Spring + Mybatis 项目讲解</h1><h2 id="视频下载"><a href="#视频下载" class="headerlink" title="视频下载"></a>视频下载</h2><ul>
+<h1><span id="maven-的单模块-多模块之-spring-mvc-spring-mybatis-项目讲解">Maven 的单模块 / 多模块之 Spring MVC + Spring + Mybatis 项目讲解</span></h1><h2><span id="视频下载">视频下载</span></h2><ul>
 <li>单模块的 Spring MVC + Spring + Mybatis 讲解（基于 IntelliJ IDEA）<ul>
 <li>百度云盘：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1dEuxWh7">http://pan.baidu.com/s/1dEuxWh7</a></li>
 <li>360 云盘（6d49）：<a target="_blank" rel="noopener" href="https://yunpan.cn/cY444GphNgMe3">https://yunpan.cn/cY444GphNgMe3</a></li>
@@ -376,7 +375,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<h2><span id="开发环境">开发环境</span></h2><ul>
 <li>JDK 7（理论上支持 JDK 6、JDK 7、JDK 8）</li>
 <li>Mysql 5.6</li>
 <li>Maven 3.1.1</li>
@@ -385,7 +384,7 @@
 <li>IntelliJ IDEA 15.0.4</li>
 <li>所有编码：UTF-8</li>
 </ul>
-<h2 id="视频中项目源码"><a href="#视频中项目源码" class="headerlink" title="视频中项目源码"></a>视频中项目源码</h2><ul>
+<h2><span id="视频中项目源码">视频中项目源码</span></h2><ul>
 <li>环境相关：<ul>
 <li><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/maven-skill-introduce.html">Maven 配置文件</a></li>
 <li>我的 Maven 本地依赖包环境下载：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1bnPZU2b">http://pan.baidu.com/s/1bnPZU2b</a></li>
@@ -431,11 +430,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="Maven-的单模块-多模块之-Spring-MVC-Spring-Spring-Data-JPA-项目"><a href="#Maven-的单模块-多模块之-Spring-MVC-Spring-Spring-Data-JPA-项目" class="headerlink" title="Maven 的单模块 / 多模块之 Spring MVC + Spring + Spring Data JPA 项目"></a>Maven 的单模块 / 多模块之 Spring MVC + Spring + Spring Data JPA 项目</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
+<h1><span id="maven-的单模块-多模块之-spring-mvc-spring-spring-data-jpa-项目">Maven 的单模块 / 多模块之 Spring MVC + Spring + Spring Data JPA 项目</span></h1><h2><span id="初衷">初衷</span></h2><ul>
 <li>本章展示 IntelliJ IDEA 高度集成化的效果，降低 IntelliJ IDEA 入门时间</li>
 <li>欢迎来到 IntelliJ IDEA 世界</li>
 </ul>
-<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ul>
+<h2><span id="项目">项目</span></h2><ul>
 <li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/judasn/Basic-Single-Module-SSJPA">https://github.com/judasn/Basic-Single-Module-SSJPA</a></li>
 </ul>
 

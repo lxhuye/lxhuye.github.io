@@ -166,8 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[toc]</p>
-<hr>
+        <p>&lt;%- toc(page.content) %&gt;</p>
 <h1 id="Mac-下修改-VM-参数"><a href="#Mac-下修改-VM-参数" class="headerlink" title="Mac 下修改 VM 参数"></a>Mac 下修改 VM 参数</h1><h2 id="方法一（官方推荐）"><a href="#方法一（官方推荐）" class="headerlink" title="方法一（官方推荐）"></a>方法一（官方推荐）</h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
 <h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
 <ul>
