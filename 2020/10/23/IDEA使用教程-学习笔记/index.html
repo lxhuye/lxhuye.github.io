@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>IDEA使用教程-学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&lt;%- toc(page.content) %&gt; Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查">
+  <meta name="description" content="toc: true Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDEA使用教程-学习笔记">
 <meta property="og:url" content="http://example.com/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&lt;%- toc(page.content) %&gt; Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查">
+<meta property="og:description" content="toc: true Mac 下修改 VM 参数方法一（官方推荐）大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： Help -&gt; Edit Custom VM Options 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiii-a-make-introduce-1.jpg">
@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg">
 <meta property="article:published_time" content="2020-10-23T14:07:35.000Z">
-<meta property="article:modified_time" content="2020-10-23T15:43:01.687Z">
+<meta property="article:modified_time" content="2020-10-23T15:51:26.637Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -181,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&lt;%- toc(page.content) %&gt;</p>
+        <p>toc: true</p>
 <h1><span id="mac-下修改-vm-参数">Mac 下修改 VM 参数</span></h1><h2><span id="方法一官方推荐">方法一（官方推荐）</span></h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
 <h2><span id="方法二">方法二</span></h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
 <ul>
