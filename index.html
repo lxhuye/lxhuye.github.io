@@ -170,8 +170,12 @@
 
 <ul>
 <li><a href="#%E5%AE%89%E8%A3%85doctoc%E4%BE%9D%E8%B5%96">安装doctoc依赖</a></li>
-<li><a href="#%E7%BB%99%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%9B%AE%E5%BD%95">给指定的博客添加目录</a></li>
-<li><a href="#%E9%87%8D%E5%90%AFhexo%E6%9C%8D%E5%8A%A1-%E4%B8%8A%E4%BC%A0%E6%9B%B4%E6%96%B0%E8%87%B3%E6%9C%8D%E5%8A%A1%E5%99%A8">重启Hexo服务 上传更新至服务器</a></li>
+<li><a href="#%E7%BB%99%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%9B%AE%E5%BD%95">给指定的博客添加目录</a><ul>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80">方法一：</a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C">方法二：</a></li>
+</ul>
+</li>
+<li><a href="#%E9%87%8D%E5%90%AFhexo%E6%9C%8D%E5%8A%A1">重启Hexo服务</a></li>
 </ul>
 <!-- tocstop -->
 
@@ -180,11 +184,12 @@
 
 
 
-<h4><span id="给指定的博客添加目录">给指定的博客添加目录</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo doctoc &quot;Hexo添加Toc支持，生成文章目录.md&quot;</span><br></pre></td></tr></table></figure>
+<h4><span id="给指定的博客添加目录">给指定的博客添加目录</span></h4><h5><span id="方法一">方法一：</span></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo doctoc &quot;Hexo添加Toc支持，生成文章目录.md&quot;</span><br></pre></td></tr></table></figure>
+
+<h5><span id="方法二">方法二：</span></h5><p>在指定位置使用标签 《!– toc –》 (正式使用改成单括号)</p>
+<h4><span id="重启hexo服务">重启Hexo服务</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo g</span><br><span class="line">sudo hexo d</span><br></pre></td></tr></table></figure>
 
 
-
-<h4><span id="重启hexo服务-上传更新至服务器">重启Hexo服务 上传更新至服务器</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo g</span><br><span class="line">sudo hexo d</span><br></pre></td></tr></table></figure>
 
 
       
