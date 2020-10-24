@@ -26,8 +26,26 @@
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-a-debug-settings-1.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-1.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-2.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-3.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-4.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-2.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-3.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-4.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-5.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-1.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-a-database-connection-1.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-b-database-settings-1.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-1.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-3.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-8.jpg">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-9.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-12.gif">
+<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-13.gif">
 <meta property="article:published_time" content="2020-10-23T14:07:35.000Z">
-<meta property="article:modified_time" content="2020-10-24T00:27:56.013Z">
+<meta property="article:modified_time" content="2020-10-24T01:04:47.635Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -402,79 +420,359 @@
 <li>如上图描述，一般我们在出现红色线的时候是都要进行排除的，防止出现因为版本不同的依赖包造成代码无法编译。</li>
 </ul>
 </blockquote>
-<h1><span id="maven-的单模块-多模块之-spring-mvc-spring-mybatis-项目讲解">Maven 的单模块 / 多模块之 Spring MVC + Spring + Mybatis 项目讲解</span></h1><h2><span id="视频下载">视频下载</span></h2><ul>
-<li>单模块的 Spring MVC + Spring + Mybatis 讲解（基于 IntelliJ IDEA）<ul>
-<li>百度云盘：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1dEuxWh7">http://pan.baidu.com/s/1dEuxWh7</a></li>
-<li>360 云盘（6d49）：<a target="_blank" rel="noopener" href="https://yunpan.cn/cY444GphNgMe3">https://yunpan.cn/cY444GphNgMe3</a></li>
+<h1><span id="debug-介绍-️">Debug 介绍 ⭐️</span></h1><h2><span id="debug-设置">Debug 设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-a-debug-settings-1.jpg" alt="Debug 设置"></p>
+<blockquote>
+<ul>
+<li>如上图标注 1 所示，表示设置 Debug 连接方式，默认是 <code>Socket</code>。<code>Shared memory</code> 是 Windows 特有的一个属性，一般在 Windows 系统下建议使用此设置，相对于 <code>Socket</code> 会快点。</li>
 </ul>
-</li>
-<li>多模块的 Spring MVC + Spring + Mybatis 讲解（基于 IntelliJ IDEA）<ul>
-<li>百度云盘：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1hr0x6sc">http://pan.baidu.com/s/1hr0x6sc</a></li>
-<li>360 云盘（e319）：<a target="_blank" rel="noopener" href="https://yunpan.cn/cY4INmfJn8yvm">https://yunpan.cn/cY4INmfJn8yvm</a></li>
+</blockquote>
+<h2><span id="debug-常用快捷键">Debug 常用快捷键</span></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">F7</td>
+<td align="left">F7</td>
+<td align="left">进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中 <code>必备</code></td>
+</tr>
+<tr>
+<td align="left">F8</td>
+<td align="left">F8</td>
+<td align="left">进入下一步，如果当前行断点是一个方法，则不进入当前方法体内 <code>必备</code></td>
+</tr>
+<tr>
+<td align="left">F9</td>
+<td align="left">Command + Option + R</td>
+<td align="left">恢复程序运行，但是如果该断点下面代码还有断点则停在下一个断点上 <code>必备</code></td>
+</tr>
+<tr>
+<td align="left">Alt + F8</td>
+<td align="left">Option + F8</td>
+<td align="left">选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果 <code>必备</code></td>
+</tr>
+<tr>
+<td align="left">Ctrl + F8</td>
+<td align="left">Command + F8</td>
+<td align="left">设置光标当前行为断点，如果当前已经是断点则去掉断点</td>
+</tr>
+<tr>
+<td align="left">Shift + F7</td>
+<td align="left">Shift + F7</td>
+<td align="left">智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</td>
+</tr>
+<tr>
+<td align="left">Shift + F8</td>
+<td align="left">Shift + F8</td>
+<td align="left">跳出，表现出来的效果跟 <code>F9</code> 一样</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + F8</td>
+<td align="left">Command + Shift + F8</td>
+<td align="left">指定断点进入条件</td>
+</tr>
+<tr>
+<td align="left">Alt + Shift + F7</td>
+<td align="left">Option + Shift + F7</td>
+<td align="left">进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果方法体还有方法，则会进入该内嵌的方法中，依此循环进入</td>
+</tr>
+<tr>
+<td align="left">Alt + Shift + F8</td>
+<td align="left">Option + Shift + F8</td>
+<td align="left">返回上一步</td>
+</tr>
+<tr>
+<td align="left">Drop Frame</td>
+<td align="left">Drop Frame</td>
+<td align="left">这个不是一个快捷键，而是一个 Debug 面板上的按钮。该按钮可以用来退回到当前停住的断点的上一层方法上，可以让过掉的断点重新来过</td>
+</tr>
+</tbody></table>
+<ul>
+<li>有时候我们可以这样粗鲁地认为 Debug 的使用就是等同于这几个快捷键的使用，所以上面的 <code>必备</code> 快捷键是我们必须牢记的，这些也是开发很常用的。</li>
 </ul>
-</li>
+<h2><span id="debug-特殊技能使用">Debug 特殊技能使用</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-1.gif" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图 Gif 所示，查看所选对象的方法常用有三种方式：</li>
 </ul>
-<h2><span id="开发环境">开发环境</span></h2><ul>
-<li>JDK 7（理论上支持 JDK 6、JDK 7、JDK 8）</li>
-<li>Mysql 5.6</li>
-<li>Maven 3.1.1</li>
-<li>Tomcat 7</li>
-<li>Git 2.7.0.2-64-bit</li>
-<li>IntelliJ IDEA 15.0.4</li>
-<li>所有编码：UTF-8</li>
+<blockquote>
+<ul>
+<li>选中对象后，使用快捷键 <code>Alt + F8</code>。</li>
+<li>选中对象后，拖动对象到 <code>Watches</code>。</li>
+<li>选中对象后，鼠标悬停在对象上 2 秒左右。</li>
 </ul>
-<h2><span id="视频中项目源码">视频中项目源码</span></h2><ul>
-<li>环境相关：<ul>
-<li><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/maven-skill-introduce.html">Maven 配置文件</a></li>
-<li>我的 Maven 本地依赖包环境下载：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1bnPZU2b">http://pan.baidu.com/s/1bnPZU2b</a></li>
-<li>建议你也跟我一样直接解压在 D 盘根目录，这样其他就不需要设置了</li>
-<li>Git 环境的说明（默认安装）：<a target="_blank" rel="noopener" href="http://www.youmeek.com/hexo-install/">http://www.youmeek.com/hexo-install/</a></li>
-<li>IntelliJ IDEA 基础教程系列：<a target="_blank" rel="noopener" href="https://github.com/judasn/IntelliJ-IDEA-Tutorial">https://github.com/judasn/IntelliJ-IDEA-Tutorial</a></li>
+</blockquote>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-2.gif" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图 Gif 所示，在弹出表达式输入框中 IntelliJ IDEA 也是能帮我们智能提示。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-3.gif" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图 Gif 所示，当我们需要过掉后面的所有断点的时候，我们不需要去掉这些断点，只需要点击左下角那个小圆点，点击小圆点之后，所有断点变成灰色，然后我们再在按快捷键 <code>F9</code> 即可过掉当前和后面所有的断点。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-4.gif" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>我们可以给断点设置进入的条件。如上图 Gif 所示，因为变量 temp3 不等于 200 所以该断点没有被进入直接跳过。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-2.jpg" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图，我们可以给断点设置更复杂的步入条件</li>
+<li>红框中的 Pass count 表示跳过多少次后开始步入，比如 for 循环中，我们要查看一个变量循环 3 次后的结果就可以使用该方式。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-3.jpg" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图，对于某些不重要的断点，只要步入一次就够了，就可以勾选此选项，让它步入之后自动删除。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-4.jpg" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>如上图，对于某些场景的断点，需要其他断点先触发之后再进行触发，可以选择此项。默认选择的是： None</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-5.gif" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>有时候当我们步入方法体之后，还想回退到方法体外。如 Gif 演示，断点进入 <code>addNum</code> 方法后，点击 <code>Drop Frame</code> 按钮之后，断点重新回到方法体之外。</li>
+</ul>
+</blockquote>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-1.jpg" alt="Debug 特殊技能使用"></p>
+<blockquote>
+<ul>
+<li>上图 IntelliJ IDEA 版本：2017.1.3</li>
+<li>如上图左侧红框内容，可以看到当前断点线程执行的堆栈情况，最上面的为当前断点位置，下面的是断点前面执行的方法，如果需要看断点前面走过的路，可以查看该区域。并且可以用图上箭头按钮进行限制显示框架类代码的执行过程，而不是包括依赖 jar 里面的执行过程。</li>
+<li>如上图右侧红框内容，可以用来展示单点断点位置的内存情况，对于判断内存溢出相关问题很有帮助。</li>
+</ul>
+</blockquote>
+<h1><span id="数据库管理工具介绍">数据库管理工具介绍</span></h1><h2><span id="配置-database-组件的数据库连接">配置 Database 组件的数据库连接</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-a-database-connection-1.gif" alt="配置 Database 组件的数据库连接"></p>
+<blockquote>
+<ul>
+<li>表面上很多人认为配置 Database 就是为了有一个 GUI 管理数据库功能，但是这并不是 IntelliJ IDEA 的 Database 最重要特性。数据库的 GUI 工具有很多，IntelliJ IDEA 的 Database 也没有太明显的优势。IntelliJ IDEA 的 Database 最大特性就是对于 Java Web 项目来讲，常使用的 ORM 框架，如 Hibernate、Mybatis 有很好的支持，比如配置好了 Database 之后，IntelliJ IDEA 会自动识别 domain 对象与数据表的关系，也可以通过 Database 的数据表直接生成 domain 对象等等。</li>
+<li>如上图 Gif 所示，这是一个完成的配置 Database 过程，对于数据库需要的依赖包，IntelliJ IDEA 可以自动帮我们下载，所以我们只要配置对应的连接参数即可。</li>
+</ul>
+</blockquote>
+<h2><span id="database-设置">Database 设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-b-database-settings-1.jpg" alt="Database 设置"></p>
+<blockquote>
+<ul>
+<li>如上图标注的红圈所示，这是 Database 常用的四个操作。</li>
+</ul>
+<blockquote>
+<ul>
+<li>第一个按钮是：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在 IntelliJ IDEA 之外用其他工具操作数据库，比如新建表。而此时 IntelliJ IDEA 的 Database 如果没有同步到新表，也是需要点击此按钮进行同步的。</li>
+<li>第二个按钮是：配置当前连接，跟我们首次设置连接的界面是一样的。</li>
+<li>第三个按钮是：断开当前的连接。</li>
+<li>第四个按钮是：查看当前所选对象的图标结构，比如我们当前选中的是整个数据库名，我们如果点击此按钮，则是显示该数据库下的所有数据表的图标结构图。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2><span id="idea推荐设置-️">IDEA推荐设置 ⭐️</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-1.jpg" alt="常用设置"></p>
+<ul>
+<li>IntelliJ IDEA 的代码提示和补充功能有一个特性：区分大小写。如上图标注 1 所示，默认就是 <code>First letter</code> 区分大小写的。</li>
+<li>区分大小写的情况是这样的：比如我们在 Java 代码文件中输入 <code>stringBuffer</code> IntelliJ IDEA 是不会帮我们提示或是代码补充的，但是如果我们输入 <code>StringBuffer</code> 就可以进行代码提示和补充。</li>
+<li>如果想不区分大小写的话，改为 <code>None</code> 选项即可。</li>
+</ul>
+<hr>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-3.jpg" alt="常用设置"></p>
+<ul>
+<li>如上图标注 1 和 2 所示，默认 IntelliJ IDEA 是没有开启自动 import 包的功能。<ul>
+<li>勾选标注 1 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们优化导入的包，比如自动去掉一些没有用到的包。</li>
+<li>勾选标注 2 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们导入需要用到的包。但是对于那些同名的包，还是需要手动 <code>Alt + Enter</code> 进行导入的，IntelliJ IDEA 目前还无法智能到替我们做判断。</li>
 </ul>
 </li>
 </ul>
 <hr>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-8.jpg" alt="常用设置"></p>
 <ul>
-<li>IntelliJ IDEA 设置：<ul>
-<li>Fork 单模块项目：<a target="_blank" rel="noopener" href="https://github.com/judasn/Basic-Single-Module-SSM">https://github.com/judasn/Basic-Single-Module-SSM</a></li>
-<li>Fork 多模块项目：<a target="_blank" rel="noopener" href="https://github.com/judasn/Basic-Multi-Module-SSM">https://github.com/judasn/Basic-Multi-Module-SSM</a></li>
-<li>Checkout 项目并导入</li>
-<li>IntelliJ IDEA Maven 设置</li>
-<li>IntelliJ IDEA 文件编码设置</li>
-<li>IntelliJ IDEA Mybatis 插件安装（该插件收费）：<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/7293?pr=">https://plugins.jetbrains.com/plugin/7293?pr=</a></li>
-</ul>
-</li>
+<li>如上图标注红圈所示，我们可以对指定代码类型进行默认折叠或是展开的设置，勾选上的表示该类型的代码在文件被打开的时候默认是被折叠的，去掉勾选则反之。</li>
 </ul>
 <hr>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-9.gif" alt="常用设置"></p>
 <ul>
-<li>项目设置：<ul>
-<li>项目 JDK 设置</li>
-<li>项目 Facet 加入 Spring 配置</li>
-</ul>
+<li><p>如上图 Gif 所示，IntelliJ IDEA 支持对代码进行垂直或是水平分组。一般在对大文件进行修改的时候，有些修改内容在文件上面，有些内容在文件下面，如果来回操作可能效率会很低，用此方法就可以好很多。当然了，前提是自己的显示器分辨率要足够高。</p>
 </li>
+<li><p>如果经常使用分屏，也可以考虑设置快捷键，快捷设置可以查看</p>
+</li>
+</ul>
+<p>  此文章</p>
+<ul>
+<li>垂直分屏快捷键关键字：<code>Split Vertically</code></li>
+<li>水平分屏快捷键关键字：<code>Split Horizontally</code></li>
 </ul>
 <hr>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-12.gif" alt="常用设置"></p>
 <ul>
-<li>代码相关：<ul>
-<li>简单讲解 pom.xml 文件</li>
-<li>用 IntelliJ IDEA 的 Database 初始化数据库</li>
-<li>单元测试</li>
-<li>启动 Tomcat 加上 Make Project 事件</li>
-<li>访问 Controller 演示 Debug</li>
-<li>讲解 Controller 中代码左侧的各个按钮效果</li>
-<li>JSP 页面直接点击请求地址直接跳转到 Controller</li>
-<li>静态资源映射特别提醒下，比如你做图片上传等等，如果你没有映射好可能都会遇到 404</li>
-<li>查看 Druid 提供监控</li>
-<li>演示用 Mybatis 插件自动生成代码</li>
+<li>如上图 Gif 所示，在没有对 <code>Ctrl + D</code> 快捷键进行修改前，此快捷键将是用来复制并黏贴所选的内容的，但是黏贴的位置是补充在原来的位置后，我个人不喜欢这种风格，我喜欢复制所选的行数完整内容，所以进行了修改，修改后的效果如上图 Gif 演示。</li>
 </ul>
-</li>
+<hr>
+<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-13.gif" alt="常用设置"></p>
+<ul>
+<li>如上图 Gif 所示，默认 <code>Ctrl + 空格</code> 快捷键是基础代码提示、补充快捷键，但是由于我们中文系统基本这个快捷键都被输入法占用了，所以我们发现不管怎么按都是没有提示代码效果的，原因就是在此。我个人建议修改此快捷键为 <code>Ctrl + 逗号</code>。</li>
 </ul>
-<h1><span id="maven-的单模块-多模块之-spring-mvc-spring-spring-data-jpa-项目">Maven 的单模块 / 多模块之 Spring MVC + Spring + Spring Data JPA 项目</span></h1><h2><span id="初衷">初衷</span></h2><ul>
-<li>本章展示 IntelliJ IDEA 高度集成化的效果，降低 IntelliJ IDEA 入门时间</li>
-<li>欢迎来到 IntelliJ IDEA 世界</li>
+<h1><span id="intellij-idea-for-mac-快捷键-️">IntelliJ IDEA For Mac 快捷键 ⭐️</span></h1><h4><span id="editing编辑">Editing（编辑）</span></h4><ul>
+<li><code>Control + Space</code> 基本的代码补全（补全任何类、方法、变量）</li>
+<li><code>Control + Shift + Space</code> 智能代码补全（过滤器方法列表和变量的预期类型）</li>
+<li><code>Command + Shift + Enter</code> 自动结束代码，行末自动添加分号</li>
+<li><code>Command + P</code> 显示方法的参数信息</li>
+<li><code>Control + J</code> 显示当前位置的变量、方法的 Documentation 内容</li>
+<li><code>Control + J</code> 快速查看文档</li>
+<li><code>Shift + F1</code> 查看外部文档（在某些代码上会触发打开浏览器显示相关文档）</li>
+<li><code>Command + 鼠标放在代码上</code> 显示代码简要信息</li>
+<li><code>Command + F1</code> 在错误或警告处显示具体描述信息</li>
+<li><code>Command + N, Control + Enter, Control + N</code> 生成代码（getter、setter、构造函数、hashCode/equals,toString）</li>
+<li><code>Control + O</code> 覆盖方法（重写父类方法）</li>
+<li><code>Control + I</code> 实现方法（实现接口中的方法）</li>
+<li><code>Command + Option + T</code> 包围代码（使用if..else, try..catch, for, synchronized等包围选中的代码）</li>
+<li><code>Command + /</code> 注释/取消注释与行注释</li>
+<li><code>Command + Option + /</code> 注释/取消注释与块注释</li>
+<li><code>Option + 方向键上</code> 连续选中代码块</li>
+<li><code>Option + 方向键下</code> 减少当前选中的代码块</li>
+<li><code>Control + Shift + Q</code> 显示上下文信息</li>
+<li><code>Option + Enter</code> 显示意向动作和快速修复代码</li>
+<li><code>Command + Option + L</code> 格式化代码</li>
+<li><code>Control + Option + O</code> 优化import</li>
+<li><code>Control + Option + I</code> 自动缩进线</li>
+<li><code>Tab / Shift + Tab</code> 缩进代码 / 反缩进代码</li>
+<li><code>Command + X</code> 剪切当前行或选定的块到剪贴板</li>
+<li><code>Command + C</code> 复制当前行或选定的块到剪贴板</li>
+<li><code>Command + V</code> 从剪贴板粘贴</li>
+<li><code>Command + Shift + V</code> 从最近的缓冲区粘贴</li>
+<li><code>Command + D</code> 复制当前行或选定的块</li>
+<li><code>Command + Delete</code> 删除当前行或选定的块的行</li>
+<li><code>Control + Shift + J</code> 智能的将代码拼接成一行</li>
+<li><code>Command + Enter</code> 智能的拆分拼接的行</li>
+<li><code>Shift + Enter</code> 开始新的一行</li>
+<li><code>Command + Shift + U</code> 大小写切换</li>
+<li><code>Command + Shift + ] / Command + Shift + [</code> 选择直到代码块结束/开始</li>
+<li><code>Option + Fn + Delete</code> 删除到单词的末尾</li>
+<li><code>Option + Delete</code> 删除到单词的开头</li>
+<li><code>Command + 加号 / Command + 减号</code> 展开 / 折叠代码块</li>
+<li><code>Command + Shift + 加号</code> 展开所以代码块</li>
+<li><code>Command + Shift + 减号</code> 折叠所有代码块</li>
+<li><code>Command + W</code> 关闭活动的编辑器选项卡</li>
 </ul>
-<h2><span id="项目">项目</span></h2><ul>
-<li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/judasn/Basic-Single-Module-SSJPA">https://github.com/judasn/Basic-Single-Module-SSJPA</a></li>
+<h4><span id="searchreplace查询替换">Search/Replace（查询/替换）</span></h4><ul>
+<li><code>Double Shift</code> 查询任何东西</li>
+<li><code>Command + F</code> 文件内查找</li>
+<li><code>Command + G</code> 查找模式下，向下查找</li>
+<li><code>Command + Shift + G</code> 查找模式下，向上查找</li>
+<li><code>Command + R</code> 文件内替换</li>
+<li><code>Command + Shift + F</code> 全局查找（根据路径）</li>
+<li><code>Command + Shift + R</code> 全局替换（根据路径）</li>
+<li><code>Command + Shift + S</code> 查询结构（Ultimate Edition 版专用，需要在Keymap中设置）</li>
+<li><code>Command + Shift + M</code> 替换结构（Ultimate Edition 版专用，需要在Keymap中设置）</li>
+</ul>
+<h4><span id="usage-search使用查询">Usage Search（使用查询）</span></h4><ul>
+<li><code>Option + F7 / Command + F7</code> 在文件中查找用法 / 在类中查找用法</li>
+<li><code>Command + Shift + F7</code> 在文件中突出显示的用法</li>
+<li><code>Command + Option + F7</code> 显示用法</li>
+</ul>
+<h4><span id="compile-and-run编译和运行">Compile and Run（编译和运行）</span></h4><ul>
+<li><code>Command + F9</code> 编译Project</li>
+<li><code>Command + Shift + F9</code> 编译选择的文件、包或模块</li>
+<li><code>Control + Option + R</code> 弹出 Run 的可选择菜单</li>
+<li><code>Control + Option + D</code> 弹出 Debug 的可选择菜单</li>
+<li><code>Control + R</code> 运行</li>
+<li><code>Control + D</code> 调试</li>
+<li><code>Control + Shift + R, Control + Shift + D</code> 从编辑器运行上下文环境配置</li>
+</ul>
+<h4><span id="debugging调试">Debugging（调试）</span></h4><ul>
+<li><code>F8</code> 进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</li>
+<li><code>F7</code> 进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</li>
+<li><code>Shift + F7</code> 智能步入，断点所在行上有多个方法调用，会弹出进入哪个方法</li>
+<li><code>Shift + F8</code> 跳出</li>
+<li><code>Option + F9</code> 运行到光标处，如果光标前有其他断点会进入到该断点</li>
+<li><code>Option + F8</code> 计算表达式（可以更改变量值使其生效）</li>
+<li><code>Command + Option + R</code> 恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上</li>
+<li><code>Command + F8</code> 切换断点（若光标当前行有断点则取消断点，没有则加上断点）</li>
+<li><code>Command + Shift + F8</code> 查看断点信息</li>
+</ul>
+<h4><span id="navigation导航">Navigation（导航）</span></h4><ul>
+<li><code>Command + O</code> 查找类文件</li>
+<li><code>Command + Shift + O</code> 查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠<code>/</code></li>
+<li><code>Command + Option + O</code> 前往指定的变量 / 方法</li>
+<li><code>Control + 方向键左 / Control + 方向键右</code> 左右切换打开的编辑tab页</li>
+<li><code>F12</code> 返回到前一个工具窗口</li>
+<li><code>Esc</code> 从工具窗口进入代码文件窗口</li>
+<li><code>Shift + Esc</code> 隐藏当前或最后一个活动的窗口，且光标进入代码文件窗口</li>
+<li><code>Command + Shift + F4</code> 关闭活动run/messages/find/… tab</li>
+<li><code>Command + L</code> 在当前文件跳转到某一行的指定处</li>
+<li><code>Command + E</code> 显示最近打开的 <strong>文件记录</strong> 列表</li>
+<li><code>Command + Shift + E</code> 显示最近打开的 <strong>文件代码位置记录</strong> 列表</li>
+<li><code>Option + 方向键左 / Option + 方向键右</code> 光标跳转到当前单词 / 中文句的左 / 右侧开头位置</li>
+<li><code>Command + Option + 方向键左 / Command + Option + 方向键右</code> 退回 / 前进到上一个操作的地方</li>
+<li><code>Command + Shift + Delete</code> 跳转到最后一个编辑的地方</li>
+<li><code>Option + F1</code> 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择(如在代码编辑窗口可以选择显示该文件的Finder)</li>
+<li><code>Command + B / Command + 鼠标点击</code> 进入光标所在的方法/变量的接口或是定义处</li>
+<li><code>Command + Option + B</code> 跳转到实现处，在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</li>
+<li><code>Option + Space, Command + Y</code> 快速打开光标所在方法、类的定义</li>
+<li><code>Control + Shift + B</code> 跳转到类型声明处</li>
+<li><code>Command + U</code> 前往当前光标所在方法的父类的方法 / 接口定义</li>
+<li><code>Control + 方向键下 / Control + 方向键上</code> 当前光标跳转到当前文件的前一个/后一个方法名位置</li>
+<li><code>Command + ] / Command + [</code> 移动光标到当前所在代码的花括号开始/结束位置</li>
+<li><code>Command + F12</code> 弹出当前文件结构层，可以在弹出的层上直接输入进行筛选（可用于搜索类中的方法）</li>
+<li><code>Control + H</code> 显示当前类的层次结构</li>
+<li><code>Command + Shift + H</code> 显示方法层次结构</li>
+<li><code>Control + Option + H</code> 显示调用层次结构</li>
+<li><code>F2 / Shift + F2</code> 跳转到下一个/上一个突出错误或警告的位置</li>
+<li><code>F4 / Command + 方向键下</code> 编辑/查看代码源</li>
+<li><code>Option + Home</code> 显示到当前文件的导航条</li>
+<li><code>F3</code>选中文件/文件夹/代码行，添加/取消书签</li>
+<li><code>Option + F3</code> 选中文件/文件夹/代码行，使用助记符添加/取消书签</li>
+<li><code>Control + 0...Control + 9</code> 定位到对应数值的书签位置</li>
+<li><code>Command + F3</code> 显示所有书签</li>
+</ul>
+<h4><span id="refactoring重构">Refactoring（重构）</span></h4><ul>
+<li><code>F5</code> 复制文件到指定目录</li>
+<li><code>F6</code> 移动文件到指定目录</li>
+<li><code>Command + Delete</code> 在文件上为安全删除文件，弹出确认框</li>
+<li><code>Shift + F6</code> 重命名文件</li>
+<li><code>Command + F6</code> 更改签名</li>
+<li><code>Command + Option + N</code> 一致性</li>
+<li><code>Command + Option + M</code> 将选中的代码提取为方法</li>
+<li><code>Command + Option + V</code> 提取变量</li>
+<li><code>Command + Option + F</code> 提取字段</li>
+<li><code>Command + Option + C</code> 提取常量</li>
+<li><code>Command + Option + P</code> 提取参数</li>
+</ul>
+<h4><span id="vcslocal-history版本控制本地历史记录">VCS/Local History（版本控制/本地历史记录）</span></h4><ul>
+<li><code>Command + K</code> 提交代码到版本控制器</li>
+<li><code>Command + T</code> 从版本控制器更新代码</li>
+<li><code>Option + Shift + C</code> 查看最近的变更记录</li>
+<li><code>Control + C</code> 快速弹出版本控制器操作面板</li>
+</ul>
+<h4><span id="live-templates动态代码模板">Live Templates（动态代码模板）</span></h4><ul>
+<li><code>Command + Option + J</code> 弹出模板选择窗口，将选定的代码使用动态模板包住</li>
+<li><code>Command + J</code> 插入自定义动态代码模板</li>
+</ul>
+<h4><span id="general通用">General（通用）</span></h4><ul>
+<li><code>Command + 1...Command + 9</code> 打开相应编号的工具窗口</li>
+<li><code>Command + S</code> 保存所有</li>
+<li><code>Command + Option + Y</code> 同步、刷新</li>
+<li><code>Control + Command + F</code> 切换全屏模式</li>
+<li><code>Command + Shift + F12</code> 切换最大化编辑器</li>
+<li><code>Option + Shift + F</code> 添加到收藏夹</li>
+<li><code>Option + Shift + I</code> 检查当前文件与当前的配置文件</li>
+<li>Control + ` 快速切换当前的scheme（切换主题、代码样式等）</li>
+<li><code>Command + ,</code> 打开IDEA系统设置</li>
+<li><code>Command + ;</code> 打开项目结构对话框</li>
+<li><code>Shift + Command + A</code> 查找动作（可设置相关选项）</li>
+<li><code>Control + Shift + Tab</code> 编辑窗口标签和工具窗口之间切换（如果在切换的过程加按上delete，则是关闭对应选中的窗口）</li>
+</ul>
+<h4><span id="other一些官方文档上没有体现的快捷键">Other（一些官方文档上没有体现的快捷键）</span></h4><ul>
+<li><code>Command + Shift +8</code> 竖编辑模式</li>
 </ul>
 
       
@@ -609,7 +907,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Mac 下修改 VM 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">方法一（官方推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">UI界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">编译方式介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Project 和 Module 介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">language level 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">IntelliJ IDEA 下的版本控制介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">实时代码模板的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">文件代码模板的设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">Postfix Completion 的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.1.</span> <span class="toc-text">Postfix Completion 的设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">Maven 项目介绍 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.1.</span> <span class="toc-text">Maven 组件界面介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.2.</span> <span class="toc-text">Maven 快速排查依赖包冲突</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">Maven 的单模块 &#x2F; 多模块之 Spring MVC + Spring + Mybatis 项目讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.1.</span> <span class="toc-text">视频下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.2.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.3.</span> <span class="toc-text">视频中项目源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">Maven 的单模块 &#x2F; 多模块之 Spring MVC + Spring + Spring Data JPA 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.1.</span> <span class="toc-text">初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.2.</span> <span class="toc-text">项目</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Mac 下修改 VM 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">方法一（官方推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">UI界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">编译方式介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Project 和 Module 介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">language level 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">IntelliJ IDEA 下的版本控制介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">实时代码模板的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">文件代码模板的设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">Postfix Completion 的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.1.</span> <span class="toc-text">Postfix Completion 的设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">Maven 项目介绍 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.1.</span> <span class="toc-text">Maven 组件界面介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.2.</span> <span class="toc-text">Maven 快速排查依赖包冲突</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">Debug 介绍 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.1.</span> <span class="toc-text">Debug 设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.2.</span> <span class="toc-text">Debug 常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.3.</span> <span class="toc-text">Debug 特殊技能使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">数据库管理工具介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.1.</span> <span class="toc-text">配置 Database 组件的数据库连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.2.</span> <span class="toc-text">Database 设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.3.</span> <span class="toc-text">IDEA推荐设置 ⭐️</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">IntelliJ IDEA For Mac 快捷键 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.1.</span> <span class="toc-text">Editing（编辑）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.2.</span> <span class="toc-text">Search&#x2F;Replace（查询&#x2F;替换）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.3.</span> <span class="toc-text">Usage Search（使用查询）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.4.</span> <span class="toc-text">Compile and Run（编译和运行）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.5.</span> <span class="toc-text">Debugging（调试）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.6.</span> <span class="toc-text">Navigation（导航）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.7.</span> <span class="toc-text">Refactoring（重构）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.8.</span> <span class="toc-text">VCS&#x2F;Local History（版本控制&#x2F;本地历史记录）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.9.</span> <span class="toc-text">Live Templates（动态代码模板）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.10.</span> <span class="toc-text">General（通用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.11.</span> <span class="toc-text">Other（一些官方文档上没有体现的快捷键）</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
