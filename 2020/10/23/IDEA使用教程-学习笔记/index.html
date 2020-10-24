@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>IDEA使用教程-学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Mac 下修改 VM 参数 方法一（官方推荐） 方法二   UI界面 IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题 编译方式介绍 Project 和 Module 介绍 ⭐️ language level 介绍 IntelliJ IDEA 下的版本控制介绍 ⭐️ 实时代码模板的介绍 文件代码模板的设置 Postfix Completion 的介绍 Postfi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="IDEA使用教程-学习笔记">
 <meta property="og:url" content="http://example.com/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Mac 下修改 VM 参数 方法一（官方推荐） 方法二   UI界面 IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题 编译方式介绍 Project 和 Module 介绍 ⭐️ language level 介绍 IntelliJ IDEA 下的版本控制介绍 ⭐️ 实时代码模板的介绍 文件代码模板的设置 Postfix Completion 的介绍 Postfi">
@@ -26,9 +26,10 @@
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg">
 <meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg">
-<meta property="article:published_time" content="2020-10-23T14:07:35.869Z">
-<meta property="article:modified_time" content="2020-10-24T00:23:20.795Z">
+<meta property="article:published_time" content="2020-10-23T14:07:35.000Z">
+<meta property="article:modified_time" content="2020-10-24T00:27:56.013Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg">
   
@@ -163,6 +164,21 @@
             <article id="post-IDEA使用教程-学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IDEA使用教程-学习笔记
+    </h1>
+  
+
+        
+        <a href="/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-10-23T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-23</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -205,9 +221,6 @@
 </ul>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<hr>
-<p>title: IDEA使用教程-学习笔记<br>date: 2020-10-23 22:07:35<br>tags: 学习笔记</p>
-<hr>
 <h1><span id="mac-下修改-vm-参数">Mac 下修改 VM 参数</span></h1><h2><span id="方法一官方推荐">方法一（官方推荐）</span></h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
 <h2><span id="方法二">方法二</span></h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
 <ul>
@@ -492,6 +505,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -715,6 +739,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
