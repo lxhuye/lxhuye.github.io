@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Spring学习03_高级装配 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三部分   高级装配">
+  <meta name="description" content="在上一章中，我们看到了一些最为核心的bean装配技术。你可能会发现上一章学到的知识有很大的用处。但是，bean装配所涉及的领域并不仅仅局限于上一章所学习到的内容。Spring提供了多种技巧，借助它们可以实现更为高级的bean装配功能。    环境与profile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习03_高级装配">
 <meta property="og:url" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第三部分   高级装配">
+<meta property="og:description" content="在上一章中，我们看到了一些最为核心的bean装配技术。你可能会发现上一章学到的知识有很大的用处。但是，bean装配所涉及的领域并不仅仅局限于上一章所学习到的内容。Spring提供了多种技巧，借助它们可以实现更为高级的bean装配功能。    环境与profile">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-24T12:11:55.000Z">
-<meta property="article:modified_time" content="2020-10-24T12:33:42.311Z">
+<meta property="article:modified_time" content="2020-10-24T12:42:05.627Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -168,14 +168,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1><span id="第三部分-高级装配"><strong>第三部分   高级装配</strong></span></h1><!-- toc -->
+        <p>在上一章中，我们看到了一些最为核心的bean装配技术。你可能会发现上一章学到的知识有很大的用处。但是，bean装配所涉及的领域并不仅仅局限于上一章所学习到的内容。Spring提供了多种技巧，借助它们可以实现<strong>更为高级的bean装配功能</strong>。</p>
+<!-- toc -->
 
-
-
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E4%B8%8Eprofile"><strong>环境与profile</strong></a></li>
+</ul>
 <!-- tocstop -->
 
 <a id="more"></a>
 
+<h2><span id="环境与profile"><strong>环境与profile</strong></span></h2><p>在开发软件的时候，有一个很大的挑战就是将应用程序从一个环境迁移到另外一个环境。开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移过去也无法正常工作。数据库配置、加密算法以及与外部系统的集成是跨环境部署时会发生变化的几个典型例子。</p>
+<p>比如，考虑一下数据库配置。在开发环境中，我们可能会使用嵌入式数据库，并预先加载测试数据。例如，在Spring配置类中，我们可能会在一个带有<code>@Bean</code>注解的方法上使用<code>EmbeddedDatabaseBuilder</code>：</p>
 
       
 
@@ -298,7 +302,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第三部分   高级装配</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">环境与profile</span></a></li></ol>
                     </div>
                 </span>
             </div>

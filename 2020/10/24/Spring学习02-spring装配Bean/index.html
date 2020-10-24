@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Spring学习02_spring装配Bean | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第2章　装配Bean在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Sp">
+  <meta name="description" content="在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Spring装配 bea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习02_spring装配Bean">
 <meta property="og:url" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第2章　装配Bean在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Sp">
+<meta property="og:description" content="在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Spring装配 bea">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/01.png">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/02.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/21.png">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/22.png">
 <meta property="article:published_time" content="2020-10-24T03:32:08.000Z">
-<meta property="article:modified_time" content="2020-10-24T12:38:15.220Z">
+<meta property="article:modified_time" content="2020-10-24T12:40:01.838Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="spring, mall_project">
 <meta name="twitter:card" content="summary">
@@ -192,10 +192,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1><span id="第2章-装配bean"><strong>第2章　装配Bean</strong></span></h1><p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
+        <p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
 <p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
-<a id="more"></a>
-
 <!-- toc -->
 
 <ul>
@@ -227,6 +225,8 @@
 <li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
 </ul>
 <!-- tocstop -->
+
+<a id="more"></a>
 
 <h2><span id="spring配置的可选方案"><strong>Spring配置的可选方案</strong></span></h2><p>当描述bean如何进行装配时，Spring具有非常大的灵活性，它提供了三种主要的装配机制：</p>
 <ul>
@@ -464,7 +464,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第2章　装配Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">Spring配置的可选方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">自动化装配bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">创建可被发现的bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">为组件扫描的bean命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">设置组件扫描的基础包 ⭐️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">为bean添加注解实现自动装配 ⭐️⭐️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">手动装配bean⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.7.1.</span> <span class="toc-text">通过Java代码装配bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">声明简单的bean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">借助JavaConfig实现注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">通过XML装配bean</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.7.1.3.1.</span> <span class="toc-text">创建XML配置规范</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.7.1.3.2.</span> <span class="toc-text">声明一个简单的Bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.7.1.3.3.</span> <span class="toc-text">借助构造器注入初始化bean</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.7.1.3.3.1.</span> <span class="toc-text">构造器注入bean引用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.7.1.3.3.2.</span> <span class="toc-text">使用Spring 3.0所引入的c-命名空间</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.7.1.3.4.</span> <span class="toc-text">将字面量注入到构造器中</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.8.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Spring配置的可选方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">自动化装配bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">创建可被发现的bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">为组件扫描的bean命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">设置组件扫描的基础包 ⭐️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">为bean添加注解实现自动装配 ⭐️⭐️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">手动装配bean⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">7.1.</span> <span class="toc-text">通过Java代码装配bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">7.1.1.</span> <span class="toc-text">声明简单的bean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">7.1.2.</span> <span class="toc-text">借助JavaConfig实现注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">7.1.3.</span> <span class="toc-text">通过XML装配bean</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">7.1.3.1.</span> <span class="toc-text">创建XML配置规范</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">7.1.3.2.</span> <span class="toc-text">声明一个简单的Bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">7.1.3.3.</span> <span class="toc-text">借助构造器注入初始化bean</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">7.1.3.3.1.</span> <span class="toc-text">构造器注入bean引用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">7.1.3.3.2.</span> <span class="toc-text">使用Spring 3.0所引入的c-命名空间</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">7.1.3.4.</span> <span class="toc-text">将字面量注入到构造器中</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">小结</span></a></li></ol>
                     </div>
                 </span>
             </div>
