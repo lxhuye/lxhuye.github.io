@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>如何新建hexo博客 | Hexo</title>
+  <title>spring学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 安装 nodejs&#x2F;cnpm在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本 12node -vnpm -v    因为npm有时下载速度会比较慢, 我们可以使用cnpm淘宝镜像来加快 12npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;regist">
+  <meta name="description" content="第1部分　Spring的核心 Spring 降低Java开发的复杂性 依赖注入 ⭐️ Bean装配 应用切面 ⭐️ 消除板式代码        第1部分　Spring的核心Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是依赖注入（dependency injection，DI）和面向切面编程（aspect-oriented pr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何新建hexo博客">
-<meta property="og:url" content="http://example.com/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="spring学习笔记">
+<meta property="og:url" content="http://example.com/2020/10/24/spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 安装 nodejs&#x2F;cnpm在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本 12node -vnpm -v    因为npm有时下载速度会比较慢, 我们可以使用cnpm淘宝镜像来加快 12npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;regist">
+<meta property="og:description" content="第1部分　Spring的核心 Spring 降低Java开发的复杂性 依赖注入 ⭐️ Bean装配 应用切面 ⭐️ 消除板式代码        第1部分　Spring的核心Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是依赖注入（dependency injection，DI）和面向切面编程（aspect-oriented pr">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-16T02:14:10.000Z">
-<meta property="article:modified_time" content="2020-10-18T01:21:52.062Z">
+<meta property="article:published_time" content="2020-10-24T02:11:14.000Z">
+<meta property="article:modified_time" content="2020-10-24T02:37:02.673Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="spring, mall_project">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,64 +149,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-如何新建hexo博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何新建hexo博客
+      spring学习笔记
     </h1>
   
 
         
-        <a href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-10-16T02:14:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
+        <a href="/2020/10/24/spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-10-24T02:11:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-安装-nodejs-cnpm"><a href="#1-安装-nodejs-cnpm" class="headerlink" title="1. 安装 nodejs/cnpm"></a>1. 安装 nodejs/cnpm</h3><p>在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+        <!-- toc -->
 
+<ul>
+<li><a href="#%E7%AC%AC1%E9%83%A8%E5%88%86-spring%E7%9A%84%E6%A0%B8%E5%BF%83"><strong>第1部分　Spring的核心</strong></a><ul>
+<li><a href="#spring-%E9%99%8D%E4%BD%8Ejava%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7">Spring 降低Java开发的复杂性</a><ul>
+<li><a href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5-%EF%B8%8F"><strong>依赖注入</strong> ⭐️</a></li>
+<li><a href="#bean%E8%A3%85%E9%85%8D">Bean装配</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%88%87%E9%9D%A2-%EF%B8%8F">应用切面 ⭐️</a></li>
+<li><a href="#%E6%B6%88%E9%99%A4%E6%9D%BF%E5%BC%8F%E4%BB%A3%E7%A0%81">消除板式代码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 
-
-<p>因为npm有时下载速度会比较慢, 我们可以使用cnpm淘宝镜像来加快</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	#安装淘宝的cnpm 管理器</span><br><span class="line">cnpm -v	#查看cnpm版本</span><br></pre></td></tr></table></figure>
-
+<h1><span id="第1部分-spring的核心"><strong>第1部分　Spring的核心</strong></span></h1><p>Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是<strong>依赖注入（dependency injection，DI）</strong>和<strong>面向切面编程（aspect-oriented programming，AOP</strong>）。</p>
+<p>创建Spring的主要目的是用来替代更加重量级的企业级Java技术，尤其是EJB。</p>
 <a id="more"></a>
 
-<h3 id="2-使用-cnpm-安装脚手架"><a href="#2-使用-cnpm-安装脚手架" class="headerlink" title="2. 使用 cnpm 安装脚手架"></a>2. 使用 cnpm 安装脚手架</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli    #安装hexo框架</span><br><span class="line">npm install #安装依赖</span><br><span class="line">hexo -v	#查看hexo版本</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-创建我们的第一篇文章"><a href="#3-创建我们的第一篇文章" class="headerlink" title="3. 创建我们的第一篇文章"></a>3. 创建我们的第一篇文章</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog	#创建blog目录</span><br><span class="line">cd blog	 #进入blog目录</span><br><span class="line">sudo hexo init 	#生成博客 初始化博客</span><br><span class="line">hexo s	#启动本地博客服务</span><br><span class="line">http://localhost:4000/	#本地访问地址</span><br><span class="line">hexo n &quot;我的第一篇文章&quot; #创建新的文章 </span><br></pre></td></tr></table></figure>
-
-<p>在使用编辑文章的时候, 系统可能会报出没有编辑权限的问题, 这里我们有两种解决方案： </p>
-<ol>
-<li>选中要编辑的文件, 点击菜单栏中的文件按钮, 点击<strong>显示简介</strong>，在最下方的权限控制给everyone选择<strong>读和写</strong></li>
-<li>按住 <strong>option</strong> 键再打开文件</li>
-</ol>
-<p>另外需要注意的是, 在执行 <em>hexo s</em> 过后, 我们使用 <em>control + z</em> 只是将hexo暂停在后台, 这样端口会一直被占用, 要关闭hexo, 需要使用 <em>control + c</em></p>
-<h3 id="4-将hexo博客系统部署到代码管理网站-（例如：github-gitee等）"><a href="#4-将hexo博客系统部署到代码管理网站-（例如：github-gitee等）" class="headerlink" title="4. 将hexo博客系统部署到代码管理网站 （例如：github/gitee等）"></a>4. 将hexo博客系统部署到代码管理网站 （例如：github/gitee等）</h3><p>登陆到github 创建一个新的repository <strong>注意名称必须为：”昵称.github.io”</strong> 例如 <em>“lxhuye.github.io”</em></p>
-<h5 id="在blog文件夹下安装github插件"><a href="#在blog文件夹下安装github插件" class="headerlink" title="在blog文件夹下安装github插件"></a>在blog文件夹下安装github插件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure>
-
-<h5 id="设置配置文件-config-yml"><a href="#设置配置文件-config-yml" class="headerlink" title="设置配置文件 #_config.yml"></a>设置配置文件 <strong>#_config.yml</strong></h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">	<span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">	<span class="attr">deploy:</span></span><br><span class="line">  		<span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span> </span><br><span class="line"> 		<span class="attr">repo:</span> <span class="string">https://github.com/lxhuye/lxhuye.github.io.git</span></span><br><span class="line">  		<span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  		<span class="attr">massage:</span> <span class="string">blog</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="使用hexo-d-部署hexo项目"><a href="#使用hexo-d-部署hexo项目" class="headerlink" title="使用hexo d 部署hexo项目"></a>使用<em>hexo d</em> 部署hexo项目</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo clean</span><br><span class="line">sudo hexo g ##重新生成</span><br><span class="line">sudo hexo d ##重新部署 自动推送到远端</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="更换hexo主题"><a href="#更换hexo主题" class="headerlink" title="更换hexo主题"></a>更换hexo主题</h3><p>github.com/litten/hexo-theme-yilia</p>
-<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia themes/yilia ##将yilia主题下载到主题文件夹下</span><br></pre></td></tr></table></figure>
-
-<p>​        </p>
-<h4 id="修改hexo主题为yilia"><a href="#修改hexo主题为yilia" class="headerlink" title="修改hexo主题为yilia"></a>修改hexo主题为yilia</h4><p>​        打开 Hexo 的配置文件 <em>_config.yml</em>  修改其中的主题为<em>yilia</em> 保存退出</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">yilia</span></span><br></pre></td></tr></table></figure>
-
+<h2><span id="spring-降低java开发的复杂性">Spring 降低Java开发的复杂性</span></h2><p>Spring采取了以下4种关键策略：</p>
+<ul>
+<li>基于POJO的轻量级和最小侵入性编程；</li>
+<li>通过依赖注入和面向接口实现<strong>松耦合</strong>；</li>
+<li>基于切面和惯例进行声明式编程；</li>
+<li>通过切面和模板减少样板式代码。</li>
+</ul>
+<p><strong>降低开发复杂度的三把宝剑： 1. 依赖注入      2. AOP     3. 封装重复性代码</strong> </p>
+<h3><span id="依赖注入-️"><strong>依赖注入</strong> ⭐️</span></h3><p>通过DI，对象的依赖关系将由系统中负责协调各对象的第三方组件在创建对象的时候进行设定。对象无需自行创建或管理它们的依赖关系，依赖关系将被<strong>自动注入</strong>到需要它们的对象当中去。</p>
+<ul>
+<li><p>方式一： 构造器注入</p>
+<p>如下图所示BraveKnight没有自行创建探险任务，而是在构造的时候把探险任务作为构造器参数传入。</p>
+</li>
+</ul>
+<p>![截屏2020-10-24 上午10.19.20](/Users/leaveshu/Library/Application Support/typora-user-images/截屏2020-10-24 上午10.19.20.png)</p>
+<p>这里的要点是<code>BraveKnight</code>没有与任何特定的<code>Quest</code>实现发生耦合。对它来说，被要求挑战的探险任务只要实现了<code>Quest</code>接口，那么具体是哪种类型的探险就无关紧要了。这就是DI所带来的最大收益——<strong>松耦合</strong>。如果一个对象只通过接口（而不是具体实现或初始化过程）来表明依赖关系，那么这种依赖就能够在对象本身毫不知情的情况下，用不同的具体实现进行替换。</p>
+<h3><span id="bean装配">Bean装配</span></h3><p>创建应用组件之间协作的行为通常称为装配（wiring）。Spring有多种装配bean的方式，采用XML是很常见的一种装配方式。</p>
+<p>![截屏2020-10-24 上午10.22.28](/Users/leaveshu/Library/Application Support/typora-user-images/截屏2020-10-24 上午10.22.28.png)</p>
+<p>在这里，<code>BraveKnight</code>和<code>SlayDragonQuest</code>被声明为Spring中的bean。就<code>BraveKnight bean</code>来讲，它在构造时传入了对<code>SlayDragonQuest bean</code>的引用，将其作为构造器参数。同时，<code>SlayDragonQuest bean</code>的声明使用了Spring表达式语言（Spring Expression Language），将<code>System.out</code>（这是一个<code>PrintStream</code>）传入到了<code>SlayDragonQuest</code>的构造器中。</p>
+<h3><span id="应用切面-️">应用切面 ⭐️</span></h3><p>DI能够让相互协作的软件组件保持<strong>松散耦合</strong>，而<strong>面向切面编程</strong>（aspect-oriented programming，AOP）允许你把遍布应用各处的功能分离出来形成<strong>可重用</strong>的组件。</p>
+<p>系统由许多不同的组件组成，<strong>每一个组件各负责一块特定功能</strong>。除了实现自身核心的功能之外，这些组件还经常承担着额外的职责。诸如日志、事务管理和安全这样的系统服务经常融入到自身具有核心业务逻辑的组件中去，这些系统服务通常被称为<strong>横切关注点</strong>，因为它们会跨越系统的多个组件。</p>
+<p>如果将这些关注点分散到多个组件中去，你的代码将会带来<strong>双重的复杂性</strong>。</p>
+<ul>
+<li>实现系统关注点功能的代码将会<strong>重复出现在多个组件中</strong>。这意味着如果你要改变这些关注点的逻辑，必须修改<strong>各个模块</strong>中的相关实现。即使你把这些关注点抽象为一个独立的模块，其他模块只是调用它的方法，但方法的调用还是会重复出现在各个模块中。</li>
+<li>组件会因为那些与自身核心业务无关的代码而<strong>变得混乱</strong>。一个向地址簿增加地址条目的方法应该只关注如何添加地址，而不应该关注它是不是安全的或者是否需要支持事务。</li>
+</ul>
+<p><strong>AOP能够使这些服务模块化，</strong>并以<strong>声明的方式</strong>将它们应用到它们需要影响的组件中去。所造成的结果就是这些组件会具有<strong>更高的内聚性并且会更加关注自身的业务</strong>，<strong>完全不需要了解涉及系统服务所带来复杂性</strong>。总之，AOP能够确保POJO的简单性。</p>
+<p>如图1.3所示，我们可以把切面想象为覆盖在很多<strong>组件之上的一个外壳</strong>。应用是由那些实现各<strong>自业务功能的模块</strong>组成的。借助AOP，可以使用各种功能层去包裹核心业务层。这些层以声明的方式灵活地应用到系统中，你的核心应用甚至根本不知道它们的存在。这是一个非常强大的理念，<strong>可以将安全、事务和日志关注点与核心业务逻辑相分离。</strong></p>
+<p>![截屏2020-10-24 上午10.29.06](/Users/leaveshu/Library/Application Support/typora-user-images/截屏2020-10-24 上午10.29.06.png)</p>
+<h3><span id="消除板式代码">消除板式代码</span></h3><p>在许多编程场景中往往都会导致类似的样板式代码，JMS、JNDI和使用REST服务通常也涉及大量的<strong>重复代码</strong>。</p>
+<p>Spring旨在通过<strong>模板封装</strong>来消除样板式代码。Spring的JdbcTemplate使得执行数据库操作时，避免传统的JDBC样板代码成为了可能。简化了Java工程开发</p>
 
       
 
@@ -241,7 +254,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
         		</li>
       		
 		</ul>
@@ -297,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/24/spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +324,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          yum lock错误的解决方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关闭mac特定端口</div>
+    <a href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo添加Toc支持，生成文章目录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -349,7 +353,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-nodejs-cnpm"><span class="toc-number">1.</span> <span class="toc-text">1. 安装 nodejs&#x2F;cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-cnpm-%E5%AE%89%E8%A3%85%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">2. 使用 cnpm 安装脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E6%88%91%E4%BB%AC%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="toc-number">3.</span> <span class="toc-text">3. 创建我们的第一篇文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E7%BD%91%E7%AB%99-%EF%BC%88%E4%BE%8B%E5%A6%82%EF%BC%9Agithub-gitee%E7%AD%89%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4. 将hexo博客系统部署到代码管理网站 （例如：github&#x2F;gitee等）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8blog%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%AE%89%E8%A3%85github%E6%8F%92%E4%BB%B6"><span class="toc-number">4.0.1.</span> <span class="toc-text">在blog文件夹下安装github插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-yml"><span class="toc-number">4.0.2.</span> <span class="toc-text">设置配置文件 #_config.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8hexo-d-%E9%83%A8%E7%BD%B2hexo%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.0.3.</span> <span class="toc-text">使用hexo d 部署hexo项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2hexo%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">更换hexo主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="toc-number">5.1.</span> <span class="toc-text">下载主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9hexo%E4%B8%BB%E9%A2%98%E4%B8%BAyilia"><span class="toc-number">5.2.</span> <span class="toc-text">修改hexo主题为yilia</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第1部分　Spring的核心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">Spring 降低Java开发的复杂性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">依赖注入 ⭐️</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">Bean装配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">应用切面 ⭐️</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.4.</span> <span class="toc-text">消除板式代码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
