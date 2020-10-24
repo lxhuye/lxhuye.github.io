@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Spring学习02_spring装配Bean | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第2章　装配Bean Spring配置的可选方案 自动化装配bean 创建可被发现的bean 为组件扫描的bean命名 设置组件扫描的基础包 ⭐️ 为bean添加注解实现自动装配 ⭐️⭐️ 手动装配bean⭐️ 通过Java代码装配bean 声明简单的bean 借助JavaConfig实现注入 通过XML装配bean 创建XML配置规范 声明一个简单的Bean 借助构造器注入初始化bean">
+  <meta name="description" content="第2章　装配Bean在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Sp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习02_spring装配Bean">
 <meta property="og:url" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第2章　装配Bean Spring配置的可选方案 自动化装配bean 创建可被发现的bean 为组件扫描的bean命名 设置组件扫描的基础包 ⭐️ 为bean添加注解实现自动装配 ⭐️⭐️ 手动装配bean⭐️ 通过Java代码装配bean 声明简单的bean 借助JavaConfig实现注入 通过XML装配bean 创建XML配置规范 声明一个简单的Bean 借助构造器注入初始化bean">
+<meta property="og:description" content="第2章　装配Bean在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，容器负责把需要相互协作的对象引用赋予各个对象。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。 创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质。在本章我们将介绍使用Sp">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/01.png">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/02.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/21.png">
 <meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/22.png">
 <meta property="article:published_time" content="2020-10-24T03:32:08.000Z">
-<meta property="article:modified_time" content="2020-10-24T12:03:43.473Z">
+<meta property="article:modified_time" content="2020-10-24T12:38:15.220Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="spring, mall_project">
 <meta name="twitter:card" content="summary">
@@ -192,10 +192,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- toc -->
+        <h1><span id="第2章-装配bean"><strong>第2章　装配Bean</strong></span></h1><p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
+<p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
+<a id="more"></a>
+
+<!-- toc -->
 
 <ul>
-<li><a href="#%E7%AC%AC2%E7%AB%A0-%E8%A3%85%E9%85%8Dbean"><strong>第2章　装配Bean</strong></a><ul>
 <li><a href="#spring%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E9%80%89%E6%96%B9%E6%A1%88"><strong>Spring配置的可选方案</strong></a></li>
 <li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E8%A3%85%E9%85%8Dbean"><strong>自动化装配bean</strong></a></li>
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%A2%AB%E5%8F%91%E7%8E%B0%E7%9A%84bean"><strong>创建可被发现的bean</strong></a></li>
@@ -223,13 +226,7 @@
 </li>
 <li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
 </ul>
-</li>
-</ul>
 <!-- tocstop -->
-
-<h1><span id="第2章-装配bean"><strong>第2章　装配Bean</strong></span></h1><p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
-<p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
-<a id="more"></a>
 
 <h2><span id="spring配置的可选方案"><strong>Spring配置的可选方案</strong></span></h2><p>当描述bean如何进行装配时，Spring具有非常大的灵活性，它提供了三种主要的装配机制：</p>
 <ul>
@@ -429,8 +426,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Spring学习03_高级装配
+        
+      </div>
+    </a>
   
-    <a href="/2020/10/24/spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">spring学习01_spring的核心</div>
       <i class="icon-circle-right"></i>
     </a>
