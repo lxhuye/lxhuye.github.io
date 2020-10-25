@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/10 | Hexo</title>
+  <title>docker笔记02_docker-file | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/10/page/2/index.html">
+  <meta name="description" content="什么是Docker File 使用Dockerfile构建Docker镜像 Dockerfile常用指令 Dockerfile各个属性的理解    本节将讨论如何使用Dockerfile构建Docker镜像。Dockerfile是一个文本文件，其中包含了若干条指令，指令描述了构建镜像的细节。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker笔记02_docker-file">
+<meta property="og:url" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是Docker File 使用Dockerfile构建Docker镜像 Dockerfile常用指令 Dockerfile各个属性的理解    本节将讨论如何使用Dockerfile构建Docker镜像。Dockerfile是一个文本文件，其中包含了若干条指令，指令描述了构建镜像的细节。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/01.png">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/02.png">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/03.png">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/04.png">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/05.png">
+<meta property="og:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/06.png">
+<meta property="article:published_time" content="2020-10-25T12:03:04.000Z">
+<meta property="article:modified_time" content="2020-10-25T14:46:44.965Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="docker, mall_learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -144,205 +156,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-docker笔记02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker笔记02_docker-file
+    </h1>
+  
+
+        
+        <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/" class="archive-article-date">
+  	<time datetime="2020-10-25T12:03:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker-file">什么是Docker File</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8dockerfile%E6%9E%84%E5%BB%BAdocker%E9%95%9C%E5%83%8F">使用Dockerfile构建Docker镜像</a></li>
+<li><a href="#dockerfile%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">Dockerfile常用指令</a></li>
+<li><a href="#dockerfile%E5%90%84%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%9A%84%E7%90%86%E8%A7%A3">Dockerfile各个属性的理解</a></li>
+</ul>
+<!-- tocstop -->
+
+<p>本节将讨论如何使用<strong>Dockerfile构建Docker镜像</strong>。Dockerfile是一个文本文件，其中包含了若干条指令，指令描述了构建镜像的细节。</p>
+<a id="more"></a>
+
+<h2><span id="什么是docker-file">什么是Docker File</span></h2><p>dockerfile是用来构建Docker镜像的构建文件<strong>，是由一系列命令和参数构成的脚本。</strong></p>
+<h2><span id="使用dockerfile构建docker镜像">使用Dockerfile构建Docker镜像</span></h2><p>1.准备一个文件，名为Dockerfile：</p>
+<p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/01.png" alt="01"></p>
+<p>该Dockerfile非常简单，其中的FROM、RUN都是Dockerfile的指令。</p>
+<p><strong>FROM指令用于指定基础镜像，RUN指令用于执行命令。</strong></p>
+<p>2.在Dockerfile所在路径执行以下命令构建镜像：</p>
+<p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/02.png" alt="02"></p>
+<p>3.执行以下命令，即可使用该镜像启动一个Docker容器。</p>
+<p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/03.png" alt="03"></p>
+<p>4.访问<a target="_blank" rel="noopener" href="http://docker宿主机ip:92/%EF%BC%8C%E5%8F%AF%E7%9C%8B%E5%88%B0%E5%A6%82%E5%9B%BE13-1%E7%9A%84%E7%95%8C%E9%9D%A2%E3%80%82">http://Docker宿主机IP:92/，可看到如图13-1的界面。</a></p>
+<p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/04.png" alt="04"></p>
+<h2><span id="dockerfile常用指令">Dockerfile常用指令</span></h2><p>在前面的例子中，提到了FROM、RUN指令。事实上，Dockerfile有十多个指令。本小节将系统讲解这些指令，指令的一般格式为：<strong>指令名称参数。</strong></p>
+<p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/05.png" alt="05"></p>
+<h2><span id="dockerfile各个属性的理解">Dockerfile各个属性的理解</span></h2><p><img src="/2020/10/25/docker%E7%AC%94%E8%AE%B002/06.png" alt="06"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/21/vue%E5%85%B3%E9%97%ADeslint/" class="archive-article-date">
-  	<time datetime="2020-10-21T06:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/21/vue%E5%85%B3%E9%97%ADeslint/">vue关闭eslint</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker, mall_learning</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/25/docker%E7%AC%94%E8%AE%B002/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/18/%E5%9C%A8Centos%E4%B8%AD%E4%BD%BF%E7%94%A8Docker%E5%AE%89%E8%A3%85Mysql%E5%92%8CRedis/" class="archive-article-date">
-  	<time datetime="2020-10-18T00:43:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/25/docker%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/18/%E5%9C%A8Centos%E4%B8%AD%E4%BD%BF%E7%94%A8Docker%E5%AE%89%E8%A3%85Mysql%E5%92%8CRedis/">在Centos中使用Docker安装Mysql和Redis</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos, 虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">什么是Docker File</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">使用Dockerfile构建Docker镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">Dockerfile常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">Dockerfile各个属性的理解</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-10-18T00:34:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">yum lock错误的解决方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-10-16T02:14:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">如何新建hexo博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-10-16T02:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/">关闭mac特定端口</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">macos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/10/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/10/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -365,8 +379,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
