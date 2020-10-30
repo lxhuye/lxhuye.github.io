@@ -146,6 +146,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-虚拟机配置网卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">centos8虚拟机配置网卡</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/" class="archive-article-date">
+  	<time datetime="2020-10-30T15:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</p>
+</li>
+<li><p>使用vim进入配置文件夹配置网络信息<br><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+</li>
+<li><p>修改配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. BOOTPROTO=static</span><br><span class="line">2. IPADDR= //这里填虚拟机自动分配的地址</span><br><span class="line">3. NETMASK=255.255.255.0</span><br><span class="line">4. GATEWAY=192.168.31.1</span><br><span class="line">5. DNS=119.29.29.29</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启虚拟机网卡</p>
+<p> 方法：nmcli c reload +网卡名   <strong>例：nmcli c reload ens33</strong></p>
+</li>
+<li><p>测试能否连接外网</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-ngork内网穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -206,69 +296,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/28/ngork%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-谷粒商城01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/26/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E01/">谷粒商城01</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/26/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E01/" class="archive-article-date">
-  	<time datetime="2020-10-26T01:32:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/26/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E01/">展开全文 >></a>
         </p>
       
 
@@ -1203,6 +1230,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
             
             <div class="clearfix"></div>
