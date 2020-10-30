@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.进入虚拟机终端 使用 dhclient 为虚拟机分配一个ip地址 (需要管理员权限) 2.使用vim进入配置文件夹配置网络信息vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33 3.修改配置文件 123451. BOOTPROTO&#x3D;static2. IPADDR&#x3D; &#x2F;&#x2F;这里填虚拟机自动分配的地址3. NETMASK&#x3D;255.255.255.04. GA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-30T15:08:06.000Z">
-<meta property="article:modified_time" content="2020-10-30T15:12:37.199Z">
+<meta property="article:modified_time" content="2020-10-30T16:25:32.745Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="centos">
 <meta name="twitter:card" content="summary">
@@ -181,6 +181,8 @@
 
 
 
+<p>注：</p>
+<p>网络不通一般是服务端和客户端找不到<br>1.确定虚拟机管理工具配置的网络连接方式是<strong>桥接</strong>，否则static网络不会生效；<br>2.如果上述是桥接网络，<strong>那么确定网络配置和物理机网络配置大部分一致，除了IP地址，特别注意网关和子网掩码；</strong><br>3.如果上述均没有问题，那么先通过ping来判断网关是否连通<br>#ping 172.16.160.1<br>4.如果上述不通，那么此时需要判断路由表是否有问题<br>#route -nn<br>此时如果发现没有172.16.160.1该网关的信息，那么需要手动添加<br>如果添加完还是不行那么就重启系统吧</p>
 
       
 
