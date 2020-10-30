@@ -166,22 +166,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</p>
-</li>
-<li><p>使用vim进入配置文件夹配置网络信息<br><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
-</li>
-<li><p>修改配置文件</p>
+        <p>1.进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</p>
+<p>2.使用vim进入配置文件夹配置网络信息<br><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+<p>3.修改配置文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. BOOTPROTO=static</span><br><span class="line">2. IPADDR= //这里填虚拟机自动分配的地址</span><br><span class="line">3. NETMASK=255.255.255.0</span><br><span class="line">4. GATEWAY=192.168.31.1</span><br><span class="line">5. DNS=119.29.29.29</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启虚拟机网卡</p>
+
+<p>4.重启虚拟机网卡</p>
 <p> 方法：nmcli c reload +网卡名   <strong>例：nmcli c reload ens33</strong></p>
-</li>
-<li><p>测试能否连接外网</p>
+<p>5.测试能否连接外网</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
+
+
 
       
 
