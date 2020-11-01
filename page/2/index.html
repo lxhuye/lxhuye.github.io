@@ -146,6 +146,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Spring学习01_spring核心" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/">spring学习01_spring的核心</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/" class="archive-article-date">
+  	<time datetime="2020-10-24T02:11:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是<strong>依赖注入（dependency injection，DI）</strong>和<strong>面向切面编程（aspect-oriented programming，AOP</strong>）。</p>
+<p>创建Spring的主要目的是用来替代更加重量级的企业级Java技术，尤其是EJB。</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#spring-%E9%99%8D%E4%BD%8Ejava%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7">Spring 降低Java开发的复杂性</a><ul>
+<li><a href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5-%EF%B8%8F"><strong>依赖注入</strong> ⭐️</a></li>
+<li><a href="#bean%E8%A3%85%E9%85%8D">Bean装配</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%88%87%E9%9D%A2-%EF%B8%8F">应用切面 ⭐️</a></li>
+<li><a href="#%E6%B6%88%E9%99%A4%E6%9D%BF%E5%BC%8F%E4%BB%A3%E7%A0%81">消除板式代码</a></li>
+</ul>
+</li>
+<li><a href="#spring-%E5%AE%B9%E5%99%A8">Spring 容器</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%AE%B9%E5%99%A8"><strong>使用应用上下文容器</strong></a><ul>
+<li><a href="#bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><strong>bean的生命周期</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
+</ul>
+<!-- tocstop -->
+        
+          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-hexo-创建目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
