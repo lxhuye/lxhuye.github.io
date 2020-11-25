@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>vue关闭eslint | Hexo</title>
+  <title>python_email_sender | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在项目根目录下增加vue.config.js文件。内容如下： 12345&#x2F;&#x2F; vue.config.jsmodule.exports &#x3D; &amp;#123;    lintOnSave: false&amp;#125;1234  完事。">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233# coding&#x3D;utf8#共四个部分：导入相关库；设置；邮件内容；登录发送import smtplibfrom email.mime.text import MIMEText #发邮件正文需要此模块##收件人邮箱地址数组receive_list&#x3D;[&quot;maria.silva@">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue关闭eslint">
-<meta property="og:url" content="http://example.com/2020/10/21/vue%E5%85%B3%E9%97%ADeslint/index.html">
+<meta property="og:title" content="python_email_sender">
+<meta property="og:url" content="http://example.com/2020/11/24/python-email-sender/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在项目根目录下增加vue.config.js文件。内容如下： 12345&#x2F;&#x2F; vue.config.jsmodule.exports &#x3D; &amp;#123;    lintOnSave: false&amp;#125;1234  完事。">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233# coding&#x3D;utf8#共四个部分：导入相关库；设置；邮件内容；登录发送import smtplibfrom email.mime.text import MIMEText #发邮件正文需要此模块##收件人邮箱地址数组receive_list&#x3D;[&quot;maria.silva@">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-21T06:29:51.000Z">
-<meta property="article:modified_time" content="2020-10-21T06:30:11.524Z">
+<meta property="article:published_time" content="2020-11-24T00:49:56.000Z">
+<meta property="article:modified_time" content="2020-11-24T11:29:44.566Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,30 +148,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue关闭eslint" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python-email-sender" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue关闭eslint
+      python_email_sender
     </h1>
   
 
         
-        <a href="/2020/10/21/vue%E5%85%B3%E9%97%ADeslint/" class="archive-article-date">
-  	<time datetime="2020-10-21T06:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+        <a href="/2020/11/24/python-email-sender/" class="archive-article-date">
+  	<time datetime="2020-11-24T00:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在项目根目录下增加vue.config.js文件。<br>内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; vue.config.js</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    lintOnSave: false</span><br><span class="line">&#125;</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=utf8</span></span><br><span class="line"><span class="comment">#共四个部分：导入相关库；设置；邮件内容；登录发送</span></span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText <span class="comment">#发邮件正文需要此模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##收件人邮箱地址数组</span></span><br><span class="line">receive_list=[<span class="string">&quot;maria.silva@codognotto.com&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置发送人/接收人/密码</span></span><br><span class="line">from_addr=<span class="string">&#x27;18675608301@163.com&#x27;</span></span><br><span class="line">to_addr= receive_list </span><br><span class="line"><span class="comment"># password=&#x27;feejroxhtuwcbcfg&#x27; </span></span><br><span class="line">password=<span class="string">&#x27;XMONZJUAOIGGSNQD&#x27;</span><span class="comment">#不是邮箱密码，是邮箱授权码，如qq邮箱，设置→账户→开启POP3/SMTP服务后有个授权码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#发送的内容正文</span></span><br><span class="line">content = <span class="string">&quot;Dear WCA strength partner! \n\n     Give us a chance to cooperate, we will complete the transportation task excellently! \n\n     At present, our company is very professional in the international freight capacity of North America (Canada, the United States); \n     we are looking forward to cooperating with you very much; at the same time, we will provide VIP service for each customer in the whole process; \n\n     Our company mailny engaged in the Air /Ocean/Rail shipment, \n     FCL/LCL Consol,Clearance,Warehousing,E-commerce\n     DAP/DDP,ONE-STOP Service ,Global Track ,Sorting&amp;Quality Inspection. \n\n     At the same time, we are mainly engaged in the whole container shipping in mainland China.Service ports: Huangpu, Nansha, Shenzhen, \n     Jiangmen, Zhongshan, Foshan, Zhuhai, Dongguan, Shantou, Yunfu, Zhanjiang, Zhaoqing, Guangxi, Xiamen, Shanghai, Qingdao, Ningbo,\n     Tianjin, Dalian, Yingkou, Lianyungang, Chongqing, Wuhan, Yichang, Changsha, Yueyang, Jiujiang / Nanchang, Nantong, etc \n     If you have the above needs could contact with me. We also could provide you with a quote for your reference. \n\n     Thanks &amp; Best Regards, \n     Sincerely, \n     Leaf \n ________________________________________\n\n Leaf  (Sales Representative) \n Tel:###+86-0769-22880494  / WeChat:729809333@qq.com \n E-mail:leaf@xny-logistics.com       URL- http://www.xnydg.com \n NVOCC: GD201906063186           WCA: 119052 \n Our business scope FOB CIF DDU DAP DDP&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#邮件内容</span></span><br><span class="line">message=MIMEText(content</span><br><span class="line">,_subtype=<span class="string">&#x27;plain&#x27;</span>, _charset=<span class="string">&#x27;utf_8&#x27;</span>) <span class="comment"># plain设置文本格式，utf-8设置编码</span></span><br><span class="line">message[<span class="string">&#x27;subject&#x27;</span>]=<span class="string">&#x27;写主题&#x27;</span>  <span class="comment">#发送的邮件主题</span></span><br><span class="line">message[<span class="string">&#x27;from&#x27;</span>]=from_addr</span><br><span class="line"><span class="keyword">for</span> to_addr <span class="keyword">in</span> receive_list:  <span class="comment">#将邮箱中的地址遍历发送</span></span><br><span class="line">    message[<span class="string">&#x27;to&#x27;</span>]=to_addr</span><br><span class="line">    <span class="comment">#登录发送</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        server=smtplib.SMTP_SSL(<span class="string">&#x27;smtp.qq.com&#x27;</span>, <span class="number">465</span>) <span class="comment">#连接服务器</span></span><br><span class="line">        server.login(from_addr, password) <span class="comment">#登录</span></span><br><span class="line">        server.sendmail(from_addr,to_addr,message.as_string()) <span class="comment">#发送</span></span><br><span class="line">        print(<span class="string">&#x27;success&#x27;</span>)</span><br><span class="line">        server.quit()</span><br><span class="line">    <span class="keyword">except</span> smtplib.SMTPException <span class="keyword">as</span> e: <span class="comment"># 如果 try 中的语句没有执行，则会执行下面的</span></span><br><span class="line">        print(<span class="string">&#x27;error&#x27;</span>,e) <span class="comment">#如果发送失败，会返回错误代码，进而找到原因                                                </span></span><br></pre></td></tr></table></figure>
 
-<p>完事。</p>
+
+
+<h4><span id="python-爬虫框架获取wca供应商信息">Python 爬虫框架获取WCA供应商信息</span></h4><h5><span id="使用爬虫框架scrapy">使用爬虫框架Scrapy</span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -202,17 +207,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -263,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/21/vue%E5%85%B3%E9%97%ADeslint/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/24/python-email-sender/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +271,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/23/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          前后端分离的商城项目
+          pandas处理excel数据
         
       </div>
     </a>
   
   
-    <a href="/2020/10/18/%E5%9C%A8Centos%E4%B8%AD%E4%BD%BF%E7%94%A8Docker%E5%AE%89%E8%A3%85Mysql%E5%92%8CRedis/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在Centos中使用Docker安装Mysql和Redis</div>
+    <a href="/2020/11/09/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AERuoyi%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开源项目Ruoyi前后端分离服务器部署</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +309,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Python 爬虫框架获取WCA供应商信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">使用爬虫框架Scrapy</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
