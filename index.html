@@ -166,57 +166,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1><span id="目标">目标</span></h1><p>通过Selenium模拟浏览器抓取淘宝商品美食信息，并存储到MongoDB数据库中。</p>
-<h1><span id="流程框架">流程框架</span></h1><p>淘宝页面比较复杂，含有各种请求参数和加密参数，如果直接请求或者分析Ajax将会非常繁琐。Selenium是一个自动化测试工具，可以驱动浏览器去完成各种工作，比如模拟点击、输入和下拉等多种功能，这样我们只需关心操作，不需要关心后台发生了怎么样的请求下面对具体操作步骤进行详述。<br>下图展示了具体的流程框架：</p>
-<p><img src="https://image-static.segmentfault.com/406/960/4069605027-5c061a833f6b5_articlex" alt="img"></p>
-<h1><span id="1搜索关键字">(1)搜索关键字</span></h1><p>首先，测试一下我们的webdriver是否可以使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">browser &#x3D; webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def search():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    browser.get(&#39;https:&#x2F;&#x2F;www.taobao.com&#x2F;&#39;)zidong</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    search()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>运行以上代码，如果出现下图所示，则表示webdriver安装成功：</p>
-<p><img src="https://image-static.segmentfault.com/267/489/2674896436-5c061a833c900_articlex" alt="img"></p>
-<p>接下来让我们利用Selenium搜索淘宝美食关键字，在搜索之前，我们应该注意到一件事情，诸如淘宝之类数据量比较大的网站，一般网站加载较慢，这就带来了一个问题，如果我们使用Selenium操作页面元素，就必须等到元素加载完毕。如果不熟悉Selenium的相关方法，可以到<code>https://www.seleniumhq.org/docs/</code>进行查看，如果你的网速不太理想，可以到<code>https://selenium- python-zh.readthedocs.io/en/latest/</code>进行参考。</p>
-<p><img src="https://image-static.segmentfault.com/292/167/2921678754-5c061a83296f5_articlex" alt="img"></p>
-<p>完成了以上的工作之后，就可以使用Selenium搜索淘宝美食关键字了，让我们打开淘宝网的首页<code>https://www.taobao.com/</code>，调出控制台来查看页面元素，接下来我们将使用Selenium内置的CSS选择器选择页面元素。<br>下图展示了如何利用Chrome浏览器获取元素的选择器：<br><img src="https://image-static.segmentfault.com/354/200/3542002918-5c061a85b4812_articlex" alt="img"></p>
-<p>在此，我们思考一下一共需要获取哪几个元素，让我们回想一下手工搜索美食的过程，首先在搜索框输入“美食”关键字，然后点击按钮搜索：</p>
-<p><img src="https://image-static.segmentfault.com/173/297/1732974068-5c061a84665eb_articlex" alt="img"></p>
-<p>代码实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from selenium.webdriver.support.ui import WebDriverWait</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from selenium.webdriver.support import expected_conditions as EC</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from selenium.common.exceptions import TimeoutException</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">browser &#x3D; webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wait &#x3D; WebDriverWait(browser, 10)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def search():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        browser.get(&#39;https:&#x2F;&#x2F;www.taobao.com&#x2F;&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 等待搜索框加载出来</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 像&#39;presence_of_element_located&#39;之类的动作，可以到Selenium官方文档查询</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        input &#x3D; wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.presence_of_element_located((By.CSS_SELECTOR, &quot;#q&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 等待搜索按钮可以被点击</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        submit &#x3D; wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.element_to_be_clickable((By.CSS_SELECTOR, &#39;#J_TSearchForm &gt; div.search-button &gt; button&#39;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        input.send_keys(&#39;美食&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        submit.click()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    except TimeoutException:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 如果出现超时异常，重新执行search()函数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        return search()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    search()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &quot;__main__&quot;:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>运行代码，如果出现以下情况，说明运行成功：</p>
-<p><img src="https://image-static.segmentfault.com/261/288/2612889826-5c061a82e8cc8_articlex" alt="img"></p>
-<p>至此，我们完成了第一步，搜索关键字。</p>
-<h1><span id="2分析页码并翻页">(2)分析页码并翻页</span></h1><p>在上面我们搜索美食关键字的第一页，我们可以看到关于美食的页面一共有100页，现在，我们需要想办法获取这个页面：</p>
-<p><img src="https://image-static.segmentfault.com/498/757/498757965-5c061a82e8038_articlex" alt="img"></p>
-<p>与上面获取元素的方法相同，我们使用CSS选择器获取页面元素并返回：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">total &#x3D; wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.presence_of_element_located((By.CSS_SELECTOR, &quot;#mainsrp-pager &gt; div &gt; div &gt; div &gt; div.total&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
-
-<p>然后利用正则表达式提取出有用的元素：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">total &#x3D; int(re.compile(&#39;(\d+)&#39;).search(total).group(1))</span><br></pre></td></tr></table></figure>
-
-<p>提取到总页数之后，我们需要定义一个翻页函数，循环遍历1-100页：</p>
-<p><img src="https://image-static.segmentfault.com/337/658/3376583379-5c061a82e45b8_articlex" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">def next_page(page_number):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        input &#x3D; wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.presence_of_element_located((By.CSS_SELECTOR, &quot;#mainsrp-pager &gt; div &gt; div &gt; div &gt; div.form &gt; input&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        submit &#x3D; wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.element_to_be_clickable((By.CSS_SELECTOR, &#39;#mainsrp-pager &gt; div &gt; div &gt; div &gt; div.form &gt; span.btn.J_Submit&#39;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 清空文本框的值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        input.clear()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 给文本框赋值 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        input.send_keys(page_number)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 点击确定，进行翻页</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        submit.click()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # 判断一下当前页码与文本框中的页码是否一致</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            EC.text_to_be_present_in_element((By.CSS_SELECTOR, &quot;#mainsrp-pager &gt; div &gt; div &gt; div &gt; ul &gt; li.item.active &gt; span&quot;), str(page_number))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        get_products()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    except TimeoutException:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        next_page(page_number)</span><br></pre></td></tr></table></figure>
-
-<p>接下来让我们测试一下以上代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">def main():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    total &#x3D; search()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    total &#x3D; int(re.compile(&#39;(\d+)&#39;).search(total).group(1))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    for i in range(2, total+1):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        next_page(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    browser.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>运行代码，可以发现浏览器打开淘宝并从第1页翻到100页后自动关闭。</p>
-<h1><span id="3分析提取商品内容">(3)分析提取商品内容</span></h1><p>利用PyQuery分析源码，解析得到商品列表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">def get_products():</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 确保商品信息完全加载完毕</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    wait.until(</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        EC.presence_of_element_located((By.CSS_SELECTOR, &#39;#mainsrp-itemlist .items .item&#39;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 获取网页源码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    html &#x3D; browser.page_source</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    doc &#x3D; pq(html)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    items &#x3D; doc(&#39;#mainsrp-itemlist .items .item&#39;).items()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    for item in items:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        product &#x3D; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取img的src属性</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;image&#39;: item.find(&#39;.pic .img&#39;).attr(&#39;src&#39;),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取价格</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;price&#39;: item.find(&#39;.price&#39;).text(),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取付款人数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;deal&#39;: item.find(&#39;.deal-cnt&#39;).text()[:-3],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取标题</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;title&#39;: item.find(&#39;.title&#39;).text(),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取商家</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;shop&#39;: item.find(&#39;.shop&#39;).text(),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            # 获取所在地</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#39;location&#39;: item.find(&#39;.location&#39;).text()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        print(product)</span><br></pre></td></tr></table></figure>
-
-<p>得到商品列表之后，在search()方法（第1页），next_page()方法（第2-100页）中分别调用get_products()方法。</p>
-<p>可以看到控制台输出打印以下结果：</p>
-<p><img src="https://image-static.segmentfault.com/245/238/2452387900-5c061a8303cd8_articlex" alt="img"></p>
-<h1><span id="4存储到mongodb">(4)存储到MongoDB</span></h1><p>让我们新建一个<code>config.py</code>文件，文件中包含了MongoDB的URL，数据库名称，表名称：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MONGO_URL &#x3D; &#39;localhost&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MONGO_DB &#x3D; &#39;taobao&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MONGO_TABLE &#x3D; &#39;product&#39;</span><br></pre></td></tr></table></figure>
-
-<p>在<code>spider.py</code>中配置存储到MongoDB相关方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">from config import *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import pymongo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">client &#x3D; pymongo.MongoClient(MONGO_URL)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">db &#x3D; client[MONGO_DB]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def save_to_mongo(result):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        if db[MONGO_TABLE].insert(result):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            print(&#39;存储到MONGODB成功&#39;, result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    except Exception:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        print(&#39;存储到MONGODB失败&#39;, result)</span><br></pre></td></tr></table></figure>
-
-<p>然后在get_products()方法中调用save_to_mongo(result)将数据存储到MongoDB中。</p>
-<p>运行代码，接下来在MongoDB中进行查看：</p>
-<p><img src="https://image-static.segmentfault.com/343/762/3437628748-5c061a830619d_articlex" alt="img"></p>
-
+        <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>通过Selenium模拟浏览器抓取淘宝商品美食信息，并存储到MongoDB数据库中。</p>
+<h1 id="流程框架"><a href="#流程框架" class="headerlink" title="流程框架"></a>流程框架</h1><p>淘宝页面比较复杂，含有各种请求参数和加密参数，如果直接请求或者分析Ajax将会非常繁琐。Selenium是一个自动化测试工具，可以驱动浏览器去完成各种工作，比如模拟点击、输入和下拉等多种功能，这样我们只需关心操作，不需要关心后台发生了怎么样的请求下面对具体操作步骤进行详述。</p>
+        
+          <a class="article-more-a" href="/2020/12/18/selenium-%E8%8E%B7%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/#more">more >></a>
+        
       
 
       
@@ -282,37 +236,6 @@
         <p>学习原因： 使用Selenium尝试自动化上传淘宝产品</p>
 <p>Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的</p>
 <p>接口自动化： Python + Requests来实现的</p>
-<p>Selenium 自动化测试实现： </p>
-<ol>
-<li><p>环境的部署</p>
-<ol>
-<li><p>搭建Python环境</p>
-<ol>
-<li>下载安装Python3.7以上</li>
-</ol>
-</li>
-<li><p>搭建Selenium环境</p>
-<ol>
-<li>pip install selenium </li>
-</ol>
-</li>
-<li><p>搭建Webdriver环境</p>
-<p>webdriver 主要是用于搭建浏览器的驱动安装, 如果要在chrome使用, 在百度搜索ChromeDriver即可</p>
-<pre><code>1. 在Chrome设置中找到当前版本
- 2. 在ChromeDriver景象源中找到对应版本下载
- 3. 解压之后 将下载的driver文件放到/usr/local/bin路径下即可</code></pre>
-</li>
-<li><p>实现测试</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>Selenium 运行机制： 代码和浏览器之间存在一个代理，代码和浏览器不会直接连接</p>
-<h3 id="基于Selenium生成Driver对象-所以要导入selenium模块"><a href="#基于Selenium生成Driver对象-所以要导入selenium模块" class="headerlink" title="基于Selenium生成Driver对象 所以要导入selenium模块"></a>基于Selenium生成Driver对象 所以要导入selenium模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="生成一个webdriver，一定要记得加（）"><a href="#生成一个webdriver，一定要记得加（）" class="headerlink" title="生成一个webdriver，一定要记得加（）"></a>生成一个webdriver，一定要记得加（）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2020/12/18/Selenium-%E5%AD%A6%E4%B9%A0/#more">more >></a>
         
@@ -391,94 +314,9 @@
       
         <p>一. xpath表达式的基本格式</p>
 <p>xpath通过”路径表达式”（Path Expression）来选择节点。在形式上，”路径表达式”与传统的文件系统非常类似。</p>
-<blockquote>
-<p># 斜杠（/）作为路径内部的分割符。</p>
-<p># 同一个节点有绝对路径和相对路径两种写法。</p>
-<p># 绝对路径（absolute path）必须用”/“起首，后面紧跟根节点，比如/step/step/…。</p>
-<p># 相对路径（relative path）则是除了绝对路径以外的其他写法，比如 step/step，也就是不使用”/“起首。</p>
-<p># “.”表示当前节点。</p>
-<p># “..”表示当前节点的父节点</p>
-</blockquote>
-<p>二、选择节点的基本规则</p>
-<blockquote>
-<p>- nodename（节点名称）：表示选择该节点的所有子节点</p>
-<p>- “/“：表示选择根节点</p>
-<p>- “//“：表示选择任意位置的某个节点</p>
-<p>- “@”： 表示选择某个属性</p>
-</blockquote>
-<p>三、选择节点的实例</p>
-<p>先看一个XML实例文档。</p>
-<blockquote>
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<bookstore>
-
- <book>
-  <title lang="eng">Harry Potter</title>
-  <price>29.99</price>
- </book>
-
- <book>
-  <title lang="eng">Learning XML</title>
-  <price>39.95</price>
- </book>
-
-</bookstore>
-</blockquote>
-<p>[例1]</p>
-<p>bookstore ：选取 bookstore 元素的所有子节点。</p>
-<p>[例2]</p>
-<p>/bookstore ：选取根节点bookstore，这是绝对路径写法。</p>
-<p>[例3]</p>
-<p>bookstore/book ：选取所有属于 bookstore 的子元素的 book元素，这是相对路径写法。</p>
-<p>[例4]</p>
-<p>//book ：选择所有 book 子元素，而不管它们在文档中的位置。</p>
-<p>[例5]</p>
-<p>bookstore//book ：选择所有属于 bookstore 元素的后代的 book 元素，而不管它们位于 bookstore 之下的什么位置。</p>
-<p>[例6]</p>
-<p>//@lang ：选取所有名为 lang 的属性。</p>
-<p>四、xpath的谓语条件（Predicate）</p>
-<p>所谓”谓语条件”，就是对路径表达式的附加条件。</p>
-<p>所有的条件，都写在方括号”[]”中，表示对节点进行进一步的筛选。</p>
-<p>[例7]</p>
-<p>/bookstore/book[1] ：表示选择bookstore的第一个book子元素。</p>
-<p>[例8]</p>
-<p>/bookstore/book[last()] ：表示选择bookstore的最后一个book子元素。</p>
-<p>[例9]</p>
-<p>/bookstore/book[last()-1] ：表示选择bookstore的倒数第二个book子元素。</p>
-<p>[例10]</p>
-<p>/bookstore/book[position()&lt;3] ：表示选择bookstore的前两个book子元素。</p>
-<p>[例11]</p>
-<p>//title[@lang] ：表示选择所有具有lang属性的title节点。</p>
-<p>[例12]</p>
-<p>//title[@lang=’eng’] ：表示选择所有lang属性的值等于”eng”的title节点。</p>
-<p>[例13]</p>
-<p>/bookstore/book[price] ：表示选择bookstore的book子元素，且被选中的book元素必须带有price子元素。</p>
-<p>[例14]</p>
-<p>/bookstore/book[price&gt;35.00] ：表示选择bookstore的book子元素，且被选中的book元素的price子元素值必须大于35。</p>
-<p>[例15]</p>
-<p>/bookstore/book[price&gt;35.00]/title ：表示在例14结果集中，选择title子元素。</p>
-<p>[例16]</p>
-<p>/bookstore/book/price[.&gt;35.00] ：表示选择值大于35的”/bookstore/book”的price子元素。</p>
-<p>五、通配符</p>
-<blockquote>
-<p># “*”表示匹配任何元素节点。</p>
-<p># “@*”表示匹配任何属性值。</p>
-<p># node()表示匹配任何类型的节点。</p>
-</blockquote>
-<p>[例17]</p>
-<p>//* ：选择文档中的所有元素节点。</p>
-<p>[例18]</p>
-<p>/<em>/</em> ：表示选择所有第二层的元素节点。</p>
-<p>[例19]</p>
-<p>/bookstore/* ：表示选择bookstore的所有元素子节点。</p>
-<p>[例20]</p>
-<p>//title[@*] ：表示选择所有带有属性的title元素。</p>
-<p>六、选择多个路径</p>
-<p>用”|”选择多个并列的路径。</p>
-<p>[例21]</p>
-<p>//book/title | //book/price ：表示同时选择book元素的title子元素和price子元素。</p>
-
+        
+          <a class="article-more-a" href="/2020/11/30/xpath%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more">more >></a>
+        
       
 
       
@@ -567,83 +405,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-python-email-sender" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/24/python-email-sender/">python_email_sender</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/24/python-email-sender/" class="archive-article-date">
-  	<time datetime="2020-11-24T00:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Version 1:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=utf8</span></span><br><span class="line"><span class="comment">#共四个部分：导入相关库；设置；邮件内容；登录发送</span></span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText <span class="comment">#发邮件正文需要此模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##收件人邮箱地址数组</span></span><br><span class="line">receive_list=[<span class="string">&quot;maria.silva@codognotto.com&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置发送人/接收人/密码</span></span><br><span class="line">from_addr=<span class="string">&#x27;18675608301@163.com&#x27;</span></span><br><span class="line">to_addr= receive_list </span><br><span class="line"><span class="comment"># password=&#x27;feejroxhtuwcbcfg&#x27; </span></span><br><span class="line">password=<span class="string">&#x27;XMONZJUAOIGGSNQD&#x27;</span><span class="comment">#不是邮箱密码，是邮箱授权码，如qq邮箱，设置→账户→开启POP3/SMTP服务后有个授权码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#发送的内容正文</span></span><br><span class="line">content = <span class="string">&quot;Dear WCA strength partner! \n\n     Give us a chance to cooperate, we will complete the transportation task excellently! \n\n     At present, our company is very professional in the international freight capacity of North America (Canada, the United States); \n     we are looking forward to cooperating with you very much; at the same time, we will provide VIP service for each customer in the whole process; \n\n     Our company mailny engaged in the Air /Ocean/Rail shipment, \n     FCL/LCL Consol,Clearance,Warehousing,E-commerce\n     DAP/DDP,ONE-STOP Service ,Global Track ,Sorting&amp;Quality Inspection. \n\n     At the same time, we are mainly engaged in the whole container shipping in mainland China.Service ports: Huangpu, Nansha, Shenzhen, \n     Jiangmen, Zhongshan, Foshan, Zhuhai, Dongguan, Shantou, Yunfu, Zhanjiang, Zhaoqing, Guangxi, Xiamen, Shanghai, Qingdao, Ningbo,\n     Tianjin, Dalian, Yingkou, Lianyungang, Chongqing, Wuhan, Yichang, Changsha, Yueyang, Jiujiang / Nanchang, Nantong, etc \n     If you have the above needs could contact with me. We also could provide you with a quote for your reference. \n\n     Thanks &amp; Best Regards, \n     Sincerely, \n     Leaf \n ________________________________________\n\n Leaf  (Sales Representative) \n Tel:###+86-0769-22880494  / WeChat:729809333@qq.com \n E-mail:leaf@xny-logistics.com       URL- http://www.xnydg.com \n NVOCC: GD201906063186           WCA: 119052 \n Our business scope FOB CIF DDU DAP DDP&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#邮件内容</span></span><br><span class="line">message=MIMEText(content</span><br><span class="line">,_subtype=<span class="string">&#x27;plain&#x27;</span>, _charset=<span class="string">&#x27;utf_8&#x27;</span>) <span class="comment"># plain设置文本格式，utf-8设置编码</span></span><br><span class="line">message[<span class="string">&#x27;subject&#x27;</span>]=<span class="string">&#x27;写主题&#x27;</span>  <span class="comment">#发送的邮件主题</span></span><br><span class="line">message[<span class="string">&#x27;from&#x27;</span>]=from_addr</span><br><span class="line"><span class="keyword">for</span> to_addr <span class="keyword">in</span> receive_list:  <span class="comment">#将邮箱中的地址遍历发送</span></span><br><span class="line">    message[<span class="string">&#x27;to&#x27;</span>]=to_addr</span><br><span class="line">    <span class="comment">#登录发送</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        server=smtplib.SMTP_SSL(<span class="string">&#x27;smtp.qq.com&#x27;</span>, <span class="number">465</span>) <span class="comment">#连接服务器</span></span><br><span class="line">        server.login(from_addr, password) <span class="comment">#登录</span></span><br><span class="line">        server.sendmail(from_addr,to_addr,message.as_string()) <span class="comment">#发送</span></span><br><span class="line">        print(<span class="string">&#x27;success&#x27;</span>)</span><br><span class="line">        server.quit()</span><br><span class="line">    <span class="keyword">except</span> smtplib.SMTPException <span class="keyword">as</span> e: <span class="comment"># 如果 try 中的语句没有执行，则会执行下面的</span></span><br><span class="line">        print(<span class="string">&#x27;error&#x27;</span>,e) <span class="comment">#如果发送失败，会返回错误代码，进而找到原因                                                </span></span><br></pre></td></tr></table></figure>
-
-<p>Version 2: 增加Pandas读取Excel表格中信息的功能 + 使用bcc密送邮箱不显示收件人</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#目前可以通过个人邮箱批量发送/企业邮箱还需要管理员权限</span></span><br><span class="line"><span class="comment">#coding=utf8</span></span><br><span class="line"><span class="comment">#共五个部分：导入相关库；读取excel数据; 配置邮箱参数；邮件内容；登录发送</span></span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText <span class="comment">#发邮件正文需要此模块</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment">#引入excel处理模块pandas</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#从excel中读取需要的数据</span></span><br><span class="line">data = pd.read_excel(<span class="string">&quot;/Users/leaveshu/Desktop/xinnuoyuan/WCA_clients_info.xlsx&quot;</span>) <span class="comment">#使用pandas读取excel数据</span></span><br><span class="line"><span class="comment">#使用pandas获取表格的最大行数</span></span><br><span class="line">line_count=len(data)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置发送人/接收人/密码</span></span><br><span class="line">from_addr= <span class="string">&quot;729809333@qq.com&quot;</span></span><br><span class="line">password=<span class="string">&#x27;ximymmpchzjfbehf&#x27;</span> <span class="comment">#qq邮箱</span></span><br><span class="line"><span class="comment"># password=&#x27;NFIQMYSZJNCVFOGG&#x27;  #163免费邮 群发会被识别成垃圾邮件</span></span><br><span class="line"> <span class="comment">#不是邮箱密码，是邮箱授权码，如qq邮箱，设置→账户→开启POP3/SMTP服务后有个授权码</span></span><br><span class="line"></span><br><span class="line">content = <span class="string">&quot;Dear WCA strength partner! \n\n     Give us a chance to cooperate, we will complete the transportation task excellently! \n\n     At present, our company is very professional in the international freight capacity of North America (Canada, the United States); \n     we are looking forward to cooperating with you very much; at the same time, we will provide VIP service for each customer in the whole process; \n\n     Our company mailny engaged in the Air /Ocean/Rail shipment, \n     FCL/LCL Consol,Clearance,Warehousing,E-commerce\n     DAP/DDP,ONE-STOP Service ,Global Track ,Sorting&amp;Quality Inspection. \n\n     At the same time, we are mainly engaged in the whole container shipping in mainland China.Service ports: Huangpu, Nansha, Shenzhen, \n     Jiangmen, Zhongshan, Foshan, Zhuhai, Dongguan, Shantou, Yunfu, Zhanjiang, Zhaoqing, Guangxi, Xiamen, Shanghai, Qingdao, Ningbo,\n     Tianjin, Dalian, Yingkou, Lianyungang, Chongqing, Wuhan, Yichang, Changsha, Yueyang, Jiujiang / Nanchang, Nantong, etc \n\n     If you have the above needs could contact with me. We also could provide you with a quote for your reference. \n\n     Thanks &amp; Best Regards, \n     Sincerely, \n ________________________________________\n\n Leaf  (Sales Representative) \n Tel:###+86-0769-22880494  / WeChat:729809333@qq.com \n E-mail:leaf@xny-logistics.com       URL- http://www.xnydg.com \n NVOCC: GD201906063186           WCA: 119052 \n Our business scope FOB CIF DDU DAP DDP&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#邮件内容</span></span><br><span class="line">message=MIMEText(content,_subtype=<span class="string">&#x27;plain&#x27;</span>,_charset=<span class="string">&#x27;utf_8&#x27;</span>) <span class="comment"># plain设置文本格式</span></span><br><span class="line">message[<span class="string">&#x27;subject&#x27;</span>]=<span class="string">&#x27;Hello Partnarts&#x27;</span></span><br><span class="line">message[<span class="string">&#x27;from&#x27;</span>]=<span class="string">&quot;leaf@xny-logistics.com&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用for循环获取excel中的邮箱列 loc获取指定行, iloc获取指定行和列</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,line_count):</span><br><span class="line">    <span class="comment"># 登录发送</span></span><br><span class="line">    <span class="comment"># 从excel的具体的邮件行中获取信息</span></span><br><span class="line">    to_addr = data.iloc[i,<span class="number">3</span>]</span><br><span class="line">    print(to_addr)</span><br><span class="line">    <span class="keyword">try</span>: </span><br><span class="line">        server=smtplib.SMTP_SSL(<span class="string">&#x27;smtp.qq.com&#x27;</span>,<span class="number">465</span>) <span class="comment">#连接服务器</span></span><br><span class="line">        server.login(from_addr, password) <span class="comment">#登录   </span></span><br><span class="line">        message[<span class="string">&#x27;bcc&#x27;</span>]= to_addr</span><br><span class="line">        server.sendmail(from_addr,to_addr,message.as_string()) <span class="comment">#发送</span></span><br><span class="line">        print(<span class="string">&#x27;success&#x27;</span>)</span><br><span class="line">        server.quit()</span><br><span class="line">    <span class="keyword">except</span> smtplib.SMTPException <span class="keyword">as</span> e: <span class="comment"># 如果 try 中的语句没有执行，则会执行下面的</span></span><br><span class="line">        print(<span class="string">&#x27;error&#x27;</span>,e) <span class="comment">#如果发送失败，会返回错误代码，进而找到原因     </span></span><br><span class="line">print(<span class="string">&quot;邮件处理完成&quot;</span>)    </span><br><span class="line">             </span><br></pre></td></tr></table></figure>
-
-
-
-<h4><span id="python-爬虫框架获取wca供应商信息">Python 爬虫框架获取WCA供应商信息</span></h4><h5><span id="使用爬虫框架scrapy">使用爬虫框架Scrapy</span></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/24/python-email-sender/">展开全文 >></a>
         </p>
       
 
@@ -908,9 +669,6 @@
 <p>4、确认安装成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
-
-
-
       
 
       
@@ -1095,6 +853,90 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-centos8-换源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/">centos8 换源</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/" class="archive-article-date">
+  	<time datetime="2020-10-30T15:16:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.备份旧的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
+
+<p>2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-8.repo</span><br></pre></td></tr></table></figure>
+
+<p>3.替换部分字段（非阿里云机器需要做）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -e &#39;&#x2F;mirrors.cloud.aliyuncs.com&#x2F;d&#39; -e &#39;&#x2F;mirrors.aliyuncs.com&#x2F;d&#39; &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<p>4.生成缓存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/">展开全文 >></a>
         </p>
       
 
