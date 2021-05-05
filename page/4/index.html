@@ -6,31 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Spring学习04_面向切面的Spring | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑相分离的（但是往往会直接嵌入到应用的业务逻辑之中）。把这些横切关注点与业务逻辑相分离正是面向切面编程（AOP）所要解决的问题。 在第2章，我们介绍了如何使用依赖注入（DI）管理和配置我们的应用对象。DI有助于应用对象之间的解耦，而AOP可以实现横切关">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring学习04_面向切面的Spring">
-<meta property="og:url" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑相分离的（但是往往会直接嵌入到应用的业务逻辑之中）。把这些横切关注点与业务逻辑相分离正是面向切面编程（AOP）所要解决的问题。 在第2章，我们介绍了如何使用依赖注入（DI）管理和配置我们的应用对象。DI有助于应用对象之间的解耦，而AOP可以实现横切关">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/01.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/02.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/03.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/04.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/05.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/06.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/07.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/08.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/09.png">
-<meta property="og:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/10.png">
-<meta property="article:published_time" content="2020-10-24T15:07:49.000Z">
-<meta property="article:modified_time" content="2020-10-30T15:17:18.926Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="spring, mall_learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,194 +144,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spring学习04-面向切面的Spring" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-关闭mac特定端口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Spring学习04_面向切面的Spring
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/">关闭mac特定端口</a>
     </h1>
   
 
         
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/" class="archive-article-date">
-  	<time datetime="2020-10-24T15:07:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
+        <a href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2020-10-16T02:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑相分离的（但是往往会直接嵌入到应用的业务逻辑之中）。把这些横切关注点与业务逻辑相分离正是面向切面编程（AOP）所要解决的问题。</p>
-<p>在第2章，我们介绍了如何使用依赖注入（DI）管理和配置我们的应用对象。DI有助于应用对象之间的解耦，而AOP可以实现横切关注点与它们所影响的对象之间的解耦。</p>
-<p>日志是应用切面的常见范例，但它并不是切面适用的唯一场景。通览本书，我们还会看到切面所适用的多个场景，包括声明式事务、安全和缓存。</p>
-<p>本章展示了Spring对切面的支持，包括如何把普通类声明为一个切面和如何使用注解创建切面。除此之外，我们还会看到AspectJ——另一种流行的AOP实现——如何补充Spring AOP框架的功能。但是，我们先不管事务、安全和缓存，先看一下Spring是如何实现切面的，就从AOP的基础知识开始吧。</p>
-<!-- toc -->
+        <p>在关闭某个应用之后 可能会存在端口残留占用的问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080 //8080指的是端口</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-%EF%B8%8F"><strong>什么是面向切面编程 ⭐️</strong></a><ul>
-<li><a href="#%E5%AE%9A%E4%B9%89aop%E6%9C%AF%E8%AF%AD-%EF%B8%8F"><strong>定义AOP术语 ⭐️</strong></a><ul>
-<li><a href="#%E9%80%9A%E7%9F%A5advice"><strong>通知（Advice）</strong></a></li>
-<li><a href="#%E8%BF%9E%E6%8E%A5%E7%82%B9join-point"><strong>连接点（Join point）</strong></a></li>
-<li><a href="#%E5%88%87%E7%82%B9poincut"><strong>切点（Poincut）</strong></a></li>
-<li><a href="#%E5%88%87%E9%9D%A2aspect"><strong>切面（Aspect）</strong></a></li>
-<li><a href="#%E5%BC%95%E5%85%A5introduction"><strong>引入（Introduction）</strong></a></li>
-<li><a href="#%E7%BB%87%E5%85%A5weaving"><strong>织入（Weaving）</strong></a></li>
-</ul>
-<ul>
-<li><a href="#spring%E5%AF%B9aop%E7%9A%84%E6%94%AF%E6%8C%81"><strong>Spring对AOP的支持</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E9%80%9A%E8%BF%87%E5%88%87%E7%82%B9%E6%9D%A5%E9%80%89%E6%8B%A9%E8%BF%9E%E6%8E%A5%E7%82%B9"><strong>通过切点来选择连接点</strong></a><ul>
-<li><a href="#%E7%BC%96%E5%86%99%E5%88%87%E7%82%B9"><strong>编写切点</strong></a></li>
-<li><a href="#%E5%9C%A8%E5%88%87%E7%82%B9%E4%B8%AD%E9%80%89%E6%8B%A9bean"><strong>在切点中选择bean</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%88%9B%E5%BB%BA%E5%88%87%E9%9D%A2-%EF%B8%8F"><strong>使用注解创建切面 ⭐️</strong></a><ul>
-<li><a href="#%E5%AE%9A%E4%B9%89%E5%88%87%E9%9D%A2aspectj"><strong>定义切面:<code>@AspectJ</code></strong></a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BA%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5around"><strong>创建环绕通知<code>@Around</code></strong></a></li>
-<li><a href="#%E5%A4%84%E7%90%86%E9%80%9A%E7%9F%A5%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0"><strong>处理通知中的参数</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E6%B3%A8%E5%85%A5aspectj%E5%88%87%E9%9D%A2"><strong>注入AspectJ切面</strong></a></li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
+<p>在使用端口查看命令之后 会返回端口占用的情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMMAND PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">java    665 snow  153u  IPv6 0xc32382e42aa8fdd1      0t0  TCP *:http-alt (LISTEN)</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
+<p>此时可以使用kill 命令关闭占用端口的程序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 665</span><br></pre></td></tr></table></figure>
 
-
-
-<h2><span id="什么是面向切面编程-️"><strong>什么是面向切面编程 ⭐️</strong></span></h2><p>如前所述，切面能帮助我们模块化横切关注点。简而言之，<strong>横切关注点可以被描述为影响应用多处的功能。</strong>例如，安全就是一个横切关注点，应用中的许多方法都会涉及到安全规则。图4.1直观呈现了横切关注点的概念</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/01.png" alt="01"></p>
-<p>图4.1展现了一个被划分为模块的典型应用。<strong>每个模块的核心功能都是为特定业务领域提供服务</strong>，但是这些模块都需要类似的辅助功能，例如安全和事务管理</p>
-<p>如果要重用通用功能的话，最常见的面向对象技术是<strong>继承（inheritance）或委托（delegation）</strong>。但是，如果在整个应用中都使用相同的基类，继承往往会导致一个脆弱的对象体系；而使用委托可能需要对委托对象进行复杂的调用。</p>
-<p>切面提供了取代继承和委托的另一种可选方案，而且在很多场景下更清晰简洁。在使用面向切面编程时，我们仍然<strong>在一个地方定义通用功能</strong>，<strong>但是可以通过声明的方式定义这个功能要以何种方式在何处应用</strong>，<strong>而无需修改受影响的类。横切关注点可以被模块化为特殊的类，这些类被称为切面（aspect）</strong>。这样做有两个好处：首先，现在每个关注点都集中于一个地方，而不是分散到多处代码中；其次，服务模块更简洁，因为它们只包含主要关注点（或核心功能）的代码，而次要关注点的代码被转移到切面中了。</p>
-<h4><span id="定义aop术语-️"><strong>定义AOP术语 ⭐️</strong></span></h4><p>与大多数技术一样，AOP已经形成了自己的术语。描述切面的常用术语有<strong>通知（advice）、切点（pointcut）和连接点（join point）</strong>。图4.2展示了这些概念是如何关联在一起的。</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/02.png" alt="02"></p>
-<h5><span id="通知advice"><strong>通知（Advice）</strong></span></h5><p>当抄表员出现在我们家门口时，他们要登记用电量并回去向电力公司报告。显然，他们必须有一份需要抄表的住户清单，他们所汇报的信息也很重要，但记录用电量才是抄表员的主要工作。</p>
-<p>类似地，切面也有目标——它必须要完成的工作。<strong>在AOP术语中，切面的工作被称为通知。</strong></p>
-<p>通知定义了切面是什么以及何时使用。除了描述切面要完成的工作，<strong>通知还解决了何时执行这个工作的问题</strong>。它应该应用在某个方法被调用之前？之后？之前和之后都调用？还是只在方法抛出异常时调用？</p>
-<p>Spring切面可以应用<strong>5种类型</strong>的通知：</p>
-<ul>
-<li><p><strong>前置通知（Before）</strong>：在目标方法被调用之前调用通知功能；</p>
-</li>
-<li><p><strong>后置通知（After）</strong>：在目标方法完成之后调用通知，此时不会关心方法的输出是什么；</p>
-</li>
-<li><p><strong>返回通知（After-returning）</strong>：在目标方法成功执行之后调用通知；</p>
-</li>
-<li><p><strong>异常通知（After-throwing）</strong>：在目标方法抛出异常后调用通知；</p>
-</li>
-<li><p><strong>环绕通知（Around）</strong>：通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义的行为。</p>
-</li>
-</ul>
-<h5><span id="连接点join-point"><strong>连接点（Join point）</strong></span></h5><p>电力公司为多个住户提供服务，甚至可能是整个城市。每家都有一个电表，这些电表上的数字都需要读取，因此每家都是抄表员的潜在目标。抄表员也许能够读取各种类型的设备，但是为了完成他的工作，他的目标应该房屋内所安装的电表。</p>
-<p>同样，<strong>我们的应用可能也有数以千计的时机应用通知。这些时机被称为连接点。</strong>连接点是在应用执行过程中能够插入切面的一个点。这个点可以是调用方法时、抛出异常时、甚至修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。</p>
-<h5><span id="切点poincut"><strong>切点（Poincut）</strong></span></h5><p>如果让一位抄表员访问电力公司所服务的所有住户，那肯定是不现实的。实际上，电力公司为每一个抄表员都分别指定某一块区域的住户。类似地，一个切面并不需要通知应用的所有连接点。切点有助于缩小切面所通知的连接点的范围。</p>
-<p><strong>如果说通知定义了切面的“什么”和“何时”的话，那么切点就定义了“何处”。</strong>切点的定义会匹配通知所要织入的一个或多个连接点。我们通常使用明确的类和方法名称，或是利用正则表达式定义所匹配的类和方法名称来指定这些切点。有些AOP框架允许我们创建动态的切点，可以根据运行时的决策（比如方法的参数值）来决定是否应用通知。</p>
-<h5><span id="切面aspect"><strong>切面（Aspect）</strong></span></h5><p>当抄表员开始一天的工作时，他知道自己要做的事情（报告用电量）和从哪些房屋收集信息。因此，他知道要完成工作所需要的一切东西。</p>
-<p><strong>切面是通知和切点的结合。通知和切点共同定义了切面的全部内容——它是什么，在何时和何处完成其功能。</strong></p>
-<h5><span id="引入introduction"><strong>引入（Introduction）</strong></span></h5><p><strong>引入允许我们向现有的类添加新方法或属性。</strong>例如，我们可以创建一个<code>Auditable</code>通知类，该类记录了对象最后一次修改时的状态。这很简单，只需一个方法，<code>setLastModified(Date)</code>，和一个实例变量来保存这个状态。然后，这个新方法和实例变量就可以被引入到现有的类中，从而可以在无需修改这些现有的类的情况下，让它们具有新的行为和状态。</p>
-<h5><span id="织入weaving"><strong>织入（Weaving）</strong></span></h5><p><strong>织入是把切面应用到目标对象并创建新的代理对象的过程。</strong>切面在指定的连接点被织入到目标对象中。在目标对象的生命周期里有多个点可以进行织入：</p>
-<ul>
-<li>编译期：切面在目标类编译时被织入。这种方式需要特殊的编译器。AspectJ的织入编译器就是以这种方式织入切面的。</li>
-<li>类加载期：切面在目标类加载到JVM时被织入。这种方式需要特殊的类加载器（<code>ClassLoader</code>），它可以在目标类被引入应用之前增强该目标类的字节码。AspectJ 5的加载时织入（load-time weaving，LTW）就支持以这种方式织入切面。</li>
-<li>运行期：切面在应用运行的某个时刻被织入。一般情况下，在织入切面时，AOP容器会为目标对象动态地创建一个代理对象。Spring AOP就是以这种方式织入切面的。</li>
-</ul>
-<h3><span id="spring对aop的支持"><strong>Spring对AOP的支持</strong></span></h3><p>Spring提供了4种类型的AOP支持：</p>
-<ul>
-<li>基于代理的经典Spring AOP；</li>
-<li>纯POJO切面；</li>
-<li><code>@AspectJ</code>注解驱动的切面；</li>
-<li>注入式AspectJ切面（适用于Spring各版本）。</li>
-</ul>
-<p>前三种都是Spring AOP实现的变体，Spring AOP构建在动态代理基础之上，因此，Spring对AOP的支持局限于方法拦截。</p>
-<h2><span id="通过切点来选择连接点"><strong>通过切点来选择连接点</strong></span></h2><p>正如之前所提过的，切点用于准确定位应该在什么地方应用切面的通知。通知和切点是切面的最基本元素。因此，了解如何编写切点非常重要。</p>
-<h3><span id="编写切点"><strong>编写切点</strong></span></h3><p>为了阐述Spring中的切面，我们需要有个主题来定义切面的切点。为此，我们定义一个<code>Performance</code>接口：</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/03.png" alt="03"></p>
-<p><code>Performance</code>可以代表任何类型的现场表演，如舞台剧、电影或音乐会。假设我们想编写<code>Performance</code>的<code>perform()</code>方法触发的通知。图4.4展现了一个切点表达式，这个表达式能够设置当perform()方法执行时触发通知的调用。</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/04.png" alt="04"></p>
-<p>我们使用**<code>execution()</code>指示器选择<code>Performance</code>的<code>perform()</code>方法<strong>。方法表达式以“<code>*</code>”号开始，表明了我们</strong>不关心方法返回值的类型<strong>。然后，我们</strong>指定了全限定类名和方法名**。对于方法参数列表，我们使用两个点号（<code>..</code>）表明切点要选择任意的<code>perform()</code>方法，无论该方法的入参是什么。</p>
-<h3><span id="在切点中选择bean"><strong>在切点中选择bean</strong></span></h3><p>Spring还引入了一个新的<code>bean()</code>指示器，它允许我们在切点表达式中使用bean的ID来标识bean。<code>bean()</code>使用bean ID或bean名称作为参数来限制切点只匹配特定的bean。</p>
-<p>例如，考虑如下的切点：</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/05.png" alt="05"></p>
-<p>在这里，我们希望在执行<code>Performance</code>的<code>perform()</code>方法时应用通知，但限定bean的ID为<code>woodstock</code>。</p>
-<p>在某些场景下，限定切点为指定的bean或许很有意义，但我们还可以使用非操作为除了特定ID以外的其他bean应用通知：</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/06.png" alt="06"></p>
-<h2><span id="使用注解创建切面-️"><strong>使用注解创建切面 ⭐️</strong></span></h2><h4><span id="定义切面aspectj"><strong>定义切面:<code>@AspectJ</code></strong></span></h4><p>程序清单4.1展现了<code>Audience</code>类，它定义了我们所需的一个切面。</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/07.png" alt="07"></p>
-<p><code>Audience</code>类使用<code>@AspectJ</code>注解进行了标注。该注解表明<code>Audience</code>不仅仅是一个POJO，还是一个切面。<code>Audience</code>类中的方法都使用注解来定义切面的具体行为。</p>
-<p><strong>表4.2　Spring使用AspectJ注解来声明通知方法</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>注　　解</strong></th>
-<th><strong>通　　知</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>@After</code></td>
-<td>通知方法会在目标方法返回或抛出异常后调用</td>
-</tr>
-<tr>
-<td><code>@AfterReturning</code></td>
-<td>通知方法会在目标方法返回后调用</td>
-</tr>
-<tr>
-<td><code>@AfterThrowing</code></td>
-<td>通知方法会在目标方法抛出异常后调用</td>
-</tr>
-<tr>
-<td><code>@Around</code></td>
-<td>通知方法会将目标方法封装起来</td>
-</tr>
-<tr>
-<td><code>@Before</code></td>
-<td>通知方法会在目标方法调用之前执行</td>
-</tr>
-</tbody></table>
-<h3><span id="创建环绕通知around"><strong>创建环绕通知<code>@Around</code></strong></span></h3><p>环绕通知是最为强大的通知类型。它能够让你所编写的逻辑将被通知的目标方法完全包装起来。实际上就像在一个通知方法中同时<strong>编写前置通知和后置通知。</strong></p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/08.png" alt="08"></p>
-<p>在这里，<code>@Around</code>注解表明<code>watchPerformance()</code>方法会作为<code>performance()</code>切点的环绕通知。</p>
-<h3><span id="处理通知中的参数"><strong>处理通知中的参数</strong></span></h3><p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/09.png" alt="09"></p>
-<p>像之前所创建的切面一样，这个切面使用<code>@Pointcut</code>注解定义命名的切点，并使用<code>@Before</code>将一个方法声明为前置通知。但是，<strong>这里的不同点在于切点还声明了要提供给通知方法的参数</strong>。图4.6将切点表达式进行了分解，以展现参数是在什么地方指定的。</p>
-<p><img src="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/10.png" alt="10"></p>
-<p>在图4.6中需要关注的是切点表达式中的<code>args(trackNumber)</code>限定符。它表明传递给<code>playTrack()</code>方法的<code>int</code>类型参数也会传递到通知中去。参数的名称<code>trackNumber</code>也与切点方法签名中的参数相匹配。</p>
-<h2><span id="注入aspectj切面"><strong>注入AspectJ切面</strong></span></h2><p>虽然Spring AOP能够满足许多应用的切面需求，<strong>但是与AspectJ相比，Spring AOP 是一个功能比较弱的AOP解决方案。AspectJ提供了Spring AOP所不能支持的许多类型的切点。</strong></p>
-<p>对于大部分功能来讲，AspectJ切面与Spring是相互独立的。虽然它们可以织入到任意的Java应用中，这也包括了Spring应用，但是在应用AspectJ切面时几乎不会涉及到Spring。</p>
-<h2><span id="小结"><strong>小结</strong></span></h2><p>AOP是面向对象编程的一个强大补充。通过AspectJ，我们现在可以把之前分散在应用各处的行为放入可重用的模块中。我们显示地声明在何处如何应用该行为。这有效减少了代码冗余，并让我们的类关注自身的主要功能。</p>
-<p>Spring提供了一个AOP框架，让我们把切面插入到方法执行的周围。现在我们已经学会如何把通知织入前置、后置和环绕方法的调用中，以及为处理异常增加自定义的行为。</p>
-<p>最后，当Spring AOP不能满足需求时，我们必须转向更为强大的AspectJ。对于这些场景，我们了解了如何使用Spring为AspectJ切面注入依赖。</p>
+<p>这样占用8080端口的程序就被消灭了</p>
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -358,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring, mall_learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">macos</a>
         		</li>
       		
 		</ul>
@@ -367,84 +198,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/16/%E5%85%B3%E9%97%ADmac%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          docker笔记01
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring学习03_高级装配</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -459,34 +222,19 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">什么是面向切面编程 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text">定义AOP术语 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">通知（Advice）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">连接点（Join point）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">切点（Poincut）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">切面（Aspect）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">引入（Introduction）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">织入（Weaving）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">Spring对AOP的支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">通过切点来选择连接点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">编写切点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">在切点中选择bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">使用注解创建切面 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.0.1.</span> <span class="toc-text">定义切面:@AspectJ</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">创建环绕通知@Around</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">处理通知中的参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">注入AspectJ切面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">小结</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
-  
-  
-  
+
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
-
 
 
           </div>
@@ -508,8 +256,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
