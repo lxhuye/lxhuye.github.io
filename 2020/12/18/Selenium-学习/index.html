@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Selenium 学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习原因： 使用Selenium尝试自动化上传淘宝产品 Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的 接口自动化： Python + Requests来实现的 Selenium 自动化测试实现：   环境的部署  搭建Python环境  下载安装Python3.7以上   搭建Selenium环境  pip">
+  <meta name="description" content="学习原因： 使用Selenium尝试自动化上传淘宝产品 Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的 接口自动化： Python + Requests来实现的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Selenium 学习">
 <meta property="og:url" content="http://example.com/2020/12/18/Selenium-%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学习原因： 使用Selenium尝试自动化上传淘宝产品 Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的 接口自动化： Python + Requests来实现的 Selenium 自动化测试实现：   环境的部署  搭建Python环境  下载安装Python3.7以上   搭建Selenium环境  pip">
+<meta property="og:description" content="学习原因： 使用Selenium尝试自动化上传淘宝产品 Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的 接口自动化： Python + Requests来实现的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
 <meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
 <meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
 <meta property="article:published_time" content="2020-12-18T01:29:08.000Z">
-<meta property="article:modified_time" content="2020-12-18T08:51:00.536Z">
+<meta property="article:modified_time" content="2021-01-11T09:26:51.167Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Selenium">
 <meta name="twitter:card" content="summary">
@@ -216,6 +216,8 @@
         <p>学习原因： 使用Selenium尝试自动化上传淘宝产品</p>
 <p>Selenium 是 Selenium+Webriver 来实现的自动化测试, 移动端的实现Appium也是基于Selenium实现的</p>
 <p>接口自动化： Python + Requests来实现的</p>
+<a id="more"></a>
+
 <p>Selenium 自动化测试实现： </p>
 <ol>
 <li><p>环境的部署</p>
@@ -233,8 +235,8 @@
 <li><p>搭建Webdriver环境</p>
 <p>webdriver 主要是用于搭建浏览器的驱动安装, 如果要在chrome使用, 在百度搜索ChromeDriver即可</p>
 <pre><code>1. 在Chrome设置中找到当前版本
- 2. 在ChromeDriver景象源中找到对应版本下载
- 3. 解压之后 将下载的driver文件放到/usr/local/bin路径下即可</code></pre>
+2. 在ChromeDriver景象源中找到对应版本下载
+3. 解压之后 将下载的driver文件放到/usr/local/bin路径下即可</code></pre>
 </li>
 <li><p>实现测试</p>
 </li>
@@ -248,7 +250,7 @@
 
 <h3><span id="生成一个webdriver一定要记得加">生成一个webdriver，一定要记得加（）</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
+<!-- more -->
 
 
 
@@ -791,35 +793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macos</a>
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,11 +809,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">centos</a>
+                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -843,11 +829,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">macos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>

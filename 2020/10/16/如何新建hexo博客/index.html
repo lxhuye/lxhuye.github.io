@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-安装-nodejs-cnpm"><a href="#1-安装-nodejs-cnpm" class="headerlink" title="1. 安装 nodejs/cnpm"></a>1. 安装 nodejs/cnpm</h3><p>在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本</p>
+        <h3><span id="1-安装-nodejscnpm">1. 安装 nodejs/cnpm</span></h3><p>在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
 
@@ -179,11 +179,11 @@
 
 <a id="more"></a>
 
-<h3 id="2-使用-cnpm-安装脚手架"><a href="#2-使用-cnpm-安装脚手架" class="headerlink" title="2. 使用 cnpm 安装脚手架"></a>2. 使用 cnpm 安装脚手架</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli    #安装hexo框架</span><br><span class="line">npm install #安装依赖</span><br><span class="line">hexo -v	#查看hexo版本</span><br></pre></td></tr></table></figure>
+<h3><span id="2-使用-cnpm-安装脚手架">2. 使用 cnpm 安装脚手架</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli    #安装hexo框架</span><br><span class="line">npm install #安装依赖</span><br><span class="line">hexo -v	#查看hexo版本</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="3-创建我们的第一篇文章"><a href="#3-创建我们的第一篇文章" class="headerlink" title="3. 创建我们的第一篇文章"></a>3. 创建我们的第一篇文章</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog	#创建blog目录</span><br><span class="line">cd blog	 #进入blog目录</span><br><span class="line">sudo hexo init 	#生成博客 初始化博客</span><br><span class="line">hexo s	#启动本地博客服务</span><br><span class="line">http://localhost:4000/	#本地访问地址</span><br><span class="line">hexo n &quot;我的第一篇文章&quot; #创建新的文章 </span><br></pre></td></tr></table></figure>
+<h3><span id="3-创建我们的第一篇文章">3. 创建我们的第一篇文章</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog	#创建blog目录</span><br><span class="line">cd blog	 #进入blog目录</span><br><span class="line">sudo hexo init 	#生成博客 初始化博客</span><br><span class="line">hexo s	#启动本地博客服务</span><br><span class="line">http://localhost:4000/	#本地访问地址</span><br><span class="line">hexo n &quot;我的第一篇文章&quot; #创建新的文章 </span><br></pre></td></tr></table></figure>
 
 <p>在使用编辑文章的时候, 系统可能会报出没有编辑权限的问题, 这里我们有两种解决方案： </p>
 <ol>
@@ -191,20 +191,20 @@
 <li>按住 <strong>option</strong> 键再打开文件</li>
 </ol>
 <p>另外需要注意的是, 在执行 <em>hexo s</em> 过后, 我们使用 <em>control + z</em> 只是将hexo暂停在后台, 这样端口会一直被占用, 要关闭hexo, 需要使用 <em>control + c</em></p>
-<h3 id="4-将hexo博客系统部署到代码管理网站-（例如：github-gitee等）"><a href="#4-将hexo博客系统部署到代码管理网站-（例如：github-gitee等）" class="headerlink" title="4. 将hexo博客系统部署到代码管理网站 （例如：github/gitee等）"></a>4. 将hexo博客系统部署到代码管理网站 （例如：github/gitee等）</h3><p>登陆到github 创建一个新的repository <strong>注意名称必须为：”昵称.github.io”</strong> 例如 <em>“lxhuye.github.io”</em></p>
-<h5 id="在blog文件夹下安装github插件"><a href="#在blog文件夹下安装github插件" class="headerlink" title="在blog文件夹下安装github插件"></a>在blog文件夹下安装github插件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure>
+<h3><span id="4-将hexo博客系统部署到代码管理网站-例如githubgitee等">4. 将hexo博客系统部署到代码管理网站 （例如：github/gitee等）</span></h3><p>登陆到github 创建一个新的repository <strong>注意名称必须为：”昵称.github.io”</strong> 例如 <em>“lxhuye.github.io”</em></p>
+<h5><span id="在blog文件夹下安装github插件">在blog文件夹下安装github插件</span></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure>
 
-<h5 id="设置配置文件-config-yml"><a href="#设置配置文件-config-yml" class="headerlink" title="设置配置文件 #_config.yml"></a>设置配置文件 <strong>#_config.yml</strong></h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">	<span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">	<span class="attr">deploy:</span></span><br><span class="line">  		<span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span> </span><br><span class="line"> 		<span class="attr">repo:</span> <span class="string">https://github.com/lxhuye/lxhuye.github.io.git</span></span><br><span class="line">  		<span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  		<span class="attr">massage:</span> <span class="string">blog</span></span><br></pre></td></tr></table></figure>
+<h5><span id="设置配置文件-_configyml">设置配置文件 <strong>#_config.yml</strong></span></h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">	<span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">	<span class="attr">deploy:</span></span><br><span class="line">  		<span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span> </span><br><span class="line"> 		<span class="attr">repo:</span> <span class="string">https://github.com/lxhuye/lxhuye.github.io.git</span></span><br><span class="line">  		<span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  		<span class="attr">massage:</span> <span class="string">blog</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="使用hexo-d-部署hexo项目"><a href="#使用hexo-d-部署hexo项目" class="headerlink" title="使用hexo d 部署hexo项目"></a>使用<em>hexo d</em> 部署hexo项目</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo clean</span><br><span class="line">sudo hexo g ##重新生成</span><br><span class="line">sudo hexo d ##重新部署 自动推送到远端</span><br></pre></td></tr></table></figure>
+<h5><span id="使用hexo-d-部署hexo项目">使用<em>hexo d</em> 部署hexo项目</span></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo clean</span><br><span class="line">sudo hexo g ##重新生成</span><br><span class="line">sudo hexo d ##重新部署 自动推送到远端</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="更换hexo主题"><a href="#更换hexo主题" class="headerlink" title="更换hexo主题"></a>更换hexo主题</h3><p>github.com/litten/hexo-theme-yilia</p>
-<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia themes/yilia ##将yilia主题下载到主题文件夹下</span><br></pre></td></tr></table></figure>
+<h3><span id="更换hexo主题">更换hexo主题</span></h3><p>github.com/litten/hexo-theme-yilia</p>
+<h4><span id="下载主题">下载主题</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia themes/yilia ##将yilia主题下载到主题文件夹下</span><br></pre></td></tr></table></figure>
 
 <p>​        </p>
-<h4 id="修改hexo主题为yilia"><a href="#修改hexo主题为yilia" class="headerlink" title="修改hexo主题为yilia"></a>修改hexo主题为yilia</h4><p>​        打开 Hexo 的配置文件 <em>_config.yml</em>  修改其中的主题为<em>yilia</em> 保存退出</p>
+<h4><span id="修改hexo主题为yilia">修改hexo主题为yilia</span></h4><p>​        打开 Hexo 的配置文件 <em>_config.yml</em>  修改其中的主题为<em>yilia</em> 保存退出</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">yilia</span></span><br></pre></td></tr></table></figure>
 
 
@@ -349,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-nodejs-cnpm"><span class="toc-number">1.</span> <span class="toc-text">1. 安装 nodejs&#x2F;cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-cnpm-%E5%AE%89%E8%A3%85%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">2. 使用 cnpm 安装脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E6%88%91%E4%BB%AC%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="toc-number">3.</span> <span class="toc-text">3. 创建我们的第一篇文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E7%BD%91%E7%AB%99-%EF%BC%88%E4%BE%8B%E5%A6%82%EF%BC%9Agithub-gitee%E7%AD%89%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4. 将hexo博客系统部署到代码管理网站 （例如：github&#x2F;gitee等）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8blog%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%AE%89%E8%A3%85github%E6%8F%92%E4%BB%B6"><span class="toc-number">4.0.1.</span> <span class="toc-text">在blog文件夹下安装github插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-yml"><span class="toc-number">4.0.2.</span> <span class="toc-text">设置配置文件 #_config.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8hexo-d-%E9%83%A8%E7%BD%B2hexo%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.0.3.</span> <span class="toc-text">使用hexo d 部署hexo项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2hexo%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">更换hexo主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="toc-number">5.1.</span> <span class="toc-text">下载主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9hexo%E4%B8%BB%E9%A2%98%E4%B8%BAyilia"><span class="toc-number">5.2.</span> <span class="toc-text">修改hexo主题为yilia</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1. 安装 nodejs&#x2F;cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2. 使用 cnpm 安装脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3. 创建我们的第一篇文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">4. 将hexo博客系统部署到代码管理网站 （例如：github&#x2F;gitee等）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">4.0.1.</span> <span class="toc-text">在blog文件夹下安装github插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">4.0.2.</span> <span class="toc-text">设置配置文件 #_config.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">4.0.3.</span> <span class="toc-text">使用hexo d 部署hexo项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">更换hexo主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">5.1.</span> <span class="toc-text">下载主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">5.2.</span> <span class="toc-text">修改hexo主题为yilia</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -462,35 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macos</a>
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +478,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">centos</a>
+                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +498,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">macos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
