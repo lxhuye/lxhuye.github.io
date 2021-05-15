@@ -6,50 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>IDEA使用教程-学习笔记 | Hexo</title>
+  <title>如何启动后台jar包 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac 下修改 VM 参数 方法一（官方推荐） 方法二   UI界面 IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题 编译方式介绍 Project 和 Module 介绍 ⭐️ language level 介绍 IntelliJ IDEA 下的版本控制介绍 ⭐️ 实时代码模板的介绍 文件代码模板的设置 Postfix Completion 的介绍 Postf">
+  <meta name="description" content="12#在jar包所在的文件夹输入以下命令$ nohup java -jar -Xms512M -Xmx512M steel.jar &gt; steel.log &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IDEA使用教程-学习笔记">
-<meta property="og:url" content="http://example.com/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="如何启动后台jar包">
+<meta property="og:url" content="http://example.com/2021/05/13/%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E5%90%8E%E5%8F%B0jar%E5%8C%85/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Mac 下修改 VM 参数 方法一（官方推荐） 方法二   UI界面 IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题 编译方式介绍 Project 和 Module 介绍 ⭐️ language level 介绍 IntelliJ IDEA 下的版本控制介绍 ⭐️ 实时代码模板的介绍 文件代码模板的设置 Postfix Completion 的介绍 Postf">
+<meta property="og:description" content="12#在jar包所在的文件夹输入以下命令$ nohup java -jar -Xms512M -Xmx512M steel.jar &gt; steel.log &amp;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiii-a-make-introduce-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiv-c-language-level-introduce-2.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-1.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-2.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xviii-b-file-and-code-templates-settings-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-c-postfix-completion-introduce-1.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-d-postfix-completion-settings-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-a-debug-settings-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-1.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-2.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-3.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-4.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-2.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-3.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-4.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-5.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-a-database-connection-1.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-b-database-settings-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-1.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-3.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-8.jpg">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-9.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-12.gif">
-<meta property="og:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-13.gif">
-<meta property="article:published_time" content="2020-10-23T14:07:35.000Z">
-<meta property="article:modified_time" content="2020-10-24T01:11:10.828Z">
+<meta property="article:published_time" content="2021-05-13T14:20:17.000Z">
+<meta property="article:modified_time" content="2021-05-13T14:21:24.071Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="部署">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,615 +149,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-IDEA使用教程-学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-如何启动后台jar包" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      IDEA使用教程-学习笔记
+      如何启动后台jar包
     </h1>
   
 
         
-        <a href="/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-10-23T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-23</time>
+        <a href="/2021/05/13/%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E5%90%8E%E5%8F%B0jar%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2021-05-13T14:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在jar包所在的文件夹输入以下命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nohup java -jar -Xms512M -Xmx512M steel.jar &gt; steel.log &amp;</span></span><br></pre></td></tr></table></figure>
 
-
-<ul>
-<li><a href="#mac-%E4%B8%8B%E4%BF%AE%E6%94%B9-vm-%E5%8F%82%E6%95%B0">Mac 下修改 VM 参数</a><ul>
-<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80%E5%AE%98%E6%96%B9%E6%8E%A8%E8%8D%90">方法一（官方推荐）</a></li>
-<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C">方法二</a></li>
-</ul>
-</li>
-<li><a href="#ui%E7%95%8C%E9%9D%A2">UI界面</a></li>
-<li><a href="#intellij-idea-%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93%E7%BC%96%E8%BE%91%E5%8C%BA%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D">编译方式介绍</a></li>
-<li><a href="#project-%E5%92%8C-module-%E4%BB%8B%E7%BB%8D-%EF%B8%8F">Project 和 Module 介绍 ⭐️</a></li>
-<li><a href="#language-level-%E4%BB%8B%E7%BB%8D">language level 介绍</a></li>
-<li><a href="#intellij-idea-%E4%B8%8B%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%BB%8B%E7%BB%8D-%EF%B8%8F">IntelliJ IDEA 下的版本控制介绍 ⭐️</a></li>
-<li><a href="#%E5%AE%9E%E6%97%B6%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BB%8B%E7%BB%8D">实时代码模板的介绍</a></li>
-<li><a href="#%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E7%9A%84%E8%AE%BE%E7%BD%AE">文件代码模板的设置</a></li>
-<li><a href="#postfix-completion-%E7%9A%84%E4%BB%8B%E7%BB%8D">Postfix Completion 的介绍</a><ul>
-<li><a href="#postfix-completion-%E7%9A%84%E8%AE%BE%E7%BD%AE">Postfix Completion 的设置</a></li>
-</ul>
-</li>
-<li><a href="#maven-%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D-%EF%B8%8F">Maven 项目介绍 ⭐️</a><ul>
-<li><a href="#maven-%E7%BB%84%E4%BB%B6%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D">Maven 组件界面介绍</a></li>
-<li><a href="#maven-%E5%BF%AB%E9%80%9F%E6%8E%92%E6%9F%A5%E4%BE%9D%E8%B5%96%E5%8C%85%E5%86%B2%E7%AA%81">Maven 快速排查依赖包冲突</a></li>
-</ul>
-</li>
-<li><a href="#debug-%E4%BB%8B%E7%BB%8D-%EF%B8%8F">Debug 介绍 ⭐️</a><ul>
-<li><a href="#debug-%E8%AE%BE%E7%BD%AE">Debug 设置</a></li>
-<li><a href="#debug-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE">Debug 常用快捷键</a></li>
-<li><a href="#debug-%E7%89%B9%E6%AE%8A%E6%8A%80%E8%83%BD%E4%BD%BF%E7%94%A8">Debug 特殊技能使用</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D">数据库管理工具介绍</a><ul>
-<li><a href="#%E9%85%8D%E7%BD%AE-database-%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5">配置 Database 组件的数据库连接</a></li>
-<li><a href="#database-%E8%AE%BE%E7%BD%AE">Database 设置</a></li>
-<li><a href="#idea%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE-%EF%B8%8F">IDEA推荐设置 ⭐️</a></li>
-</ul>
-</li>
-<li><a href="#intellij-idea-for-mac-%E5%BF%AB%E6%8D%B7%E9%94%AE-%EF%B8%8F">IntelliJ IDEA For Mac 快捷键 ⭐️</a><pre><code>- [Editing（编辑）](#editing%E7%BC%96%E8%BE%91)
-- [Search/Replace（查询/替换）](#searchreplace%E6%9F%A5%E8%AF%A2%E6%9B%BF%E6%8D%A2)
-- [Usage Search（使用查询）](#usage-search%E4%BD%BF%E7%94%A8%E6%9F%A5%E8%AF%A2)
-- [Compile and Run（编译和运行）](#compile-and-run%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C)
-- [Debugging（调试）](#debugging%E8%B0%83%E8%AF%95)
-- [Navigation（导航）](#navigation%E5%AF%BC%E8%88%AA)
-- [Refactoring（重构）](#refactoring%E9%87%8D%E6%9E%84)
-- [VCS/Local History（版本控制/本地历史记录）](#vcslocal-history%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E6%9C%AC%E5%9C%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95)
-- [Live Templates（动态代码模板）](#live-templates%E5%8A%A8%E6%80%81%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF)
-- [General（通用）](#general%E9%80%9A%E7%94%A8)
-- [Other（一些官方文档上没有体现的快捷键）](#other%E4%B8%80%E4%BA%9B%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%8A%E6%B2%A1%E6%9C%89%E4%BD%93%E7%8E%B0%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE)</code></pre>
-</li>
-</ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<h1><span id="mac-下修改-vm-参数">Mac 下修改 VM 参数</span></h1><h2><span id="方法一官方推荐">方法一（官方推荐）</span></h2><p>大部分情况下，修改 VM 参数可以使用 IDEA 自带的选项： <code>Help -&gt; Edit Custom VM Options</code> 这个选项会自动帮你在正确的位置用正确的名字新建一个 VM 参数配置文件，并在当前 IDEA 窗口自动打开。我们只需要按需编辑，保存后重启即可。 建议在编辑的时候查看一下文件的原始路径，以备改错参数导致无法启动时恢复使用。 这种方法修改不会由于升级 IDEA 导致修改被还原。</p>
-<h2><span id="方法二">方法二</span></h2><p>手动修改个人配置下的 <code>idea.vmoptions</code> 文件，完整的路径为： <code>/Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 或者可以简写为： <code>~/Library/Preferences/IntelliJIdeaXXXXXX/idea.vmoptions</code> 如果该文件不存在，按照名称新建一个即可。 推荐直接使用命令行进行编辑。 Finder 中进入该文件夹的方法是：</p>
-<ul>
-<li>打开 Finder</li>
-<li>按快捷键 Command + Shift + G</li>
-<li>在弹出窗口中输入 <code>~/Library/Preferences/</code></li>
-<li>找到对应版本的 <code>IntelliJIdea</code> 文件夹</li>
-<li>新建或修改 <code>idea.vmoptions</code> 文件</li>
-</ul>
-<a id="more"></a>
-
-
-
-<h1><span id="ui界面">UI界面</span></h1><blockquote>
-<ul>
-<li><strong>重点说明：</strong> IntelliJ IDEA 是没有类似 Eclipse 的工作空间的概念（<code>Workspaces</code> ），最大单元就是 <code>Project</code>。如果你同时观察多个项目的情况，IntelliJ IDEA 提供的解决方案是打开多个项目实例，你可以理解为开多个项目窗口。</li>
-<li>命令 <code>Create New Project</code> 创建一个新项目。</li>
-<li>命令 <code>Import Project</code> 导入一个已有项目。</li>
-<li>命令 <code>Open</code> 打开一个已有项目，可以直接打开 Eclipse 项目，但是由于两者 IDE 下的项目配置不一样，所以项目还是需要配置的。</li>
-<li>命令 <code>Check out from Version Control</code> 可以通过服务器上的项目地址 Checkout Github 上面项目或是其他 Git 托管服务器上的项目。</li>
-<li>为了介绍 IntelliJ IDEA 界面，我们这里创建一个新 HTML 项目。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>对于首次创建或打开的新项目，IntelliJ IDEA 都会创建项目索引，如上图标注 1 所示。大型项目在创建索引过程中可能必须会卡顿，所以 <strong>强烈建议</strong> 创建索引过程最好不要动项目。</li>
-<li>每次进入项目中，IntelliJ IDEA 会根据当前项目情况进行问题反馈，或是升级更新提示等。使用方式如上图标注 2 所示。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/ix-interface-introduce-5.jpg" alt="界面介绍"></p>
-<h1><span id="intellij-idea-主题-字体-编辑区主题-文件编码修改-乱码问题">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</span></h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html</a></p>
-<h1><span id="编译方式介绍">编译方式介绍</span></h1><p>在 IntelliJ IDEA 里，编译方式一共有三种：</p>
-<blockquote>
-<ul>
-<li>Compile：对选定的目标（Java 类文件），进行强制性编译，不管目标是否是被修改过。注：2018版操作为Recompile。</li>
-<li>Rebuild：对选定的目标（Project），进行强制性编译，不管目标是否是被修改过，由于 Rebuild 的目标只有 Project，所以 Rebuild 每次花的时间会比较长。</li>
-<li>Make：使用最多的编译操作。对选定的目标（Project 或 Module）进行编译，但只编译有修改过的文件，没有修改过的文件不会编译，这样平时开发大型项目才不会浪费时间在编译过程中。注：2018版操作为Build。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiii-a-make-introduce-1.jpg" alt="IntelliJ IDEA 编译触发按钮"></p>
-<blockquote>
-<ul>
-<li>如上图标注 1 所示，Make 的操作有：<code>Make Project</code>、<code>Make Module</code></li>
-<li>如上图标注 2 所示，Compile 的操作有：<code>Compile</code> 指定类</li>
-<li>如上图标注 3 所示，Rebuild 的操作有：<code>Rebuild Project</code></li>
-</ul>
-</blockquote>
-<h1><span id="project-和-module-介绍-️">Project 和 Module 介绍 ⭐️</span></h1><p>对于 Project，IntelliJ IDEA 是这样解释的：</p>
-<blockquote>
-<ul>
-<li>Whatever you do in IntelliJ IDEA, you do that in the context of a project. A project is an organizational unit that represents a complete software solution. It serves as a basis for coding assistance, bulk refactoring, coding style consistency, etc.</li>
-<li>Your finished product may be decomposed into a series of discrete, isolated modules, but it’s a project definition that brings them together and ties them into a greater whole.</li>
-<li>Projects don’t themselves contain development artifacts such as source code, build scripts, or documentation. They are the highest level of organization in the IDE, and they define project-wide settings as well as collections of what IntelliJ IDEA refers to as modules and libraries.</li>
-</ul>
-<blockquote>
-<ul>
-<li>20170630 更新新地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/about-projects.html">https://www.jetbrains.com/help/idea/about-projects.html</a></li>
-</ul>
-</blockquote>
-</blockquote>
-<p>对于 Module，IntelliJ IDEA 是这样解释的：</p>
-<blockquote>
-<ul>
-<li>A module is a discrete unit of functionality which you can compile, run, test and debug independently.</li>
-<li>Modules contain everything that is required for their specific tasks: source code, build scripts, unit tests, deployment descriptors, and documentation. However, modules exist and are functional only in the context of a project.</li>
-<li>Configuration information for a module is stored in a .iml module file. By default, such a file is located in the module’s content root folder.</li>
-<li>Development teams, normally, share the .iml module files through version control.</li>
-</ul>
-<blockquote>
-<ul>
-<li>20170630 更新新地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/about-modules.html?search=About">https://www.jetbrains.com/help/idea/about-modules.html?search=About</a></li>
-</ul>
-</blockquote>
-</blockquote>
-<p>通过上面的介绍我们知道，在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module。一个 Project 可以有多个 Module。目前主流的大型项目结构都是类似这种多 Module 结构，这类项目一般是这样划分的，比如：core Module、web Module、plugin Module、solr Module 等等，模块之间彼此可以相互依赖。通过这些 Module 的命名也可以看出，他们之间应该都是处于同一个项目业务情况下的模块，彼此之间是有不可分割的业务关系的。</p>
-<p>所以我们现在总结：<strong>一个 <code>Project</code> 是由一个或多个 <code>Module</code> 组成，模块之间尽量是处在同一个项目业务的的情况下，彼此之间互相依赖关联。</strong>这里用的是 <code>尽量</code>，因为 IntelliJ IDEA 的 Project 是一个没有具备任何编码设置、构建等开发功能的，主要起到一个项目定义、范围约束、规范等类型的效果，也许我们可以简单地理解为就是一个单纯的目录，只是这个目录命名上必须有其代表性的意义。</p>
-<h1><span id="language-level-介绍">language level 介绍</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xiv-c-language-level-introduce-2.jpg" alt="language level 介绍"></p>
-<blockquote>
-<ul>
-<li>如上第一张图标注 1，使用的是 JDK 7，显示的 <code>SDK default</code> 为 <code>7 - Diamonds，ARM，multi-catch etc.</code></li>
-<li>如上第二张图标注 1，使用的是 JDK 8，显示的 <code>SDK default</code> 为 <code>8 - Lambdas，type annotation etc.</code></li>
-</ul>
-</blockquote>
-<p>当我们使用 JDK 8 的时候，我们只能向下兼容 JDK 8 及其以下的特性，所以只能选择 8 及其以下的 <code>language level</code>。所以当我们项目使用的是 JDK 8，但是代码却没有使用 JDK 8 的新特性，最多使用了 JDK 7 的特性的时候我们可以选择 <code>7 - Diamonds，ARM，multi-catch etc.</code>。</p>
-<p>对此我们总结 <code>language level</code>：限定项目编译检查时最低要求的 JDK 特性。</p>
-<p>现在假设我们有一个项目代码使用的 JDK 8 新特性：<code>lambda</code> 语法，但是 JDK 选择的却是 JDK 7，即使 <code>language level</code> 选择了 <code>8 - Lambdas，type annotation etc.</code>，也是没有多大意义的，一样会编译报错。</p>
-<h1><span id="intellij-idea-下的版本控制介绍-️">IntelliJ IDEA 下的版本控制介绍 ⭐️</span></h1><p><a target="_blank" rel="noopener" href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html">https://youmeek.gitbooks.io/intellij-idea-tutorial/content/vcs-introduce.html</a></p>
-<h1><span id="实时代码模板的介绍">实时代码模板的介绍</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-1.gif" alt="实时代码模板的介绍"></p>
-<blockquote>
-<ul>
-<li>上图 Gif 演示为最好的介绍 <code>Live Templates</code>。</li>
-<li>实时代码模板需要字符串前缀，如 Gif 演示中，在输入 <code>sys</code> 后生成一段输出语句，其中 <code>sys</code> 前缀是我自己设置的。</li>
-<li>实时代码模板支持变量参数设置，如 Gif 演示中，在输入 <code>temp1</code> 的时候，后面自动也生成了一个 <code>temp1</code>，这是因为两者的变量名是一致的，所以我设置了一个变量值内容之后，相同变量值的内容也会跟着出现。</li>
-<li>实时代码模板支持最后位置的定位，如 Gif 演示中，在输入完 <code>temp1</code> 之后，按 <code>Enter</code> 后自动跳转到语句末。虽然默认没有设置的时候也是在这个位置，但是我是通过设置来定位到此位置的。</li>
-<li>实时代码模板支持获取当前类名和当前方法名（本质是内置函数），如 Gif 演示中，在输入完 <code>sys</code> 生成输出语句中自动带有当前类名和方法名。</li>
-<li>综上效果：实时代码模板只是为了让我们更加高效的写一些固定模式的代码，以提高编码效率，同时也可以增加个性化。比如 Gif 演示中，我在开发中如果需要写输出的话，我个人习惯输出语句中前缀是自己的标记：横线和域名，以区分其他人输出，方便做全文搜索。</li>
-<li>官网介绍 <code>Live Templates</code>：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/help/live-templates.html">https://www.jetbrains.com/idea/help/live-templates.html</a></li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xvii-a-live-templates-introduce-2.jpg" alt="实时代码模板的介绍"></p>
-<blockquote>
-<ul>
-<li>如上图标注所示，实时代码模板本质是用 XML 文件来保存的，所以传播自己的实时代码模板只要传播对应的文件即可。</li>
-<li>IntelliJ IDEA 的实时代码模板保存在 <code>/templates</code> 目录下，其他系统目录位置如下：（因为目录名在各个系统上是一致的，建议用硬盘搜索工具搜索即可）</li>
-</ul>
-<blockquote>
-<ul>
-<li>Windows: <code>C:\Users\youmeek\.IntelliJIdea2017.2\config</code></li>
-<li>Linux: <code>~/.&lt;product name&gt;&lt;version number&gt;/config/templates</code></li>
-<li>OS X: <code>~/Library/Preferences/IdeaIC2017.2/templates</code></li>
-</ul>
-</blockquote>
-</blockquote>
-<p>调用常规的实时代码模板主要是通过两个快捷键：<code>Tab</code> 和 <code>Ctrl + J</code>。虽然 IntelliJ IDEA 支持修改此对应的快捷键，但是默认大家都是这样使用的，所以没有特别原因就不要去改。</p>
-<p>该两个快捷键的使用方法：如第一张 Gif 演示图所示，在输入 <code>sys</code> 后按 <code>Tab</code> 键，即立即生成预设语句。如果按 <code>Ctrl + J</code> 则会先提示与之匹配的实时代码模板介绍，然后还需按 <code>Enter</code> 才可完成预设语句的生成。</p>
-<h1><span id="文件代码模板的设置">文件代码模板的设置</span></h1><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xviii-b-file-and-code-templates-settings-1.jpg" alt="文件代码模板的设置"></p>
-<blockquote>
-<ul>
-<li>如上图标注 1 所示，文件代码模板支持的类型基本常见的文件类型都涵盖了。</li>
-<li>如上图标注 2 所示，这是 Java 文件模板新建的代码模板，其中 <code>$&#123;PACKAGE_NAME&#125;、$&#123;NAME&#125;</code> 是 IntelliJ IDEA 预设的变量。</li>
-<li>如上图标注 3 所示，IntelliJ IDEA 的文件代码模板是可以使用 <code>Velocity Template Language</code> (VTL) 进行书写的。如图 2 上的 <code>#if ... #end</code> 和 <code>#parse</code> 都是 VTL 的语法。</li>
-<li>如上图标注 4 所示，介绍当前文件模板的一些信息，以及一些预设变量的作用介绍。</li>
-<li>如上图标注 5 所示，这四个按钮是文件代码模板的主要操作按钮，四个操作分别是：</li>
-</ul>
-<blockquote>
-<ul>
-<li><code>Create Template</code> 创建一个文件代码模板。</li>
-<li><code>Remove Template</code> 删除一个文件代码模板，标注 1 所示的这些预设模板是不允许删除的，只能能删除预设之外的新增的。</li>
-<li><code>Copy Template</code> 复制一个文件代码模板。</li>
-<li><code>Reset To Default</code> 对被修改的预设文件代码模板，还原到默认状态。</li>
-</ul>
-</blockquote>
-</blockquote>
-<h1><span id="postfix-completion-的介绍">Postfix Completion 的介绍</span></h1><p>Postfix Completion 功能本质上也是代码模板，只是它比 Live Templates 来得更加便捷一点点而已。具体它是做什么的，我们通过下面一张 Gif 演示图来说明：</p>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-c-postfix-completion-introduce-1.gif" alt="Postfix Completion 的介绍"></p>
-<blockquote>
-<ul>
-<li>如上图标注 1 所示，非空的判断在 Java 代码中应该是非常常见的一句话代码，如果用 Live Templates 当然也是可以快速生成，但是没有上图 Gif 这种 Postfix Completion 效果快。也许只是快了那么 0.01 秒，但是有如此好用的功能不用也是一种浪费。</li>
-</ul>
-</blockquote>
-<h2><span id="postfix-completion-的设置">Postfix Completion 的设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xix-d-postfix-completion-settings-1.jpg" alt="Postfix Completion 的设置"></p>
-<blockquote>
-<ul>
-<li>如上图红圈所示，IntelliJ IDEA 只提供了是否启用的开关，其他的设置就没了。所以如果目前的版本中你还无法想对该功能进行自定义。IntelliJ IDEA 也对常用到的一些固定格式的代码进行了归纳，基本目前也够用了。</li>
-</ul>
-</blockquote>
-<h1><span id="maven-项目介绍-️">Maven 项目介绍 ⭐️</span></h1><h2><span id="maven-组件界面介绍">Maven 组件界面介绍</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-c-maven-component-1.jpg" alt="Maven 组件界面介绍"></p>
-<blockquote>
-<ul>
-<li><p>如上图标注 1 所示，为常用的 Maven 工具栏，其中最常用的有：</p>
-<blockquote>
-<ul>
-<li>第一个按钮：<code>Reimport All Maven Projects</code> 表示根据 <code>pom.xml</code> 重新载入项目。一般当我们在 <code>pom.xml</code> 添加了依赖包或是插件的时候，发现标注 4 的依赖区中没有看到最新写的依赖的话，可以尝试点击此按钮进行项目的重新载入。</li>
-<li>第六个按钮：<code>Execute Maven Goal</code> 弹出可执行的 Maven 命令的输入框。有些情况下我们需要通过书写某些执行命令来构建项目，就可以通过此按钮。</li>
-<li>第九个按钮：<code>Show Dependencies</code> 显示项目依赖的结构图，可以方便我们直观项目的依赖包情况。这个功能有些具体的操作下面会专门进行讲解。</li>
-</ul>
-</blockquote>
-</li>
-<li><p>如上图标注 2 所示，常用的 Maven 生命周期的命令，通过双击对应的命令来执行项目编译、打包、部署等操作。</p>
-</li>
-<li><p>如上图标注 3 所示，为我们在 <code>pom.xml</code> 中配置的插件列表，方便调用插件。</p>
-</li>
-<li><p>如上图标注 4 所示，为我们在 <code>pom.xml</code> 中配置的依赖包列表。</p>
-</li>
-<li><p>如上图标注 5 所示，为常见的 Java Web 在 Maven 下的一个项目结构。</p>
-</li>
-</ul>
-</blockquote>
-<h2><span id="maven-快速排查依赖包冲突">Maven 快速排查依赖包冲突</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-1.jpg" alt="Maven 快速排查依赖包冲突"></p>
-<blockquote>
-<ul>
-<li>如上图箭头所示，点击此按钮会出现左边的项目依赖结构图，通过此图我们可以很好的观察项目的依赖依赖情况。</li>
-<li>如上图标注 1 所示，我们可以直接在依赖结构图上编辑依赖，常用的就是此排除功能。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxii-e-maven-dependent-exclude-2.jpg" alt="Maven 快速排查依赖包冲突"></p>
-<blockquote>
-<ul>
-<li>如上图描述，一般我们在出现红色线的时候是都要进行排除的，防止出现因为版本不同的依赖包造成代码无法编译。</li>
-</ul>
-</blockquote>
-<h1><span id="debug-介绍-️">Debug 介绍 ⭐️</span></h1><h2><span id="debug-设置">Debug 设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-a-debug-settings-1.jpg" alt="Debug 设置"></p>
-<blockquote>
-<ul>
-<li>如上图标注 1 所示，表示设置 Debug 连接方式，默认是 <code>Socket</code>。<code>Shared memory</code> 是 Windows 特有的一个属性，一般在 Windows 系统下建议使用此设置，相对于 <code>Socket</code> 会快点。</li>
-</ul>
-</blockquote>
-<h2><span id="debug-常用快捷键">Debug 常用快捷键</span></h2><table>
-<thead>
-<tr>
-<th align="left">Win 快捷键</th>
-<th align="left">Mac 快捷键</th>
-<th align="left">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">F7</td>
-<td align="left">F7</td>
-<td align="left">进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中 <code>必备</code></td>
-</tr>
-<tr>
-<td align="left">F8</td>
-<td align="left">F8</td>
-<td align="left">进入下一步，如果当前行断点是一个方法，则不进入当前方法体内 <code>必备</code></td>
-</tr>
-<tr>
-<td align="left">F9</td>
-<td align="left">Command + Option + R</td>
-<td align="left">恢复程序运行，但是如果该断点下面代码还有断点则停在下一个断点上 <code>必备</code></td>
-</tr>
-<tr>
-<td align="left">Alt + F8</td>
-<td align="left">Option + F8</td>
-<td align="left">选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果 <code>必备</code></td>
-</tr>
-<tr>
-<td align="left">Ctrl + F8</td>
-<td align="left">Command + F8</td>
-<td align="left">设置光标当前行为断点，如果当前已经是断点则去掉断点</td>
-</tr>
-<tr>
-<td align="left">Shift + F7</td>
-<td align="left">Shift + F7</td>
-<td align="left">智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</td>
-</tr>
-<tr>
-<td align="left">Shift + F8</td>
-<td align="left">Shift + F8</td>
-<td align="left">跳出，表现出来的效果跟 <code>F9</code> 一样</td>
-</tr>
-<tr>
-<td align="left">Ctrl + Shift + F8</td>
-<td align="left">Command + Shift + F8</td>
-<td align="left">指定断点进入条件</td>
-</tr>
-<tr>
-<td align="left">Alt + Shift + F7</td>
-<td align="left">Option + Shift + F7</td>
-<td align="left">进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果方法体还有方法，则会进入该内嵌的方法中，依此循环进入</td>
-</tr>
-<tr>
-<td align="left">Alt + Shift + F8</td>
-<td align="left">Option + Shift + F8</td>
-<td align="left">返回上一步</td>
-</tr>
-<tr>
-<td align="left">Drop Frame</td>
-<td align="left">Drop Frame</td>
-<td align="left">这个不是一个快捷键，而是一个 Debug 面板上的按钮。该按钮可以用来退回到当前停住的断点的上一层方法上，可以让过掉的断点重新来过</td>
-</tr>
-</tbody></table>
-<ul>
-<li>有时候我们可以这样粗鲁地认为 Debug 的使用就是等同于这几个快捷键的使用，所以上面的 <code>必备</code> 快捷键是我们必须牢记的，这些也是开发很常用的。</li>
-</ul>
-<h2><span id="debug-特殊技能使用">Debug 特殊技能使用</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-1.gif" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图 Gif 所示，查看所选对象的方法常用有三种方式：</li>
-</ul>
-<blockquote>
-<ul>
-<li>选中对象后，使用快捷键 <code>Alt + F8</code>。</li>
-<li>选中对象后，拖动对象到 <code>Watches</code>。</li>
-<li>选中对象后，鼠标悬停在对象上 2 秒左右。</li>
-</ul>
-</blockquote>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-2.gif" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图 Gif 所示，在弹出表达式输入框中 IntelliJ IDEA 也是能帮我们智能提示。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-3.gif" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图 Gif 所示，当我们需要过掉后面的所有断点的时候，我们不需要去掉这些断点，只需要点击左下角那个小圆点，点击小圆点之后，所有断点变成灰色，然后我们再在按快捷键 <code>F9</code> 即可过掉当前和后面所有的断点。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-4.gif" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>我们可以给断点设置进入的条件。如上图 Gif 所示，因为变量 temp3 不等于 200 所以该断点没有被进入直接跳过。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-2.jpg" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图，我们可以给断点设置更复杂的步入条件</li>
-<li>红框中的 Pass count 表示跳过多少次后开始步入，比如 for 循环中，我们要查看一个变量循环 3 次后的结果就可以使用该方式。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-3.jpg" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图，对于某些不重要的断点，只要步入一次就够了，就可以勾选此选项，让它步入之后自动删除。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-4.jpg" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>如上图，对于某些场景的断点，需要其他断点先触发之后再进行触发，可以选择此项。默认选择的是： None</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-b-debug-use-5.gif" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>有时候当我们步入方法体之后，还想回退到方法体外。如 Gif 演示，断点进入 <code>addNum</code> 方法后，点击 <code>Drop Frame</code> 按钮之后，断点重新回到方法体之外。</li>
-</ul>
-</blockquote>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxiii-c-debug-use-1.jpg" alt="Debug 特殊技能使用"></p>
-<blockquote>
-<ul>
-<li>上图 IntelliJ IDEA 版本：2017.1.3</li>
-<li>如上图左侧红框内容，可以看到当前断点线程执行的堆栈情况，最上面的为当前断点位置，下面的是断点前面执行的方法，如果需要看断点前面走过的路，可以查看该区域。并且可以用图上箭头按钮进行限制显示框架类代码的执行过程，而不是包括依赖 jar 里面的执行过程。</li>
-<li>如上图右侧红框内容，可以用来展示单点断点位置的内存情况，对于判断内存溢出相关问题很有帮助。</li>
-</ul>
-</blockquote>
-<h1><span id="数据库管理工具介绍">数据库管理工具介绍</span></h1><h2><span id="配置-database-组件的数据库连接">配置 Database 组件的数据库连接</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-a-database-connection-1.gif" alt="配置 Database 组件的数据库连接"></p>
-<blockquote>
-<ul>
-<li>表面上很多人认为配置 Database 就是为了有一个 GUI 管理数据库功能，但是这并不是 IntelliJ IDEA 的 Database 最重要特性。数据库的 GUI 工具有很多，IntelliJ IDEA 的 Database 也没有太明显的优势。IntelliJ IDEA 的 Database 最大特性就是对于 Java Web 项目来讲，常使用的 ORM 框架，如 Hibernate、Mybatis 有很好的支持，比如配置好了 Database 之后，IntelliJ IDEA 会自动识别 domain 对象与数据表的关系，也可以通过 Database 的数据表直接生成 domain 对象等等。</li>
-<li>如上图 Gif 所示，这是一个完成的配置 Database 过程，对于数据库需要的依赖包，IntelliJ IDEA 可以自动帮我们下载，所以我们只要配置对应的连接参数即可。</li>
-</ul>
-</blockquote>
-<h2><span id="database-设置">Database 设置</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxv-b-database-settings-1.jpg" alt="Database 设置"></p>
-<blockquote>
-<ul>
-<li>如上图标注的红圈所示，这是 Database 常用的四个操作。</li>
-</ul>
-<blockquote>
-<ul>
-<li>第一个按钮是：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在 IntelliJ IDEA 之外用其他工具操作数据库，比如新建表。而此时 IntelliJ IDEA 的 Database 如果没有同步到新表，也是需要点击此按钮进行同步的。</li>
-<li>第二个按钮是：配置当前连接，跟我们首次设置连接的界面是一样的。</li>
-<li>第三个按钮是：断开当前的连接。</li>
-<li>第四个按钮是：查看当前所选对象的图标结构，比如我们当前选中的是整个数据库名，我们如果点击此按钮，则是显示该数据库下的所有数据表的图标结构图。</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2><span id="idea推荐设置-️">IDEA推荐设置 ⭐️</span></h2><p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-1.jpg" alt="常用设置"></p>
-<ul>
-<li>IntelliJ IDEA 的代码提示和补充功能有一个特性：区分大小写。如上图标注 1 所示，默认就是 <code>First letter</code> 区分大小写的。</li>
-<li>区分大小写的情况是这样的：比如我们在 Java 代码文件中输入 <code>stringBuffer</code> IntelliJ IDEA 是不会帮我们提示或是代码补充的，但是如果我们输入 <code>StringBuffer</code> 就可以进行代码提示和补充。</li>
-<li>如果想不区分大小写的话，改为 <code>None</code> 选项即可。</li>
-</ul>
-<hr>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-3.jpg" alt="常用设置"></p>
-<ul>
-<li>如上图标注 1 和 2 所示，默认 IntelliJ IDEA 是没有开启自动 import 包的功能。<ul>
-<li>勾选标注 1 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们优化导入的包，比如自动去掉一些没有用到的包。</li>
-<li>勾选标注 2 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们导入需要用到的包。但是对于那些同名的包，还是需要手动 <code>Alt + Enter</code> 进行导入的，IntelliJ IDEA 目前还无法智能到替我们做判断。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-8.jpg" alt="常用设置"></p>
-<ul>
-<li>如上图标注红圈所示，我们可以对指定代码类型进行默认折叠或是展开的设置，勾选上的表示该类型的代码在文件被打开的时候默认是被折叠的，去掉勾选则反之。</li>
-</ul>
-<hr>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-9.gif" alt="常用设置"></p>
-<ul>
-<li><p>如上图 Gif 所示，IntelliJ IDEA 支持对代码进行垂直或是水平分组。一般在对大文件进行修改的时候，有些修改内容在文件上面，有些内容在文件下面，如果来回操作可能效率会很低，用此方法就可以好很多。当然了，前提是自己的显示器分辨率要足够高。</p>
-</li>
-<li><p>如果经常使用分屏，也可以考虑设置快捷键，快捷设置可以查看</p>
-</li>
-</ul>
-<p>  此文章</p>
-<ul>
-<li>垂直分屏快捷键关键字：<code>Split Vertically</code></li>
-<li>水平分屏快捷键关键字：<code>Split Horizontally</code></li>
-</ul>
-<hr>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-12.gif" alt="常用设置"></p>
-<ul>
-<li>如上图 Gif 所示，在没有对 <code>Ctrl + D</code> 快捷键进行修改前，此快捷键将是用来复制并黏贴所选的内容的，但是黏贴的位置是补充在原来的位置后，我个人不喜欢这种风格，我喜欢复制所选的行数完整内容，所以进行了修改，修改后的效果如上图 Gif 演示。</li>
-</ul>
-<hr>
-<p><img src="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/images/xxvi-a-settings-introduce-13.gif" alt="常用设置"></p>
-<ul>
-<li>如上图 Gif 所示，默认 <code>Ctrl + 空格</code> 快捷键是基础代码提示、补充快捷键，但是由于我们中文系统基本这个快捷键都被输入法占用了，所以我们发现不管怎么按都是没有提示代码效果的，原因就是在此。我个人建议修改此快捷键为 <code>Ctrl + 逗号</code>。</li>
-</ul>
-<h1><span id="intellij-idea-for-mac-快捷键-️">IntelliJ IDEA For Mac 快捷键 ⭐️</span></h1><h4><span id="editing编辑">Editing（编辑）</span></h4><ul>
-<li><code>Control + Space</code> 基本的代码补全（补全任何类、方法、变量）</li>
-<li><code>Control + Shift + Space</code> 智能代码补全（过滤器方法列表和变量的预期类型）</li>
-<li><code>Command + Shift + Enter</code> 自动结束代码，行末自动添加分号</li>
-<li><code>Command + P</code> 显示方法的参数信息</li>
-<li><code>Control + J</code> 显示当前位置的变量、方法的 Documentation 内容</li>
-<li><code>Control + J</code> 快速查看文档</li>
-<li><code>Shift + F1</code> 查看外部文档（在某些代码上会触发打开浏览器显示相关文档）</li>
-<li><code>Command + 鼠标放在代码上</code> 显示代码简要信息</li>
-<li><code>Command + F1</code> 在错误或警告处显示具体描述信息</li>
-<li><code>Command + N, Control + Enter, Control + N</code> 生成代码（getter、setter、构造函数、hashCode/equals,toString）</li>
-<li><code>Control + O</code> 覆盖方法（重写父类方法）</li>
-<li><code>Control + I</code> 实现方法（实现接口中的方法）</li>
-<li><code>Command + Option + T</code> 包围代码（使用if..else, try..catch, for, synchronized等包围选中的代码）</li>
-<li><code>Command + /</code> 注释/取消注释与行注释</li>
-<li><code>Command + Option + /</code> 注释/取消注释与块注释</li>
-<li><code>Option + 方向键上</code> 连续选中代码块</li>
-<li><code>Option + 方向键下</code> 减少当前选中的代码块</li>
-<li><code>Control + Shift + Q</code> 显示上下文信息</li>
-<li><code>Option + Enter</code> 显示意向动作和快速修复代码</li>
-<li><code>Command + Option + L</code> 格式化代码</li>
-<li><code>Control + Option + O</code> 优化import</li>
-<li><code>Control + Option + I</code> 自动缩进线</li>
-<li><code>Tab / Shift + Tab</code> 缩进代码 / 反缩进代码</li>
-<li><code>Command + X</code> 剪切当前行或选定的块到剪贴板</li>
-<li><code>Command + C</code> 复制当前行或选定的块到剪贴板</li>
-<li><code>Command + V</code> 从剪贴板粘贴</li>
-<li><code>Command + Shift + V</code> 从最近的缓冲区粘贴</li>
-<li><code>Command + D</code> 复制当前行或选定的块</li>
-<li><code>Command + Delete</code> 删除当前行或选定的块的行</li>
-<li><code>Control + Shift + J</code> 智能的将代码拼接成一行</li>
-<li><code>Command + Enter</code> 智能的拆分拼接的行</li>
-<li><code>Shift + Enter</code> 开始新的一行</li>
-<li><code>Command + Shift + U</code> 大小写切换</li>
-<li><code>Command + Shift + ] / Command + Shift + [</code> 选择直到代码块结束/开始</li>
-<li><code>Option + Fn + Delete</code> 删除到单词的末尾</li>
-<li><code>Option + Delete</code> 删除到单词的开头</li>
-<li><code>Command + 加号 / Command + 减号</code> 展开 / 折叠代码块</li>
-<li><code>Command + Shift + 加号</code> 展开所以代码块</li>
-<li><code>Command + Shift + 减号</code> 折叠所有代码块</li>
-<li><code>Command + W</code> 关闭活动的编辑器选项卡</li>
-</ul>
-<h4><span id="searchreplace查询替换">Search/Replace（查询/替换）</span></h4><ul>
-<li><code>Double Shift</code> 查询任何东西</li>
-<li><code>Command + F</code> 文件内查找</li>
-<li><code>Command + G</code> 查找模式下，向下查找</li>
-<li><code>Command + Shift + G</code> 查找模式下，向上查找</li>
-<li><code>Command + R</code> 文件内替换</li>
-<li><code>Command + Shift + F</code> 全局查找（根据路径）</li>
-<li><code>Command + Shift + R</code> 全局替换（根据路径）</li>
-<li><code>Command + Shift + S</code> 查询结构（Ultimate Edition 版专用，需要在Keymap中设置）</li>
-<li><code>Command + Shift + M</code> 替换结构（Ultimate Edition 版专用，需要在Keymap中设置）</li>
-</ul>
-<h4><span id="usage-search使用查询">Usage Search（使用查询）</span></h4><ul>
-<li><code>Option + F7 / Command + F7</code> 在文件中查找用法 / 在类中查找用法</li>
-<li><code>Command + Shift + F7</code> 在文件中突出显示的用法</li>
-<li><code>Command + Option + F7</code> 显示用法</li>
-</ul>
-<h4><span id="compile-and-run编译和运行">Compile and Run（编译和运行）</span></h4><ul>
-<li><code>Command + F9</code> 编译Project</li>
-<li><code>Command + Shift + F9</code> 编译选择的文件、包或模块</li>
-<li><code>Control + Option + R</code> 弹出 Run 的可选择菜单</li>
-<li><code>Control + Option + D</code> 弹出 Debug 的可选择菜单</li>
-<li><code>Control + R</code> 运行</li>
-<li><code>Control + D</code> 调试</li>
-<li><code>Control + Shift + R, Control + Shift + D</code> 从编辑器运行上下文环境配置</li>
-</ul>
-<h4><span id="debugging调试">Debugging（调试）</span></h4><ul>
-<li><code>F8</code> 进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</li>
-<li><code>F7</code> 进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</li>
-<li><code>Shift + F7</code> 智能步入，断点所在行上有多个方法调用，会弹出进入哪个方法</li>
-<li><code>Shift + F8</code> 跳出</li>
-<li><code>Option + F9</code> 运行到光标处，如果光标前有其他断点会进入到该断点</li>
-<li><code>Option + F8</code> 计算表达式（可以更改变量值使其生效）</li>
-<li><code>Command + Option + R</code> 恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上</li>
-<li><code>Command + F8</code> 切换断点（若光标当前行有断点则取消断点，没有则加上断点）</li>
-<li><code>Command + Shift + F8</code> 查看断点信息</li>
-</ul>
-<h4><span id="navigation导航">Navigation（导航）</span></h4><ul>
-<li><code>Command + O</code> 查找类文件</li>
-<li><code>Command + Shift + O</code> 查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠<code>/</code></li>
-<li><code>Command + Option + O</code> 前往指定的变量 / 方法</li>
-<li><code>Control + 方向键左 / Control + 方向键右</code> 左右切换打开的编辑tab页</li>
-<li><code>F12</code> 返回到前一个工具窗口</li>
-<li><code>Esc</code> 从工具窗口进入代码文件窗口</li>
-<li><code>Shift + Esc</code> 隐藏当前或最后一个活动的窗口，且光标进入代码文件窗口</li>
-<li><code>Command + Shift + F4</code> 关闭活动run/messages/find/… tab</li>
-<li><code>Command + L</code> 在当前文件跳转到某一行的指定处</li>
-<li><code>Command + E</code> 显示最近打开的 <strong>文件记录</strong> 列表</li>
-<li><code>Command + Shift + E</code> 显示最近打开的 <strong>文件代码位置记录</strong> 列表</li>
-<li><code>Option + 方向键左 / Option + 方向键右</code> 光标跳转到当前单词 / 中文句的左 / 右侧开头位置</li>
-<li><code>Command + Option + 方向键左 / Command + Option + 方向键右</code> 退回 / 前进到上一个操作的地方</li>
-<li><code>Command + Shift + Delete</code> 跳转到最后一个编辑的地方</li>
-<li><code>Option + F1</code> 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择(如在代码编辑窗口可以选择显示该文件的Finder)</li>
-<li><code>Command + B / Command + 鼠标点击</code> 进入光标所在的方法/变量的接口或是定义处</li>
-<li><code>Command + Option + B</code> 跳转到实现处，在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</li>
-<li><code>Option + Space, Command + Y</code> 快速打开光标所在方法、类的定义</li>
-<li><code>Control + Shift + B</code> 跳转到类型声明处</li>
-<li><code>Command + U</code> 前往当前光标所在方法的父类的方法 / 接口定义</li>
-<li><code>Control + 方向键下 / Control + 方向键上</code> 当前光标跳转到当前文件的前一个/后一个方法名位置</li>
-<li><code>Command + ] / Command + [</code> 移动光标到当前所在代码的花括号开始/结束位置</li>
-<li><code>Command + F12</code> 弹出当前文件结构层，可以在弹出的层上直接输入进行筛选（可用于搜索类中的方法）</li>
-<li><code>Control + H</code> 显示当前类的层次结构</li>
-<li><code>Command + Shift + H</code> 显示方法层次结构</li>
-<li><code>Control + Option + H</code> 显示调用层次结构</li>
-<li><code>F2 / Shift + F2</code> 跳转到下一个/上一个突出错误或警告的位置</li>
-<li><code>F4 / Command + 方向键下</code> 编辑/查看代码源</li>
-<li><code>Option + Home</code> 显示到当前文件的导航条</li>
-<li><code>F3</code>选中文件/文件夹/代码行，添加/取消书签</li>
-<li><code>Option + F3</code> 选中文件/文件夹/代码行，使用助记符添加/取消书签</li>
-<li><code>Control + 0...Control + 9</code> 定位到对应数值的书签位置</li>
-<li><code>Command + F3</code> 显示所有书签</li>
-</ul>
-<h4><span id="refactoring重构">Refactoring（重构）</span></h4><ul>
-<li><code>F5</code> 复制文件到指定目录</li>
-<li><code>F6</code> 移动文件到指定目录</li>
-<li><code>Command + Delete</code> 在文件上为安全删除文件，弹出确认框</li>
-<li><code>Shift + F6</code> 重命名文件</li>
-<li><code>Command + F6</code> 更改签名</li>
-<li><code>Command + Option + N</code> 一致性</li>
-<li><code>Command + Option + M</code> 将选中的代码提取为方法</li>
-<li><code>Command + Option + V</code> 提取变量</li>
-<li><code>Command + Option + F</code> 提取字段</li>
-<li><code>Command + Option + C</code> 提取常量</li>
-<li><code>Command + Option + P</code> 提取参数</li>
-</ul>
-<h4><span id="vcslocal-history版本控制本地历史记录">VCS/Local History（版本控制/本地历史记录）</span></h4><ul>
-<li><code>Command + K</code> 提交代码到版本控制器</li>
-<li><code>Command + T</code> 从版本控制器更新代码</li>
-<li><code>Option + Shift + C</code> 查看最近的变更记录</li>
-<li><code>Control + C</code> 快速弹出版本控制器操作面板</li>
-</ul>
-<h4><span id="live-templates动态代码模板">Live Templates（动态代码模板）</span></h4><ul>
-<li><code>Command + Option + J</code> 弹出模板选择窗口，将选定的代码使用动态模板包住</li>
-<li><code>Command + J</code> 插入自定义动态代码模板</li>
-</ul>
-<h4><span id="general通用">General（通用）</span></h4><ul>
-<li><code>Command + 1...Command + 9</code> 打开相应编号的工具窗口</li>
-<li><code>Command + S</code> 保存所有</li>
-<li><code>Command + Option + Y</code> 同步、刷新</li>
-<li><code>Control + Command + F</code> 切换全屏模式</li>
-<li><code>Command + Shift + F12</code> 切换最大化编辑器</li>
-<li><code>Option + Shift + F</code> 添加到收藏夹</li>
-<li><code>Option + Shift + I</code> 检查当前文件与当前的配置文件</li>
-<li>Control + ` 快速切换当前的scheme（切换主题、代码样式等）</li>
-<li><code>Command + ,</code> 打开IDEA系统设置</li>
-<li><code>Command + ;</code> 打开项目结构对话框</li>
-<li><code>Shift + Command + A</code> 查找动作（可设置相关选项）</li>
-<li><code>Control + Shift + Tab</code> 编辑窗口标签和工具窗口之间切换（如果在切换的过程加按上delete，则是关闭对应选中的窗口）</li>
-</ul>
-<h4><span id="other一些官方文档上没有体现的快捷键">Other（一些官方文档上没有体现的快捷键）</span></h4><ul>
-<li><code>Command + Shift +8</code> 竖编辑模式</li>
-</ul>
 
       
 
@@ -822,7 +205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
         		</li>
       		
 		</ul>
@@ -878,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/23/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/05/13/%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E5%90%8E%E5%8F%B0jar%E5%8C%85/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -892,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/13/angular%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo添加Toc支持，生成文章目录
+          angular学习
         
       </div>
     </a>
   
   
-    <a href="/2020/10/23/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前后端分离的商城项目</div>
+    <a href="/2021/05/07/start-elasticsearch-redis-nacos/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">start elasticsearch/redis/nacos</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -930,7 +313,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Mac 下修改 VM 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">方法一（官方推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">UI界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">IntelliJ IDEA 主题、字体、编辑区主题、文件编码修改、乱码问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">编译方式介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">Project 和 Module 介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">language level 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">IntelliJ IDEA 下的版本控制介绍 ⭐️</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">实时代码模板的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">文件代码模板的设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">Postfix Completion 的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.1.</span> <span class="toc-text">Postfix Completion 的设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">Maven 项目介绍 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.1.</span> <span class="toc-text">Maven 组件界面介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.2.</span> <span class="toc-text">Maven 快速排查依赖包冲突</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">Debug 介绍 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.1.</span> <span class="toc-text">Debug 设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.2.</span> <span class="toc-text">Debug 常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.3.</span> <span class="toc-text">Debug 特殊技能使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">数据库管理工具介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.1.</span> <span class="toc-text">配置 Database 组件的数据库连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.2.</span> <span class="toc-text">Database 设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.3.</span> <span class="toc-text">IDEA推荐设置 ⭐️</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">IntelliJ IDEA For Mac 快捷键 ⭐️</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.1.</span> <span class="toc-text">Editing（编辑）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.2.</span> <span class="toc-text">Search&#x2F;Replace（查询&#x2F;替换）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.3.</span> <span class="toc-text">Usage Search（使用查询）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.4.</span> <span class="toc-text">Compile and Run（编译和运行）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.5.</span> <span class="toc-text">Debugging（调试）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.6.</span> <span class="toc-text">Navigation（导航）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.7.</span> <span class="toc-text">Refactoring（重构）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.8.</span> <span class="toc-text">VCS&#x2F;Local History（版本控制&#x2F;本地历史记录）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.9.</span> <span class="toc-text">Live Templates（动态代码模板）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.10.</span> <span class="toc-text">General（通用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">14.0.0.11.</span> <span class="toc-text">Other（一些官方文档上没有体现的快捷键）</span></a></li></ol></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
