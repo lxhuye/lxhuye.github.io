@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>谷粒商城笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. 配置本地虚拟机环境 二.在Centos中使用Docker安装Mysql和Redis 2. 用docker安装mysql 使用docker ps 查看mysql容器是否启动成功 创建mysql配置文件 3.用docker安装Redis 4. 设置容器开机自启动 5. 安装ngidocker安装nginx为P124的内容">
+  <meta name="description" content="一. 配置本地虚拟机环境 二.在Centos中使用Docker安装Mysql和Redis 2. 用docker安装mysql 使用docker ps 查看mysql容器是否启动成功 创建mysql配置文件 3.用docker安装Redis 4. 设置容器开机自启动 5. 安装ngidocker安装nginx为P124的内容   三. 在Github或者是码云上创建项目 创建微服务 一些不想上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谷粒商城笔记">
 <meta property="og:url" content="http://example.com/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一. 配置本地虚拟机环境 二.在Centos中使用Docker安装Mysql和Redis 2. 用docker安装mysql 使用docker ps 查看mysql容器是否启动成功 创建mysql配置文件 3.用docker安装Redis 4. 设置容器开机自启动 5. 安装ngidocker安装nginx为P124的内容">
+<meta property="og:description" content="一. 配置本地虚拟机环境 二.在Centos中使用Docker安装Mysql和Redis 2. 用docker安装mysql 使用docker ps 查看mysql容器是否启动成功 创建mysql配置文件 3.用docker安装Redis 4. 设置容器开机自启动 5. 安装ngidocker安装nginx为P124的内容   三. 在Github或者是码云上创建项目 创建微服务 一些不想上">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-25T07:59:50.000Z">
-<meta property="article:modified_time" content="2021-05-25T08:33:38.201Z">
+<meta property="article:modified_time" content="2021-05-25T13:54:20.397Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="谷粒商城">
 <meta name="twitter:card" content="summary">
@@ -182,6 +182,12 @@
 <li><a href="#5-%E5%AE%89%E8%A3%85ngidocker%E5%AE%89%E8%A3%85nginx%E4%B8%BAp124%E7%9A%84%E5%86%85%E5%AE%B9">5. 安装ngidocker安装nginx为P124的内容</a></li>
 </ul>
 </li>
+<li><a href="#%E4%B8%89-%E5%9C%A8github%E6%88%96%E8%80%85%E6%98%AF%E7%A0%81%E4%BA%91%E4%B8%8A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE">三. 在Github或者是码云上创建项目</a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1">创建微服务</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E4%B8%8D%E6%83%B3%E4%B8%8A%E4%BC%A0%E5%88%B0github%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%91%E4%BB%AC%E5%B0%86%E5%85%B6%E5%BF%BD%E7%95%A5%E6%8E%89">一些不想上传到Github的文件我们将其忽略掉</a></li>
+<li><a href="#%E5%B0%86%E5%88%9B%E5%BB%BA%E5%A5%BD%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81%E5%88%B0github%E4%BB%93%E5%BA%93%E4%B8%AD">将创建好的项目推送到Github仓库中</a></li>
+</ul>
+</li>
 </ul>
 <!-- tocstop -->
 
@@ -225,6 +231,49 @@
 
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> /mydata/nginx/html/</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim index.html <span class="comment">#随便写入内容保存</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">测试虚拟机80端口</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="三-在github或者是码云上创建项目">三. 在Github或者是码云上创建项目</span></h2><p>在GitHub或者码云上创建项目 </p>
+<p>gitignore选择Maven 开源协议选阿帕奇2.0</p>
+<p>创建好之后在IDEA中使用Git创建新项目</p>
+<h4><span id="创建微服务">创建微服务</span></h4><p>使用git连接创建好项目之后, 可以创建商城所需要的微服务模块</p>
+<p><strong>所需要的模块:</strong> 商品服务, 仓储服务,订单服务,优惠卷服务,用户服务</p>
+<p>首先创建商品模块: </p>
+<ol>
+<li>在项目中选择新建模块</li>
+<li>选择Spring Initializr初始化Spring微服务 Java版本选择1.8</li>
+<li>Group设置为com.atguigu.gulimall</li>
+<li>Artifact设置为各个模块的名称 gulimall-product</li>
+<li>修改pacakge中重复的部分</li>
+<li>导入OpenFegin，web</li>
+<li>同理创建各个不同的微服务</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">可能出现的问题</span></span><br><span class="line"><span class="meta">#</span><span class="bash">在创建Spring服务的时候出现 spring Initializr connect time out问题</span></span><br><span class="line"><span class="meta">#</span><span class="bash">解决方法： 在新建项目时，spring Initializr下选择阿里云的源，在Custom下输入https://start.aliyun.com</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>依次创建出以下服务</p>
+<ul>
+<li>商品服务product</li>
+<li>存储服务ware</li>
+<li>订单服务order</li>
+<li>优惠券服务coupon</li>
+<li>用户服务member</li>
+</ul>
+<p>共同点：</p>
+<ul>
+<li>导入web和openFeign</li>
+<li>group：com.atguigu.gulimall</li>
+<li>Artifact：gulimall-XXX</li>
+<li>每一个服务，包名com.atguigu.gulimall.XXX{product/order/ware/coupon/member}</li>
+<li>模块名：gulimall-XXX</li>
+</ul>
+<h4><span id="一些不想上传到github的文件我们将其忽略掉">一些不想上传到Github的文件我们将其忽略掉</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 修改总项目的.gitignore，把小项目里的垃圾文件在提交的时候忽略掉，比如HELP.md</span><br><span class="line">**/mvnw</span><br><span class="line">**/mvnw.cmd</span><br><span class="line">**/.mvn</span><br><span class="line">**/target/</span><br><span class="line">.idea</span><br><span class="line">**/.gitignore</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="将创建好的项目推送到github仓库中">将创建好的项目推送到Github仓库中</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">可能出现git@github.com - Permission denied publickey错误</span></span><br><span class="line"><span class="meta">#</span><span class="bash">解决方法：https://www.jianshu.com/p/d49a5fb558cf</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -359,7 +408,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一. 配置本地虚拟机环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二.在Centos中使用Docker安装Mysql和Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">2. 用docker安装mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">使用docker ps 查看mysql容器是否启动成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">创建mysql配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">3.用docker安装Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.5.</span> <span class="toc-text">4. 设置容器开机自启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.6.</span> <span class="toc-text">5. 安装ngidocker安装nginx为P124的内容</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一. 配置本地虚拟机环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二.在Centos中使用Docker安装Mysql和Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">2. 用docker安装mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">使用docker ps 查看mysql容器是否启动成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">创建mysql配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">3.用docker安装Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.5.</span> <span class="toc-text">4. 设置容器开机自启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.6.</span> <span class="toc-text">5. 安装ngidocker安装nginx为P124的内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">三. 在Github或者是码云上创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.0.1.</span> <span class="toc-text">创建微服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.0.2.</span> <span class="toc-text">一些不想上传到Github的文件我们将其忽略掉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.0.3.</span> <span class="toc-text">将创建好的项目推送到Github仓库中</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
