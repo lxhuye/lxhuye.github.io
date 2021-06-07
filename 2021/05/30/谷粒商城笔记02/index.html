@@ -16,7 +16,7 @@
 <meta property="og:description" content="Spring Cloud Alibaba的使用- [如何使用SpringCloudAlibaba](#如何使用springcloudalibaba)  下载Alibaba Nacos作为服务注册中心 服务注册时候, 使用OpenFeign 远程调用微服务 在需要被调用的微服务中,也就是gulimall-coupon微服务中创建一个controller，用于测试gulimall-member调">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T10:11:48.000Z">
-<meta property="article:modified_time" content="2021-06-07T00:28:26.586Z">
+<meta property="article:modified_time" content="2021-06-07T01:11:58.759Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="谷粒商城">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,11 @@
 </li>
 </ul>
 </li>
-<li><a href="#%E4%BD%BF%E7%94%A8alibaba-nacos%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83">使用Alibaba Nacos作为服务配置中心</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8alibaba-nacos%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83">使用Alibaba Nacos作为服务配置中心</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8nacos%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE">使用Nacos作为配置中心动态修改配置</a></li>
+<li><a href="#nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E5%88%9B%E5%BB%BA%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%88%86%E7%BB%84%E5%8C%BA%E5%88%86%E7%8E%AF%E5%A2%83">Nacos配置中心创建命名空间,使用配置分组区分环境</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -248,7 +252,7 @@
 <h4><span id="现在feign服务器已经创建完成-我们可以测试一下是否可以正确调用">现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在MemberController中新建一个Controller, 用于获取Coupon信息</span><br><span class="line">  <span class="meta">@RequestMapping(&quot;/coupons&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        MemberEntity memberEntity = <span class="keyword">new</span> MemberEntity();</span><br><span class="line">        memberEntity.setNickname(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        R memberCoupon = CouponFeignService.MemberCoupon();</span><br><span class="line">        <span class="keyword">return</span> R.ok().put(<span class="string">&quot;member_name&quot;</span>,memberEntity).put(<span class="string">&quot;coupon&quot;</span>,memberCoupon.get(<span class="string">&quot;coupons&quot;</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p>重新启动gulimall-coupon和gulimall-member服务,微服务启动成功后, 访问: <a target="_blank" rel="noopener" href="http://localhost:8000/member/member/coupons">http://localhost:8000/member/member/coupons</a> 如果出现正确的信息, 就说明远程调用成功！</p>
-<h3><span id="使用alibaba-nacos作为服务配置中心">使用Alibaba Nacos作为服务配置中心</span></h3><p>在服务上线过程中,我们时常需要动态修改配置文件, 如果在yml或者properties文件中直接修改,需要重新部署微服务,非常麻烦, 使用Nacos作为配置中心, 结合<code>@RefreshScope</code>注解, 可以做到动态修改配置</p>
+<h3><span id="使用alibaba-nacos作为服务配置中心">使用Alibaba Nacos作为服务配置中心</span></h3><h4><span id="使用nacos作为配置中心动态修改配置">使用Nacos作为配置中心动态修改配置</span></h4><p>在服务上线过程中,我们时常需要动态修改配置文件, 如果在yml或者properties文件中直接修改,需要重新部署微服务,非常麻烦, 使用Nacos作为配置中心, 结合<code>@RefreshScope</code>注解, 可以做到动态修改配置</p>
 <ol>
 <li><p>将配置中心的依赖添加到gulimall-common</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">     &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
@@ -260,8 +264,26 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 这里在创建配置文件的时候, 可能会出现 报错：发布失败。请检查参数是否正确</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 出现这个错误的原因主要是因为配置不兼容, 将Nacos更换为2.0版本就可以解决</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>想要动态的加载<code>guimall-coupon.properties</code>我们还需要使用一个注解<code>@RefreshScope</code>,在Controllers文件上加上就可以使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 例如我们在controller中想要获得某一个在配置中的值</span><br><span class="line"><span class="meta">@RefreshScope</span> </span><br><span class="line"><span class="meta">@Value(&quot;$&#123;coupon.user.name&#125;&quot;)</span><span class="comment">//从application.properties中获取//不要写user.name，他是环境里的变量</span></span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> R <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> R.ok().put(<span class="string">&quot;name&quot;</span>,name).put(<span class="string">&quot;age&quot;</span>,age); &#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
+<h4><span id="nacos配置中心创建命名空间使用配置分组区分环境">Nacos配置中心创建命名空间,使用配置分组区分环境</span></h4><p>命名空间：用作配置隔离。（一般每个微服务一个命名空间）</p>
+<ul>
+<li>默认public。默认新增的配置都在public空间下</li>
+<li>开发、测试、开发可以用命名空间分割。properties每个空间有一份。</li>
+<li>在bootstrap.properties里配置（测试完去掉，学习不需要）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 可以选择对应的命名空间 # 写上对应环境的命名空间ID</span><br><span class="line">spring.cloud.nacos.config.namespace=b176a68a-<span class="number">6800</span>-<span class="number">4648</span>-<span class="number">833</span>b-be10be8bab00</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置集：一组相关或不相关配置项的集合。</li>
+<li>配置集ID：类似于配置文件名，即Data ID</li>
+<li>配置分组：默认所有的配置集都属于<code>DEFAULT_GROUP</code>。双十一，618的优惠策略改分组即可</li>
+</ul>
+<p>最终方案：每个微服务创建自己的命名空间，然后使用配置分组区分环境（dev/test/prod）</p>
 
       
 
@@ -395,7 +417,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Spring Cloud Alibaba的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">如何使用SpringCloudAlibaba</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text">下载Alibaba Nacos作为服务注册中心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.2.</span> <span class="toc-text">服务注册时候, 使用OpenFeign 远程调用微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">在需要被调用的微服务中,也就是gulimall-coupon微服务中创建一个controller，用于测试gulimall-member调用gulimall-coupon。因为现在数据库中并没有数据, 我们先创建一个coupon实例来模拟以后获得的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">在我们在需要调用的微服务,也就是gulimall-member中,创建一个远程调用的服务器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.3.</span> <span class="toc-text">使用Alibaba Nacos作为服务配置中心</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Spring Cloud Alibaba的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">如何使用SpringCloudAlibaba</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text">下载Alibaba Nacos作为服务注册中心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.2.</span> <span class="toc-text">服务注册时候, 使用OpenFeign 远程调用微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">在需要被调用的微服务中,也就是gulimall-coupon微服务中创建一个controller，用于测试gulimall-member调用gulimall-coupon。因为现在数据库中并没有数据, 我们先创建一个coupon实例来模拟以后获得的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">在我们在需要调用的微服务,也就是gulimall-member中,创建一个远程调用的服务器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.3.</span> <span class="toc-text">使用Alibaba Nacos作为服务配置中心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">使用Nacos作为配置中心动态修改配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">Nacos配置中心创建命名空间,使用配置分组区分环境</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
