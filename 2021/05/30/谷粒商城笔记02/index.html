@@ -16,7 +16,7 @@
 <meta property="og:description" content="Spring Cloud Alibaba的使用 下载Alibaba Nacos作为服务注册中心 服务注册时候, 使用OpenFeign 远程调用微服务 现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用   使用Alibaba Nacos作为服务配置中心 使用Nacos作为配置中心动态修改配置 Nacos配置中心创建命名空间,使用配置分组区分环境   使用SpringClo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T10:11:48.000Z">
-<meta property="article:modified_time" content="2021-06-07T06:48:23.685Z">
+<meta property="article:modified_time" content="2021-06-07T07:23:50.726Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="谷粒商城">
 <meta name="twitter:card" content="summary">
@@ -294,6 +294,9 @@
 <li>Predicate(断言): 就是java里的断言函数，实质上就是一个判断条件, 确定请求应该被路由到哪一个微服务，匹配请求里的任何信息，包括请求头等。根据请求头路由哪个服务</li>
 <li>Filter(过滤器): 过滤器指的是在请求响应和返回的过程中, 可以加上特定条件对请求或者是响应结果进行修改。</li>
 </ul>
+<p>假设我们想要网关将我们的请求路由到qq.com</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  cloud:</span><br><span class="line">    gateway:</span><br><span class="line">      routes:</span><br><span class="line">      - id: test #网关名称</span><br><span class="line">        uri: https:<span class="comment">//www.qq.com #指要去的服务器地址</span></span><br><span class="line">        predicates:</span><br><span class="line">        	- Query=url,baidu</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -397,6 +400,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B003-%E5%89%8D%E7%AB%AF%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          谷粒商城笔记03--前端搭建
+        
+      </div>
+    </a>
   
   
     <a href="/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B001/" id="article-nav-older" class="article-nav-link-wrap">
