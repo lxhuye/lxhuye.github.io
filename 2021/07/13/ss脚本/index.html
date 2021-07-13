@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>虚拟机ping不通外网的解决方法 | Hexo</title>
+  <title>ss脚本 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原因是: 由于主机没有配置DNS导致的 1.找到本机网卡配置文件vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ens33添加配置网卡内容: 12DNS1&#x3D;114.114.114.114DNS2&#x3D;8.8.8.8  2.配置主机DNSvi &#x2F;etc&#x2F;resolv.conf配置内容: 12nameserver 114.114.114.114nameserver 8.8.8.8  这">
+  <meta name="description" content="bash &lt;(curl -sL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;hijkpw&#x2F;scripts&#x2F;master&#x2F;centos_install_ss.sh)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机ping不通外网的解决方法">
-<meta property="og:url" content="http://example.com/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="ss脚本">
+<meta property="og:url" content="http://example.com/2021/07/13/ss%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="原因是: 由于主机没有配置DNS导致的 1.找到本机网卡配置文件vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ens33添加配置网卡内容: 12DNS1&#x3D;114.114.114.114DNS2&#x3D;8.8.8.8  2.配置主机DNSvi &#x2F;etc&#x2F;resolv.conf配置内容: 12nameserver 114.114.114.114nameserver 8.8.8.8  这">
+<meta property="og:description" content="bash &lt;(curl -sL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;hijkpw&#x2F;scripts&#x2F;master&#x2F;centos_install_ss.sh)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-01T08:07:37.000Z">
-<meta property="article:modified_time" content="2020-12-18T08:50:44.262Z">
+<meta property="article:published_time" content="2021-07-13T01:50:45.000Z">
+<meta property="article:modified_time" content="2021-07-13T01:51:00.586Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="centos">
+<meta property="article:tag" content="vpn">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,34 +149,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-虚拟机ping不同外网的解决方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ss脚本" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      虚拟机ping不通外网的解决方法
+      ss脚本
     </h1>
   
 
         
-        <a href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-11-01T08:07:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
+        <a href="/2021/07/13/ss%E8%84%9A%E6%9C%AC/" class="archive-article-date">
+  	<time datetime="2021-07-13T01:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原因是: 由于主机没有配置DNS导致的</p>
-<h4><span id="1找到本机网卡配置文件">1.找到本机网卡配置文件</span></h4><p><strong>vi /etc/sysconfig/network-scripts/ens33</strong><br>添加配置网卡内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<h4><span id="2配置主机dns">2.配置主机DNS</span></h4><p><strong>vi /etc/resolv.conf</strong><br>配置内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以了。</p>
+        <p>bash &lt;(curl -sL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_ss.sh">https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_ss.sh</a>)</p>
 
       
 
@@ -211,7 +204,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
         		</li>
       		
 		</ul>
@@ -267,7 +260,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/13/ss%E8%84%9A%E6%9C%AC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,18 +274,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/01/Centos8%E5%AE%89%E8%A3%85nodeJS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Centos8安装nodeJS
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">部署项目到服务器(虚拟机)</div>
+    <a href="/2021/07/13/v2ray-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">v2ray 安装脚本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -319,7 +303,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1.找到本机网卡配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2.配置主机DNS</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
