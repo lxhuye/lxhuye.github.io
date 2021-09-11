@@ -146,6 +146,244 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-远程-origin-已经存在" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">git 远程 origin 已经存在</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/" class="archive-article-date">
+  	<time datetime="2021-05-05T04:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>解决办法：删除远程配置,重新添加：</strong></p>
+<p>git remote rm origin</p>
+<p>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#x63;&#111;&#x64;&#101;&#x2e;&#x61;&#108;&#105;&#121;&#x75;&#x6e;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#x63;&#111;&#x64;&#101;&#x2e;&#x61;&#108;&#105;&#121;&#x75;&#x6e;&#x2e;&#99;&#x6f;&#x6d;</a>:XXXXXXXXXXX/myWork.git</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-vue监听页面滚动，动态修改导航条颜色" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/">vue监听页面滚动，动态修改导航条颜色</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/" class="archive-article-date">
+  	<time datetime="2021-01-14T09:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;header&quot; :style&#x3D;&quot;style&quot;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data() &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				style: &#123;&#125;,</span><br><span class="line">				opacity: 0,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		mounted() &#123;</span><br><span class="line">			window.addEventListener(&quot;scroll&quot;, this.windowScroll); &#x2F;&#x2F;监听页面滚动</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			windowScroll() &#123;</span><br><span class="line">				let scrollTop &#x3D; window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">				this.opacity &#x3D; Math.abs(Math.round(scrollTop)) &#x2F; 250;</span><br><span class="line">				this.style &#x3D; &#123;background: &#96;rgba(0, 0, 0,$&#123;this.opacity&#125;)&#96;&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		destroyed() &#123;</span><br><span class="line">			window.removeEventListener(&quot;scroll&quot;, this.windowScroll); &#x2F;&#x2F;销毁滚动事件</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-创建一个vue脚手架工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/">创建一个vue脚手架工程</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-01-11T10:20:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4><span id="创建命令">创建命令：</span></h4><p>​    命令行创建： </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create &#x27;项目名&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>​    vue ui可视化创建: </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+
+<h4><span id="项目启动命令">项目启动命令：</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>使用vue ui创建的项目直接在 <strong>vue ui</strong> 的 <strong>task</strong> 中启动项目</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-selenium-获取淘宝商品" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -685,251 +923,6 @@
 
 
   
-    <article id="post-虚拟机ping不同外网的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">虚拟机ping不通外网的解决方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-11-01T08:07:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原因是: 由于主机没有配置DNS导致的</p>
-<h4><span id="1找到本机网卡配置文件">1.找到本机网卡配置文件</span></h4><p><strong>vi /etc/sysconfig/network-scripts/ens33</strong><br>添加配置网卡内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<h4><span id="2配置主机dns">2.配置主机DNS</span></h4><p><strong>vi /etc/resolv.conf</strong><br>配置内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-部署项目到服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">部署项目到服务器(虚拟机)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-10-31T07:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习资料： 程序羊ruoyi项目部署</p>
-<p>视频地址： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uK411p7Bp/?spm_id_from=333.788.videocard.0">https://www.bilibili.com/video/BV1uK411p7Bp/?spm_id_from=333.788.videocard.0</a></p>
-<p>ruoyi项目地址(前后端分离版)：<a target="_blank" rel="noopener" href="https://gitee.com/y_project/RuoYi-Vue?_from=gitee_search">https://gitee.com/y_project/RuoYi-Vue?_from=gitee_search</a></p>
-        
-          <a class="article-more-a" href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/31/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-centos8-换源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/">centos8 换源</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/" class="archive-article-date">
-  	<time datetime="2020-10-30T15:16:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.备份旧的配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
-
-<p>2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-8.repo</span><br></pre></td></tr></table></figure>
-
-<p>3.替换部分字段（非阿里云机器需要做）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -e &#39;&#x2F;mirrors.cloud.aliyuncs.com&#x2F;d&#39; -e &#39;&#x2F;mirrors.aliyuncs.com&#x2F;d&#39; &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-
-<p>4.生成缓存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/30/centos8-%E6%8D%A2%E6%BA%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1035,11 +1028,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vpn</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1047,7 +1044,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,6 +1061,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vpn</a>
               </li>
              
               <li class="article-tag-list-item">
