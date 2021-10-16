@@ -146,6 +146,199 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/">docker笔记01</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/" class="archive-article-date">
+  	<time datetime="2020-10-25T00:34:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Docker是一个开源的容器引擎</strong>，它有助于更快地交付应用。<strong>Docker可将应用程序和基础设施层隔离</strong>，并且能将基础设施当作程序一样进行管理。<strong>使用Docker，可更快地打包、测试以及部署应用程序，并可缩短从编写到部署运行代码的周期</strong>。</p>
+<!--toc-->
+        
+          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker, mall_learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-Spring学习04-面向切面的Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/">Spring学习04_面向切面的Spring</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/" class="archive-article-date">
+  	<time datetime="2020-10-24T15:07:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑相分离的（但是往往会直接嵌入到应用的业务逻辑之中）。把这些横切关注点与业务逻辑相分离正是面向切面编程（AOP）所要解决的问题。</p>
+<p>在第2章，我们介绍了如何使用依赖注入（DI）管理和配置我们的应用对象。DI有助于应用对象之间的解耦，而AOP可以实现横切关注点与它们所影响的对象之间的解耦。</p>
+<p>日志是应用切面的常见范例，但它并不是切面适用的唯一场景。通览本书，我们还会看到切面所适用的多个场景，包括声明式事务、安全和缓存。</p>
+<p>本章展示了Spring对切面的支持，包括如何把普通类声明为一个切面和如何使用注解创建切面。除此之外，我们还会看到AspectJ——另一种流行的AOP实现——如何补充Spring AOP框架的功能。但是，我们先不管事务、安全和缓存，先看一下Spring是如何实现切面的，就从AOP的基础知识开始吧。</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-%EF%B8%8F"><strong>什么是面向切面编程 ⭐️</strong></a><ul>
+<li><a href="#%E5%AE%9A%E4%B9%89aop%E6%9C%AF%E8%AF%AD-%EF%B8%8F"><strong>定义AOP术语 ⭐️</strong></a><ul>
+<li><a href="#%E9%80%9A%E7%9F%A5advice"><strong>通知（Advice）</strong></a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E7%82%B9join-point"><strong>连接点（Join point）</strong></a></li>
+<li><a href="#%E5%88%87%E7%82%B9poincut"><strong>切点（Poincut）</strong></a></li>
+<li><a href="#%E5%88%87%E9%9D%A2aspect"><strong>切面（Aspect）</strong></a></li>
+<li><a href="#%E5%BC%95%E5%85%A5introduction"><strong>引入（Introduction）</strong></a></li>
+<li><a href="#%E7%BB%87%E5%85%A5weaving"><strong>织入（Weaving）</strong></a></li>
+</ul>
+<ul>
+<li><a href="#spring%E5%AF%B9aop%E7%9A%84%E6%94%AF%E6%8C%81"><strong>Spring对AOP的支持</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%88%87%E7%82%B9%E6%9D%A5%E9%80%89%E6%8B%A9%E8%BF%9E%E6%8E%A5%E7%82%B9"><strong>通过切点来选择连接点</strong></a><ul>
+<li><a href="#%E7%BC%96%E5%86%99%E5%88%87%E7%82%B9"><strong>编写切点</strong></a></li>
+<li><a href="#%E5%9C%A8%E5%88%87%E7%82%B9%E4%B8%AD%E9%80%89%E6%8B%A9bean"><strong>在切点中选择bean</strong></a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%88%9B%E5%BB%BA%E5%88%87%E9%9D%A2-%EF%B8%8F"><strong>使用注解创建切面 ⭐️</strong></a><ul>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%88%87%E9%9D%A2aspectj"><strong>定义切面:<code>@AspectJ</code></strong></a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5around"><strong>创建环绕通知<code>@Around</code></strong></a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E9%80%9A%E7%9F%A5%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0"><strong>处理通知中的参数</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%B3%A8%E5%85%A5aspectj%E5%88%87%E9%9D%A2"><strong>注入AspectJ切面</strong></a></li>
+<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
+</ul>
+<!-- tocstop -->
+        
+          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring, mall_learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Spring学习03-高级装配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -924,153 +1117,6 @@
 
 
   
-    <article id="post-yum-lock错误的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">yum lock错误的解决方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-10-18T00:34:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>解决办法:<br>rm -f /var/run/yum.pid</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/18/yum-lock%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-如何新建hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">如何新建hexo博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-10-16T02:14:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-安装-nodejs-cnpm"><a href="#1-安装-nodejs-cnpm" class="headerlink" title="1. 安装 nodejs/cnpm"></a>1. 安装 nodejs/cnpm</h3><p>在nodejs 官网下载nodejs 安装包, 得到一个名为.pkg的安装包, 双击打开后直接无脑继续, 安装完成后, 可以在terminal中查看nodejs版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-
-
-<p>因为npm有时下载速度会比较慢, 我们可以使用cnpm淘宝镜像来加快</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	#安装淘宝的cnpm 管理器</span><br><span class="line">cnpm -v	#查看cnpm版本</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/16/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
@@ -1172,6 +1218,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1188,14 +1238,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vpn</a>
               </li>
              
@@ -1204,15 +1246,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1224,11 +1274,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,15 +1294,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
               </li>
              
               <li class="article-tag-list-item">

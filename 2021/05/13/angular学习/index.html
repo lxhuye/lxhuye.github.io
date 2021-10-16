@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>angular学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装angular 一. Angular CLI简单使用 1.1 新建组件 1.2. 其他命令 1.3. 单元测试 1.4. 端到端测试 1.5. 构建应用程序   二、Angular目录结构分析、app.module.ts详解 2.1 app.component.ts组件分析">
+  <meta name="description" content="什么是angular&amp;TypeScript? 使用angular-cli 安装angular 一. Angular CLI简单使用 1.1 新建组件 Angular 文档结构   1.2. 其他命令 1.3. 构建应用程序   快速上手 组件&#x2F; Components 组件生命周期钩子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="angular学习">
 <meta property="og:url" content="http://example.com/2021/05/13/angular%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装angular 一. Angular CLI简单使用 1.1 新建组件 1.2. 其他命令 1.3. 单元测试 1.4. 端到端测试 1.5. 构建应用程序   二、Angular目录结构分析、app.module.ts详解 2.1 app.component.ts组件分析">
+<meta property="og:description" content="什么是angular&amp;TypeScript? 使用angular-cli 安装angular 一. Angular CLI简单使用 1.1 新建组件 Angular 文档结构   1.2. 其他命令 1.3. 构建应用程序   快速上手 组件&#x2F; Components 组件生命周期钩子">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-13T14:23:39.000Z">
-<meta property="article:modified_time" content="2021-05-21T06:54:37.283Z">
+<meta property="article:modified_time" content="2021-10-04T08:39:11.762Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="angular">
 <meta name="twitter:card" content="summary">
@@ -172,30 +172,32 @@
         <!-- toc -->
 
 <ul>
-<li><a href="#%E5%AE%89%E8%A3%85angular">安装angular</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFangulartypescript">什么是angular&amp;TypeScript?</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8angular-cli-%E5%AE%89%E8%A3%85angular">使用angular-cli 安装angular</a></li>
 <li><a href="#%E4%B8%80-angular-cli%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8">一. Angular CLI简单使用</a><ul>
-<li><a href="#11-%E6%96%B0%E5%BB%BA%E7%BB%84%E4%BB%B6">1.1 新建组件</a></li>
+<li><a href="#11-%E6%96%B0%E5%BB%BA%E7%BB%84%E4%BB%B6">1.1 新建组件</a><ul>
+<li><a href="#angular-%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84">Angular 文档结构</a></li>
+</ul>
+</li>
 <li><a href="#12-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4">1.2. 其他命令</a></li>
-<li><a href="#13-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">1.3. 单元测试</a></li>
-<li><a href="#14-%E7%AB%AF%E5%88%B0%E7%AB%AF%E6%B5%8B%E8%AF%95">1.4. 端到端测试</a></li>
-<li><a href="#15-%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">1.5. 构建应用程序</a></li>
+<li><a href="#13-%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">1.3. 构建应用程序</a></li>
 </ul>
 </li>
-<li><a href="#%E4%BA%8C-angular%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90-appmodulets%E8%AF%A6%E8%A7%A3">二、Angular目录结构分析、app.module.ts详解</a><ul>
-<li><a href="#21-appcomponentts%E7%BB%84%E4%BB%B6%E5%88%86%E6%9E%90">2.1 app.component.ts组件分析</a></li>
-</ul>
-</li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6-components">组件/ Components</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">组件生命周期钩子</a></li>
 </ul>
 <!-- tocstop -->
 
 <a id="more"></a>
 
-<h2><span id="安装angular">安装angular</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 需要在管理员模式启动</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install -g @angular/cli</span></span><br></pre></td></tr></table></figure>
+<h2><span id="什么是angularamptypescript">什么是angular&amp;TypeScript?</span></h2><p>谷歌开源的 TypeScript 的响应式的前端框架，现在我们说的Angular是基于Angular2更新之后的Angular。</p>
+<p>TypeScript 是 Javascript的一个超集 包括了Javascript的功能 同时提供更多规范性</p>
+<h2><span id="使用angular-cli-安装angular">使用angular-cli 安装angular</span></h2><p><strong>在安装angular-cli之前 需要先安装nodeJS NPM</strong> </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 需要在管理员模式启动</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install -g @angular/cli</span></span><br></pre></td></tr></table></figure>
 
-
-
-<p>启动一个angular项目</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动项目</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ng new &lt;angular:项目名&gt;</span></span><br></pre></td></tr></table></figure>
+<p>安装cli完毕之后 可以初始化一个angular项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动项目</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ng new &lt;angular:项目名&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;项目名&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ng serve</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -204,21 +206,42 @@
 
 <p>如你所见，Angular cli帮我们干了如下事情：</p>
 <p>src/app/news 目录被创建<br>news目录下会生成以下<strong>四个文件</strong>：<br>CSS 样式文件，用于设置组件的样式<br>HTML 模板文件，用于设置组件的模板<br>TypeScript 文件，里面包含一个 组件类和组件的元信息<br>Spec 文件，包含组件相关的测试用例<br>news 组件会被自动地添加到 app.module.ts  @NgModule 装饰器的 declarations 属性中。</p>
+<h4><span id="angular-文档结构">Angular 文档结构</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">|--E2e	应用的端对端(e2e)测试，用 Jasmine 写成并用 protractor 端对端测试运行器测试。</span><br><span class="line">|--Node_modules	依赖包</span><br><span class="line">|--Src	</span><br><span class="line">   |--App	Angular应用文件</span><br><span class="line">      |--App.module.ts	</span><br><span class="line">      |---App.component.ts	</span><br><span class="line">   |--assets	资源文件</span><br><span class="line">   |--environments	环境配置：开发、部署</span><br><span class="line">   |--index.html	应用的宿主页面。 它以特定的顺序加载一些基本脚本。 然后它启动应用，将根AppComponent放置到自定义&lt;my-app&gt;标签里。</span><br><span class="line">   |--main.ts	项目的入口文件</span><br><span class="line">   |--polyfills.ts	处理浏览器兼容问题</span><br><span class="line">|--angular.json	Cli配置文件</span><br><span class="line">|--.editorconfig	统一代码风格工具配置，不支持的需要安装插件</span><br><span class="line">|--.gitignore	Git配置文件</span><br><span class="line">|--karma.conf.js	在测试指南中提到的 karma 测试运行器的配置。</span><br><span class="line">|--package.json	项目指定npm依赖包</span><br><span class="line">|--tsconfig.app.json	Typescript编译配置</span><br><span class="line">|--tsconfig.spec.json	Typescript测试编译配置</span><br><span class="line">|--tsconfig.json	Typescript编译配置</span><br><span class="line">|--tslint.json	Typescript语法检查器</span><br></pre></td></tr></table></figure>
+
+
+
 <h3><span id="12-其他命令">1.2. 其他命令</span></h3><p>Angualr CLI提供了许多常用命令供我们选择：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ng generate <span class="keyword">class</span> my-<span class="keyword">new</span>-<span class="keyword">class</span>              <span class="comment">// 新建类，  新建一个名为my-new-class的类 (class)</span></span><br><span class="line">ng generate component my-<span class="keyword">new</span>-component      <span class="comment">// 新建组件</span></span><br><span class="line">ng generate directive my-<span class="keyword">new</span>-directive      <span class="comment">// 新建指令</span></span><br><span class="line">ng generate <span class="built_in">enum</span> my-<span class="keyword">new</span>-<span class="built_in">enum</span>                <span class="comment">// 新建枚举</span></span><br><span class="line">ng generate <span class="keyword">module</span> my-new-<span class="keyword">module</span>            // 新建模块</span><br><span class="line">ng generate pipe my-new-pipe                // 新建管道</span><br><span class="line">ng generate service my-new-service          // 新建服务</span><br></pre></td></tr></table></figure>
 
 <p>当然选择。。简写：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ng g cl my-<span class="keyword">new</span>-<span class="keyword">class</span>        <span class="comment">// 新建 class</span></span><br><span class="line">ng g c my-<span class="keyword">new</span>-component     <span class="comment">// 新建组件</span></span><br><span class="line">ng g d my-<span class="keyword">new</span>-directive     <span class="comment">// 新建指令</span></span><br><span class="line">ng g e my-<span class="keyword">new</span>-<span class="built_in">enum</span>          <span class="comment">// 新建枚举</span></span><br><span class="line">ng g m my-<span class="keyword">new</span>-<span class="keyword">module</span>        // 新建模块</span><br><span class="line">ng g p my-new-pipe          // 新建管道</span><br><span class="line">ng g s my-new-service       // 新建服务</span><br></pre></td></tr></table></figure>
 
-<h3><span id="13-单元测试">1.3. 单元测试</span></h3><p>Angular默认帮我们集成了``karma`测试框架，我们只需要：<br><strong>ng test</strong></p>
-<h3><span id="14-端到端测试">1.4. 端到端测试</span></h3><p><strong>ng e2e</strong></p>
-<h3><span id="15-构建应用程序">1.5. 构建应用程序</span></h3><p><strong>ng build</strong></p>
+
+
+<h3><span id="13-构建应用程序">1.3. 构建应用程序</span></h3><p><strong>ng build</strong></p>
 <p>其中过程应该是这样的：<br>Angular CLI 从 .angular-cli.json 文件中加载配置信息<br>Angular CLI 运行 Webpack 打包项目相关的 JavaScript、 CSS 等文件<br>打包后的资源，将被输出到配置文件中 outDir 所指定的目录，默认是输出到 dist 目录。</p>
 <p><strong>Angular开发工具介绍</strong></p>
 <p>Visual Studio Code</p>
-<h2><span id="二-angular目录结构分析-appmodulets详解">二、Angular目录结构分析、app.module.ts详解</span></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">|--E2e	应用的端对端(e2e)测试，用 Jasmine 写成并用 protractor 端对端测试运行器测试。</span><br><span class="line">|--Node_modules	依赖包</span><br><span class="line">|--Src	</span><br><span class="line">   |--App	Angular应用文件</span><br><span class="line">      |--App.module.ts	</span><br><span class="line">      |---App.component.ts	</span><br><span class="line">   |--assets	资源文件</span><br><span class="line">   |--environments	环境配置：开发、部署</span><br><span class="line">   |--index.html	应用的宿主页面。 它以特定的顺序加载一些基本脚本。 然后它启动应用，将根AppComponent放置到自定义&lt;my-app&gt;标签里。</span><br><span class="line">   |--main.ts	项目的入口文件</span><br><span class="line">   |--polyfills.ts	处理浏览器兼容问题</span><br><span class="line">|--angular.json	Cli配置文件</span><br><span class="line">|--.editorconfig	统一代码风格工具配置，不支持的需要安装插件</span><br><span class="line">|--.gitignore	Git配置文件</span><br><span class="line">|--karma.conf.js	在测试指南中提到的 karma 测试运行器的配置。</span><br><span class="line">|--package.json	项目指定npm依赖包</span><br><span class="line">|--tsconfig.app.json	Typescript编译配置</span><br><span class="line">|--tsconfig.spec.json	Typescript测试编译配置</span><br><span class="line">|--tsconfig.json	Typescript编译配置</span><br><span class="line">|--tslint.json	Typescript语法检查器</span><br></pre></td></tr></table></figure>
+<h2><span id="快速上手">快速上手</span></h2><ul>
+<li><code>*ngFor</code></li>
+<li><code>*ngIf</code></li>
+<li>插值 <code>&#123;&#123;&#125;&#125;</code></li>
+<li>属性绑定 <code>[]</code></li>
+<li>事件绑定 <code>()</code></li>
+<li>双向数据绑定 <code>[()]</code></li>
+</ul>
+<h2><span id="组件-components">组件/ Components</span></h2><p> 组件就是在angular中可以复用的区块</p>
+<h2><span id="组件生命周期钩子">组件生命周期钩子</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;angular.cn&#x2F;guide&#x2F;lifecycle-hooks</span><br></pre></td></tr></table></figure>
 
-<h3><span id="21-appcomponentts组件分析">2.1 app.component.ts组件分析</span></h3>
+
+
+
+
+
+
+
+
+
       
 
       
@@ -360,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">安装angular</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">一. Angular CLI简单使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 新建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">1.2. 其他命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">1.3. 单元测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">1.4. 端到端测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.5.</span> <span class="toc-text">1.5. 构建应用程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">二、Angular目录结构分析、app.module.ts详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 app.component.ts组件分析</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">什么是angular&amp;TypeScript?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">使用angular-cli 安装angular</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">一. Angular CLI简单使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">1.1 新建组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.1.1.</span> <span class="toc-text">Angular 文档结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">1.2. 其他命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">1.3. 构建应用程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">快速上手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">组件&#x2F; Components</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">组件生命周期钩子</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -477,6 +500,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -493,14 +520,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vpn</a>
               </li>
              
@@ -509,15 +528,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
               </li>
              
               <li class="article-tag-list-item">
