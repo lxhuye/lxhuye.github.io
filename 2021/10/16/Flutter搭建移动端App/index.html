@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-16T01:04:32.000Z">
-<meta property="article:modified_time" content="2021-10-16T15:48:44.858Z">
+<meta property="article:modified_time" content="2021-10-18T05:51:15.640Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
@@ -310,11 +310,19 @@
 <h2><span id="项目二-骰子比大小">项目二: 骰子比大小</span></h2><p>从Github仓库克隆初始代码，在Android Studio中打开代码后, 部署好所需要的依赖</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;https://github.com/londonappbrewery/dicee-flutter&#x27;</span> <span class="comment">//仓库地址</span></span><br></pre></td></tr></table></figure>
 
-<p>插入images文件夹下的dice1.png 使用Expanded()组件使图片可以占据整个屏幕</p>
+<p>插入images文件夹下的dice1.png 使用**Expanded()**组件使图片可以占据整个屏幕</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> Container(</span><br><span class="line">  child: Row(</span><br><span class="line">    children: [</span><br><span class="line">      Expanded(<span class="comment">//Expanded()组件可以让图片占满整个屏幕</span></span><br><span class="line">       <span class="comment">//使用flex可以设置所在组件的权重 例如A组件是flex:1, B组件是flex;2, B组件所占用的屏幕就是A组件的两倍</span></span><br><span class="line">        child: Image.asset(<span class="string">&#x27;images/dice1.png&#x27;</span>),</span><br><span class="line">      ),</span><br><span class="line">      Expanded(</span><br><span class="line">        child: Image.asset(<span class="string">&#x27;images/dice1.png&#x27;</span>),</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<p>使用组件FlatButton() or TextButton() 创建一个可点击的图片</p>
+<p>使用组件FlatButton() or <strong>TextButton()</strong> 创建一个可点击的图片</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> Container(</span><br><span class="line">  child: Center(</span><br><span class="line">  child: Row(</span><br><span class="line">    children: [</span><br><span class="line">      Expanded(</span><br><span class="line">        child: Image.asset(<span class="string">&#x27;images/dice1.png&#x27;</span>),</span><br><span class="line">      ),</span><br><span class="line">      Expanded(</span><br><span class="line">        child: TextButton( <span class="comment">//使用Textbutton包裹Image组件 可以创建一个可点击的图片</span></span><br><span class="line">          onPressed:()&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;button is clicked&#x27;</span>),<span class="comment">// onPressed()&#123; XXX &#125;;指的是按钮点击后所需要进行的操作</span></span><br><span class="line">          &#125;</span><br><span class="line">        	child: Image.asset(<span class="string">&#x27;images/dice1.png&#x27;</span>),</span><br><span class="line">          ),</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">  ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>使用状态可变化的StatefulWidget给图片增加点击事件 把之前的代码粘贴进去</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用快捷键stful 可以自动生成StatefulWidget结构</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123; <span class="comment">//创建的时候需要给组件加上名字</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _State createState() =&gt; _State();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_State</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在组件外新增一个全局变量用于生成随机数改变图片</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">inport <span class="string">&quot;dart/math&quot;</span> <span class="comment">//导入Math组件生成随机数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用快捷键stful 可以自动生成StatefulWidget结构</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123; <span class="comment">//创建的时候需要给组件加上名字</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _State createState() =&gt; _State();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_State</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;&gt; </span>&#123;</span><br><span class="line">	<span class="built_in">int</span> leftDice = <span class="number">1</span>;  <span class="comment">//定义一个变量</span></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container(</span><br><span class="line">    ....</span><br><span class="line">      onPress:()&#123;</span><br><span class="line">        leftDice = Random().nextInt(<span class="number">6</span>) + <span class="number">1</span>; <span class="comment">//使用Math组件生成随机数 范围是0-5 </span></span><br><span class="line">      &#125;</span><br><span class="line">    ....  </span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 
 
       
@@ -582,7 +590,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,15 +598,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,11 +622,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">odoo</a>
+                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">odoo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +650,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
               </li>
              
               <li class="article-tag-list-item">
