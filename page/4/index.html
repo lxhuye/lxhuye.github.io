@@ -146,6 +146,149 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-xpath的路径表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/30/xpath%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">xpath的路径表达式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/30/xpath%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-11-30T09:52:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一. xpath表达式的基本格式</p>
+<p>xpath通过”路径表达式”（Path Expression）来选择节点。在形式上，”路径表达式”与传统的文件系统非常类似。</p>
+        
+          <a class="article-more-a" href="/2020/11/30/xpath%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/30/xpath%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-pandas处理excel数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">pandas处理excel数据</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-11-25T02:00:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="comment"># file_path为excel的文件路径</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_excel</span>(<span class="params">file_path</span>):</span></span><br><span class="line">	<span class="comment"># 读取excel</span></span><br><span class="line">	<span class="comment"># df=pandas.read_excel(file_path,sheet_name=excel里的表名)</span></span><br><span class="line">	df=pandas.read_excel(file_path)</span><br><span class="line">	<span class="comment"># len出excel的总行数</span></span><br><span class="line">	line_count=len(df)</span><br><span class="line">	<span class="comment"># len出excel的总列数</span></span><br><span class="line">	column_count=len(df.head())</span><br><span class="line">	<span class="comment"># df.head()方法可以获取excel一列里所有的标题名称,</span></span><br><span class="line">	<span class="comment"># print(df.head())默认显示前五个标题名称</span></span><br><span class="line">	<span class="comment"># 循环每行</span></span><br><span class="line">	<span class="keyword">for</span> line_i <span class="keyword">in</span> range(line_count):</span><br><span class="line">		<span class="comment"># 循环每列标题名称,获取指定想要的标题名称下的数据</span></span><br><span class="line">		column_num=<span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> df.head():</span><br><span class="line">			print(<span class="string">&#x27;i&#x27;</span>,i)</span><br><span class="line">			<span class="keyword">if</span> i==<span class="string">&#x27;你想获取的固定标题名称&#x27;</span>:</span><br><span class="line">				<span class="comment"># 获取此行此列下的参数data</span></span><br><span class="line">				<span class="comment"># ix为旧版本方法,新版本的方法是df.iloc[line_i, column_num]</span></span><br><span class="line">				data = df.ix[line_i, column_num]</span><br><span class="line">				print(<span class="string">&#x27;data&#x27;</span>,data)</span><br><span class="line">				column_num+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">email_sender小工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-开源项目Ruoyi前后端分离服务器部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -819,171 +962,6 @@
 
 
   
-    <article id="post-docker笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/">docker笔记02_docker-file</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/" class="archive-article-date">
-  	<time datetime="2020-10-25T12:03:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker-file">什么是Docker File</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8dockerfile%E6%9E%84%E5%BB%BAdocker%E9%95%9C%E5%83%8F">使用Dockerfile构建Docker镜像</a></li>
-<li><a href="#dockerfile%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">Dockerfile常用指令</a></li>
-<li><a href="#dockerfile%E5%90%84%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%9A%84%E7%90%86%E8%A7%A3">Dockerfile各个属性的理解</a></li>
-</ul>
-<!-- tocstop -->
-
-<p>本节将讨论如何使用<strong>Dockerfile构建Docker镜像</strong>。Dockerfile是一个文本文件，其中包含了若干条指令，指令描述了构建镜像的细节。</p>
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker, mall_learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-docker安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">docker安装</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-10-25T00:41:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本节我们来探讨如何安装Docker。目前，Docker支持在数十种操作系统上安装。限于篇幅，笔者只能以几款常见的操作系统为例，为大家演示如何安装Docker。若有的操作系统本书并未提及，读者可在<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/installation%E6%9F%A5%E9%98%85%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97%E3%80%82">https://docs.docker.com/engine/installation查阅安装指南。</a></p>
-<!--toc-->
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1085,10 +1063,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1097,11 +1071,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1113,15 +1087,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1133,15 +1111,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">odoo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
+                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1161,11 +1135,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1174,6 +1148,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">谷粒商城</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
               </li>
              
               <li class="article-tag-list-item">

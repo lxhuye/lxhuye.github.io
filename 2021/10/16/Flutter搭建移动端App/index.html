@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-16T01:04:32.000Z">
-<meta property="article:modified_time" content="2021-10-18T05:51:15.640Z">
+<meta property="article:modified_time" content="2021-11-13T02:18:55.318Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
@@ -324,6 +324,70 @@
 
 
 
+<h2><span id="滚动组件的使用">滚动组件的使用</span></h2><h4><span id="listview的使用">ListView的使用</span></h4><p>ListView() 和 Row() Column() 一样 都有一个Children属性, 可以插入多个组件</p>
+<p>有多种方法构造：ListView(), ListView.builder(),ListView.separated(),</p>
+<p>Tip: List.generate(100,’Hello World’) 可以快速生成列表</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">body:ListView(</span><br><span class="line">	children: </span><br><span class="line"> 	 <span class="built_in">List</span>.generate(<span class="number">100</span>,(index)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> Text(<span class="string">&#x27;Hello world&#x27;</span>); <span class="comment">//循环生成100个 &#x27;Hello World 文本&#x27;</span></span><br><span class="line">	&#125;),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body:ListView(</span><br><span class="line">	children: <span class="built_in">List</span>.generate(<span class="number">100</span>,(index)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> ListTile(</span><br><span class="line">    	leading: Icon(Icons.people),</span><br><span class="line">      trailing: Icon(Icons.delete),</span><br><span class="line">      title:Text(<span class="string">&#x27;联系人<span class="subst">$&#123;index&#125;</span>&#x27;</span>),</span><br><span class="line">      subtitle:Text(<span class="string">&#x27;联系人电话号码:18866665555&#x27;</span>),</span><br><span class="line">    ); <span class="comment">//使用ListTile 生成一系列的联系人框</span></span><br><span class="line">	&#125;),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+
+
+<h5><span id="listview的主要属性">ListView的主要属性</span></h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ListView(</span><br><span class="line">	scrollDiraction: Axis.horizontal, <span class="comment">//设置ListView水平滚动</span></span><br><span class="line">  reverse: <span class="keyword">true</span>, <span class="comment">//让列表从最后一个开始渲染</span></span><br><span class="line">  itemExtent: <span class="number">100</span>, <span class="comment">//给ListView设置一个固定高度 </span></span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="listviewbuilder的使用-懒加载">ListView.builder()的使用 : 懒加载</span></h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ListView.builder(</span><br><span class="line">	itemCount:<span class="number">100</span>, <span class="comment">//表示想要渲染的个数 不会立刻创建</span></span><br><span class="line">  itemExtent: <span class="number">60</span>, <span class="comment">//设定渲染列表的高度</span></span><br><span class="line">	itembBuilder: (BuildContext ctx, <span class="built_in">int</span> index)&#123;</span><br><span class="line">			<span class="keyword">return</span> Text(<span class="string">&#x27;hello world: <span class="subst">$index</span>&#x27;</span>);</span><br><span class="line">	&#125; </span><br><span class="line">  <span class="comment">//要求传入一个回调函数 这里我们放入一个匿名函数 传入上下文context 和 index计数</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>另外：</p>
+<p>GridView: 主要生成网格视图</p>
+<p>ListView.seperate：主要生成进度条</p>
+<h4><span id="sliver的使用">Sliver的使用</span></h4><h2><span id="flutter-widget-生命周期">Flutter Widget 生命周期</span></h2><p>Stateless Wiget 的生命周期 </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> initState()&#123;</span><br><span class="line">&#125; <span class="comment">//在进入时执行</span></span><br><span class="line"></span><br><span class="line">Widget build(BuildContext context)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125; <span class="comment">//在构建时执行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> deactive()&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">//在销毁时执行</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2><span id="flutter中的异步-futuresasync-await-的使用">Flutter中的异步 Futures，Async , Await 的使用</span></h2><p>在弄清<code>Async</code> 和 <code>await</code>之前，首先要清楚Dart是单线程模型，并不是靠子线程实现的异步操作。<code>Async</code> 和 <code>await</code> 实现的异步只适合耗时操作为等待类型的，例如接口请求，时间都耗费在等待上，等待期间，线程可以干别的事情。如果耗时操作是计算密集型，是不适用的，计算时会一直阻塞直到计算完毕。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:io&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:http/http.dart&#x27;</span> <span class="keyword">as</span> http;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  _startMethod();</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;C开始&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> Future _startMethod() <span class="keyword">async</span>&#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;A开始执行这个方法~&quot;</span>);</span><br><span class="line">  <span class="built_in">print</span>(<span class="keyword">await</span> getHttp());</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;A执行结束&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Future&lt;<span class="built_in">String</span>&gt; getHttp() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">final</span> result = <span class="keyword">await</span> http.<span class="keyword">get</span>(<span class="string">&#x27;https://www.jianshu.com/&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;请求到的数据：&quot;</span> +  result.body.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果 ：接口等待期间，执行了<code>main</code>方法剩余的代码，打印了<code>“C开始”</code>，然后才打印接口返回数据。实现了异步处理效果。</p>
+<p>需要注意的几点: </p>
+<p>1.<code>await</code> 必须在<code>async</code>方法中使用</p>
+<p>2.<code>async</code>方法中在<code>await</code>前面的代码会立即同步执行，直到碰到<code>await</code></p>
+<p>3.<code>await</code>的作用是等待所标记的方法（即<code>getHttp</code>）获取返回结果</p>
+<p>4.当代码执行到<code>await</code>，会立即返回一个<code>future</code></p>
+<h2><span id="fultter-package-的使用">Fultter Package 的使用</span></h2><p>Flutter 提供了许多好用的库, 我们可以在 <a target="_blank" rel="noopener" href="https://pub.dev/">https://pub.dev/</a> 这个网址找到</p>
+<p>例如我们需要获得用户的具体地址, 我们可以使用Flutter Package的Geolocater包简单的达成目标</p>
+<h4><span id="eg1-使用flutter-package-geolocater-来获得目前所在的经度和纬度">Eg1: 使用Flutter Package Geolocater 来获得目前所在的经度和纬度</span></h4><p>到 <a target="_blank" rel="noopener" href="https://pub.dev/">https://pub.dev/</a> 中找到Geolocater的类目 地址在 <a target="_blank" rel="noopener" href="https://pub.dev/packages/geolocator">https://pub.dev/packages/geolocator</a></p>
+<p>写入Geolocater所需要的依赖 重新导入所需要的依赖 </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//1.在Installing类目中可以找到导入所需要的代码</span></span><br><span class="line"><span class="string">//2.将代码写入flutter的pubspec.yaml</span> <span class="string">文件中</span></span><br><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">geolocator:</span> <span class="string">^7.7.1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>在需要使用包的文件中使用</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:geolocator/geolocator.dart&#x27;</span>; <span class="comment">//导入所需要的依赖</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> getLocation() <span class="keyword">async</span> &#123;</span><br><span class="line">  Position position = <span class="keyword">await</span> Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high); <span class="comment">//获取当前地址</span></span><br><span class="line">  <span class="comment">//print(position);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="eg2-使用http-package实现网络请求">Eg2: 使用Http package实现网络请求</span></h4><p>到<a target="_blank" rel="noopener" href="https://pub.dev/packages/http/install">https://pub.dev/packages/http/install</a> 获取Http Package</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:http/http.dart&#x27;</span> <span class="keyword">as</span> http;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入之后可以使用get()方法获取网络请求</span></span><br><span class="line">http.<span class="keyword">get</span>();</span><br></pre></td></tr></table></figure>
+
+<p>注意: get()方法是异步方法 需要加async 和 await关键字</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Void GetData() <span class="keyword">async</span>&#123;</span><br><span class="line">	http.Response response = <span class="keyword">await</span> http.<span class="keyword">get</span>(<span class="string">&#x27;url&#x27;</span>);<span class="comment">//返回一个Response instance </span></span><br><span class="line">  Print(response.body); <span class="comment">//打印获得的body</span></span><br><span class="line">  Print(response.statusCode);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3><span id="flutter-解析json请求">Flutter 解析Json请求</span></h3><p>我们可以使用Http Package来获得API中的Json请求, 在我们获得Json之后, 我们需要通过解析器获得Json中的数据</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:convert&#x27;</span> <span class="comment">//导入conver包可以让Dart解析获得Json的数据</span></span><br><span class="line"></span><br><span class="line">json.Decode()<span class="comment">//传入Json Instance, 可以通过键值对的方法取出想要的数据 //有时候实例中可能没有键 可能需要使用Index</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -428,6 +492,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/10/23/flutter-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          flutter 项目实战
+        
+      </div>
+    </a>
+  
   
     <a href="/2021/10/06/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">宝塔面板添加网站</div>
@@ -457,7 +530,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Flutter环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Flutter 入门使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.0.1.</span> <span class="toc-text">01&#x2F; 创建  ’Hello World‘ App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">02&#x2F;使用Scaffolding(脚手架) 创建新的App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">03&#x2F;配置Flutter Ymal文件导入静态资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">04&#x2F;修改App的icon</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">编辑Flutter UI和布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">01&#x2F;设置flutter 热刷新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">02&#x2F;使用Container(), 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">03&#x2F;使用Column() 和Row()组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.4.</span> <span class="toc-text">04&#x2F;使用CircleAvatar构造一个头像框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.5.</span> <span class="toc-text">05&#x2F;使用Google Font中的字体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">项目一：MiCard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">项目二: 骰子比大小</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Flutter环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Flutter 入门使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.0.1.</span> <span class="toc-text">01&#x2F; 创建  ’Hello World‘ App</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">02&#x2F;使用Scaffolding(脚手架) 创建新的App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">03&#x2F;配置Flutter Ymal文件导入静态资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">04&#x2F;修改App的icon</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">编辑Flutter UI和布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">01&#x2F;设置flutter 热刷新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">02&#x2F;使用Container(), 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">03&#x2F;使用Column() 和Row()组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.4.</span> <span class="toc-text">04&#x2F;使用CircleAvatar构造一个头像框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.5.</span> <span class="toc-text">05&#x2F;使用Google Font中的字体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">项目一：MiCard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">项目二: 骰子比大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">滚动组件的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">6.0.1.</span> <span class="toc-text">ListView的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">6.0.1.1.</span> <span class="toc-text">ListView的主要属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">6.0.2.</span> <span class="toc-text">ListView.builder()的使用 : 懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">6.0.3.</span> <span class="toc-text">Sliver的使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">Flutter Widget 生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">Flutter中的异步 Futures，Async , Await 的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">Fultter Package 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">9.0.1.</span> <span class="toc-text">Eg1: 使用Flutter Package Geolocater 来获得目前所在的经度和纬度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">9.0.2.</span> <span class="toc-text">Eg2: 使用Http package实现网络请求</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">9.1.</span> <span class="toc-text">Flutter 解析Json请求</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -574,10 +647,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -586,11 +655,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color1">spring, mall_project</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,15 +671,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker, mall_learning</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,15 +695,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">odoo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
+                <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,11 +719,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ERPnext</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +732,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">谷粒商城</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">启动配置</a>
               </li>
              
               <li class="article-tag-list-item">
