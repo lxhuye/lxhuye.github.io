@@ -8,15 +8,13 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>SpringBoot快速搭建web Demo | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新建一个SpringBoot项目 1234567&#x2F;&#x2F; Java SDK一般选择 1.8 &#x2F;&#x2F; 在新建项目之前需要导入的依赖	&#x2F;&#x2F; 1.Spring Web 组件	&#x2F;&#x2F; 2. Mysql Driver 数据库组件	&#x2F;&#x2F; 3. Lombok 简化Spring Bean组件	&#x2F;&#x2F; 4. Mybatis Framework 数据持久化组件&#x2F;&#x2F;导入依赖以后 正常打开, Idea会自动下载需要的依赖">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot快速搭建web Demo">
 <meta property="og:url" content="http://example.com/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="新建一个SpringBoot项目 1234567&#x2F;&#x2F; Java SDK一般选择 1.8 &#x2F;&#x2F; 在新建项目之前需要导入的依赖	&#x2F;&#x2F; 1.Spring Web 组件	&#x2F;&#x2F; 2. Mysql Driver 数据库组件	&#x2F;&#x2F; 3. Lombok 简化Spring Bean组件	&#x2F;&#x2F; 4. Mybatis Framework 数据持久化组件&#x2F;&#x2F;导入依赖以后 正常打开, Idea会自动下载需要的依赖">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-16T09:31:44.000Z">
-<meta property="article:modified_time" content="2021-11-16T10:29:08.507Z">
+<meta property="article:modified_time" content="2021-11-17T01:25:21.445Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="springboot">
 <meta name="twitter:card" content="summary">
@@ -169,73 +167,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>新建一个SpringBoot项目</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java SDK一般选择 1.8 </span></span><br><span class="line"><span class="comment">// 在新建项目之前需要导入的依赖</span></span><br><span class="line">	<span class="comment">// 1.Spring Web 组件</span></span><br><span class="line">	<span class="comment">// 2. Mysql Driver 数据库组件</span></span><br><span class="line">	<span class="comment">// 3. Lombok 简化Spring Bean组件</span></span><br><span class="line">	<span class="comment">// 4. Mybatis Framework 数据持久化组件</span></span><br><span class="line"><span class="comment">//导入依赖以后 正常打开, Idea会自动下载需要的依赖</span></span><br></pre></td></tr></table></figure>
+        <!--toc-->
+
+<a id="more"></a>
+
+<h4><span id="新建一个springboot项目">新建一个SpringBoot项目</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java SDK一般选择 1.8 </span></span><br><span class="line"><span class="comment">// 在新建项目之前需要导入的依赖</span></span><br><span class="line">	<span class="comment">// 1.Spring Web 组件</span></span><br><span class="line">	<span class="comment">// 2. Mysql Driver 数据库组件</span></span><br><span class="line">	<span class="comment">// 3. Lombok 简化Spring Bean组件</span></span><br><span class="line">	<span class="comment">// 4. Mybatis Framework 数据持久化组件</span></span><br><span class="line"><span class="comment">//导入依赖以后 正常打开, Idea会自动下载需要的依赖</span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="2">
-<li><p>配置数据库</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 依赖下载完毕后, 需要配置数据源</span></span><br><span class="line"><span class="comment"># 打开Resource 文件夹下的 application.properties 配置文件 配置数据库相关信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库驱动：</span></span><br><span class="line"><span class="string">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment"># 数据源名称</span></span><br><span class="line"><span class="string">spring.datasource.name=defaultDataSource</span></span><br><span class="line"><span class="comment"># 数据库连接地址</span></span><br><span class="line"><span class="string">spring.datasource.url=jdbc:mysql://localhost:3306/xxx?serverTimezone=UTC</span></span><br><span class="line"><span class="comment"># 数据库用户名&amp;密码：</span></span><br><span class="line"><span class="string">spring.datasource.username=xxx</span></span><br><span class="line"><span class="string">spring.datasource.password=xxx</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="配置数据库">配置数据库</span></h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 依赖下载完毕后, 需要配置数据源</span></span><br><span class="line"><span class="comment"># 打开Resource 文件夹下的 application.properties 配置文件 配置数据库相关信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库驱动：</span></span><br><span class="line"><span class="string">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment"># 数据源名称</span></span><br><span class="line"><span class="string">spring.datasource.name=defaultDataSource</span></span><br><span class="line"><span class="comment"># 数据库连接地址</span></span><br><span class="line"><span class="string">spring.datasource.url=jdbc:mysql://localhost:3306/xxx?serverTimezone=UTC</span></span><br><span class="line"><span class="comment"># 数据库用户名&amp;密码：</span></span><br><span class="line"><span class="string">spring.datasource.username=xxx</span></span><br><span class="line"><span class="string">spring.datasource.password=xxx</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="3">
-<li><p>配置mybatis 信息 重新启动项目</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 告诉Mybatis 我们的数据路径在哪里</span></span><br><span class="line">	<span class="comment">//- 新建一个mapper文件夹 </span></span><br><span class="line">	<span class="comment">//- 复制mapper的相对路径</span></span><br><span class="line"><span class="comment">// 2. 给启动入口文件增加mybatis注解</span></span><br><span class="line">	<span class="comment">//- 在@SpringBootApplication 注解下面增加 @MapperScan(&quot;mapper路径&quot;)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="配置mybatis-信息-重新启动项目">配置mybatis 信息 重新启动项目</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 告诉Mybatis 我们的数据路径在哪里</span></span><br><span class="line">	<span class="comment">//- 新建一个mapper文件夹 </span></span><br><span class="line">	<span class="comment">//- 复制mapper的相对路径</span></span><br><span class="line"><span class="comment">// 2. 给启动入口文件增加mybatis注解</span></span><br><span class="line">	<span class="comment">//- 在@SpringBootApplication 注解下面增加 @MapperScan(&quot;mapper路径&quot;)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="4">
-<li><p>创建好数据库的表之后 我们需要创建一个<strong>接口</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例如 我们有一个数据源 名为Items</span></span><br><span class="line"><span class="comment">// 我们可以在mapper文件夹下创建一个名为ItemsMappper的Interface </span></span><br></pre></td></tr></table></figure>
+<h4><span id="创建好数据库的表之后-我们需要创建一个接口">创建好数据库的表之后 我们需要创建一个<strong>接口</strong></span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例如 我们有一个数据源 名为Items</span></span><br><span class="line"><span class="comment">// 我们可以在mapper文件夹下创建一个名为ItemsMappper的Interface </span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="5">
-<li><p>创建完接口之后 需要创建一个实体类  里面的属性和数据库的属性相对应</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在mapper文件夹的统计目录新建一个entity文件夹</span></span><br><span class="line"><span class="comment">// 创建一个名为Items的实体类</span></span><br><span class="line"><span class="comment">// 创建Items属性和数据库的每一列相对应</span></span><br><span class="line"><span class="comment">// 添加@Data注解 可以不用创建Get/Set方法</span></span><br></pre></td></tr></table></figure>
+<h4><span id="创建完接口之后-需要创建一个实体类-里面的属性和数据库的属性相对应">创建完接口之后 需要创建一个实体类  里面的属性和数据库的属性相对应</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在mapper文件夹的统计目录新建一个entity文件夹</span></span><br><span class="line"><span class="comment">// 创建一个名为Items的实体类</span></span><br><span class="line"><span class="comment">// 创建Items属性和数据库的每一列相对应</span></span><br><span class="line"><span class="comment">// 添加@Data注解 可以不用创建Get/Set方法</span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="6">
-<li><p>在接口中增加一个方法, 让其返回数据库中的数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ItemsMapper</span> </span>&#123;</span><br><span class="line">  	<span class="comment">//增加Select注解 是让接口去数据库中查询我们需要的数据</span></span><br><span class="line">    <span class="meta">@Select(&quot;select * from items&quot;)</span> <span class="comment">//注解里面写入的就是我们查询的Sql语句</span></span><br><span class="line">    <span class="function">List&lt;Items&gt; <span class="title">findall</span><span class="params">()</span></span>; <span class="comment">//增加一个方法签名 名称为 findall(), 返回的是一个&lt;Items&gt;的列表</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="在接口中增加一个方法-让其返回数据库中的数据">在接口中增加一个方法, 让其返回数据库中的数据</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ItemsMapper</span> </span>&#123;</span><br><span class="line">  	<span class="comment">//增加Select注解 是让接口去数据库中查询我们需要的数据</span></span><br><span class="line">    <span class="meta">@Select(&quot;select * from items&quot;)</span> <span class="comment">//注解里面写入的就是我们查询的Sql语句</span></span><br><span class="line">    <span class="function">List&lt;Items&gt; <span class="title">findall</span><span class="params">()</span></span>; <span class="comment">//增加一个方法签名 名称为 findall(), 返回的是一个&lt;Items&gt;的列表</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="7">
-<li><p>创建Controller文件夹, 给Spring Web设置REST URL路径</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建controller文件夹, 在文件夹中创建ItemsController.java </span></span><br><span class="line"><span class="comment">//在ItemsController.java文件中 我们需要写入请求的路径</span></span><br><span class="line">	<span class="comment">// 1. 我们想要让后端遵循Json的方式传递数据 所以我们需要在类上增加 @RestController 注解 这样我们从数据库中返回的数据就会以Json格式返回</span></span><br><span class="line">	<span class="comment">// 2. 使用@RequestMapping(&quot;&quot;)可以设置前段访问后端的路径 例如在类上增加 @RequestMapping(&quot;/items&quot;) 之后, 前端就可以使用http://localhost:8080/items 进入这个类 </span></span><br></pre></td></tr></table></figure>
+<h4><span id="创建controller文件夹-给spring-web设置rest-url路径">创建Controller文件夹, 给Spring Web设置REST URL路径</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建controller文件夹, 在文件夹中创建ItemsController.java </span></span><br><span class="line"><span class="comment">//在ItemsController.java文件中 我们需要写入请求的路径</span></span><br><span class="line">	<span class="comment">// 1. 我们想要让后端遵循Json的方式传递数据 所以我们需要在类上增加 @RestController 注解 这样我们从数据库中返回的数据就会以Json格式返回</span></span><br><span class="line">	<span class="comment">// 2. 使用@RequestMapping(&quot;&quot;)可以设置前段访问后端的路径 例如在类上增加 @RequestMapping(&quot;/items&quot;) 之后, 前端就可以使用http://localhost:8080/items 进入这个类 </span></span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="8">
-<li><p>引入我们创建的接口文件，用@Resource注解后, 我们就可以使用其中定义好的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"> ItemsMapper itemsMapper; <span class="comment">//创建一个ItemMapper的类</span></span><br><span class="line">   </span><br><span class="line"> <span class="meta">@RequestMapping</span> <span class="comment">//在这里可以进一步设置路径</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> List&lt;Items&gt;  <span class="title">getItems</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> itemsMapper.findall(); <span class="comment">//使用创建好的ItemMapper类中的findall()方法返回数据库中的数据</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="引入我们创建的接口文件用resource注解后-我们就可以使用其中定义好的方法">引入我们创建的接口文件，用@Resource注解后, 我们就可以使用其中定义好的方法</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"> ItemsMapper itemsMapper; <span class="comment">//创建一个ItemMapper的类</span></span><br><span class="line"></span><br><span class="line"> <span class="meta">@RequestMapping</span> <span class="comment">//在这里可以进一步设置路径</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> List&lt;Items&gt;  <span class="title">getItems</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> itemsMapper.findall(); <span class="comment">//使用创建好的ItemMapper类中的findall()方法返回数据库中的数据</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="9">
-<li>重新启动项目之后, 再次访问 <a target="_blank" rel="noopener" href="http://localhost:8080/items">http://localhost:8080/items</a> 就可以返回后端数据库中的Json数据</li>
-</ol>
+<p>重新启动项目之后, 再次访问 <a target="_blank" rel="noopener" href="http://localhost:8080/items">http://localhost:8080/items</a> 就可以返回后端数据库中的Json数据</p>
 
       
 
@@ -341,8 +309,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2021/10/23/flutter-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flutter 项目实战</div>
+    <a href="/2021/10/16/Flutter%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E7%AB%AFApp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Flutter搭建移动端App</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -369,7 +337,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">新建一个SpringBoot项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">配置数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">配置mybatis 信息 重新启动项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">创建好数据库的表之后 我们需要创建一个接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">创建完接口之后 需要创建一个实体类  里面的属性和数据库的属性相对应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">在接口中增加一个方法, 让其返回数据库中的数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">创建Controller文件夹, 给Spring Web设置REST URL路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">引入我们创建的接口文件，用@Resource注解后, 我们就可以使用其中定义好的方法</span></a></li></ol>
                     </div>
                 </span>
             </div>

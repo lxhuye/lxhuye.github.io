@@ -166,74 +166,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>新建一个SpringBoot项目</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java SDK一般选择 1.8 </span></span><br><span class="line"><span class="comment">// 在新建项目之前需要导入的依赖</span></span><br><span class="line">	<span class="comment">// 1.Spring Web 组件</span></span><br><span class="line">	<span class="comment">// 2. Mysql Driver 数据库组件</span></span><br><span class="line">	<span class="comment">// 3. Lombok 简化Spring Bean组件</span></span><br><span class="line">	<span class="comment">// 4. Mybatis Framework 数据持久化组件</span></span><br><span class="line"><span class="comment">//导入依赖以后 正常打开, Idea会自动下载需要的依赖</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>配置数据库</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 依赖下载完毕后, 需要配置数据源</span></span><br><span class="line"><span class="comment"># 打开Resource 文件夹下的 application.properties 配置文件 配置数据库相关信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库驱动：</span></span><br><span class="line"><span class="string">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment"># 数据源名称</span></span><br><span class="line"><span class="string">spring.datasource.name=defaultDataSource</span></span><br><span class="line"><span class="comment"># 数据库连接地址</span></span><br><span class="line"><span class="string">spring.datasource.url=jdbc:mysql://localhost:3306/xxx?serverTimezone=UTC</span></span><br><span class="line"><span class="comment"># 数据库用户名&amp;密码：</span></span><br><span class="line"><span class="string">spring.datasource.username=xxx</span></span><br><span class="line"><span class="string">spring.datasource.password=xxx</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>配置mybatis 信息 重新启动项目</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 告诉Mybatis 我们的数据路径在哪里</span></span><br><span class="line">	<span class="comment">//- 新建一个mapper文件夹 </span></span><br><span class="line">	<span class="comment">//- 复制mapper的相对路径</span></span><br><span class="line"><span class="comment">// 2. 给启动入口文件增加mybatis注解</span></span><br><span class="line">	<span class="comment">//- 在@SpringBootApplication 注解下面增加 @MapperScan(&quot;mapper路径&quot;)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="4">
-<li><p>创建好数据库的表之后 我们需要创建一个<strong>接口</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例如 我们有一个数据源 名为Items</span></span><br><span class="line"><span class="comment">// 我们可以在mapper文件夹下创建一个名为ItemsMappper的Interface </span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="5">
-<li><p>创建完接口之后 需要创建一个实体类  里面的属性和数据库的属性相对应</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在mapper文件夹的统计目录新建一个entity文件夹</span></span><br><span class="line"><span class="comment">// 创建一个名为Items的实体类</span></span><br><span class="line"><span class="comment">// 创建Items属性和数据库的每一列相对应</span></span><br><span class="line"><span class="comment">// 添加@Data注解 可以不用创建Get/Set方法</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="6">
-<li><p>在接口中增加一个方法, 让其返回数据库中的数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ItemsMapper</span> </span>&#123;</span><br><span class="line">  	<span class="comment">//增加Select注解 是让接口去数据库中查询我们需要的数据</span></span><br><span class="line">    <span class="meta">@Select(&quot;select * from items&quot;)</span> <span class="comment">//注解里面写入的就是我们查询的Sql语句</span></span><br><span class="line">    <span class="function">List&lt;Items&gt; <span class="title">findall</span><span class="params">()</span></span>; <span class="comment">//增加一个方法签名 名称为 findall(), 返回的是一个&lt;Items&gt;的列表</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="7">
-<li><p>创建Controller文件夹, 给Spring Web设置REST URL路径</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建controller文件夹, 在文件夹中创建ItemsController.java </span></span><br><span class="line"><span class="comment">//在ItemsController.java文件中 我们需要写入请求的路径</span></span><br><span class="line">	<span class="comment">// 1. 我们想要让后端遵循Json的方式传递数据 所以我们需要在类上增加 @RestController 注解 这样我们从数据库中返回的数据就会以Json格式返回</span></span><br><span class="line">	<span class="comment">// 2. 使用@RequestMapping(&quot;&quot;)可以设置前段访问后端的路径 例如在类上增加 @RequestMapping(&quot;/items&quot;) 之后, 前端就可以使用http://localhost:8080/items 进入这个类 </span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="8">
-<li><p>引入我们创建的接口文件，用@Resource注解后, 我们就可以使用其中定义好的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"> ItemsMapper itemsMapper; <span class="comment">//创建一个ItemMapper的类</span></span><br><span class="line">   </span><br><span class="line"> <span class="meta">@RequestMapping</span> <span class="comment">//在这里可以进一步设置路径</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> List&lt;Items&gt;  <span class="title">getItems</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> itemsMapper.findall(); <span class="comment">//使用创建好的ItemMapper类中的findall()方法返回数据库中的数据</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="9">
-<li>重新启动项目之后, 再次访问 <a target="_blank" rel="noopener" href="http://localhost:8080/items">http://localhost:8080/items</a> 就可以返回后端数据库中的Json数据</li>
-</ol>
-
+        <!--toc-->
+        
+          <a class="article-more-a" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/#more">more >></a>
+        
       
 
       
@@ -257,80 +193,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-flutter-项目实战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/23/flutter-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">flutter 项目实战</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/23/flutter-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2021-10-23T03:41:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="flutter-app-底部导航栏的编写">Flutter APP 底部导航栏的编写</span></h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/23/flutter-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">展开全文 >></a>
         </p>
       
 
@@ -1032,6 +894,98 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/08/12/odoo-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-ubuntu20-04-搭建odoo14方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">ubuntu20.04 搭建odoo14方法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-08-12T06:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>命令教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts">https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts</a></p>
+<h3><span id="psycopg2operationalerror-fatal-peer-authentication-failed-for-user-odoo14-解决办法">psycopg2.OperationalError: FATAL: Peer authentication failed for user “odoo14” 解决办法</span></h3><p>给用户“odoo14添加密码”</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su - postgres</span><br><span class="line">psql <span class="comment">#进入postgre</span></span><br><span class="line"><span class="keyword">alter</span> roll odoo14 <span class="keyword">password</span> “xxxx”</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/postgresql/12/main#根据自己的版本进入配置</span><br><span class="line">sudo nano pg_hba.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="将local的配置改为md5-原先是peer">将local的配置改为md5 （原先是peer）</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Database administrative login by Unix domain socket</span><br><span class="line"># md5 允许使用密码</span><br><span class="line">local   all                                       md5</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重启postgresql">重启postgresql</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重新修改odoo的配置">重新修改odoo的配置</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/odoo.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[options]</span><br><span class="line">   ; This is the password that allows database operations:</span><br><span class="line">   admin_passwd &#x3D; admin</span><br><span class="line">   db_host &#x3D; False</span><br><span class="line">   db_port &#x3D; False</span><br><span class="line">   db_user &#x3D; odoo14</span><br><span class="line">   db_password &#x3D; password #把此处的密码改成修改过后的密码！！</span><br><span class="line">   addons_path &#x3D; &#x2F;opt&#x2F;odoo&#x2F;addons</span><br><span class="line">   logfile &#x3D; &#x2F;var&#x2F;log&#x2F;odoo&#x2F;odoo.log</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重启odoo14">重启odoo14</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart odoo.service</span><br><span class="line">sudo systemctl status odoo.service</span><br><span class="line">sudo tail -f /var/log/odoo/odoo.log #查看日志</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
