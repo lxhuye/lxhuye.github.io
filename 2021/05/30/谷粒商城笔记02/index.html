@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>谷粒商城笔记02---分布式组件学习 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Spring Cloud Alibaba的使用 下载Alibaba Nacos作为服务注册中心 服务注册时候, 使用OpenFeign 远程调用微服务 现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用   使用Alibaba Nacos作为服务配置中心 使用Nacos作为配置中心动态修改配置 Nacos配置中心创建命名空间,使用配置分组区分环境   使用SpringClo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谷粒商城笔记02---分布式组件学习">
+<meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Spring Cloud Alibaba的使用 下载Alibaba Nacos作为服务注册中心 服务注册时候, 使用OpenFeign 远程调用微服务 现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用   使用Alibaba Nacos作为服务配置中心 使用Nacos作为配置中心动态修改配置 Nacos配置中心创建命名空间,使用配置分组区分环境   使用SpringClo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T10:11:48.000Z">
-<meta property="article:modified_time" content="2021-06-07T09:46:34.910Z">
+<meta property="article:modified_time" content="2021-11-19T05:17:31.050Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="谷粒商城">
 <meta name="twitter:card" content="summary">
@@ -152,21 +152,6 @@
             <article id="post-谷粒商城笔记02" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      谷粒商城笔记02---分布式组件学习
-    </h1>
-  
-
-        
-        <a href="/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/" class="archive-article-date">
-  	<time datetime="2021-05-30T10:11:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-30</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
         <!-- toc -->
@@ -227,50 +212,59 @@
 <h3><span id="服务注册时候-使用openfeign-远程调用微服务">服务注册时候, 使用OpenFeign 远程调用微服务</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 因为先前在创建SpringBoot项目的时候已经导入了OpenFeign的依赖 所以不需要再次导入OpenFeign，如果未导入可以使用pom导入</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
 <p>在这里我们想要在Member微服务中调取Coupon服务中的信息, 我们的思路分为2点，一<strong>是在被调用的微服务中创建controller,二是在需要调用的微服务中创建Feign的服务器</strong>:</p>
-<ol>
-<li><p>在需要被调用的微服务中,也就是gulimall-coupon微服务中创建一个controller，用于测试gulimall-member调用gulimall-coupon。因为现在数据库中并没有数据, 我们先创建一个coupon实例来模拟以后获得的数据</p>
+<p>在需要被调用的微服务中,也就是gulimall-coupon微服务中创建一个controller，用于测试gulimall-member调用gulimall-coupon。因为现在数据库中并没有数据, 我们先创建一个coupon实例来模拟以后获得的数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 修改的文件名: gulimall-coupon/Controller/CouponController</span><br><span class="line"># 我们添加一个测试远程调用微服务的controler</span><br><span class="line">  </span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/member/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">MemberCoupon</span><span class="params">()</span></span>&#123;</span><br><span class="line">        CouponEntity couponEntity = <span class="keyword">new</span> CouponEntity(); <span class="comment">//创建一个Entity用于返回</span></span><br><span class="line">        couponEntity.setCouponName(<span class="string">&quot;满100减10元&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> R.ok().put(<span class="string">&quot;coupons&quot;</span>,Arrays.asList(couponEntity));<span class="comment">//将CouponEntity保存到List返回</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
+
+<ul>
 <li><p>在我们在需要调用的微服务,也就是gulimall-member中,创建一个远程调用的服务器</p>
-<ol>
+<ul>
 <li><p>首先需要创建一个名为feign的包, 在这里创建一个类用于存放需要调用的方法</p>
 </li>
 <li><p>在feign包下创建一个名为<code>CouponFeignService</code>的接口, 用于存放需要调用的方法, <strong>存放的内容就是需要调用的controller的签名</strong>,需要注意的是,此处<code>@RequestMapping</code><strong>需要将完整的路径填写上去,否则会找不到正确的controller</strong></p>
+</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CouponFeignService</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 远程服务的url</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/coupon/coupon/member/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">membercoupons</span><span class="params">()</span></span>;<span class="comment">//得到一个R对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>给接口增加一个<code>@FeignClient(&quot;要调用的微服务的名称&quot;)</code>,用于告诉SpringCould这个接口可以调用的远程客户端</p>
+
+<ul>
+<li>给接口增加一个<code>@FeignClient(&quot;要调用的微服务的名称&quot;)</code>,用于告诉SpringCould这个接口可以调用的远程客户端</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient(&quot;gulimall-coupon&quot;)</span> <span class="comment">//告诉spring cloud这个接口是一个远程客户端，要调用coupon服务(nacos中找到)，具体是调用coupon服务的/coupon/coupon/member/list对应的方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CouponFeignService</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 远程服务的url</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/coupon/coupon/member/list&quot;)</span><span class="comment">//注意写全优惠券类上还有映射//注意我们这个地方不是控制层，所以这个请求映射请求的不是我们服务器上的东西，而是nacos注册中心的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">membercoupons</span><span class="params">()</span></span>;<span class="comment">//得到一个R对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在启动类中配置注解<code>@EnableDiscoveryClients</code>,注解需要一个参数<code>basePackages</code>，需要填入的是<strong>微服务远程接口的路径</strong></p>
+
+<ul>
+<li>在启动类中配置注解<code>@EnableDiscoveryClients</code>,注解需要一个参数<code>basePackages</code>，需要填入的是<strong>微服务远程接口的路径</strong></li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 想要远程调用的步骤：</span></span><br><span class="line"><span class="comment">* 1 引入openfeign</span></span><br><span class="line"><span class="comment">* 2 编写一个接口，接口告诉springcloud这个接口需要调用远程服务</span></span><br><span class="line"><span class="comment">* 	2.1 在接口里声明@FeignClient(&quot;gulimall-coupon&quot;)他是一个远程调用客户端且要调用coupon服务</span></span><br><span class="line"><span class="comment">* 	2.2 要调用coupon服务的/coupon/coupon/member/list方法</span></span><br><span class="line"><span class="comment">* 3 开启远程调用功能 @EnableFeignClients，要指定远程调用功能放的基础包</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="meta">@EnableFeignClients(basePackages=&quot;com.atguigu.gulimall.member.feign&quot;)</span><span class="comment">//扫描接口方法注解</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">gulimallMemberApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(gulimallMemberApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-</li>
-</ol>
 <h4><span id="现在feign服务器已经创建完成-我们可以测试一下是否可以正确调用">现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用</span></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在MemberController中新建一个Controller, 用于获取Coupon信息</span><br><span class="line">  <span class="meta">@RequestMapping(&quot;/coupons&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        MemberEntity memberEntity = <span class="keyword">new</span> MemberEntity();</span><br><span class="line">        memberEntity.setNickname(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        R memberCoupon = CouponFeignService.MemberCoupon();</span><br><span class="line">        <span class="keyword">return</span> R.ok().put(<span class="string">&quot;member_name&quot;</span>,memberEntity).put(<span class="string">&quot;coupon&quot;</span>,memberCoupon.get(<span class="string">&quot;coupons&quot;</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p>重新启动gulimall-coupon和gulimall-member服务,微服务启动成功后, 访问: <a target="_blank" rel="noopener" href="http://localhost:8000/member/member/coupons">http://localhost:8000/member/member/coupons</a> 如果出现正确的信息, 就说明远程调用成功！</p>
 <h3><span id="使用alibaba-nacos作为服务配置中心">使用Alibaba Nacos作为服务配置中心</span></h3><h4><span id="使用nacos作为配置中心动态修改配置">使用Nacos作为配置中心动态修改配置</span></h4><p>在服务上线过程中,我们时常需要动态修改配置文件, 如果在yml或者properties文件中直接修改,需要重新部署微服务,非常麻烦, 使用Nacos作为配置中心, 结合<code>@RefreshScope</code>注解, 可以做到动态修改配置</p>
-<ol>
-<li><p>将配置中心的依赖添加到gulimall-common</p>
+<ul>
+<li>将配置中心的依赖添加到gulimall-common</li>
+</ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">     &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在微服务中创建一个名为<code>bootstrap.properties</code>的配置文件, 用于配置Nacos Config元数据</p>
+
+<ul>
+<li>在微服务中创建一个名为<code>bootstrap.properties</code>的配置文件, 用于配置Nacos Config元数据</li>
+</ul>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#spring.application.name=nacos-config-example 配置nacos服务名,之前在注册服务的时候已经设置,没设置的可以设置</span></span><br><span class="line"><span class="string">$</span> <span class="string">spring.cloud.nacos.config.server-addr=127.0.0.1:8848</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在Nacos配置中心中创建一个名为<code>guimall-coupon.properties</code>的文件,这个文件会在微服务启动时将配置加载进来</p>
+
+<ul>
+<li>在Nacos配置中心中创建一个名为<code>guimall-coupon.properties</code>的文件,这个文件会在微服务启动时将配置加载进来</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 这里在创建配置文件的时候, 可能会出现 报错：发布失败。请检查参数是否正确</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 出现这个错误的原因主要是因为配置不兼容, 将Nacos更换为2.0版本就可以解决</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>想要动态的加载<code>guimall-coupon.properties</code>我们还需要使用一个注解<code>@RefreshScope</code>,在Controllers文件上加上就可以使用</p>
+
+<ul>
+<li>想要动态的加载<code>guimall-coupon.properties</code>我们还需要使用一个注解<code>@RefreshScope</code>,在Controllers文件上加上就可以使用</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 例如我们在controller中想要获得某一个在配置中的值</span><br><span class="line"><span class="meta">@RefreshScope</span> </span><br><span class="line"><span class="meta">@Value(&quot;$&#123;coupon.user.name&#125;&quot;)</span><span class="comment">//从application.properties中获取//不要写user.name，他是环境里的变量</span></span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> R <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> R.ok().put(<span class="string">&quot;name&quot;</span>,name).put(<span class="string">&quot;age&quot;</span>,age); &#125;</span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
 <h4><span id="nacos配置中心创建命名空间使用配置分组区分环境">Nacos配置中心创建命名空间,使用配置分组区分环境</span></h4><p>命名空间：用作配置隔离。（一般每个微服务一个命名空间）</p>
 <ul>
 <li>默认public。默认新增的配置都在public空间下</li>
