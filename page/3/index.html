@@ -146,6 +146,288 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-谷粒商城笔记03-前端搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B003-%E5%89%8D%E7%AB%AF%E6%90%AD%E5%BB%BA/">谷粒商城笔记03--前端搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B003-%E5%89%8D%E7%AB%AF%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2021-06-07T07:25:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用阿里云OSS管理上传的图片</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">谷粒商城</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B003-%E5%89%8D%E7%AB%AF%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-谷粒商城笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#spring-cloud-alibaba%E7%9A%84%E4%BD%BF%E7%94%A8">Spring Cloud Alibaba的使用</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BDalibaba-nacos%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83">下载Alibaba Nacos作为服务注册中心</a></li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E6%97%B6%E5%80%99-%E4%BD%BF%E7%94%A8openfeign-%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E5%BE%AE%E6%9C%8D%E5%8A%A1">服务注册时候, 使用OpenFeign 远程调用微服务</a><ul>
+<li><a href="#%E7%8E%B0%E5%9C%A8feign%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B7%B2%E7%BB%8F%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%88%90-%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%AD%A3%E7%A1%AE%E8%B0%83%E7%94%A8">现在Feign服务器已经创建完成, 我们可以测试一下是否可以正确调用</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8alibaba-nacos%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83">使用Alibaba Nacos作为服务配置中心</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8nacos%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE">使用Nacos作为配置中心动态修改配置</a></li>
+<li><a href="#nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E5%88%9B%E5%BB%BA%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%88%86%E7%BB%84%E5%8C%BA%E5%88%86%E7%8E%AF%E5%A2%83">Nacos配置中心创建命名空间,使用配置分组区分环境</a></li>
+</ul>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8springcloud-gateway%E9%85%8D%E7%BD%AE%E7%BD%91%E5%85%B3%E6%9C%8D%E5%8A%A1">使用SpringCloud GateWay配置网关服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+        
+          <a class="article-more-a" href="/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">谷粒商城</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-谷粒商城笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B001/">谷粒商城笔记01--配置项目环境</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B001/" class="archive-article-date">
+  	<time datetime="2021-05-25T07:59:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#%E4%B8%80-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83">一. 配置本地虚拟机环境</a></li>
+<li><a href="#%E4%BA%8C%E5%9C%A8centos%E4%B8%AD%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85mysql%E5%92%8Credis">二.在Centos中使用Docker安装Mysql和Redis</a><ul>
+<li><a href="#2-%E7%94%A8docker%E5%AE%89%E8%A3%85mysql">2. 用docker安装mysql</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8docker-ps-%E6%9F%A5%E7%9C%8Bmysql%E5%AE%B9%E5%99%A8%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F">使用docker ps 查看mysql容器是否启动成功</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAmysql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">创建mysql配置文件</a></li>
+<li><a href="#3%E7%94%A8docker%E5%AE%89%E8%A3%85redis">3.用docker安装Redis</a></li>
+<li><a href="#4-%E8%AE%BE%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8">4. 设置容器开机自启动</a></li>
+<li><a href="#5-%E5%AE%89%E8%A3%85ngidocker%E5%AE%89%E8%A3%85nginx%E4%B8%BAp124%E7%9A%84%E5%86%85%E5%AE%B9">5. 安装ngidocker安装nginx为P124的内容</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-%E5%9C%A8github%E6%88%96%E8%80%85%E6%98%AF%E7%A0%81%E4%BA%91%E4%B8%8A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE">三. 在Github或者是码云上创建项目</a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1">创建微服务</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E4%B8%8D%E6%83%B3%E4%B8%8A%E4%BC%A0%E5%88%B0github%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%91%E4%BB%AC%E5%B0%86%E5%85%B6%E5%BF%BD%E7%95%A5%E6%8E%89">一些不想上传到Github的文件我们将其忽略掉</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8pom%E6%96%87%E4%BB%B6%E8%81%9A%E5%90%88%E9%A1%B9%E7%9B%AE">使用pom文件聚合项目</a></li>
+<li><a href="#%E5%B0%86%E5%88%9B%E5%BB%BA%E5%A5%BD%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81%E5%88%B0github%E4%BB%93%E5%BA%93%E4%B8%AD">将创建好的项目推送到Github仓库中</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-%E4%B8%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93">四. 为微服务初始化数据库</a><ul>
+<li><a href="#%E6%89%BE%E5%88%B0%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%B0%E5%9D%80">找到虚拟机地址</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7navicat%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93">使用数据库管理工具Navicat连接数据库</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8sql%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8">创建数据库以及使用Sql文件创建数据库表</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%94-%E4%BD%BF%E7%94%A8%E4%BA%BA%E4%BA%BA%E5%BC%80%E6%BA%90%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B">五. 使用人人开源快速启动脚手架工程</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8renren-fast%E5%88%9B%E5%BB%BA%E5%90%8E%E5%90%8E%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6">使用renren-fast创建后后端脚手架</a><ul>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%B0%B1%E9%9C%80%E8%A6%81%E5%88%9B%E5%BB%BArenren-fast%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93">接下来就需要创建renren-fast所需要的数据库</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%A5%BD%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%90%8E-%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9renren-fast%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E5%85%B6%E8%83%BD%E5%A4%9F%E6%AD%A3%E5%B8%B8%E5%90%AF%E5%8A%A8">创建好所需要的数据库之后, 我们需要修改renren-fast的配置文件,使其能够正常启动</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8renren-fast%E5%88%9B%E5%BB%BAvue%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E8%84%9A%E6%89%8B%E6%9E%B6">使用renren-fast创建vue后台管理脚手架</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AD-%E4%BD%BF%E7%94%A8%E4%BA%BA%E4%BA%BA%E5%BC%80%E6%BA%90%E6%8F%90%E4%BE%9B%E7%9A%84renren-generator%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E5%92%8Cvue%E9%A1%B9%E7%9B%AE%E8%BF%9E%E8%B0%83%E6%9C%AA%E6%88%90%E5%8A%9F">六. 使用人人开源提供的renren-generator实现后端和vue项目连调（未成功）</a><ul>
+<li><a href="#%E8%BF%99%E6%A0%B7renren-generator%E5%B0%B1%E9%9B%86%E6%88%90%E5%88%B0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BA%86">这样renren-generator就集成到项目中了</a></li>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%AC%E8%A6%81%E4%BD%BF%E7%94%A8renren-generator%E7%94%9F%E6%88%90%E6%88%91%E4%BB%AC%E5%90%84%E4%B8%AA%E6%9C%8D%E5%8A%A1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E4%BB%A3%E7%A0%81">接下来我们要使用renren-generator生成我们各个服务所需要的代码</a></li>
+<li><a href="#%E8%BF%99%E6%A0%B7%E6%88%91%E4%BB%AC%E5%B0%B1%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A5%BD%E4%BA%86product%E7%9A%84crud%E6%9C%8D%E5%8A%A1%E6%8E%A5%E4%B8%8B%E5%8E%BB%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%A4%84%E7%90%86%E5%A5%BD%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E4%BE%9D%E8%B5%96">这样我们就自动生成好了product的CRUD服务，接下去我们需要处理好所需要的依赖</a><ul>
+<li><a href="#%E9%85%8D%E7%BD%AEmybatis-plus%E6%95%B0%E6%8D%AE%E6%BA%90">配置mybatis-plus数据源</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F">测试微服务是否配置成功</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8C%89%E7%85%A7%E9%80%86%E5%90%91%E7%94%9F%E6%88%90product%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E6%B3%95%E9%80%86%E5%90%91%E7%94%9F%E6%88%90%E5%85%B6%E4%BB%96%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%A3%E7%A0%81">按照逆向生成Product微服务的方法逆向生成其他微服务的代码</a></li>
+<li><a href="#%E5%B0%86%E4%BB%A3%E7%A0%81%E9%9B%86%E6%88%90%E5%88%B0%E9%A1%B9%E7%9B%AE%E4%B8%AD">将代码集成到项目中</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+        
+          <a class="article-more-a" href="/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B001/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">谷粒商城</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/25/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B001/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-angular学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -717,244 +999,6 @@
 
 
   
-    <article id="post-git-远程-origin-已经存在" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">git 远程 origin 已经存在</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/" class="archive-article-date">
-  	<time datetime="2021-05-05T04:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>解决办法：删除远程配置,重新添加：</strong></p>
-<p>git remote rm origin</p>
-<p>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#99;&#x6f;&#x64;&#101;&#x2e;&#x61;&#108;&#105;&#x79;&#117;&#110;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#99;&#x6f;&#x64;&#101;&#x2e;&#x61;&#108;&#105;&#x79;&#117;&#110;&#x2e;&#99;&#x6f;&#109;</a>:XXXXXXXXXXX/myWork.git</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-vue监听页面滚动，动态修改导航条颜色" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/">vue监听页面滚动，动态修改导航条颜色</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/" class="archive-article-date">
-  	<time datetime="2021-01-14T09:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;header&quot; :style&#x3D;&quot;style&quot;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data() &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				style: &#123;&#125;,</span><br><span class="line">				opacity: 0,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		mounted() &#123;</span><br><span class="line">			window.addEventListener(&quot;scroll&quot;, this.windowScroll); &#x2F;&#x2F;监听页面滚动</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			windowScroll() &#123;</span><br><span class="line">				let scrollTop &#x3D; window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">				this.opacity &#x3D; Math.abs(Math.round(scrollTop)) &#x2F; 250;</span><br><span class="line">				this.style &#x3D; &#123;background: &#96;rgba(0, 0, 0,$&#123;this.opacity&#125;)&#96;&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		destroyed() &#123;</span><br><span class="line">			window.removeEventListener(&quot;scroll&quot;, this.windowScroll); &#x2F;&#x2F;销毁滚动事件</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/14/vue%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%AF%BC%E8%88%AA%E6%9D%A1%E9%A2%9C%E8%89%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-创建一个vue脚手架工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/">创建一个vue脚手架工程</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-01-11T10:20:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4><span id="创建命令">创建命令：</span></h4><p>​    命令行创建： </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create &#x27;项目名&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>​    vue ui可视化创建: </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
-
-<h4><span id="项目启动命令">项目启动命令：</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
-
-<p>使用vue ui创建的项目直接在 <strong>vue ui</strong> 的 <strong>task</strong> 中启动项目</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/11/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1157,6 +1201,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
             
             <div class="clearfix"></div>
