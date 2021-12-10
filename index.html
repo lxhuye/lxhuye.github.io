@@ -146,6 +146,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-百度u-editor集成vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/10/%E7%99%BE%E5%BA%A6u-editor%E9%9B%86%E6%88%90vue/">百度u-editor集成vue</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/10/%E7%99%BE%E5%BA%A6u-editor%E9%9B%86%E6%88%90vue/" class="archive-article-date">
+  	<time datetime="2021-12-10T08:01:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vue2使用github仓库：<a target="_blank" rel="noopener" href="https://github.com/haochuan9421/vue-ueditor-wrap/tree/2.x">https://github.com/haochuan9421/vue-ueditor-wrap/tree/2.x</a></p>
+<h4><span id="installation">Installation</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># vue-ueditor-wrap v2 仅支持 Vue 2</span><br><span class="line">npm i vue-ueditor-wrap@2.x</span><br><span class="line"># 或者</span><br><span class="line">yarn add vue-ueditor-wrap@2.x</span><br></pre></td></tr></table></figure>
+
+<p>找到合适的版本, 下载资料代码。找到public，将u-editor移动到静态资源目录下</p>
+<p>将解压的文件夹重命名为 UEditor 并移动到你项目的<a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/html-and-static-assets.html#public-%E6%96%87%E4%BB%B6%E5%A4%B9">静态资源</a>目录下，比如下面是一个由 Vue CLI（v3+）创建的项目，静态资源目录就是 public。Vue CLI（v2+）就是Static目录下。</p>
+<h4><span id="引入vueueditorwrap组件">引入<code>VueUeditorWrap</code>组件</span></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueUeditorWrap <span class="keyword">from</span> <span class="string">&#x27;vue-ueditor-wrap&#x27;</span>; <span class="comment">// ES6 Module</span></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">const</span> VueUeditorWrap = <span class="built_in">require</span>(<span class="string">&#x27;vue-ueditor-wrap&#x27;</span>); <span class="comment">// CommonJS</span></span><br></pre></td></tr></table></figure>
+
+<h4><span id="注册组件">注册组件</span></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">  VueUeditorWrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 或者在 main.js 里将它注册为全局组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;vue-ueditor-wrap&#x27;</span>, VueUeditorWrap);</span><br></pre></td></tr></table></figure>
+
+<h4><span id="v-model绑定数据"><code>v-model</code>绑定数据</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;vue-ueditor-wrap v-model&#x3D;&quot;msg&quot;&gt;&lt;&#x2F;vue-ueditor-wrap&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/10/%E7%99%BE%E5%BA%A6u-editor%E9%9B%86%E6%88%90vue/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-mybaits-学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -881,105 +966,9 @@
 
 
   
-    <article id="post-部署废料平台前后端项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/29/%E9%83%A8%E7%BD%B2%E5%BA%9F%E6%96%99%E5%B9%B3%E5%8F%B0%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE/">废料平台前后端项目部署</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/29/%E9%83%A8%E7%BD%B2%E5%BA%9F%E6%96%99%E5%B9%B3%E5%8F%B0%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  	<time datetime="2021-09-29T03:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>服务器：centos8</p>
-<p>需要预先安装java环境</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装java8</span></span><br><span class="line">yum install -y java-1.8.0-openjdk-devel.x86_64     </span><br></pre></td></tr></table></figure>
-
-
-
-<p>安装nginx</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装nginx依赖</span></span><br><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel </span><br><span class="line"><span class="meta">#</span><span class="bash">安装 PCRE 让 Nginx 支持 Rewrite 功能</span></span><br><span class="line">yum install -y pcre pcre-devel</span><br><span class="line"><span class="meta">#</span><span class="bash">安装 Nginx</span></span><br><span class="line">mkdir /nginx</span><br><span class="line">cd /nginx/</span><br><span class="line">wget http://nginx.org/download/nginx-1.18.0.tar.gz</span><br><span class="line">tar zxf nginx-1.18.0.tar.gz </span><br><span class="line">cd nginx-1.18.0</span><br><span class="line">./configure --prefix=/nginx --with-http_stub_status_module --with-http_ssl_module </span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-
-
-<p>nginx其他命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Nginx 其他命令</span><br><span class="line">重载配置文件 </span><br><span class="line">重启 /nginx/sbin -s reopen</span><br><span class="line">停止 /nginx/sbin -s stop</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重载nginx配置</span></span><br><span class="line">./nginx -s reload</span><br><span class="line"><span class="meta">#</span><span class="bash">查找nginx pid</span></span><br><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
-
-
-
-<p>java服务器jar包启动命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar -Xms512M -Xmx512M steel.jar &gt; steel.log &amp;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：nginx配置文件在sbin同级的conf文件夹下</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/29/%E9%83%A8%E7%BD%B2%E5%BA%9F%E6%96%99%E5%B9%B3%E5%8F%B0%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
