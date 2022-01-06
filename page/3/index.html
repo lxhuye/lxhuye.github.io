@@ -146,6 +146,318 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ubuntu20-04-搭建odoo14方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">ubuntu20.04 搭建odoo14方法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-08-12T06:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>命令教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts">https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts</a></p>
+<h3><span id="psycopg2operationalerror-fatal-peer-authentication-failed-for-user-odoo14-解决办法">psycopg2.OperationalError: FATAL: Peer authentication failed for user “odoo14” 解决办法</span></h3><p>给用户“odoo14添加密码”</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su - postgres</span><br><span class="line">psql <span class="comment">#进入postgre</span></span><br><span class="line"><span class="keyword">alter</span> roll odoo14 <span class="keyword">password</span> “xxxx”</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/postgresql/12/main#根据自己的版本进入配置</span><br><span class="line">sudo nano pg_hba.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="将local的配置改为md5-原先是peer">将local的配置改为md5 （原先是peer）</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Database administrative login by Unix domain socket</span><br><span class="line"># md5 允许使用密码</span><br><span class="line">local   all                                       md5</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重启postgresql">重启postgresql</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重新修改odoo的配置">重新修改odoo的配置</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/odoo.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[options]</span><br><span class="line">   ; This is the password that allows database operations:</span><br><span class="line">   admin_passwd &#x3D; admin</span><br><span class="line">   db_host &#x3D; False</span><br><span class="line">   db_port &#x3D; False</span><br><span class="line">   db_user &#x3D; odoo14</span><br><span class="line">   db_password &#x3D; password #把此处的密码改成修改过后的密码！！</span><br><span class="line">   addons_path &#x3D; &#x2F;opt&#x2F;odoo&#x2F;addons</span><br><span class="line">   logfile &#x3D; &#x2F;var&#x2F;log&#x2F;odoo&#x2F;odoo.log</span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="重启odoo14">重启odoo14</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart odoo.service</span><br><span class="line">sudo systemctl status odoo.service</span><br><span class="line">sudo tail -f /var/log/odoo/odoo.log #查看日志</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-阿里云换源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/06/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8D%A2%E6%BA%90/">阿里云换源</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/06/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8D%A2%E6%BA%90/" class="archive-article-date">
+  	<time datetime="2021-08-06T08:21:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阿里云换源教程</p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/704603">https://developer.aliyun.com/article/704603</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/06/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8D%A2%E6%BA%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-安装ERPnext" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/03/%E5%AE%89%E8%A3%85ERPnext/">安装ERPnext</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/03/%E5%AE%89%E8%A3%85ERPnext/" class="archive-article-date">
+  	<time datetime="2021-08-03T07:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>教程地址</p>
+<p><a target="_blank" rel="noopener" href="https://idroot.us/install-erpnext-ubuntu-20-04/">https://idroot.us/install-erpnext-ubuntu-20-04/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ERPnext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/03/%E5%AE%89%E8%A3%85ERPnext/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-VPS安装SSH" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/13/VPS%E5%AE%89%E8%A3%85SSH/">VPS安装ssh</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/13/VPS%E5%AE%89%E8%A3%85SSH/" class="archive-article-date">
+  	<time datetime="2021-07-13T01:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ShadowSocks 安装脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_ss.sh)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/13/VPS%E5%AE%89%E8%A3%85SSH/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-谷粒商城04-编写后端服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -329,6 +641,21 @@
   
     <article id="post-谷粒商城笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/">谷粒商城笔记02---分布式组件学习</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/30/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E7%AC%94%E8%AE%B002/" class="archive-article-date">
+  	<time datetime="2021-05-30T10:11:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-30</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -705,329 +1032,6 @@
 
 
   
-    <article id="post-start-elasticsearch-redis-nacos" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/07/start-elasticsearch-redis-nacos/">start elasticsearch/redis/nacos</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/07/start-elasticsearch-redis-nacos/" class="archive-article-date">
-  	<time datetime="2021-05-07T05:09:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3><span id="启动elasticsearch">启动elasticsearch</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /Users/leaveshu/elasticsearch-7.12.1/bin</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./elasticsearch</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="启动redis">启动Redis</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /Users/leaveshu/redis-6.2.3</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> redis-server</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">启动配置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/07/start-elasticsearch-redis-nacos/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-安装和启动nacos" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/06/%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8nacos/">安装和启动nacos</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/06/%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8nacos/" class="archive-article-date">
-  	<time datetime="2021-05-06T15:06:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3><span id="安装nacos">安装nacos</span></h3><p><a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a> 下载最新稳定版本的nacos</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> unzip nacos-server-<span class="variable">$version</span>.zip 或者 tar -xvf nacos-server-<span class="variable">$version</span>.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> nacos/bin</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="启动服务器">启动服务器</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Linux/Unix/Mac</span></span><br><span class="line"><span class="meta">#</span><span class="bash">启动命令(standalone代表着单机模式运行，非集群模式):</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sh startup.sh -m standalone</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如果您使用的是ubuntu系统，或者运行脚本报错提示[[符号找不到，可尝试如下运行：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> bash startup.sh -m standalone</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Windows</span></span><br><span class="line"><span class="meta">#</span><span class="bash">启动命令(standalone代表着单机模式运行，非集群模式):</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> startup.cmd -m standalone</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2><span id="关闭服务器">关闭服务器</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Linux/Unix/Mac</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sh shutdown.sh</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Windows</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> shutdown.cmd</span></span><br><span class="line"></span><br><span class="line">或者双击shutdown.cmd运行文件。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="进入nacos">进入nacos</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nacos默认使用8848端口</span><br><span class="line">可通过http:&#x2F;&#x2F;127.0.0.1:8848&#x2F;nacos&#x2F;index.html进入自带的控制台界面，默认用户名&#x2F;密码是nacos&#x2F;nacos</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nacos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/06/%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8nacos/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Git-push失败-当前最新提交落后于对应远程分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/06/Git-push%E5%A4%B1%E8%B4%A5-%E5%BD%93%E5%89%8D%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E8%90%BD%E5%90%8E%E4%BA%8E%E5%AF%B9%E5%BA%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/">Git push失败:当前最新提交落后于对应远程分支</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/06/Git-push%E5%A4%B1%E8%B4%A5-%E5%BD%93%E5%89%8D%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E8%90%BD%E5%90%8E%E4%BA%8E%E5%AF%B9%E5%BA%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/" class="archive-article-date">
-  	<time datetime="2021-05-06T13:07:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3><span id="解决办法">解决办法</span></h3><p>git push -u origin +main </p>
-<p>其中main代表的是远程分支</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/06/Git-push%E5%A4%B1%E8%B4%A5-%E5%BD%93%E5%89%8D%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E8%90%BD%E5%90%8E%E4%BA%8E%E5%AF%B9%E5%BA%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-vue3学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/06/vue3%E5%AD%A6%E4%B9%A0/">vue3学习</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/06/vue3%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2021-05-06T09:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3><span id="初始化一个vue3项目">初始化一个vue3项目</span></h3><h4><span id="vite">Vite:</span></h4><h5><span id="使用vite创建一个新项目">使用vite创建一个新项目</span></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm init vite-app &lt;project-name&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;project-name&gt;</span><br><span class="line">$ npm install</span><br><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="vue3新特性">Vue3新特性</span></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/06/vue3%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1042,7 +1046,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2022 John Doe
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1238,6 +1242,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">erp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
               </li>
             
             <div class="clearfix"></div>
