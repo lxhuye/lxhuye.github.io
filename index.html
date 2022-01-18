@@ -146,6 +146,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Flutter-路由跳转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/18/Flutter-%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">Flutter 路由跳转</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/18/Flutter-%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/" class="archive-article-date">
+  	<time datetime="2022-01-18T09:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3><span id="flutter-组件的点击功能监听">Flutter 组件的点击功能监听</span></h3><p>使用Inkwell()组件 可以给 Row(),Column(),Container()增加onTap()方法</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Inkwell(</span><br><span class="line">	child:Row(),</span><br><span class="line">  onTap:()&#123;</span><br><span class="line">    Navigator.of(context).push(</span><br><span class="line">      <span class="comment">//使用Navigator组件点击跳转到对应页面 xxx写的是要跳转的页面名称</span></span><br><span class="line">      MaterialPageRoute(builder:(context) =&gt; xxx()));</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/18/Flutter-%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-elasticsearch笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,10 +249,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>安装ElasticSerach</li>
-<li></li>
-</ol>
+        <a id="more"></a>
+
+<h3><span id="一-elasticserach-基本介绍">一. ElasticSerach 基本介绍</span></h3><p>mysql用作持久化存储，ES用作检索</p>
+<p>基本概念：index库&gt;type表&gt;document文档</p>
+<h5><span id="index索引">index索引</span></h5><p>动词：相当于mysql的insert</p>
+<p>名词：相当于mysql的db</p>
+<h5><span id="type类型">Type类型</span></h5><p>在index中，可以定义一个或多个类型</p>
+<p>类似于mysql的table，每一种类型的数据放在一起</p>
+<h5><span id="document文档">Document文档</span></h5><p>保存在某个index下，某种type的一个数据document，文档是json格式的，document就像是mysql中的某个table里面的内容</p>
+<p>每一行对应的列叫属性</p>
+<img src="https://img-blog.csdnimg.cn/img_convert/ac324af45c240156678ec41f2100a590.png" alt="img" style="zoom: 67%;">
+
+
+
+
+
+<h3><span id="二-安装es">二. 安装ES</span></h3><p>dokcer中安装elastic search</p>
+<p>（1）下载ealastic search（存储和检索）和kibana（可视化检索）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:xxx</span><br><span class="line">docker pull kibana:xxx</span><br><span class="line">版本要统一</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -178,6 +279,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -393,19 +505,19 @@
 
 
   
-    <article id="post-Flutter状态State管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Flutter状态State管理_provider的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86/">Flutter状态State管理</a>
+      <a class="article-title" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">Flutter状态State管理</a>
     </h1>
   
 
         
-        <a href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86/" class="archive-article-date">
+        <a href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2021-12-13T13:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-13</time>
 </a>
         
@@ -413,7 +525,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Provider</p>
+
       
 
       
@@ -436,7 +549,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -874,94 +987,6 @@
 
 
   
-    <article id="post-后台管理系统快速使用Upload功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/">后台管理系统快速使用Upload功能</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/" class="archive-article-date">
-  	<time datetime="2021-11-22T07:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Step 1: 引入upload组件</p>
-<p>首先在谷粒商城的文件夹前端找到upload文件夹, 这个是已经封装好的upload方法, 为我们设置好了给阿里云oss发送请求</p>
-<p>将upload文件夹复制粘贴到vue项目的components文件夹下</p>
-<p>Step 2: 使用导入的upload组件</p>
-<p>进入需要使用upload组件的vue文件</p>
-<p>第一步：导入upload文件 (单文件上传就用singleUpload, 多文件上传就用multiUpload)：在<script>标签的下方导入文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  import singleUpload from &quot;@&#x2F;components&#x2F;upload&#x2F;singleUpload&quot;&#x2F;&#x2F;导入单文件上传</span><br><span class="line">  XXXX</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>第二步: 在下方export default注册组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;  </span><br><span class="line">    components:&#123;</span><br><span class="line">      singleUpload,</span><br><span class="line">    &#125;, &#x2F;&#x2F;输出组件</span><br></pre></td></tr></table></figure>
-
-<p>第三步: 在文件中使用组件, 将原先的el-input替换成注册好的<singleUpload>组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-form-item label&#x3D;&quot;商品主图地址&quot; prop&#x3D;&quot;mainPicture&quot;&gt;</span><br><span class="line">   &lt;!-- &lt;el-input v-model&#x3D;&quot;dataForm.mainPicture&quot; placeholder&#x3D;&quot;商品主图地址&quot;&gt;&lt;&#x2F;el-input&gt; --&gt;</span><br><span class="line">   &lt;singleUpload v-model&#x3D;&quot;dataForm.mainPicture&quot;&gt;&lt;&#x2F;singleUpload&gt;</span><br><span class="line"> &lt;&#x2F;el-form-item&gt;</span><br></pre></td></tr></table></figure>
-
-</script></p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1176,6 +1201,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
             
             <div class="clearfix"></div>
