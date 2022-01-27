@@ -146,6 +146,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-selenium-获取淘宝商品" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/18/selenium-%E8%8E%B7%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/">selenium 获取淘宝商品</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/18/selenium-%E8%8E%B7%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/" class="archive-article-date">
+  	<time datetime="2020-12-18T08:51:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>通过Selenium模拟浏览器抓取淘宝商品美食信息，并存储到MongoDB数据库中。</p>
+<h1 id="流程框架"><a href="#流程框架" class="headerlink" title="流程框架"></a>流程框架</h1><p>淘宝页面比较复杂，含有各种请求参数和加密参数，如果直接请求或者分析Ajax将会非常繁琐。Selenium是一个自动化测试工具，可以驱动浏览器去完成各种工作，比如模拟点击、输入和下拉等多种功能，这样我们只需关心操作，不需要关心后台发生了怎么样的请求下面对具体操作步骤进行详述。</p>
+        
+          <a class="article-more-a" href="/2020/12/18/selenium-%E8%8E%B7%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/18/selenium-%E8%8E%B7%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Selenium-学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -863,94 +930,6 @@
 
 
   
-    <article id="post-虚拟机配置网卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">centos8虚拟机配置网卡</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/" class="archive-article-date">
-  	<time datetime="2020-10-30T15:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</p>
-<p>2.使用vim进入配置文件夹配置网络信息<br><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
-<p>3.修改配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line">IPADDR= //这里填虚拟机自动分配的地址</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.10.1</span><br><span class="line">DNS=114.114.114.114</span><br></pre></td></tr></table></figure>
-
-<p>4.重启虚拟机网卡</p>
-<p> 方法：nmcli c reload +网卡名   <strong>例：nmcli c reload ens33</strong></p>
-<p>5.测试能否连接外网</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
-
-
-
-<p>注：</p>
-<p>网络不通一般是服务端和客户端找不到<br>1.确定虚拟机管理工具配置的网络连接方式是<strong>桥接</strong>，否则static网络不会生效；<br>2.如果上述是桥接网络，<strong>那么确定网络配置和物理机网络配置大部分一致，除了IP地址，特别注意网关和子网掩码；</strong><br>3.如果上述均没有问题，那么先通过ping来判断网关是否连通<br>#ping 172.16.160.1<br>4.如果上述不通，那么此时需要判断路由表是否有问题<br>#route -nn<br>此时如果发现没有172.16.160.1该网关的信息，那么需要手动添加<br>如果添加完还是不行那么就重启系统吧</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
@@ -1169,6 +1148,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
               </li>
             
             <div class="clearfix"></div>
