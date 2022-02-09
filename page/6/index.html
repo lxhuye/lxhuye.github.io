@@ -146,6 +146,173 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos8安装nodeJS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/01/Centos8%E5%AE%89%E8%A3%85nodeJS/">Centos8安装nodeJS</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/01/Centos8%E5%AE%89%E8%A3%85nodeJS/" class="archive-article-date">
+  	<time datetime="2020-11-01T08:18:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、通过官方查询需要安装的版本<br><a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">https://github.com/nodesource/distributions</a></p>
+<p>2、在CentOS下获取相应版本的nodejs资源（以NodeJS 14.x为例）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、运行<code> sudo yum install -y nodejs</code> 进行nodejs安装</p>
+<p>You may also need development tools to build native addons:<br>   <code>sudo yum install gcc-c++ make</code></p>
+<p>## To install the Yarn package manager, run:<br><code> curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo</code><br><code>   sudo yum install yarn</code></p>
+<p>4、确认安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/01/Centos8%E5%AE%89%E8%A3%85nodeJS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-虚拟机ping不同外网的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">虚拟机ping不通外网的解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-11-01T08:07:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原因是: 由于主机没有配置DNS导致的</p>
+<h4><span id="1找到本机网卡配置文件">1.找到本机网卡配置文件</span></h4><p><strong>vi /etc/sysconfig/network-scripts/ens33</strong><br>添加配置网卡内容:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<h4><span id="2配置主机dns">2.配置主机DNS</span></h4><p><strong>vi /etc/resolv.conf</strong><br>配置内容:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-部署项目到服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -845,224 +1012,9 @@
 
 
   
-    <article id="post-Spring学习03-高级装配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/">Spring学习03_高级装配</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/" class="archive-article-date">
-  	<time datetime="2020-10-24T12:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在上一章中，我们看到了一些最为核心的bean装配技术。你可能会发现上一章学到的知识有很大的用处。但是，bean装配所涉及的领域并不仅仅局限于上一章所学习到的内容。Spring提供了多种技巧，借助它们可以实现<strong>更为高级的bean装配功能</strong>。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E4%B8%8Eprofile"><strong>环境与profile</strong></a><ul>
-<li><a href="#%E9%85%8D%E7%BD%AEprofile-beanprofile"><strong>配置profile bean：<code>@Profile</code></strong></a><ul>
-<li><a href="#%E5%9C%A8xml%E4%B8%AD%E9%85%8D%E7%BD%AEprofile"><strong>在XML中配置profile</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E5%8C%96%E7%9A%84beanconditional"><strong>条件化的bean：@Conditional</strong></a><ul>
-<li><a href="#%E6%BF%80%E6%B4%BBprofile"><strong>激活profile</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%A4%84%E7%90%86%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7"><strong>处理自动装配的歧义性</strong></a><ul>
-<li><a href="#%E6%A0%87%E7%A4%BA%E9%A6%96%E9%80%89%E7%9A%84beanprimary"><strong>标示首选的bean：<code>@Primary</code></strong></a></li>
-<li><a href="#%E9%99%90%E5%AE%9A%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84beanqualifier"><strong>限定自动装配的bean：</strong><code>@Qualifier</code></a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%99%90%E5%AE%9A%E7%AC%A6"><strong>创建自定义的限定符</strong></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%99%90%E5%AE%9A%E7%AC%A6%E6%B3%A8%E8%A7%A3"><strong>使用自定义的限定符注解</strong></a></li>
-</ul>
-</li>
-<li><a href="#bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F-%EF%B8%8F"><strong>bean的作用域</strong> ⭐️</a><ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E5%92%8C%E8%AF%B7%E6%B1%82%E4%BD%9C%E7%94%A8%E5%9F%9F"><strong>使用会话和请求作用域</strong></a></li>
-<li><a href="#%E5%9C%A8xml%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%BB%A3%E7%90%86"><strong>在XML中声明作用域代理</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%80%BC%E6%B3%A8%E5%85%A5"><strong>运行时值注入</strong></a><ul>
-<li><a href="#%E5%B1%9E%E6%80%A7%E5%8D%A0%E4%BD%8D%E7%AC%A6">属性占位符</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8spring%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E8%A8%80%E8%BF%9B%E8%A1%8C%E8%A3%85%E9%85%8D"><strong>使用Spring表达式语言进行装配</strong></a><ul>
-<li><a href="#spel%E6%A0%B7%E4%BE%8B"><strong>SpEL样例</strong></a></li>
-<li><a href="#%E5%BC%95%E7%94%A8bean-%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><strong>引用bean、属性和方法</strong></a></li>
-<li><a href="#%E5%9C%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%9E%8B"><strong>在表达式中使用类型</strong></a></li>
-<li><a href="#spel%E8%BF%90%E7%AE%97%E7%AC%A6"><strong>SpEL运算符</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93">小结</a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习02-spring装配Bean" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">Spring学习02_spring装配Bean</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/" class="archive-article-date">
-  	<time datetime="2020-10-24T03:32:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
-<p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#spring%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E9%80%89%E6%96%B9%E6%A1%88"><strong>Spring配置的可选方案</strong></a></li>
-<li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E8%A3%85%E9%85%8Dbean"><strong>自动化装配bean</strong></a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%A2%AB%E5%8F%91%E7%8E%B0%E7%9A%84bean"><strong>创建可被发现的bean</strong></a></li>
-<li><a href="#%E4%B8%BA%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84bean%E5%91%BD%E5%90%8D"><strong>为组件扫描的bean命名</strong></a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E5%8C%85-%EF%B8%8F"><strong>设置组件扫描的基础包</strong> ⭐️</a></li>
-<li><a href="#%E4%B8%BAbean%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D-%EF%B8%8F%EF%B8%8F"><strong>为bean添加注解实现自动装配</strong> ⭐️⭐️</a></li>
-<li><a href="#%E6%89%8B%E5%8A%A8%E8%A3%85%E9%85%8Dbean%EF%B8%8F"><strong>手动装配bean</strong>⭐️</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87java%E4%BB%A3%E7%A0%81%E8%A3%85%E9%85%8Dbean"><strong>通过Java代码装配bean</strong></a><ul>
-<li><a href="#%E5%A3%B0%E6%98%8E%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明简单的bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9javaconfig%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%85%A5"><strong>借助JavaConfig实现注入</strong></a></li>
-<li><a href="#%E9%80%9A%E8%BF%87xml%E8%A3%85%E9%85%8Dbean"><strong>通过XML装配bean</strong></a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BAxml%E9%85%8D%E7%BD%AE%E8%A7%84%E8%8C%83"><strong>创建XML配置规范</strong></a></li>
-<li><a href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明一个简单的Bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5%E5%88%9D%E5%A7%8B%E5%8C%96bean"><strong>借助构造器注入初始化bean</strong></a><ul>
-<li><a href="#%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5bean%E5%BC%95%E7%94%A8"><strong>构造器注入bean引用</strong></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8spring-30%E6%89%80%E5%BC%95%E5%85%A5%E7%9A%84c-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">使用Spring 3.0所引入的c-命名空间</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B0%86%E5%AD%97%E9%9D%A2%E9%87%8F%E6%B3%A8%E5%85%A5%E5%88%B0%E6%9E%84%E9%80%A0%E5%99%A8%E4%B8%AD"><strong>将字面量注入到构造器中</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1286,6 +1238,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
             
             <div class="clearfix"></div>
