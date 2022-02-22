@@ -146,6 +146,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nginx路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/19/nginx%E8%B7%AF%E5%BE%84/">nginx路径</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/19/nginx%E8%B7%AF%E5%BE%84/" class="archive-article-date">
+  	<time datetime="2022-02-19T04:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/19/nginx%E8%B7%AF%E5%BE%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-Selenium使用xpath获取元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/10/Selenium%E4%BD%BF%E7%94%A8xpath%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/">Selenium使用xpath获取元素</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/10/Selenium%E4%BD%BF%E7%94%A8xpath%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/" class="archive-article-date">
+  	<time datetime="2022-02-10T02:23:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>按照XPATH正常的语法，想要获取a标签的url也就是href的属性应该写作</p>
+<p>//div[@class=”qg-limit-list”]/a/@href</p>
+<p>然而在使用find_elements_by_xpath一直报错，显示只能存放element而不是object。<br>最后的解决办法就是，这里只取到标签级，想要获取元素在之后再获取如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">items = browser.find_elements_by_xpath(<span class="string">&#x27;//*[@id=&quot;nav_layer4D38CB07B38A684F7F33B352C86DA7CC&quot;]/li/a&#x27;</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">       itemname = item.text</span><br><span class="line">       itemurl = item.get_attribute(<span class="string">&quot;href&quot;</span>)</span><br><span class="line">       categorynames.append(itemname)</span><br><span class="line">       categorylinks.append(itemurl)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Selenium</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/10/Selenium%E4%BD%BF%E7%94%A8xpath%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Linux-jar包nohup部署命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -242,7 +397,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//MAC</span><br><span class="line">nc -Z 127.0.0.1 8883</span><br></pre></td></tr></table></figure>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//MAC</span><br><span class="line">nc -vz -w 2 43.226.24.217 8082</span><br></pre></td></tr></table></figure>
 
 
       
@@ -654,10 +809,13 @@
 
 <h3><span id="二-安装es">二. 安装ES</span></h3><p>dokcer中安装elastic search</p>
 <p>（1）下载ealastic search（存储和检索）和kibana（可视化检索）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:xxx</span><br><span class="line">docker pull kibana:xxx</span><br><span class="line">版本要统一</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install Elasticsearch : 最后安装 Elasticsearch 成功！</span><br><span class="line">brew services start elasticsearch:  后台启动 Elasticsearch。</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install kibana //安装Kibana</span><br><span class="line">brew services start kibana // 启动Kibana</span><br></pre></td></tr></table></figure>
 
-
+<p>ElasticSearch 的启动地址:   <a target="_blank" rel="noopener" href="http://localhost:9200/">http://localhost:9200/</a></p>
+<p>Kibana 的启动地址：<a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hancoder/article/details/113922398">https://blog.csdn.net/hancoder/article/details/113922398</a></p>
 
       
 
@@ -776,167 +934,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/01/03/Flutter%E4%BD%BF%E7%94%A8%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E6%8F%92%E4%BB%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Flutter-集成swiper轮播图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/">Flutter 集成swiper轮播图</a>
-    </h1>
-  
-
-        
-        <a href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2022-01-03T08:55:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用非空安全的Flutter模块</p>
-<p>地址: <a target="_blank" rel="noopener" href="https://github.com/lianyagang/flutter_swiper_null_safety">https://github.com/lianyagang/flutter_swiper_null_safety</a></p>
-<ol>
-<li>引入Flutter依赖</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies: flutter_swiper_null_safety:</span> <span class="string">^1.0.2</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>创建轮播图dart组件</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入依赖</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>; </span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:convert&#x27;</span>; </span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个静态组件swiper</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">swiper</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// final List imageList; </span></span><br><span class="line">  <span class="keyword">const</span> swiper(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container(</span><br><span class="line">      height: <span class="number">150</span>,</span><br><span class="line">      child: Swiper( <span class="comment">//放入Swiper组件 </span></span><br><span class="line">        itemBuilder: (BuildContext context, <span class="built_in">int</span> index)&#123; </span><br><span class="line">          <span class="comment">// return Image.network(imageList[index]);</span></span><br><span class="line">          <span class="keyword">return</span> 	Image.network</span><br><span class="line">            (<span class="string">&quot;https://img0.baidu.com/it/u=3799188782,2929440238&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=552&quot;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// itemCount: imageList.length,</span></span><br><span class="line">        itemCount: <span class="number">3</span>,</span><br><span class="line">        autoplay: <span class="keyword">true</span>,</span><br><span class="line">        <span class="comment">// pagination: SwiperCustomPagination(),</span></span><br><span class="line">      ),</span><br><span class="line"></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Flutter状态State管理_provider的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">Flutter状态State管理</a>
-    </h1>
-  
-
-        
-        <a href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-12-13T13:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Provider</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -1197,6 +1194,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
             
             <div class="clearfix"></div>

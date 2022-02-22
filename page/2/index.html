@@ -146,6 +146,167 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Flutter-集成swiper轮播图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/">Flutter 集成swiper轮播图</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2022-01-03T08:55:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用非空安全的Flutter模块</p>
+<p>地址: <a target="_blank" rel="noopener" href="https://github.com/lianyagang/flutter_swiper_null_safety">https://github.com/lianyagang/flutter_swiper_null_safety</a></p>
+<ol>
+<li>引入Flutter依赖</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies: flutter_swiper_null_safety:</span> <span class="string">^1.0.2</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>创建轮播图dart组件</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入依赖</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>; </span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;dart:convert&#x27;</span>; </span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个静态组件swiper</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">swiper</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// final List imageList; </span></span><br><span class="line">  <span class="keyword">const</span> swiper(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container(</span><br><span class="line">      height: <span class="number">150</span>,</span><br><span class="line">      child: Swiper( <span class="comment">//放入Swiper组件 </span></span><br><span class="line">        itemBuilder: (BuildContext context, <span class="built_in">int</span> index)&#123; </span><br><span class="line">          <span class="comment">// return Image.network(imageList[index]);</span></span><br><span class="line">          <span class="keyword">return</span> 	Image.network</span><br><span class="line">            (<span class="string">&quot;https://img0.baidu.com/it/u=3799188782,2929440238&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=800&amp;h=552&quot;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// itemCount: imageList.length,</span></span><br><span class="line">        itemCount: <span class="number">3</span>,</span><br><span class="line">        autoplay: <span class="keyword">true</span>,</span><br><span class="line">        <span class="comment">// pagination: SwiperCustomPagination(),</span></span><br><span class="line">      ),</span><br><span class="line"></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/03/Flutter-%E9%9B%86%E6%88%90swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-Flutter状态State管理_provider的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">Flutter状态State管理</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-12-13T13:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Provider</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/13/Flutter%E7%8A%B6%E6%80%81State%E7%AE%A1%E7%90%86_provider%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-开源jshERP-下载部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -573,7 +734,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Step 1: 引入upload组件</p>
+        <p>后端创建管理第三方服务的微服务</p>
+<p>Step 1: 引入upload组件</p>
 <p>首先在谷粒商城的文件夹前端找到upload文件夹, 这个是已经封装好的upload方法, 为我们设置好了给阿里云oss发送请求</p>
 <p>将upload文件夹复制粘贴到vue项目的components文件夹下</p>
 <p>Step 2: 使用导入的upload组件</p>
@@ -795,152 +957,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Flutter搭建移动端App" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/16/Flutter%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E7%AB%AFApp/">Flutter搭建移动端App</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/16/Flutter%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E7%AB%AFApp/" class="archive-article-date">
-  	<time datetime="2021-10-16T01:04:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--toc-->
-        
-          <a class="article-more-a" href="/2021/10/16/Flutter%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E7%AB%AFApp/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/16/Flutter%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E7%AB%AFApp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-宝塔面板添加网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/06/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99/">宝塔面板添加网站</a>
-    </h1>
-  
-
-        
-        <a href="/2021/10/06/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2021-10-06T05:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先 需要搭建好网站所需的环境</p>
-<p>在网站栏目中 选择添加网站</p>
-<p>在域名管理中添加需要绑定的域名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eg:</span><br><span class="line">decorationcamp.com</span><br><span class="line">www.decorationcamp.com</span><br></pre></td></tr></table></figure>
-
-<p>将要绑定的域名解析到宝塔面板服务器ip</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/06/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99/">展开全文 >></a>
         </p>
       
 
@@ -1201,6 +1217,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
             
             <div class="clearfix"></div>
