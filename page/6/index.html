@@ -146,6 +146,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-pandas处理excel数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">pandas处理excel数据</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-11-25T02:00:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="comment"># file_path为excel的文件路径</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_excel</span>(<span class="params">file_path</span>):</span></span><br><span class="line">	<span class="comment"># 读取excel</span></span><br><span class="line">	<span class="comment"># df=pandas.read_excel(file_path,sheet_name=excel里的表名)</span></span><br><span class="line">	df=pandas.read_excel(file_path)</span><br><span class="line">	<span class="comment"># len出excel的总行数</span></span><br><span class="line">	line_count=len(df)</span><br><span class="line">	<span class="comment"># len出excel的总列数</span></span><br><span class="line">	column_count=len(df.head())</span><br><span class="line">	<span class="comment"># df.head()方法可以获取excel一列里所有的标题名称,</span></span><br><span class="line">	<span class="comment"># print(df.head())默认显示前五个标题名称</span></span><br><span class="line">	<span class="comment"># 循环每行</span></span><br><span class="line">	<span class="keyword">for</span> line_i <span class="keyword">in</span> range(line_count):</span><br><span class="line">		<span class="comment"># 循环每列标题名称,获取指定想要的标题名称下的数据</span></span><br><span class="line">		column_num=<span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> df.head():</span><br><span class="line">			print(<span class="string">&#x27;i&#x27;</span>,i)</span><br><span class="line">			<span class="keyword">if</span> i==<span class="string">&#x27;你想获取的固定标题名称&#x27;</span>:</span><br><span class="line">				<span class="comment"># 获取此行此列下的参数data</span></span><br><span class="line">				<span class="comment"># ix为旧版本方法,新版本的方法是df.iloc[line_i, column_num]</span></span><br><span class="line">				data = df.ix[line_i, column_num]</span><br><span class="line">				print(<span class="string">&#x27;data&#x27;</span>,data)</span><br><span class="line">				column_num+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">email_sender小工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/25/pandas%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-开源项目Ruoyi前后端分离服务器部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -876,84 +952,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-docker安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">docker安装</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-10-25T00:41:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本节我们来探讨如何安装Docker。目前，Docker支持在数十种操作系统上安装。限于篇幅，笔者只能以几款常见的操作系统为例，为大家演示如何安装Docker。若有的操作系统本书并未提及，读者可在<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/installation%E6%9F%A5%E9%98%85%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97%E3%80%82">https://docs.docker.com/engine/installation查阅安装指南。</a></p>
-<!--toc-->
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">展开全文 >></a>
         </p>
       
 
