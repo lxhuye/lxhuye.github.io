@@ -146,6 +146,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flutter-使用高德地图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/">flutter 使用高德地图</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2021-11-22T03:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>注册一个高德地图账号</p>
+</li>
+<li><p>创建一个新的应用</p>
+</li>
+<li><p>给创建好的应用添加一个Key</p>
+</li>
+<li><p>获得高德地图需要的几个重要参数</p>
+<ol>
+<li>将安卓包下的iml文件用安卓的方式打开</li>
+<li>build完毕之后, 在右侧Gradle的build中找到:app/android/singleReport</li>
+<li>在控制台就可以找到SHA1 将其粘贴到高德地图API申请窗口</li>
+<li>找到android目录下的./app/build.gradle</li>
+<li>找到defaultConfig类下的 applicationId 后面跟着的就是我们的项目名</li>
+<li>复制粘贴项目名到高德地图API申请窗口, 点击阅读并同意 完成Key的申请   </li>
+</ol>
+</li>
+<li><p>复制申请到的applicatin Key 重新回到安卓项目中</p>
+<ol>
+<li>打开安卓项目中的./main/AndroidManifest.xml文件</li>
+<li>复制一份文件下方<meta-data>的格式</meta-data></li>
+<li>将复制到的<meta-data android:name="XXX">数据放在 <application xxx> 标签下方, <activity> 标签上方</activity></application></meta-data></li>
+<li>修改<meta-data name="com.amap./api.v2.apikey" value="高德地图的Key">为高德key中的数据</meta-data></li>
+</ol>
+</li>
+<li><p>导入高德地图依赖 </p>
+<ol>
+<li>在github搜索 flutter amap</li>
+<li>找到稳定版本的amap 继承进flutter的依赖pubspec.ymal, 重新加载依赖</li>
+<li>导入高德地图依赖 可以在dart文件中使用高德接口</li>
+</ol>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-SpringBoot快速搭建web-Demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -894,98 +1001,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/08/12/odoo-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-ubuntu20-04-搭建odoo14方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">ubuntu20.04 搭建odoo14方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-08-12T06:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>命令教程：</p>
-<p><a target="_blank" rel="noopener" href="https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts">https://www.cybrosys.com/blog/how-to-install-odoo-14-on-ubuntu-20-04-lts</a></p>
-<h3><span id="psycopg2operationalerror-fatal-peer-authentication-failed-for-user-odoo14-解决办法">psycopg2.OperationalError: FATAL: Peer authentication failed for user “odoo14” 解决办法</span></h3><p>给用户“odoo14添加密码”</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su - postgres</span><br><span class="line">psql <span class="comment">#进入postgre</span></span><br><span class="line"><span class="keyword">alter</span> roll odoo14 <span class="keyword">password</span> “xxxx”</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/postgresql/12/main#根据自己的版本进入配置</span><br><span class="line">sudo nano pg_hba.conf</span><br></pre></td></tr></table></figure>
-
-
-
-<h4><span id="将local的配置改为md5-原先是peer">将local的配置改为md5 （原先是peer）</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Database administrative login by Unix domain socket</span><br><span class="line"># md5 允许使用密码</span><br><span class="line">local   all                                       md5</span><br></pre></td></tr></table></figure>
-
-
-
-<h4><span id="重启postgresql">重启postgresql</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service postgresql restart</span><br></pre></td></tr></table></figure>
-
-
-
-<h4><span id="重新修改odoo的配置">重新修改odoo的配置</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/odoo.conf</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[options]</span><br><span class="line">   ; This is the password that allows database operations:</span><br><span class="line">   admin_passwd &#x3D; admin</span><br><span class="line">   db_host &#x3D; False</span><br><span class="line">   db_port &#x3D; False</span><br><span class="line">   db_user &#x3D; odoo14</span><br><span class="line">   db_password &#x3D; password #把此处的密码改成修改过后的密码！！</span><br><span class="line">   addons_path &#x3D; &#x2F;opt&#x2F;odoo&#x2F;addons</span><br><span class="line">   logfile &#x3D; &#x2F;var&#x2F;log&#x2F;odoo&#x2F;odoo.log</span><br></pre></td></tr></table></figure>
-
-
-
-<h4><span id="重启odoo14">重启odoo14</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart odoo.service</span><br><span class="line">sudo systemctl status odoo.service</span><br><span class="line">sudo tail -f /var/log/odoo/odoo.log #查看日志</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/12/ubuntu20-04-%E6%90%AD%E5%BB%BAodoo14%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 

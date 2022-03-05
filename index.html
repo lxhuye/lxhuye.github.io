@@ -146,6 +146,143 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python连接数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/05/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">Python连接数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/05/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2022-03-05T10:14:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wkfvawl/p/14955556.html">https://www.cnblogs.com/wkfvawl/p/14955556.html</a></p>
+<h2><span id="一-连接数据库">一、 连接数据库</span></h2><p>1、下载安装pymyql库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>2、导入库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br></pre></td></tr></table></figure>
+
+<p>3、连接数据库，最好用try except捕获异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    db &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, password&#x3D;&quot;****&quot;, database&#x3D;&quot;test&quot;)</span><br><span class="line">    print(&#39;数据库连接成功!&#39;)</span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&#39;数据库连接失败&#39;+str(e))</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="二-创建一张新表">二、创建一张新表</span></h2><p>1、声明一个游标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cur &#x3D; db.cursor()</span><br></pre></td></tr></table></figure>
+
+<p>2、创建表之前先检查是否存在，如果存在则删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cur.execute(&#39;DROP TABLE IF EXISTS Student&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>3、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery &#x3D; &quot;CREATE TABLE Student(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )&quot;</span><br><span class="line">cur.execute(sqlQuery)</span><br></pre></td></tr></table></figure>
+
+<h2><span id="三-向表中插入一条数据">三、向表中插入一条数据</span></h2><p>1、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery&#x3D;&quot; INSERT INTO Student (Name, Email, Age) VALUE (%s,%s,%s) &quot;</span><br></pre></td></tr></table></figure>
+
+<p>2、编辑准备插入的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value&#x3D;(&#39;Mike&#39;,&#39;123456@163.com&#39;,20)</span><br></pre></td></tr></table></figure>
+
+<p>3、执行sql语句</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    cur.execute(sqlQuery,value)</span><br><span class="line">    db.commit()</span><br><span class="line">    print(&#39;数据插入成功！&#39;)</span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&quot;数据插入失败：&quot;+e )</span><br><span class="line">    db.rollback()</span><br></pre></td></tr></table></figure>
+
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<h2><span id="四-查询表中的数据">四、查询表中的数据</span></h2><p>1、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery &#x3D; &quot;SELECT * FROM Student&quot;</span><br></pre></td></tr></table></figure>
+
+<p>2、使用fetchall()方法接收全部的返回结果行</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    cur.execute(sqlQuery)</span><br><span class="line">    results&#x3D;cur.fetchall()</span><br><span class="line">    for row in results:</span><br><span class="line">        name&#x3D;row[0]</span><br><span class="line">        email&#x3D;row[1]</span><br><span class="line">        age&#x3D;row[2]</span><br><span class="line">        print(&#39;Name:%s,Email:%s,Age:%s&#39;%(name,email,age))</span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&quot;数据查询失败：&quot;+str(e))</span><br></pre></td></tr></table></figure>
+
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<h2><span id="五-更新表中的数据">五、更新表中的数据</span></h2><p>1、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery &#x3D; &quot;UPDATE Student SET Name&#x3D; %s WHERE Name&#x3D;%s&quot;</span><br></pre></td></tr></table></figure>
+
+<p>2、编辑更新的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value &#x3D; (&#39;John&#39;, &#39;updated name&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>3、提交修改</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    cur.execute(sqlQuery, value)</span><br><span class="line">    db.commit()</span><br><span class="line">    print(&#39;数据更新成功！&#39;)</span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&quot;数据更新失败：&quot;+str(e))</span><br><span class="line">    # 发生错误时回滚</span><br><span class="line">    db.rollback()</span><br></pre></td></tr></table></figure>
+
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<h2><span id="六-删除表中的数据">六、删除表中的数据</span></h2><p>1、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery &#x3D; &quot;DELETE FROM Student where Name&#x3D;%s&quot;</span><br></pre></td></tr></table></figure>
+
+<p>2、编辑更新的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value &#x3D; (&#39;John&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>3、提交修改</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    cur.execute(sqlQuery, value)</span><br><span class="line">    db.commit()</span><br><span class="line">    print(&#39;Date Deleted Successfully&#39;)</span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&quot;数据删除失败：&quot;+str(e))</span><br><span class="line">    # 发生错误时回滚</span><br><span class="line">    db.rollback()</span><br></pre></td></tr></table></figure>
+
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<h2><span id="七-删除一张表">七、删除一张表</span></h2><p>1、编辑sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlQuery&#x3D;&#39;DROP TABLE IF EXISTS Student&#39;</span><br></pre></td></tr></table></figure>
+
+<p>2、提交修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cur.execute(sqlQuery)</span><br><span class="line">print(&#39;表删除成功!&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>完整demo：</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"></span><br><span class="line"># https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_39598271&#x2F;article&#x2F;details&#x2F;112610382</span><br><span class="line"># Python3.8问题</span><br><span class="line">try:</span><br><span class="line">    db &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, password&#x3D;&quot;*****&quot;, database&#x3D;&quot;test&quot;)</span><br><span class="line">    print(&#39;数据库连接成功!&#39;)</span><br><span class="line">    # 创建一张表</span><br><span class="line">    cur &#x3D; db.cursor()</span><br><span class="line">    # cur.execute(&#39;DROP TABLE IF EXISTS Student&#39;)</span><br><span class="line">    # sqlQuery &#x3D; &quot;CREATE TABLE Student(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )&quot;</span><br><span class="line">    # cur.execute(sqlQuery)</span><br><span class="line"></span><br><span class="line">    # 向表中插入数据</span><br><span class="line">    # cur &#x3D; db.cursor()</span><br><span class="line">    # sqlQuery &#x3D; &quot; INSERT INTO Student (Name, Email, Age) VALUE (%s,%s,%s) &quot;</span><br><span class="line">    # value &#x3D; (&#39;Mike&#39;, &#39;123456@163.com&#39;, 20)</span><br><span class="line">    # try:</span><br><span class="line">    #     cur.execute(sqlQuery, value)</span><br><span class="line">    #     db.commit()</span><br><span class="line">    #     print(&#39;数据插入成功！&#39;)</span><br><span class="line">    # except pymysql.Error as e:</span><br><span class="line">    #     print(&quot;数据插入失败：&quot; + e)</span><br><span class="line">    #     db.rollback()</span><br><span class="line"></span><br><span class="line">    # 查询表中数据</span><br><span class="line">    # cur &#x3D; db.cursor()</span><br><span class="line">    # sqlQuery &#x3D; &quot;SELECT * FROM Student&quot;</span><br><span class="line">    # try:</span><br><span class="line">    #     cur.execute(sqlQuery)</span><br><span class="line">    #     results &#x3D; cur.fetchall()</span><br><span class="line">    #     for row in results:</span><br><span class="line">    #         name &#x3D; row[0]</span><br><span class="line">    #         email &#x3D; row[1]</span><br><span class="line">    #         age &#x3D; row[2]</span><br><span class="line">    #         print(&#39;Name:%s,Email:%s,Age:%s&#39; % (name, email, age))</span><br><span class="line">    # except pymysql.Error as e:</span><br><span class="line">    #     print(&quot;数据查询失败：&quot; + str(e))</span><br><span class="line"></span><br><span class="line">    # 更新表中数据</span><br><span class="line">    # cur &#x3D; db.cursor()</span><br><span class="line">    # sqlQuery &#x3D; &quot;UPDATE Student SET Name&#x3D; %s WHERE Name&#x3D;%s&quot;</span><br><span class="line">    # value &#x3D; (&#39;John&#39;, &#39;updated name&#39;)</span><br><span class="line">    # try:</span><br><span class="line">    #     cur.execute(sqlQuery, value)</span><br><span class="line">    #     db.commit()</span><br><span class="line">    #     print(&#39;数据更新成功！&#39;)</span><br><span class="line">    # except pymysql.Error as e:</span><br><span class="line">    #     print(&quot;数据更新失败：&quot; + str(e))</span><br><span class="line">    #     # 发生错误时回滚</span><br><span class="line">    #     db.rollback()</span><br><span class="line"></span><br><span class="line">    # 删除表中数据</span><br><span class="line">    # cur &#x3D; db.cursor()</span><br><span class="line">    # sqlQuery &#x3D; &quot;DELETE FROM Student where Name&#x3D;%s&quot;</span><br><span class="line">    # value &#x3D; (&#39;John&#39;)</span><br><span class="line">    # try:</span><br><span class="line">    #     cur.execute(sqlQuery, value)</span><br><span class="line">    #     db.commit()</span><br><span class="line">    #     print(&#39;Date Deleted Successfully&#39;)</span><br><span class="line">    # except pymysql.Error as e:</span><br><span class="line">    #     print(&quot;数据删除失败：&quot; + str(e))</span><br><span class="line">    #     # 发生错误时回滚</span><br><span class="line">    #     db.rollback()</span><br><span class="line"></span><br><span class="line">    # 删除一张表</span><br><span class="line">    cur &#x3D; db.cursor()</span><br><span class="line">    sqlQuery &#x3D; &#39;DROP TABLE IF EXISTS Student&#39;</span><br><span class="line">    cur.execute(sqlQuery)</span><br><span class="line">    print(&#39;表删除成功!&#39;)</span><br><span class="line"></span><br><span class="line">except pymysql.Error as e:</span><br><span class="line">    print(&#39;数据库连接失败&#39;+str(e))</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/05/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-阿里云申请免费ssl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -820,105 +957,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/01/18/Flutter-%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-elasticsearch笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/">elasticsearch</a>
-    </h1>
-  
-
-        
-        <a href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-01-04T09:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-
-<h3><span id="一-elasticserach-基本介绍">一. ElasticSerach 基本介绍</span></h3><p>mysql用作持久化存储，ES用作检索</p>
-<p>基本概念：index库&gt;type表&gt;document文档</p>
-<h5><span id="index索引">index索引</span></h5><p>动词：相当于mysql的insert</p>
-<p>名词：相当于mysql的db</p>
-<h5><span id="type类型">Type类型</span></h5><p>在index中，可以定义一个或多个类型</p>
-<p>类似于mysql的table，每一种类型的数据放在一起</p>
-<h5><span id="document文档">Document文档</span></h5><p>保存在某个index下，某种type的一个数据document，文档是json格式的，document就像是mysql中的某个table里面的内容</p>
-<p>每一行对应的列叫属性</p>
-<img src="https://img-blog.csdnimg.cn/img_convert/ac324af45c240156678ec41f2100a590.png" alt="img" style="zoom: 67%;">
-
-
-
-
-
-<h3><span id="二-安装es">二. 安装ES</span></h3><p>dokcer中安装elastic search</p>
-<p>（1）下载ealastic search（存储和检索）和kibana（可视化检索）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install Elasticsearch : 最后安装 Elasticsearch 成功！</span><br><span class="line">brew services start elasticsearch:  后台启动 Elasticsearch。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install kibana //安装Kibana</span><br><span class="line">brew services start kibana // 启动Kibana</span><br></pre></td></tr></table></figure>
-
-<p>ElasticSearch 的启动地址:   <a target="_blank" rel="noopener" href="http://localhost:9200/">http://localhost:9200/</a></p>
-<p>Kibana 的启动地址：<a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hancoder/article/details/113922398">https://blog.csdn.net/hancoder/article/details/113922398</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 

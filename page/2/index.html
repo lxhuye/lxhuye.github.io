@@ -146,6 +146,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-elasticsearch笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/">elasticsearch</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2022-01-04T09:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h3><span id="一-elasticserach-基本介绍">一. ElasticSerach 基本介绍</span></h3><p>mysql用作持久化存储，ES用作检索</p>
+<p>基本概念：index库&gt;type表&gt;document文档</p>
+<h5><span id="index索引">index索引</span></h5><p>动词：相当于mysql的insert</p>
+<p>名词：相当于mysql的db</p>
+<h5><span id="type类型">Type类型</span></h5><p>在index中，可以定义一个或多个类型</p>
+<p>类似于mysql的table，每一种类型的数据放在一起</p>
+<h5><span id="document文档">Document文档</span></h5><p>保存在某个index下，某种type的一个数据document，文档是json格式的，document就像是mysql中的某个table里面的内容</p>
+<p>每一行对应的列叫属性</p>
+<img src="https://img-blog.csdnimg.cn/img_convert/ac324af45c240156678ec41f2100a590.png" alt="img" style="zoom: 67%;">
+
+
+
+
+
+<h3><span id="二-安装es">二. 安装ES</span></h3><p>dokcer中安装elastic search</p>
+<p>（1）下载ealastic search（存储和检索）和kibana（可视化检索）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install Elasticsearch : 最后安装 Elasticsearch 成功！</span><br><span class="line">brew services start elasticsearch:  后台启动 Elasticsearch。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install kibana //安装Kibana</span><br><span class="line">brew services start kibana // 启动Kibana</span><br></pre></td></tr></table></figure>
+
+<p>ElasticSearch 的启动地址:   <a target="_blank" rel="noopener" href="http://localhost:9200/">http://localhost:9200/</a></p>
+<p>Kibana 的启动地址：<a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hancoder/article/details/113922398">https://blog.csdn.net/hancoder/article/details/113922398</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/04/elasticsearch%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Flutter使用屏幕适配插件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -867,113 +966,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-flutter-使用高德地图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/">flutter 使用高德地图</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2021-11-22T03:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>注册一个高德地图账号</p>
-</li>
-<li><p>创建一个新的应用</p>
-</li>
-<li><p>给创建好的应用添加一个Key</p>
-</li>
-<li><p>获得高德地图需要的几个重要参数</p>
-<ol>
-<li>将安卓包下的iml文件用安卓的方式打开</li>
-<li>build完毕之后, 在右侧Gradle的build中找到:app/android/singleReport</li>
-<li>在控制台就可以找到SHA1 将其粘贴到高德地图API申请窗口</li>
-<li>找到android目录下的./app/build.gradle</li>
-<li>找到defaultConfig类下的 applicationId 后面跟着的就是我们的项目名</li>
-<li>复制粘贴项目名到高德地图API申请窗口, 点击阅读并同意 完成Key的申请   </li>
-</ol>
-</li>
-<li><p>复制申请到的applicatin Key 重新回到安卓项目中</p>
-<ol>
-<li>打开安卓项目中的./main/AndroidManifest.xml文件</li>
-<li>复制一份文件下方<meta-data>的格式</meta-data></li>
-<li>将复制到的<meta-data android:name="XXX">数据放在 <application xxx> 标签下方, <activity> 标签上方</activity></application></meta-data></li>
-<li>修改<meta-data name="com.amap./api.v2.apikey" value="高德地图的Key">为高德key中的数据</meta-data></li>
-</ol>
-</li>
-<li><p>导入高德地图依赖 </p>
-<ol>
-<li>在github搜索 flutter amap</li>
-<li>找到稳定版本的amap 继承进flutter的依赖pubspec.ymal, 重新加载依赖</li>
-<li>导入高德地图依赖 可以在dart文件中使用高德接口</li>
-</ol>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/22/flutter-%E4%BD%BF%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/">展开全文 >></a>
         </p>
       
 
