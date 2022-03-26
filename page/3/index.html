@@ -146,6 +146,171 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-在vue中使用img展示商品主图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/22/%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8img%E5%B1%95%E7%A4%BA%E5%95%86%E5%93%81%E4%B8%BB%E5%9B%BE/">在vue中使用img展示商品主图</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/22/%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8img%E5%B1%95%E7%A4%BA%E5%95%86%E5%93%81%E4%B8%BB%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2021-11-22T08:04:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-table-column</span><br><span class="line">       prop&#x3D;&quot;mainPicture&quot;</span><br><span class="line">       header-align&#x3D;&quot;center&quot;</span><br><span class="line">       align&#x3D;&quot;center&quot;</span><br><span class="line">       label&#x3D;&quot;商品主图&quot;&gt;</span><br><span class="line">        &lt;template slot-scope&#x3D;&quot;scope&quot;&gt;</span><br><span class="line">          &lt;img :src&#x3D;&quot;scope.row.mainPicture&quot; style&#x3D;&quot;width:100px;height:80px&quot;&gt;</span><br><span class="line">       &lt;&#x2F;template&gt;</span><br><span class="line">     &lt;&#x2F;el-table-column&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">谷粒商城</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/22/%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8img%E5%B1%95%E7%A4%BA%E5%95%86%E5%93%81%E4%B8%BB%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-后台管理系统快速使用Upload功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/">后台管理系统快速使用Upload功能</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/" class="archive-article-date">
+  	<time datetime="2021-11-22T07:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>后端创建管理第三方服务的微服务</p>
+<p>Step 1: 引入upload组件</p>
+<p>首先在谷粒商城的文件夹前端找到upload文件夹, 这个是已经封装好的upload方法, 为我们设置好了给阿里云oss发送请求</p>
+<p>将upload文件夹复制粘贴到vue项目的components文件夹下</p>
+<p>Step 2: 使用导入的upload组件</p>
+<p>进入需要使用upload组件的vue文件</p>
+<p>第一步：导入upload文件 (单文件上传就用singleUpload, 多文件上传就用multiUpload)：在<script>标签的下方导入文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  import singleUpload from &quot;@&#x2F;components&#x2F;upload&#x2F;singleUpload&quot;&#x2F;&#x2F;导入单文件上传</span><br><span class="line">  XXXX</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第二步: 在下方export default注册组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;  </span><br><span class="line">    components:&#123;</span><br><span class="line">      singleUpload,</span><br><span class="line">    &#125;, &#x2F;&#x2F;输出组件</span><br></pre></td></tr></table></figure>
+
+<p>第三步: 在文件中使用组件, 将原先的el-input替换成注册好的<singleUpload>组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-form-item label&#x3D;&quot;商品主图地址&quot; prop&#x3D;&quot;mainPicture&quot;&gt;</span><br><span class="line">   &lt;!-- &lt;el-input v-model&#x3D;&quot;dataForm.mainPicture&quot; placeholder&#x3D;&quot;商品主图地址&quot;&gt;&lt;&#x2F;el-input&gt; --&gt;</span><br><span class="line">   &lt;singleUpload v-model&#x3D;&quot;dataForm.mainPicture&quot;&gt;&lt;&#x2F;singleUpload&gt;</span><br><span class="line"> &lt;&#x2F;el-form-item&gt;</span><br></pre></td></tr></table></figure>
+
+</script></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/22/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Upload%E5%8A%9F%E8%83%BD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-flutter-使用高德地图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -824,183 +989,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/05/SEO%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-解决hexo-github-deploy鉴权失败问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/05/%E8%A7%A3%E5%86%B3hexo-github-deploy%E9%89%B4%E6%9D%83%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/">解决hexo github deploy鉴权失败问题</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/05/%E8%A7%A3%E5%86%B3hexo-github-deploy%E9%89%B4%E6%9D%83%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-09-05T11:01:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>解决方案：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41010198/article/details/119698015">https://blog.csdn.net/weixin_41010198/article/details/119698015</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/05/%E8%A7%A3%E5%86%B3hexo-github-deploy%E9%89%B4%E6%9D%83%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-odoo-绑定域名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/12/odoo-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">odoo 绑定域名</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/12/odoo-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/" class="archive-article-date">
-  	<time datetime="2021-08-12T08:21:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考教程： </p>
-<p><a target="_blank" rel="noopener" href="https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-ubuntu-20-04/">https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-ubuntu-20-04/</a></p>
-<h3><span id="一-安装nginx">一. 安装nginx</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br><span class="line">sudo systemctl status nginx # 安装好后，查看nginx运行状况</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="二-给网站增加ssl">二. 给网站增加ssl</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install certbot </span><br><span class="line">sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 #增加安全性</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /var/lib/letsencrypt/.well-known </span><br><span class="line">sudo chgrp www-data /var/lib/letsencrypt</span><br><span class="line">sudo chmod g+s /var/lib/letsencrypt</span><br><span class="line">sudo nano /etc/nginx/snippets/letsencrypt.conf</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location ^~ &#x2F;.well-known&#x2F;acme-challenge&#x2F; &#123;</span><br><span class="line">  allow all;</span><br><span class="line">  root &#x2F;var&#x2F;lib&#x2F;letsencrypt&#x2F;;</span><br><span class="line">  default_type &quot;text&#x2F;plain&quot;;</span><br><span class="line">  try_files $uri &#x3D;404;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/nginx/snippets/ssl.conf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ssl_dhparam &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dhparam.pem;</span><br><span class="line"></span><br><span class="line">ssl_session_timeout 1d;</span><br><span class="line">ssl_session_cache shared:SSL:10m;</span><br><span class="line">ssl_session_tickets off;</span><br><span class="line"></span><br><span class="line">ssl_protocols TLSv1.2 TLSv1.3;</span><br><span class="line">ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">ssl_stapling on;</span><br><span class="line">ssl_stapling_verify on;</span><br><span class="line">resolver 8.8.8.8 8.8.4.4 valid&#x3D;300s;</span><br><span class="line">resolver_timeout 30s;</span><br><span class="line"></span><br><span class="line">add_header Strict-Transport-Security &quot;max-age&#x3D;31536000; includeSubDomains&quot; always;</span><br><span class="line">add_header X-Frame-Options SAMEORIGIN;</span><br><span class="line">add_header X-Content-Type-Options nosniff;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="三创建一个关联域名的文件">三.创建一个关联域名的文件</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo nano /etc/nginx/sites-available/example.com.conf 改成自己要绑定的域名</span></span><br><span class="line"> sudo nano /etc/nginx/sites-available/arrinvestment.org.conf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name arrinvestment.org www.arrinvestment.org;</span><br><span class="line">  include snippets&#x2F;letsencrypt.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /etc/nginx/sites-available/arrinvestment.org.conf /etc/nginx/sites-enabled/</span><br><span class="line">sudo systemctl restart nginx #重启nginx</span><br></pre></td></tr></table></figure>
-
-
-
-<p>四. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --agree-tos --email lxhu.work@gmail.com --webroot -w &#x2F;var&#x2F;lib&#x2F;letsencrypt&#x2F; -d arrinvestment.org -d www.arrinvestment.org</span><br></pre></td></tr></table></figure>
-
-<p>需要备案 备案之后继续</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">odoo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/12/odoo-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">展开全文 >></a>
         </p>
       
 

@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>nginx 学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/7/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="nginx 学习">
+<meta property="og:url" content="http://example.com/2022/03/25/nginx-%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_60608DE7BD61-1.jpeg">
+<meta property="og:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_9E4049DC1987-1.jpeg">
+<meta property="og:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_77176C2C4564-1.jpeg">
+<meta property="og:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_7D543D84A702-1.jpeg">
+<meta property="og:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_767B3597D87F-1.jpeg">
+<meta property="article:published_time" content="2022-03-25T14:02:19.000Z">
+<meta property="article:modified_time" content="2022-03-25T14:06:51.801Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_60608DE7BD61-1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -144,74 +152,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-虚拟机配置网卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-nginx-学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">centos8虚拟机配置网卡</a>
+    <h1 class="article-title" itemprop="name">
+      nginx 学习
     </h1>
   
 
         
-        <a href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/" class="archive-article-date">
-  	<time datetime="2020-10-30T15:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
+        <a href="/2022/03/25/nginx-%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2022-03-25T14:02:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.进入虚拟机终端 使用 <strong>dhclient</strong> 为虚拟机分配一个ip地址 (需要管理员权限)</p>
-<p>2.使用vim进入配置文件夹配置网络信息<br><code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
-<p>3.修改配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line">IPADDR= //这里填虚拟机自动分配的地址</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.10.1</span><br><span class="line">DNS=114.114.114.114</span><br></pre></td></tr></table></figure>
+        <!--toc-->
 
-<p>4.重启虚拟机网卡</p>
-<p> 方法：nmcli c reload +网卡名   <strong>例：nmcli c reload ens33</strong></p>
-<p>5.测试能否连接外网</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
+<h2><span id="nginx-命令行的几个重要参数">nginx 命令行的几个重要参数</span></h2><h4><span id="-g-全局配置启动">-g: 全局配置启动</span></h4><img src="/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_60608DE7BD61-1.jpeg" alt="IMG_60608DE7BD61-1" style="zoom:25%;">
 
+<h4><span id="-t-不启动-仅仅测试配置文件">-t 不启动 仅仅测试配置文件</span></h4><img src="/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_9E4049DC1987-1.jpeg" alt="IMG_9E4049DC1987-1" style="zoom:25%;">
 
-<p>注：</p>
-<p>网络不通一般是服务端和客户端找不到<br>1.确定虚拟机管理工具配置的网络连接方式是<strong>桥接</strong>，否则static网络不会生效；<br>2.如果上述是桥接网络，<strong>那么确定网络配置和物理机网络配置大部分一致，除了IP地址，特别注意网关和子网掩码；</strong><br>3.如果上述均没有问题，那么先通过ping来判断网关是否连通<br>#ping 172.16.160.1<br>4.如果上述不通，那么此时需要判断路由表是否有问题<br>#route -nn<br>此时如果发现没有172.16.160.1该网关的信息，那么需要手动添加<br>如果添加完还是不行那么就重启系统吧</p>
+<h4><span id="-q-测试期间不打印error级别以下的信息">-q 测试期间不打印error级别以下的信息</span></h4><img src="/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_77176C2C4564-1.jpeg" alt="IMG_77176C2C4564-1" style="zoom:25%;">
+
+<h4><span id="-s-快速停止服务">-s 快速停止服务</span></h4><img src="/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_7D543D84A702-1.jpeg" alt="IMG_7D543D84A702-1" style="zoom:25%;">
+
+<img src="/Users/leaveshu/blog/source/_posts/nginx-学习/IMG_767B3597D87F-1.jpeg" alt="IMG_767B3597D87F-1" style="zoom:25%;">
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/30/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/25/nginx-%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/25/mvn-java-home-%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mvn java_home 错误解决</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -226,871 +300,34 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-ngork内网穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/28/ngork%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">ngork内网穿透</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/28/ngork%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="archive-article-date">
-  	<time datetime="2020-10-28T10:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在某些场景下，我们在本地编写的项目, 需要被别人访问到，这时候， 我们需要一个服务器，来转发我们本地端口的内容，<strong>使得别人也可以访问我们本地的项目</strong>，这个过程就叫做<strong>内网穿透</strong> </p>
-<p>我们可以使用ngork这个平台提供的免费服务器来快速的实现内网穿透</p>
-<ol>
-<li>注册ngork账号<ul>
-<li><a target="_blank" rel="noopener" href="http://www.ngrok.cc/">http://www.ngrok.cc/</a></li>
-</ul>
-</li>
-<li>购买服务（0元）<ul>
-<li>选择美国免费服务器</li>
-</ul>
-</li>
-<li>填入本地项目的端口地址，以及一些基本信息</li>
-<li>下载工具，开启服务器通道</li>
-</ol>
-<p>本地服务需要一直启动项目</p>
-<p><strong>更多使用：</strong>在本地机器部署应用，然后使用内网穿透将其上线</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/28/ngork%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">nginx 命令行的几个重要参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text">-g: 全局配置启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.2.</span> <span class="toc-text">-t 不启动 仅仅测试配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.3.</span> <span class="toc-text">-q 测试期间不打印error级别以下的信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.0.4.</span> <span class="toc-text">-s 快速停止服务</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-
-  
-    <article id="post-docker笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/">docker笔记02_docker-file</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/" class="archive-article-date">
-  	<time datetime="2020-10-25T12:03:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker-file">什么是Docker File</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8dockerfile%E6%9E%84%E5%BB%BAdocker%E9%95%9C%E5%83%8F">使用Dockerfile构建Docker镜像</a></li>
-<li><a href="#dockerfile%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">Dockerfile常用指令</a></li>
-<li><a href="#dockerfile%E5%90%84%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%9A%84%E7%90%86%E8%A7%A3">Dockerfile各个属性的理解</a></li>
-</ul>
-<!-- tocstop -->
-
-<p>本节将讨论如何使用<strong>Dockerfile构建Docker镜像</strong>。Dockerfile是一个文本文件，其中包含了若干条指令，指令描述了构建镜像的细节。</p>
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker, mall_learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B002/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-docker安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">docker安装</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-10-25T00:41:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本节我们来探讨如何安装Docker。目前，Docker支持在数十种操作系统上安装。限于篇幅，笔者只能以几款常见的操作系统为例，为大家演示如何安装Docker。若有的操作系统本书并未提及，读者可在<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/installation%E6%9F%A5%E9%98%85%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97%E3%80%82">https://docs.docker.com/engine/installation查阅安装指南。</a></p>
-<!--toc-->
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E5%AE%89%E8%A3%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-docker笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/">docker笔记01</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/" class="archive-article-date">
-  	<time datetime="2020-10-25T00:34:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Docker是一个开源的容器引擎</strong>，它有助于更快地交付应用。<strong>Docker可将应用程序和基础设施层隔离</strong>，并且能将基础设施当作程序一样进行管理。<strong>使用Docker，可更快地打包、测试以及部署应用程序，并可缩短从编写到部署运行代码的周期</strong>。</p>
-<!--toc-->
-        
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker, mall_learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/docker%E7%AC%94%E8%AE%B001/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习04-面向切面的Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/">Spring学习04_面向切面的Spring</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/" class="archive-article-date">
-  	<time datetime="2020-10-24T15:07:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑相分离的（但是往往会直接嵌入到应用的业务逻辑之中）。把这些横切关注点与业务逻辑相分离正是面向切面编程（AOP）所要解决的问题。</p>
-<p>在第2章，我们介绍了如何使用依赖注入（DI）管理和配置我们的应用对象。DI有助于应用对象之间的解耦，而AOP可以实现横切关注点与它们所影响的对象之间的解耦。</p>
-<p>日志是应用切面的常见范例，但它并不是切面适用的唯一场景。通览本书，我们还会看到切面所适用的多个场景，包括声明式事务、安全和缓存。</p>
-<p>本章展示了Spring对切面的支持，包括如何把普通类声明为一个切面和如何使用注解创建切面。除此之外，我们还会看到AspectJ——另一种流行的AOP实现——如何补充Spring AOP框架的功能。但是，我们先不管事务、安全和缓存，先看一下Spring是如何实现切面的，就从AOP的基础知识开始吧。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-%EF%B8%8F"><strong>什么是面向切面编程 ⭐️</strong></a><ul>
-<li><a href="#%E5%AE%9A%E4%B9%89aop%E6%9C%AF%E8%AF%AD-%EF%B8%8F"><strong>定义AOP术语 ⭐️</strong></a><ul>
-<li><a href="#%E9%80%9A%E7%9F%A5advice"><strong>通知（Advice）</strong></a></li>
-<li><a href="#%E8%BF%9E%E6%8E%A5%E7%82%B9join-point"><strong>连接点（Join point）</strong></a></li>
-<li><a href="#%E5%88%87%E7%82%B9poincut"><strong>切点（Poincut）</strong></a></li>
-<li><a href="#%E5%88%87%E9%9D%A2aspect"><strong>切面（Aspect）</strong></a></li>
-<li><a href="#%E5%BC%95%E5%85%A5introduction"><strong>引入（Introduction）</strong></a></li>
-<li><a href="#%E7%BB%87%E5%85%A5weaving"><strong>织入（Weaving）</strong></a></li>
-</ul>
-<ul>
-<li><a href="#spring%E5%AF%B9aop%E7%9A%84%E6%94%AF%E6%8C%81"><strong>Spring对AOP的支持</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E9%80%9A%E8%BF%87%E5%88%87%E7%82%B9%E6%9D%A5%E9%80%89%E6%8B%A9%E8%BF%9E%E6%8E%A5%E7%82%B9"><strong>通过切点来选择连接点</strong></a><ul>
-<li><a href="#%E7%BC%96%E5%86%99%E5%88%87%E7%82%B9"><strong>编写切点</strong></a></li>
-<li><a href="#%E5%9C%A8%E5%88%87%E7%82%B9%E4%B8%AD%E9%80%89%E6%8B%A9bean"><strong>在切点中选择bean</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%88%9B%E5%BB%BA%E5%88%87%E9%9D%A2-%EF%B8%8F"><strong>使用注解创建切面 ⭐️</strong></a><ul>
-<li><a href="#%E5%AE%9A%E4%B9%89%E5%88%87%E9%9D%A2aspectj"><strong>定义切面:<code>@AspectJ</code></strong></a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BA%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5around"><strong>创建环绕通知<code>@Around</code></strong></a></li>
-<li><a href="#%E5%A4%84%E7%90%86%E9%80%9A%E7%9F%A5%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0"><strong>处理通知中的参数</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E6%B3%A8%E5%85%A5aspectj%E5%88%87%E9%9D%A2"><strong>注入AspectJ切面</strong></a></li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring, mall_learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A004-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%9A%84Spring/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习03-高级装配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/">Spring学习03_高级装配</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/" class="archive-article-date">
-  	<time datetime="2020-10-24T12:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在上一章中，我们看到了一些最为核心的bean装配技术。你可能会发现上一章学到的知识有很大的用处。但是，bean装配所涉及的领域并不仅仅局限于上一章所学习到的内容。Spring提供了多种技巧，借助它们可以实现<strong>更为高级的bean装配功能</strong>。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E4%B8%8Eprofile"><strong>环境与profile</strong></a><ul>
-<li><a href="#%E9%85%8D%E7%BD%AEprofile-beanprofile"><strong>配置profile bean：<code>@Profile</code></strong></a><ul>
-<li><a href="#%E5%9C%A8xml%E4%B8%AD%E9%85%8D%E7%BD%AEprofile"><strong>在XML中配置profile</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E5%8C%96%E7%9A%84beanconditional"><strong>条件化的bean：@Conditional</strong></a><ul>
-<li><a href="#%E6%BF%80%E6%B4%BBprofile"><strong>激活profile</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%A4%84%E7%90%86%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7"><strong>处理自动装配的歧义性</strong></a><ul>
-<li><a href="#%E6%A0%87%E7%A4%BA%E9%A6%96%E9%80%89%E7%9A%84beanprimary"><strong>标示首选的bean：<code>@Primary</code></strong></a></li>
-<li><a href="#%E9%99%90%E5%AE%9A%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84beanqualifier"><strong>限定自动装配的bean：</strong><code>@Qualifier</code></a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%99%90%E5%AE%9A%E7%AC%A6"><strong>创建自定义的限定符</strong></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%99%90%E5%AE%9A%E7%AC%A6%E6%B3%A8%E8%A7%A3"><strong>使用自定义的限定符注解</strong></a></li>
-</ul>
-</li>
-<li><a href="#bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F-%EF%B8%8F"><strong>bean的作用域</strong> ⭐️</a><ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E5%92%8C%E8%AF%B7%E6%B1%82%E4%BD%9C%E7%94%A8%E5%9F%9F"><strong>使用会话和请求作用域</strong></a></li>
-<li><a href="#%E5%9C%A8xml%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%BB%A3%E7%90%86"><strong>在XML中声明作用域代理</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%80%BC%E6%B3%A8%E5%85%A5"><strong>运行时值注入</strong></a><ul>
-<li><a href="#%E5%B1%9E%E6%80%A7%E5%8D%A0%E4%BD%8D%E7%AC%A6">属性占位符</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8spring%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E8%A8%80%E8%BF%9B%E8%A1%8C%E8%A3%85%E9%85%8D"><strong>使用Spring表达式语言进行装配</strong></a><ul>
-<li><a href="#spel%E6%A0%B7%E4%BE%8B"><strong>SpEL样例</strong></a></li>
-<li><a href="#%E5%BC%95%E7%94%A8bean-%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><strong>引用bean、属性和方法</strong></a></li>
-<li><a href="#%E5%9C%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%9E%8B"><strong>在表达式中使用类型</strong></a></li>
-<li><a href="#spel%E8%BF%90%E7%AE%97%E7%AC%A6"><strong>SpEL运算符</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93">小结</a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习02-spring装配Bean" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">Spring学习02_spring装配Bean</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/" class="archive-article-date">
-  	<time datetime="2020-10-24T03:32:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
-<p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#spring%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E9%80%89%E6%96%B9%E6%A1%88"><strong>Spring配置的可选方案</strong></a></li>
-<li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E8%A3%85%E9%85%8Dbean"><strong>自动化装配bean</strong></a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%A2%AB%E5%8F%91%E7%8E%B0%E7%9A%84bean"><strong>创建可被发现的bean</strong></a></li>
-<li><a href="#%E4%B8%BA%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84bean%E5%91%BD%E5%90%8D"><strong>为组件扫描的bean命名</strong></a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E5%8C%85-%EF%B8%8F"><strong>设置组件扫描的基础包</strong> ⭐️</a></li>
-<li><a href="#%E4%B8%BAbean%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D-%EF%B8%8F%EF%B8%8F"><strong>为bean添加注解实现自动装配</strong> ⭐️⭐️</a></li>
-<li><a href="#%E6%89%8B%E5%8A%A8%E8%A3%85%E9%85%8Dbean%EF%B8%8F"><strong>手动装配bean</strong>⭐️</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87java%E4%BB%A3%E7%A0%81%E8%A3%85%E9%85%8Dbean"><strong>通过Java代码装配bean</strong></a><ul>
-<li><a href="#%E5%A3%B0%E6%98%8E%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明简单的bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9javaconfig%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%85%A5"><strong>借助JavaConfig实现注入</strong></a></li>
-<li><a href="#%E9%80%9A%E8%BF%87xml%E8%A3%85%E9%85%8Dbean"><strong>通过XML装配bean</strong></a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BAxml%E9%85%8D%E7%BD%AE%E8%A7%84%E8%8C%83"><strong>创建XML配置规范</strong></a></li>
-<li><a href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明一个简单的Bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5%E5%88%9D%E5%A7%8B%E5%8C%96bean"><strong>借助构造器注入初始化bean</strong></a><ul>
-<li><a href="#%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5bean%E5%BC%95%E7%94%A8"><strong>构造器注入bean引用</strong></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8spring-30%E6%89%80%E5%BC%95%E5%85%A5%E7%9A%84c-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">使用Spring 3.0所引入的c-命名空间</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B0%86%E5%AD%97%E9%9D%A2%E9%87%8F%E6%B3%A8%E5%85%A5%E5%88%B0%E6%9E%84%E9%80%A0%E5%99%A8%E4%B8%AD"><strong>将字面量注入到构造器中</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习01_spring核心" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/">spring学习01_spring的核心</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/" class="archive-article-date">
-  	<time datetime="2020-10-24T02:11:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是<strong>依赖注入（dependency injection，DI）</strong>和<strong>面向切面编程（aspect-oriented programming，AOP</strong>）。</p>
-<p>创建Spring的主要目的是用来替代更加重量级的企业级Java技术，尤其是EJB。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#spring-%E9%99%8D%E4%BD%8Ejava%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7">Spring 降低Java开发的复杂性</a><ul>
-<li><a href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5-%EF%B8%8F"><strong>依赖注入</strong> ⭐️</a></li>
-<li><a href="#bean%E8%A3%85%E9%85%8D">Bean装配</a></li>
-<li><a href="#%E5%BA%94%E7%94%A8%E5%88%87%E9%9D%A2-%EF%B8%8F">应用切面 ⭐️</a></li>
-<li><a href="#%E6%B6%88%E9%99%A4%E6%9D%BF%E5%BC%8F%E4%BB%A3%E7%A0%81">消除板式代码</a></li>
-</ul>
-</li>
-<li><a href="#spring-%E5%AE%B9%E5%99%A8">Spring 容器</a><ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%AE%B9%E5%99%A8"><strong>使用应用上下文容器</strong></a><ul>
-<li><a href="#bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><strong>bean的生命周期</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A001_spring%E6%A0%B8%E5%BF%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-hexo-创建目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/">Hexo添加Toc支持，生成文章目录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-10-24T01:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85doctoc%E4%BE%9D%E8%B5%96">安装doctoc依赖</a></li>
-<li><a href="#%E7%BB%99%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%9B%AE%E5%BD%95">给指定的博客添加目录</a><ul>
-<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80">方法一：</a></li>
-<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C">方法二：</a></li>
-</ul>
-</li>
-<li><a href="#%E9%87%8D%E5%90%AFhexo%E6%9C%8D%E5%8A%A1">重启Hexo服务</a></li>
-</ul>
-<!-- tocstop -->
-
-<h4 id="安装doctoc依赖"><a href="#安装doctoc依赖" class="headerlink" title="安装doctoc依赖"></a>安装doctoc依赖</h4><p>在Hexo根目录中安装doctoc依赖</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install doctoc</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/hexo-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
-    </nav>
   
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -1112,8 +349,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
