@@ -146,6 +146,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Flutter使用屏幕适配插件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/03/Flutter%E4%BD%BF%E7%94%A8%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E6%8F%92%E4%BB%B6/">Flutter使用屏幕适配插件</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/03/Flutter%E4%BD%BF%E7%94%A8%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E6%8F%92%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2022-01-03T10:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用屏幕适配插件 flutter_screenutil 适配不同机型的屏幕</p>
+<p>插件地址: <a target="_blank" rel="noopener" href="https://github.com/OpenFlutter/flutter_screenutil/blob/master/README_CN.md">https://github.com/OpenFlutter/flutter_screenutil/blob/master/README_CN.md</a></p>
+<p>安装依赖: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter_screenutil: ^&#123;latest version&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>导入包: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;package:flutter_screenutil&#x2F;flutter_screenutil.dart&#39;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用方式</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() =&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="comment">//填入设计稿中设备的屏幕尺寸,单位dp</span></span><br><span class="line">    <span class="keyword">return</span> ScreenUtilInit(</span><br><span class="line">      designSize: Size(<span class="number">360</span>, <span class="number">690</span>), <span class="comment">//设置尺寸 如果设计基于360dp * 690dp的屏幕 </span></span><br><span class="line">      minTextAdapt: <span class="keyword">true</span>,</span><br><span class="line">      builder: () =&gt; MaterialApp(</span><br><span class="line">        debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">        title: <span class="string">&#x27;Flutter_ScreenUtil&#x27;</span>,</span><br><span class="line">        theme: ThemeData(</span><br><span class="line">                  primarySwatch: Colors.blue,</span><br><span class="line">                  <span class="comment">//要支持下面这个需要使用第一种初始化方式</span></span><br><span class="line">                  textTheme: TextTheme(</span><br><span class="line">                    button: TextStyle(fontSize: <span class="number">45.</span>sp)</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">        home: HomePage(title: <span class="string">&#x27;FlutterScreenUtil Demo&#x27;</span>),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用screenUtil设置尺寸</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">width: <span class="number">50.</span>w,</span><br><span class="line">height:<span class="number">200.</span>h</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/03/Flutter%E4%BD%BF%E7%94%A8%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E6%8F%92%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Flutter-集成swiper轮播图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -910,83 +1004,6 @@
 
 
   
-    <article id="post-SpringBoot快速搭建web-Demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/">SpringBoot快速搭建web Demo</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/" class="archive-article-date">
-  	<time datetime="2021-11-16T09:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--toc-->
-        
-          <a class="article-more-a" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/16/SpringBoot%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAweb-Demo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1245,6 +1262,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">独立站搭建</a>
               </li>
             
             <div class="clearfix"></div>

