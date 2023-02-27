@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: erp | Hexo</title>
+  <title>在Ubantu 上安装使用Nginx安装 WordPress + ssl | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/erp/index.html">
+  <meta name="description" content="在Ubantu 上安装使用Nginx安装 WordPress + ssl 安装必要的软件包： 12sudo apt updatesudo apt install nginx php-fpm php-mysql  安装MySQL数据库 12sudo apt install mysql-serversudo mysql -u root -p  创建一个新的MySQL用户和数据库 12345CREATE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubantu 上安装使用Nginx安装 WordPress + ssl">
+<meta property="og:url" content="http://example.com/2023/02/27/%E5%9C%A8Ubantu-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Nginx%E5%AE%89%E8%A3%85-WordPress-ssl/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在Ubantu 上安装使用Nginx安装 WordPress + ssl 安装必要的软件包： 12sudo apt updatesudo apt install nginx php-fpm php-mysql  安装MySQL数据库 12sudo apt install mysql-serversudo mysql -u root -p  创建一个新的MySQL用户和数据库 12345CREATE">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-27T14:19:22.000Z">
+<meta property="article:modified_time" content="2023-02-27T14:20:19.116Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="VPS,wordpress">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -144,60 +149,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-在Ubantu-上安装使用Nginx安装-WordPress-ssl" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/11/%E5%BC%80%E6%BA%90jshERP-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2021-12-11T04:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/11/%E5%BC%80%E6%BA%90jshERP-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/">开源jshERP 下载部署</a>
+    <h1 class="article-title" itemprop="name">
+      在Ubantu 上安装使用Nginx安装 WordPress + ssl
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2023/02/27/%E5%9C%A8Ubantu-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Nginx%E5%AE%89%E8%A3%85-WordPress-ssl/" class="archive-article-date">
+  	<time datetime="2023-02-27T14:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="在ubantu-上安装使用nginx安装-wordpress-ssl">在Ubantu 上安装使用Nginx安装 WordPress + ssl</span></h2><ol>
+<li><p>安装必要的软件包：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nginx php-fpm php-mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装MySQL数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>创建一个新的MySQL用户和数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE wordpress;</span><br><span class="line">CREATE USER &#x27;lxhu&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Root1234&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON wordpress.* TO &#x27;lxhu&#x27;@&#x27;localhost&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">exit;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载WordPress并将其解压缩</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">wget https://wordpress.org/latest.tar.gz</span><br><span class="line">tar -zxvf latest.tar.gz</span><br><span class="line">sudo mv wordpress /var/www/honkaistarrail.shop/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑wp-config-sample.php 文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/honkaistarrail.shop/</span><br><span class="line">cp wp-config-sample.php wp-config.php</span><br><span class="line">sudo vi wp-config.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编辑wordpress配置</span></span><br><span class="line">define(&#x27;DB_NAME&#x27;, &#x27;wordpress&#x27;);</span><br><span class="line">define(&#x27;DB_USER&#x27;, &#x27;lxhu&#x27;);</span><br><span class="line">define(&#x27;DB_PASSWORD&#x27;, &#x27;Root1234&#x27;);</span><br><span class="line">define(&#x27;DB_HOST&#x27;, &#x27;localhost&#x27;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动 Nginx 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br><span class="line">sudo systemctl enable nginx</span><br><span class="line"><span class="meta">#</span><span class="bash"> 确认 Nginx 是否已经成功运行：</span></span><br><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑nginx config 文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">client_max_body_size</span> <span class="number">200m</span>;</span><br><span class="line">  <span class="attribute">root</span> /var/www/honkaistarrail.shop;</span><br><span class="line">  <span class="attribute">index</span> index.php;</span><br><span class="line">  <span class="attribute">server_name</span> honkaistarrail.shop;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$args</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">    <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">    <span class="comment"># 这里很重要 需要改成当前使用的PHP版本</span></span><br><span class="line">    <span class="attribute">fastcgi_pass</span> unix:/var/run/php/php8.1-fpm.sock;</span><br><span class="line">    <span class="attribute">fastcgi_param</span> SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">    <span class="attribute">fastcgi_param</span> SCRIPT_NAME <span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启nginx服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl reload nginx </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启服务器80 443 端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 检查80端口是否被占用</span></span><br><span class="line">sudo lsof -i :80</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装防火墙</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install ufw</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动防火墙</span></span><br><span class="line">sudo ufw enable</span><br><span class="line"><span class="meta">#</span><span class="bash"> 检查防火墙启动状态</span></span><br><span class="line">sudo ufw status</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 开启80 端口</span></span><br><span class="line">sudo ufw allow 80/tcp</span><br><span class="line">sudo ufw allow 443/tcp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启nginx</span></span><br><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置文件夹权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data /var/www/honkaistarrail.shop</span><br><span class="line">sudo find /var/www/honkaistarrail.shop/ -type d -exec chmod 755 &#123;&#125; \;</span><br><span class="line">sudo find /var/www/honkaistarrail.shop/ -type f -exec chmod 644 &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改php.ini/nginx.conf 的上传限制</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 找到php.ini 的位置</span></span><br><span class="line">sudo vi /etc/php/8.1/fpm/php.ini   </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在文件中修改摸板上传的大小限制</span></span><br><span class="line">upload_max_filesize = 32M</span><br><span class="line">post_max_size = 32M</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">找到当前生效的PHP版本</span></span><br><span class="line">systemctl list-unit-files | grep php</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启PHP服务</span></span><br><span class="line">sudo systemctl restart php8.1-fpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装SSL插件 Certbot</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装certbot</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install certbot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取 Let’s Encrypt SSL 证书 根据提示完成配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 通过certbot申请证书</span></span><br><span class="line">sudo certbot certonly --webroot -w /var/www/honkaistarrail.shop -d honkaistarrail.shop</span><br><span class="line">sudo certbot certonly --webroot -w /var/www/honkaistarrail.shop -d www.honkaistarrail.shop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将 SSL 证书和私钥文件复制到 Nginx 配置中：</p>
+<p>将以下行添加到 “server” 块中：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在安装ssl之后 配置ssl</span></span><br><span class="line"><span class="section">server</span> &#123;      </span><br><span class="line">        <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">        <span class="attribute">ssl_certificate</span> /etc/letsencrypt/live/honkaistarrail.shop/fullchain.pem;</span><br><span class="line">        <span class="attribute">ssl_certificate_key</span> /etc/letsencrypt/live/honkaistarrail.shop/privkey.pem;</span><br><span class="line">			  <span class="attribute">root</span> /var/www/honkaistarrail.shop;</span><br><span class="line">        <span class="attribute">index</span> index.php;</span><br><span class="line">  			<span class="attribute">server_name</span> honkaistarrail.shop;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$args</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">          <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">          <span class="comment"># 这里很重要 需要改成当前使用的PHP版本</span></span><br><span class="line">          <span class="attribute">fastcgi_pass</span> unix:/var/run/php/php8.1-fpm.sock;</span><br><span class="line">          <span class="attribute">fastcgi_param</span> SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">          <span class="attribute">fastcgi_param</span> SCRIPT_NAME <span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新加载 Nginx：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl reload nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动更新 Let’s Encrypt SSL 证书：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置 corn 定时任务</span></span><br><span class="line">sudo crontab -e</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用Nano编辑 在文件末尾添加自动更行命令</span></span><br><span class="line">0 0 * * 0 certbot renew</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在shell命令行确认是否成功设置</span></span><br><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">erp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VPS,wordpress</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/02/27/%E5%9C%A8Ubantu-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Nginx%E5%AE%89%E8%A3%85-WordPress-ssl/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2023/02/23/VPS-%E6%90%AD%E5%BB%BAwordpress%E7%8B%AC%E7%AB%8B%E7%AB%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VPS 搭建wordpress独立站</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">在Ubantu 上安装使用Nginx安装 WordPress + ssl</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -220,9 +400,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

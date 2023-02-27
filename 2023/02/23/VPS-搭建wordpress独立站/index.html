@@ -16,7 +16,7 @@
 <meta property="og:description" content="Update the system and install necessary packages: 12sudo yum updatesudo yum install wget unzip httpd mariadb mariadb-server php php-sudo yum install httpd mariadb mariadb-server php php-mysqlnd  Star">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-23T04:13:22.000Z">
-<meta property="article:modified_time" content="2023-02-23T05:32:50.663Z">
+<meta property="article:modified_time" content="2023-02-23T14:06:01.849Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="独立站搭建">
 <meta name="twitter:card" content="summary">
@@ -183,12 +183,16 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br><span class="line"><span class="meta">#</span><span class="bash"> Once logged <span class="keyword">in</span>, run the following SQL commands:</span></span><br><span class="line">CREATE DATABASE wordpress;</span><br><span class="line">CREATE USER &#x27;lxhu&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Wordpress7298&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON dbname.* TO &#x27;lxhu&#x27;@&#x27;localhost&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">exit;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Download and extract the latest WordPress:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">curl -O https://wordpress.org/latest.tar.gz</span><br><span class="line">tar xzvf latest.tar.gz</span><br><span class="line"></span><br><span class="line">sudo yum install rsync</span><br><span class="line"></span><br><span class="line">sudo rsync -avP /tmp/wordpress/ /var/www/html/</span><br><span class="line"></span><br><span class="line">sudo chown -R apache:apache /var/www/html/</span><br><span class="line">sudo chmod -R 755 /var/www/html/</span><br><span class="line"></span><br><span class="line">cd /var/www/html/</span><br><span class="line">sudo mv wp-config-sample.php wp-config.php</span><br><span class="line"></span><br><span class="line">sudo vi wp-config.php</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">curl -O https://wordpress.org/latest.tar.gz</span><br><span class="line">tar xzvf latest.tar.gz</span><br><span class="line"></span><br><span class="line">sudo yum install rsync</span><br><span class="line"></span><br><span class="line">sudo rsync -avP /tmp/wordpress/ /var/www/html/</span><br><span class="line"></span><br><span class="line">sudo chown -R apache:apache /var/www/html/</span><br><span class="line">sudo chmod -R 755 /var/www/html/</span><br><span class="line"></span><br><span class="line">cd /var/www/html/</span><br><span class="line">sudo mv wp-config-sample.php wp-config.php</span><br><span class="line"></span><br><span class="line">sudo vi wp-config.php</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Open port 80</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install firewalld</span><br><span class="line">sudo systemctl status firewalld</span><br><span class="line">sudo systemctl start firewalld</span><br><span class="line">sudo firewall-cmd --add-port=80/tcp --permanent</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Complete the WordPress installation by accessing your server’s domain or IP address in a web browser and following the installation prompts. During the installation, use the database name, username, and password you created in step 4.</p>
+<li><p>Upgrade to PHP 7.4</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加 Remi 存储库：您可以通过以下命令添加 Remi 存储库</span></span><br><span class="line">sudo yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启用 Remi 存储库，您可以使用以下命令：</span></span><br><span class="line">sudo yum-config-manager --enable remi-php74</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 升级 PHP：在启用 Remi 存储库后，您可以使用以下命令升级 PHP：</span></span><br><span class="line">sudo yum update</span><br><span class="line">sudo yum install php</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 确认 PHP 版本：在安装完毕后，您可以使用以下命令检查 PHP 版本：</span></span><br><span class="line">php -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Change theme upload size in php.ini</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询php.ini 的地址</span></span><br><span class="line">php -i | grep php.ini</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改‘php.ini’</span></span><br><span class="line">vi /tem/php.ini</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在文件中修改 upload_max_filesize = 100M</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重新启动Apache</span></span><br><span class="line">sudo systemctl restart httpd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -294,6 +298,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2023/02/27/%E5%9C%A8Ubantu-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Nginx%E5%AE%89%E8%A3%85-WordPress-ssl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在Ubantu 上安装使用Nginx安装 WordPress + ssl
+        
+      </div>
+    </a>
   
   
     <a href="/2022/10/23/Woocommerce-%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E4%BA%A7%E5%93%81/" id="article-nav-older" class="article-nav-link-wrap">
@@ -602,6 +615,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">独立站搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VPS,wordpress</a>
               </li>
             
             <div class="clearfix"></div>
