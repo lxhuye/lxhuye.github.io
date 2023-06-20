@@ -146,6 +146,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-虚拟机ping不同外网的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">虚拟机ping不通外网的解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-11-01T08:07:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原因是: 由于主机没有配置DNS导致的</p>
+<h4><span id="1找到本机网卡配置文件">1.找到本机网卡配置文件</span></h4><p><strong>vi /etc/sysconfig/network-scripts/ens33</strong><br>添加配置网卡内容:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<h4><span id="2配置主机dns">2.配置主机DNS</span></h4><p><strong>vi /etc/resolv.conf</strong><br>配置内容:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-部署项目到服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -921,115 +1003,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A003-%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Spring学习02-spring装配Bean" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">Spring学习02_spring装配Bean</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/" class="archive-article-date">
-  	<time datetime="2020-10-24T03:32:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Spring中，对象无需自己查找或创建与其所关联的其他对象。相反，<strong>容器负责把需要相互协作的对象引用赋予各个对象</strong>。例如，一个订单管理组件需要信用卡认证组件，但它不需要自己创建信用卡认证组件。订单管理组件只需要表明自己两手空空，容器就会主动赋予它一个信用卡认证组件。</p>
-<p>创建应用对象之间协作关系的行为通常称为<strong>装配（wiring）</strong>，这也是<strong>依赖注入（DI）</strong>的本质。在本章我们将介绍使用Spring装配 bean的基础知识。因为DI是Spring的最基本要素，所以在开发基于Spring的应用时，你随时都在使用这些技术。</p>
-<!-- toc -->
-
-<ul>
-<li><a href="#spring%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E9%80%89%E6%96%B9%E6%A1%88"><strong>Spring配置的可选方案</strong></a></li>
-<li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E8%A3%85%E9%85%8Dbean"><strong>自动化装配bean</strong></a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%A2%AB%E5%8F%91%E7%8E%B0%E7%9A%84bean"><strong>创建可被发现的bean</strong></a></li>
-<li><a href="#%E4%B8%BA%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84bean%E5%91%BD%E5%90%8D"><strong>为组件扫描的bean命名</strong></a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E5%8C%85-%EF%B8%8F"><strong>设置组件扫描的基础包</strong> ⭐️</a></li>
-<li><a href="#%E4%B8%BAbean%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D-%EF%B8%8F%EF%B8%8F"><strong>为bean添加注解实现自动装配</strong> ⭐️⭐️</a></li>
-<li><a href="#%E6%89%8B%E5%8A%A8%E8%A3%85%E9%85%8Dbean%EF%B8%8F"><strong>手动装配bean</strong>⭐️</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87java%E4%BB%A3%E7%A0%81%E8%A3%85%E9%85%8Dbean"><strong>通过Java代码装配bean</strong></a><ul>
-<li><a href="#%E5%A3%B0%E6%98%8E%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明简单的bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9javaconfig%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%85%A5"><strong>借助JavaConfig实现注入</strong></a></li>
-<li><a href="#%E9%80%9A%E8%BF%87xml%E8%A3%85%E9%85%8Dbean"><strong>通过XML装配bean</strong></a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BAxml%E9%85%8D%E7%BD%AE%E8%A7%84%E8%8C%83"><strong>创建XML配置规范</strong></a></li>
-<li><a href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84bean"><strong>声明一个简单的Bean</strong></a></li>
-<li><a href="#%E5%80%9F%E5%8A%A9%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5%E5%88%9D%E5%A7%8B%E5%8C%96bean"><strong>借助构造器注入初始化bean</strong></a><ul>
-<li><a href="#%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5bean%E5%BC%95%E7%94%A8"><strong>构造器注入bean引用</strong></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8spring-30%E6%89%80%E5%BC%95%E5%85%A5%E7%9A%84c-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">使用Spring 3.0所引入的c-命名空间</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B0%86%E5%AD%97%E9%9D%A2%E9%87%8F%E6%B3%A8%E5%85%A5%E5%88%B0%E6%9E%84%E9%80%A0%E5%99%A8%E4%B8%AD"><strong>将字面量注入到构造器中</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%8F%E7%BB%93"><strong>小结</strong></a></li>
-</ul>
-<!-- tocstop -->
-        
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">spring, mall_project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/24/Spring%E5%AD%A6%E4%B9%A002-spring%E8%A3%85%E9%85%8DBean/">展开全文 >></a>
         </p>
       
 

@@ -146,6 +146,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-远程-origin-已经存在" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">git 远程 origin 已经存在</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/" class="archive-article-date">
+  	<time datetime="2021-05-05T04:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>解决办法：删除远程配置,重新添加：</strong></p>
+<p>git remote rm origin</p>
+<p>git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#64;&#99;&#x6f;&#x64;&#x65;&#46;&#97;&#x6c;&#105;&#121;&#x75;&#x6e;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#99;&#x6f;&#x64;&#x65;&#46;&#97;&#x6c;&#105;&#121;&#x75;&#x6e;&#x2e;&#x63;&#x6f;&#109;</a>:XXXXXXXXXXX/myWork.git</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/05/git-%E8%BF%9C%E7%A8%8B-origin-%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-vue监听页面滚动，动态修改导航条颜色" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -816,88 +893,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/11/01/Centos8%E5%AE%89%E8%A3%85nodeJS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-虚拟机ping不同外网的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">虚拟机ping不通外网的解决方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-11-01T08:07:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原因是: 由于主机没有配置DNS导致的</p>
-<h4><span id="1找到本机网卡配置文件">1.找到本机网卡配置文件</span></h4><p><strong>vi /etc/sysconfig/network-scripts/ens33</strong><br>添加配置网卡内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<h4><span id="2配置主机dns">2.配置主机DNS</span></h4><p><strong>vi /etc/resolv.conf</strong><br>配置内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/01/%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E5%90%8C%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
