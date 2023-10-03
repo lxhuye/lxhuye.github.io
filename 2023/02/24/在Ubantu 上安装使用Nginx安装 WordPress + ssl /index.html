@@ -16,7 +16,7 @@
 <meta property="og:description" content="安装 Ubuntu 22.04上的 WordPress 网站并使用 Nginx 安装必要的软件包： 123456sudo apt updatesudo apt install nginx php-fpm php-mysql# 这一步是为了wordpress 媒体库可以正常工作 Replace phpX.Y with your PHP version number (e.g., php7.4 or">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-24T08:20:59.355Z">
-<meta property="article:modified_time" content="2023-04-15T06:46:25.499Z">
+<meta property="article:modified_time" content="2023-08-14T14:32:14.668Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -239,7 +239,16 @@
 
 4. 在Ubuntu上开启MySQL用户权限，允许远程访问任何数据库和表，
 
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 登陆mysql</span><br><span class="line">sudo mysql -u root -p</span><br><span class="line"></span><br><span class="line"># 接下来，您需要创建一个新用户或更新现有用户，以允许从任何IP地址远程访问。执行以下SQL命令：将your_username和your_password替换为实际值。</span><br><span class="line">CREATE USER &#39;your_username&#39;@&#39;%&#39; IDENTIFIED BY &#39;your_password&#39;;</span><br><span class="line"></span><br><span class="line"># 为新用户或现有用户授予对所有数据库和表的访问权限：</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#39;your_username&#39;@&#39;%&#39; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">#刷新权限以使更改生效：</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line">EXIT;</span><br></pre></td></tr></table></figure></code></pre>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登陆mysql</span></span><br><span class="line">sudo mysql -u root -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接下来，您需要创建一个新用户或更新现有用户，以允许从任何IP地址远程访问。执行以下SQL命令：将your_username和your_password替换为实际值。</span></span><br><span class="line">CREATE USER <span class="string">&#x27;your_username&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;your_password&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为新用户或现有用户授予对所有数据库和表的访问权限：</span></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;your_username&#x27;</span>@<span class="string">&#x27;%&#x27;</span> WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line"><span class="comment">#刷新权限以使更改生效：</span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line">EXIT;</span><br></pre></td></tr></table></figure></code></pre>
+<p>16 安装wordpress需要的依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"><span class="comment"># 上传需要的依赖</span></span><br><span class="line">sudo apt-get install php8.1-mbstring</span><br><span class="line">sudo systemctl restart php8.1-fpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="17">
+<li><p>修改PHP.ini</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果您不确定php.ini的位置，可以使用以下命令找到它（针对FPM）：</span></span><br><span class="line">php-fpm8.1 -i | grep <span class="string">&quot;Loaded Configuration File&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改php.ini文件</span></span><br><span class="line">使用您喜欢的文本编辑器打开php.ini。例如，使用nano编辑器：</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改php.ini文件</span></span><br><span class="line">sudo nano /etc/php/8.1/fpm/php.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 您可以在nano编辑器中按下Ctrl + W并输入max_execution_time进行搜索</span></span><br><span class="line">max_execution_time = 60</span><br><span class="line">memory_limit = 1280M</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存并关闭文件。如果您使用的是nano编辑器，可以按Ctrl + O保存，然后按Enter，接着按Ctrl + X退出。</span></span><br><span class="line"></span><br><span class="line">sudo systemctl restart php8.1-fpm</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
 
@@ -484,6 +493,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动手学深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
@@ -496,7 +509,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动手学深度学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,19 +529,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">seo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,11 +549,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">独立站搭建</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vpn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,19 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">digital marketing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,6 +597,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">odoo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">email_sender小工具</a>
               </li>
              
@@ -584,15 +609,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">odoo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,15 +617,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">谷粒商城</a>
+                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">macos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VPS,wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">谷粒商城</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,11 +653,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
+                <a href="javascript:void(0)" class="js-tag color4">erp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">erp</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,26 +666,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">独立站搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VPS,wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
               </li>
             
             <div class="clearfix"></div>
